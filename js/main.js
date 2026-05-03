@@ -17,15 +17,18 @@ window.addEventListener('scroll', () => {
     backTop?.classList.remove('visible');
   }
 
-  // Active nav link highlight
-  const sections = document.querySelectorAll('section[id]');
-  let current = '';
-  sections.forEach(s => {
-    if (window.scrollY >= s.offsetTop - 100) current = s.id;
-  });
-  document.querySelectorAll('.nav-links a').forEach(a => {
-    a.classList.toggle('active', a.getAttribute('href') === `#${current}`);
-  });
+  // Active nav link highlight (homepage sections only — subpages link to index.html#…)
+  if (document.getElementById('hero')) {
+    const sections = document.querySelectorAll('section[id]');
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 100) current = s.id;
+    });
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      const href = a.getAttribute('href') || '';
+      a.classList.toggle('active', href === `#${current}`);
+    });
+  }
 });
 
 // ── Back to top ──────────────────────────────────────────────────

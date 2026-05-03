@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Deep learning on 3D point clouds — DeltaConv and geometric deep learning research by Dr. Ahmad Nasikun." />
+  <title>Deep Learning for Point Clouds | Dr. Ahmad Nasikun</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230d1b2a'/><text y='24' x='4' font-size='22' font-family='serif' fill='%23c9a84c'>N</text></svg>" />
+</head>
+<body class="page-research-detail">
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-brand">Dr. <span>Nasikun</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#research">Research</a></li>
+      <li><a href="../index.html#publications">Publications</a></li>
+      <li><a href="../index.html#teaching">Teaching</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li class="nav-cta"><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <div id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<main class="page-sub-main">
+  <header class="research-page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a> · <a href="../index.html#research">Research areas</a> · Deep Learning for Point Clouds
+      </nav>
+      <div class="research-page-title-row">
+        <span class="research-page-icon" aria-hidden="true">🧠</span>
+        <div>
+          <h1>Deep Learning for Point Clouds</h1>
+          <p class="research-page-lead">Geometric deep learning with anisotropic operators on unstructured 3D data — bridging exterior calculus with practical point-cloud networks.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <article class="section">
+    <div class="container research-detail-body">
+      <div class="research-detail-intro animate-on-scroll">
+        <p>
+          Point clouds from LiDAR, depth cameras, and reconstruction pipelines are inherently <strong>unordered and irregular</strong>. Standard convolutions assume a grid; geometric deep learning must instead define derivatives and neighbourhoods that respect surface and spatial structure.
+        </p>
+        <p>
+          In collaboration with colleagues at TU Delft, I contributed to <strong>DeltaConv</strong>, which introduces <strong>anisotropic operators</strong> inspired by discrete exterior calculus so that learned filters can align with local geometry rather than treating all directions equally. The line of work spans an arXiv preprint, the ACM TOG journal version, and open-source implementations for reproducibility.
+        </p>
+      </div>
+
+      <section class="research-detail-topic animate-on-scroll">
+        <h2>Anisotropic operators &amp; CNN architectures for point clouds</h2>
+        <p>
+          We design convolution-like layers whose stencils adapt to estimated tangent and normal structure, improving feature extraction for segmentation, classification, and scene understanding. The goal is to make 3D networks more data-efficient and faithful to curvature while remaining compatible with modern training stacks.
+        </p>
+        <p class="research-detail-papers-label">Related publications</p>
+        <ul class="research-detail-paper-links">
+          <li><a href="#pub-deltaconv-tog">DeltaConv: Anisotropic Operators for Geometric Deep Learning on Point Clouds (ACM TOG, 2022)</a></li>
+          <li><a href="#pub-deltaconv-arxiv">DeltaConv: Anisotropic Point Cloud Learning with Exterior Calculus (arXiv, 2021)</a></li>
+          <li><a href="#pub-deltaconv-alt">DeltaConv: Anisotropic Geometric Deep Learning with Exterior Calculus (related Scholar listing, 2022)</a></li>
+        </ul>
+      </section>
+
+      <section class="research-detail-topic animate-on-scroll">
+        <h2>3D mapping, recognition, and applications</h2>
+        <p>
+          Better point-cloud networks support autonomous systems, digital twins, and robotics. While my published focus is on the operator design itself, the motivation includes robust object recognition and real-time understanding of large scans where anisotropy and scale vary across the scene.
+        </p>
+        <p class="research-detail-papers-label">Related publications</p>
+        <ul class="research-detail-paper-links">
+          <li><a href="#pub-deltaconv-tog">See ACM TOG (2022) and arXiv preprint above</a></li>
+        </ul>
+      </section>
+
+      <section class="research-detail-pubs-section" id="publications-in-area">
+        <div class="section-header animate-on-scroll">
+          <span class="badge">Publications</span>
+          <div class="divider"></div>
+          <h2>All papers in this area</h2>
+          <p>DeltaConv line of work; newest first.</p>
+        </div>
+        <div class="pub-list">
+
+          <div class="pub-item animate-on-scroll" id="pub-deltaconv-tog">
+            <div class="pub-year">2022</div>
+            <div class="pub-content">
+              <h4>DeltaConv: Anisotropic Operators for Geometric Deep Learning on Point Clouds</h4>
+              <p class="pub-authors">Wiersma, R., <strong>Nasikun, A.</strong>, Eisemann, E., &amp; Hildebrandt, K.</p>
+              <p class="pub-venue">ACM Transactions on Graphics (TOG), 41(4), pp. 1–10 · ACM</p>
+              <div class="pub-links">
+                <span class="tag">ACM TOG</span>
+                <span class="tag">Deep Learning</span>
+                <a class="pub-link" href="https://github.com/rubenwiersma/deltaconv" target="_blank" rel="noopener">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                  Code
+                </a>
+                <a class="pub-link" href="https://doi.org/10.1145/3528223.3530166" target="_blank" rel="noopener">DOI ↗</a>
+                <a class="pub-link" href="https://scholar.google.com/scholar?oi=bibs&amp;hl=en&amp;cites=4242914372854199680" target="_blank" rel="noopener">Scholar ↗</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="pub-item animate-on-scroll" id="pub-deltaconv-alt">
+            <div class="pub-year">2022</div>
+            <div class="pub-content">
+              <h4>DeltaConv: Anisotropic Geometric Deep Learning with Exterior Calculus</h4>
+              <p class="pub-authors">Wiersma, R., <strong>NASIKUN, A.</strong>, Eisemann, E., &amp; Hildebrandt, K.</p>
+              <p class="pub-venue">Additional Scholar listing (related to DeltaConv / TOG 2022), 2022</p>
+              <div class="pub-links">
+                <span class="tag">Related work</span>
+                <a class="pub-link" href="https://scholar.google.com/scholar?oi=bibs&amp;hl=en&amp;cites=6841797991074501294" target="_blank" rel="noopener">Scholar ↗</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="pub-item animate-on-scroll" id="pub-deltaconv-arxiv">
+            <div class="pub-year">2021</div>
+            <div class="pub-content">
+              <h4>DeltaConv: Anisotropic Point Cloud Learning with Exterior Calculus</h4>
+              <p class="pub-authors">Wiersma, R., <strong>Nasikun, A.</strong>, Eisemann, E., &amp; Hildebrandt, K.</p>
+              <p class="pub-venue">arXiv preprint arXiv:2111.08799, 2021</p>
+              <div class="pub-links">
+                <span class="tag">arXiv</span>
+                <a class="pub-link" href="https://arxiv.org/abs/2111.08799" target="_blank" rel="noopener">arXiv ↗</a>
+                <a class="pub-link" href="https://scholar.google.com/scholar?oi=bibs&amp;hl=en&amp;cites=5720278602888321843" target="_blank" rel="noopener">Scholar ↗</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <p class="animate-on-scroll" style="text-align:center;margin-top:2rem;">
+          <a href="../index.html#publications" class="btn-secondary" style="display:inline-block;border:1px solid var(--gray-200);color:var(--gray-800);padding:0.75rem 1.75rem;border-radius:6px;">← Full publication list on homepage</a>
+        </p>
+      </section>
+    </div>
+  </article>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <p>© <span id="footer-year"></span> Dr. Ahmad Nasikun · Universitas Gadjah Mada</p>
+    <p>Built with plain HTML, CSS &amp; JS · Hosted on <a href="https://pages.github.com" target="_blank">GitHub Pages</a></p>
+    <p>
+      <a href="mailto:ahmad.nasikun@ugm.ac.id">Email</a> ·
+      <a href="https://github.com/a-nasikun" target="_blank">GitHub</a> ·
+      <a href="https://scholar.google.com/citations?user=w0s9NVoAAAAJ&hl=en" target="_blank">Scholar</a>
+    </p>
+  </div>
+</footer>
+
+<button id="back-top" aria-label="Back to top">↑</button>
+<script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Geometry processing research by Dr. Ahmad Nasikun — spectral methods, Laplace–Beltrami eigenproblems, and discrete surface analysis." />
+  <title>Geometry Processing | Dr. Ahmad Nasikun</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230d1b2a'/><text y='24' x='4' font-size='22' font-family='serif' fill='%23c9a84c'>N</text></svg>" />
+</head>
+<body class="page-research-detail">
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-brand">Dr. <span>Nasikun</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#research">Research</a></li>
+      <li><a href="../index.html#publications">Publications</a></li>
+      <li><a href="../index.html#teaching">Teaching</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li class="nav-cta"><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <div id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<main class="page-sub-main">
+  <header class="research-page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a> · <a href="../index.html#research">Research areas</a> · Geometry Processing
+      </nav>
+      <div class="research-page-title-row">
+        <span class="research-page-icon" aria-hidden="true">🔺</span>
+        <div>
+          <h1>Geometry Processing</h1>
+          <p class="research-page-lead">Spectral and discrete differential geometry on surfaces — building reliable algorithms for shape analysis, field design, and scalable eigenanalysis.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <article class="section">
+    <div class="container research-detail-body">
+      <div class="research-detail-intro animate-on-scroll">
+        <p>
+          Geometry processing studies how to represent, analyse, and manipulate 3D shape on digital domains such as triangle meshes and point clouds. My work focuses on the <strong>Laplace–Beltrami operator</strong> on curved surfaces: its spectrum encodes intrinsic geometry and underpins applications from shape matching to physical simulation.
+        </p>
+        <p>
+          A central theme is to avoid prohibitively expensive linear algebra while preserving spectral fidelity — through <strong>subspace iteration</strong>, <strong>fast approximate eigen solvers</strong>, and <strong>locally supported bases</strong> for vector and tensor fields. These tools connect classical numerical analysis with interactive graphics and engineering workflows.
+        </p>
+      </div>
+
+      <section class="research-detail-topic animate-on-scroll">
+        <h2>Subspace methods &amp; Laplace–Beltrami eigenproblems</h2>
+        <p>
+          Computing many eigenpairs of the Laplace–Beltrami operator on high-resolution meshes is costly. Hierarchical subspace iteration targets this bottleneck by maintaining a multi-resolution hierarchy and iterating in progressively refined subspaces, so that low-frequency modes that matter for shape analysis emerge efficiently without assembling the full spectrum at once.
+        </p>
+        <p class="research-detail-papers-label">Related publications</p>
+        <ul class="research-detail-paper-links">
+          <li><a href="#pub-hierarchical">The Hierarchical Subspace Iteration Method for Laplace–Beltrami Eigenproblems (ACM TOG, 2022)</a></li>
+        </ul>
+      </section>
+
+      <section class="research-detail-topic animate-on-scroll">
+        <h2>Fast spectral approximation (FastSpectrum)</h2>
+        <p>
+          For applications that need approximate eigenfunctions quickly — for example interactive design or prototyping — we developed compact schemes that trade a controlled amount of accuracy for orders-of-magnitude speedups compared with direct solves, while remaining grounded in the continuous Laplace–Beltrami problem.
+        </p>
+        <p class="research-detail-papers-label">Related publications</p>
+        <ul class="research-detail-paper-links">
+          <li><a href="#pub-fast-laplace">Fast Approximation of Laplace–Beltrami Eigenproblems (CGF / SGP, 2018)</a></li>
+        </ul>
+      </section>
+
+      <section class="research-detail-topic animate-on-scroll">
+        <h2>Locally supported tangential vector, <i>n</i>-vector, and tensor fields</h2>
+        <p>
+          Direction fields and tensor quantities on surfaces appear in remeshing, quadrangulation, and non-photorealistic rendering. We construct fields with <strong>compact support</strong> so designers can edit regions locally without global recomputation, while preserving alignment and smoothness constraints where needed.
+        </p>
+        <p class="research-detail-papers-label">Related publications</p>
+        <ul class="research-detail-paper-links">
+          <li><a href="#pub-local-fields">Locally Supported Tangential Vector, <i>n</i>-Vector, and Tensor Fields (CGF / Eurographics, 2020)</a></li>
+        </ul>
+      </section>
+
+      <section class="research-detail-pubs-section" id="publications-in-area">
+        <div class="section-header animate-on-scroll">
+          <span class="badge">Publications</span>
+          <div class="divider"></div>
+          <h2>All papers in this area</h2>
+          <p>Same layout as the homepage list, ordered newest first.</p>
+        </div>
+        <div class="pub-list">
+
+          <div class="pub-item animate-on-scroll" id="pub-hierarchical">
+            <div class="pub-year">2022</div>
+            <div class="pub-content">
+              <h4>The Hierarchical Subspace Iteration Method for Laplace–Beltrami Eigenproblems</h4>
+              <p class="pub-authors"><strong>Nasikun, A.</strong>, &amp; Hildebrandt, K.</p>
+              <p class="pub-venue">ACM Transactions on Graphics (TOG), 41(2), pp. 1–14 · ACM</p>
+              <div class="pub-links">
+                <span class="tag">ACM TOG</span>
+                <span class="tag">Geometry Processing</span>
+                <a class="pub-link" href="https://dl.acm.org/doi/10.1145/3494456" target="_blank" rel="noopener">DOI ↗</a>
+                <a class="pub-link" href="https://scholar.google.com/scholar?oi=bibs&amp;hl=en&amp;cites=2875956367425592135" target="_blank" rel="noopener">Scholar ↗</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="pub-item animate-on-scroll" id="pub-local-fields">
+            <div class="pub-year">2020</div>
+            <div class="pub-content">
+              <h4>Locally Supported Tangential Vector, <i>n</i>-Vector, and Tensor Fields</h4>
+              <p class="pub-authors"><strong>Nasikun, A.</strong>, Brandt, C., &amp; Hildebrandt, K.</p>
+              <p class="pub-venue">Computer Graphics Forum, 39(2), pp. 203–217 · Eurographics 2020</p>
+              <div class="pub-links">
+                <span class="tag">Eurographics</span>
+                <span class="tag">CGF</span>
+                <a class="pub-link" href="https://github.com/a-nasikun/LocalFields" target="_blank" rel="noopener">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                  Code
+                </a>
+                <a class="pub-link" href="https://scholar.google.com/scholar?oi=bibs&amp;hl=en&amp;cites=2561362485376053785" target="_blank" rel="noopener">Scholar ↗</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="pub-item animate-on-scroll" id="pub-fast-laplace">
+            <div class="pub-year">2018</div>
+            <div class="pub-content">
+              <h4>Fast Approximation of Laplace–Beltrami Eigenproblems</h4>
+              <p class="pub-authors"><strong>Nasikun, A.</strong>, Brandt, C., &amp; Hildebrandt, K.</p>
+              <p class="pub-venue">Computer Graphics Forum, 37(5), pp. 121–134 · SGP 2018 · Eurographics</p>
+              <div class="pub-links">
+                <span class="tag">SGP 2018</span>
+                <span class="tag">CGF</span>
+                <a class="pub-link" href="https://github.com/a-nasikun/FastSpectrum" target="_blank" rel="noopener">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                  Code
+                </a>
+                <a class="pub-link" href="https://scholar.google.com/scholar?oi=bibs&amp;hl=en&amp;cites=6767516321270248543" target="_blank" rel="noopener">Scholar ↗</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <p class="animate-on-scroll" style="text-align:center;margin-top:2rem;">
+          <a href="../index.html#publications" class="btn-secondary" style="display:inline-block;border:1px solid var(--gray-200);color:var(--gray-800);padding:0.75rem 1.75rem;border-radius:6px;">← Full publication list on homepage</a>
+        </p>
+      </section>
+    </div>
+  </article>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <p>© <span id="footer-year"></span> Dr. Ahmad Nasikun · Universitas Gadjah Mada</p>
+    <p>Built with plain HTML, CSS &amp; JS · Hosted on <a href="https://pages.github.com" target="_blank">GitHub Pages</a></p>
+    <p>
+      <a href="mailto:ahmad.nasikun@ugm.ac.id">Email</a> ·
+      <a href="https://github.com/a-nasikun" target="_blank">GitHub</a> ·
+      <a href="https://scholar.google.com/citations?user=w0s9NVoAAAAJ&hl=en" target="_blank">Scholar</a>
+    </p>
+  </div>
+</footer>
+
+<button id="back-top" aria-label="Back to top">↑</button>
+<script src="../js/main.js"></script>
+</body>
+</html>
