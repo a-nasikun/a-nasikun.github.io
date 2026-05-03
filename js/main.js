@@ -83,6 +83,10 @@ filterBtns.forEach(btn => {
 
     const filter = btn.dataset.filter;
     pubItems.forEach(item => {
+      if (item.classList.contains('pub-hidden')) {
+        item.style.display = 'none';
+        return;
+      }
       const show = filter === 'all' || item.dataset.type === filter;
       item.style.display = show ? 'grid' : 'none';
       if (show) {
