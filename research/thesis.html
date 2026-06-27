@@ -132,6 +132,27 @@
       margin: 0 auto 1.5rem;
       line-height: 1.7;
     }
+    .btn-interest {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.25rem;
+      padding: 0.55rem 1.25rem;
+      background: var(--navy-soft);
+      color: var(--white);
+      border: 1px solid var(--navy-soft);
+      border-radius: var(--radius);
+      font-size: 0.8rem;
+      font-weight: 500;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    .btn-interest:hover {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: var(--gold-light);
+      transform: translateY(-1px);
+    }
   </style>
 </head>
 <body class="page-research-detail">
@@ -209,6 +230,7 @@
             <p>
               Students working on this topic will investigate how attention weights can be adapted to spatial distances and geometric properties (like local normals and curvature). You will implement and benchmark point transformers on standard datasets for tasks such as 3D object classification, part segmentation, and scene understanding. The ultimate goal is to design a model that balances local detail extraction with global structural awareness, achieving state-of-the-art accuracy while maintaining a manageable computational footprint.
             </p>
+            <a href="mailto:ahmad.nasikun@ugm.ac.id?subject=Thesis%20enquiry%20%2B%20Transformer-based%20models%20for%20geometric%20deep%20learning%20on%20point-cloud%20data" class="btn-interest">I'm interested at this topic</a>
           </div>
 
           <div class="thesis-topic-card">
@@ -219,6 +241,7 @@
             <p>
               In this project, you will design and implement a spatial retention operator that incorporates 3D relative position decay. You will investigate local-to-global aggregation methods that replace sequential order with spatial distance or hierarchical clustering (such as octrees or k-nearest neighbor graphs). By building a RetNet-based pipeline for 3D point clouds, this research aims to achieve the computational efficiency of linear-attention models while retaining the high representational capacity of standard Transformers for large-scale 3D scene analysis.
             </p>
+            <a href="mailto:ahmad.nasikun@ugm.ac.id?subject=Thesis%20enquiry%20%2B%20Exploring%20Retention%20Network%20for%20point%20cloud%20data" class="btn-interest">I'm interested at this topic</a>
           </div>
 
         </div>
@@ -240,6 +263,7 @@
             <p>
               Building on our group's SIGGRAPH 2023 work on geometric multigrid methods, this topic involves designing robust restriction and prolongation operators that preserve the spectral properties of the LBO across levels. You will work on optimizing mesh decimation algorithms to construct high-quality coarse representations and implement efficient smoothers that handle irregular vertex valences. This research is critical for enabling real-time geometry processing and interactive design tools directly on complex, raw 3D scans.
             </p>
+            <a href="mailto:ahmad.nasikun@ugm.ac.id?subject=Thesis%20enquiry%20%2B%20Multigrid%20solver%20for%20Laplace-Beltrami%20Operator%20on%20surface%20mesh" class="btn-interest">I'm interested at this topic</a>
           </div>
 
           <div class="thesis-topic-card">
@@ -250,6 +274,7 @@
             <p>
               This project explores hierarchical (multigrid or coarse-to-fine) solver strategies to accelerate the simulation of deformable bodies. You will develop methods that compute coarse-scale deformations quickly and use them to guide or restrict the fine-scale simulation details. By implementing these hierarchical techniques, you will help bridge the gap between high-fidelity physics and real-time performance, enabling realistic tactile and visual feedback for highly detailed soft-body models in virtual environments.
             </p>
+            <a href="mailto:ahmad.nasikun@ugm.ac.id?subject=Thesis%20enquiry%20%2B%20Hierarchical%20method%20for%20simulation%20of%20deformable%20bodies" class="btn-interest">I'm interested at this topic</a>
           </div>
 
         </div>
@@ -271,6 +296,7 @@
             <p>
               You will design and implement gamified mechanics—such as virtual shopping, interactive cooking, or situational matching games—where players must recognize and use Korean words to progress. The research will analyze how spatial memory, active physical interaction (e.g., picking up an object while hearing its Korean name), and game feedback loops affect word retention and learner motivation. This project combines Unity game development with pedagogical design and user experience evaluation.
             </p>
+            <a href="mailto:ahmad.nasikun@ugm.ac.id?subject=Thesis%20enquiry%20%2B%20Game-based%20VR%20app%20for%20learning%20Korean%20words" class="btn-interest">I'm interested at this topic</a>
           </div>
 
           <div class="thesis-topic-card">
@@ -281,6 +307,7 @@
             <p>
               Students will design conversational scenarios—such as ordering food at a Korean restaurant, asking for directions in Seoul, or checking in at a hotel—where learners interact with AI-driven non-player characters (NPCs). The system will analyze the user's spoken input, generate contextually appropriate responses, and provide helpful feedback on grammar and pronunciation. You will address challenges such as reducing latency between speech and AI response to maintain immersion, and evaluating the educational efficacy of the virtual conversational partner.
             </p>
+            <a href="mailto:ahmad.nasikun@ugm.ac.id?subject=Thesis%20enquiry%20%2B%20AI-powered%20conversational%20VR%20app%20for%20Korean%20learners" class="btn-interest">I'm interested at this topic</a>
           </div>
 
         </div>
@@ -302,6 +329,7 @@
             <p>
               This project focuses on optimizing real-time rendering pipelines (using Unity's URP or HDRP) to deliver photorealistic interiors in VR. You will explore advanced techniques such as dynamic lightmap baking, screen-space reflections, high-quality shader design for wood, glass, and fabrics, and foveated rendering. The goal is to build an interactive house customization app where users can change wall colors, flooring materials, and lighting layouts, and immediately see the results under realistic, high-fidelity illumination.
             </p>
+            <a href="mailto:ahmad.nasikun@ugm.ac.id?subject=Thesis%20enquiry%20%2B%20Realistic%20rendering%20of%20house%20customization%20in%20Virtual%20Reality" class="btn-interest">I'm interested at this topic</a>
           </div>
 
           <div class="thesis-topic-card">
@@ -312,6 +340,7 @@
             <p>
               In this thesis, you will work on improving and integrating MiDiffusion into an interactive VR interface. You will develop mechanisms that allow users to select specific areas in VR, lock certain furniture pieces in place, and query the diffusion model to generate or complete the remaining layout. The project involves adapting layout generation to respect physical constraints (such as walking paths and door clearance) and building a responsive VR UI that translates AI-generated layouts into interactive 3D virtual spaces.
             </p>
+            <a href="mailto:ahmad.nasikun@ugm.ac.id?subject=Thesis%20enquiry%20%2B%20Improving%20MiDiffusion%20for%20layout%20generation%20of%20home%20furnitures%20in%20Virtual%20Reality" class="btn-interest">I'm interested at this topic</a>
           </div>
 
         </div>
@@ -333,6 +362,7 @@
             <p>
               You will investigate and modify Unity's stereoscopic rendering pipeline, focusing on techniques such as Single Pass Instanced rendering, variable rate shading, and custom shader compilation. Additionally, you will look at implementing advanced culling techniques to prevent the CPU and GPU from processing objects outside the user's field of view. This research is highly technical and suitable for students interested in graphics programming, engine architecture, and hardware-level performance optimization.
             </p>
+            <a href="mailto:ahmad.nasikun@ugm.ac.id?subject=Thesis%20enquiry%20%2B%20Modifying%20the%20current%20rendering%20system%20of%20Unity%20for%20Virtual%20Reality" class="btn-interest">I'm interested at this topic</a>
           </div>
 
         </div>
@@ -354,6 +384,7 @@
             <p>
               In this project, you will build an interactive VR clothing try-in system. You will implement real-time mass-spring or position-based cloth simulation models, optimize collision detection between the cloth mesh and the user's avatar, and design an intuitive VR interface for browsing and selecting garments. The research will evaluate the trade-offs between simulation accuracy and frame rate, aiming to create a system that feels natural, responsive, and visually convincing for e-commerce applications.
             </p>
+            <a href="mailto:ahmad.nasikun@ugm.ac.id?subject=Thesis%20enquiry%20%2B%20Virtual%20Reality-based%20Try-in%20System%20for%20clothings%20in%20e-commerce" class="btn-interest">I'm interested at this topic</a>
           </div>
 
           <div class="thesis-topic-card">
@@ -364,6 +395,7 @@
             <p>
               You will implement core 3D editing tools, including surface deformation, real-time texture painting, sticker placement with UV mapping, and material customization (e.g., matte, metallic, gloss). The system will allow users to rotate the tumbler naturally, apply designs, and export their creations into production-ready formats (such as STL or OBJ). You will study user interaction patterns to design a VR interface that is accessible to casual users while remaining precise enough for professional designers.
             </p>
+            <a href="mailto:ahmad.nasikun@ugm.ac.id?subject=Thesis%20enquiry%20%2B%20VR-based%20editing%20tools%20for%20tumbler%20design" class="btn-interest">I'm interested at this topic</a>
           </div>
 
         </div>
@@ -390,6 +422,7 @@
             <p>
               As a student, you will work on integrating these features in Unity, evaluating how higher sensory fidelity and realistic crowd behaviors affect user stress levels and learning retention. The project involves 3D asset optimization, pathfinding algorithms, and interactive UI design, contributing to a vital campus-safety application.
             </p>
+            <a href="mailto:ahmad.nasikun@ugm.ac.id?subject=Thesis%20enquiry%20%2B%20Improving%20FireDrill%20VR%20for%20disaster%20education%20in%20SGLC%20FT%20UGM" class="btn-interest">I'm interested at this topic</a>
           </div>
 
         </div>
@@ -411,6 +444,7 @@
             <p>
               This thesis topic focuses on evaluating and calibrating the motion tracking accuracy of the KAT VR C2+ treadmill. You will design experiments to measure the correlation between a user's physical steps (stride length, frequency, direction) and the corresponding virtual movement speed and trajectory. By analyzing sensor latency, drift, and user gait patterns, you will identify areas for improvement and propose custom calibration models to enhance locomotion fidelity, ultimately contributing to a more comfortable and immersive VR navigation experience.
             </p>
+            <a href="mailto:ahmad.nasikun@ugm.ac.id?subject=Thesis%20enquiry%20%2B%20Analyzing%20the%20accuracy%20of%20walk-in-place%20in%20KAT%20VR%20C2%2B%20Enhance%20omni%20treadmill" class="btn-interest">I'm interested at this topic</a>
           </div>
 
         </div>
@@ -435,6 +469,7 @@
             <p>
               You will implement navigation systems (teleportation and smooth locomotion), design a spatial user interface for information hotspots, and integrate multimedia content (such as audio guides, historical photos, and videos). You will also focus on asset optimization, including level-of-detail (LOD) creation, mesh simplification, and occlusion culling to ensure high frame rates. This project is ideal for students interested in architectural VR, user experience design, and interactive system optimization.
             </p>
+            <a href="mailto:ahmad.nasikun@ugm.ac.id?subject=Thesis%20enquiry%20%2B%20Virtual%20Tour%20of%20Faculty%20of%20Engineering%20(FoE)" class="btn-interest">I'm interested at this topic</a>
           </div>
 
           <div class="thesis-topic-card">
@@ -448,6 +483,7 @@
             <p>
               You will research animal vision characteristics (such as dichromatic vision, field-of-view limits, or motion sensitivity) and implement shader-based post-processing effects to replicate them. This thesis combines game mechanics, shader programming, and creative interaction design.
             </p>
+            <a href="mailto:ahmad.nasikun@ugm.ac.id?subject=Thesis%20enquiry%20%2B%20Animal%E2%80%99s%20tour%20of%20Faculty%20of%20Engineering" class="btn-interest">I'm interested at this topic</a>
           </div>
 
         </div>
