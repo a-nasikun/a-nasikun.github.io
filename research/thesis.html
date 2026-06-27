@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore available undergraduate and graduate research thesis topics in geometry processing, virtual reality, and geometric deep learning supervised by Dr. Ahmad Nasikun at Universitas Gadjah Mada." />
+  <title>Available Thesis & Project Topics | Dr. Ahmad Nasikun</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230d1b2a'/><text y='24' x='4' font-size='22' font-family='serif' fill='%23c9a84c'>N</text></svg>" />
+  <style>
+    /* Custom additions for thesis topics page */
+    .thesis-jump-menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 3.5rem;
+      justify-content: center;
+    }
+    .thesis-jump-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 1.1rem;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 99px;
+      font-size: 0.82rem;
+      color: var(--gray-800);
+      font-weight: 500;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    .thesis-jump-btn:hover {
+      background: var(--navy);
+      color: var(--white);
+      border-color: var(--navy);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+    .thesis-theme-section {
+      margin-top: 3.5rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--gray-200);
+    }
+    .thesis-theme-section:first-of-type {
+      border-top: none;
+      padding-top: 0;
+    }
+    .thesis-theme-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+    }
+    .thesis-theme-header h2 {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      color: var(--navy);
+      font-weight: 600;
+    }
+    .thesis-theme-icon {
+      font-size: 1.8rem;
+    }
+    .thesis-topic-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+    .thesis-topic-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-left: 4px solid var(--navy-soft);
+      border-radius: 6px;
+      padding: 1.75rem;
+      transition: transform var(--transition), box-shadow var(--transition), border-left-color var(--transition);
+    }
+    .thesis-topic-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-left-color: var(--gold);
+    }
+    .thesis-topic-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+    }
+    .thesis-topic-card p {
+      font-size: 0.92rem;
+      color: var(--gray-600);
+      line-height: 1.75;
+      margin-bottom: 0.75rem;
+    }
+    .thesis-topic-card p:last-child {
+      margin-bottom: 0;
+    }
+    .thesis-sub-bullets {
+      margin-top: 0.75rem;
+      margin-bottom: 0.75rem;
+      padding-left: 1.5rem;
+      list-style-type: square;
+      color: var(--gray-600);
+      font-size: 0.88rem;
+    }
+    .thesis-sub-bullets li {
+      margin-bottom: 0.4rem;
+      line-height: 1.5;
+    }
+    .thesis-sub-bullets strong {
+      color: var(--navy);
+    }
+    .thesis-cta-box {
+      margin-top: 4.5rem;
+      padding: 2.5rem;
+      background: var(--gold-pale);
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+    .thesis-cta-box h2 {
+      font-family: var(--font-serif);
+      color: var(--navy);
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .thesis-cta-box p {
+      font-size: 0.95rem;
+      color: var(--gray-800);
+      max-width: 42rem;
+      margin: 0 auto 1.5rem;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body class="page-research-detail">
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-brand">Dr. <span>Nasikun</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#research">Research</a></li>
+      <li><a href="../index.html#publications">Publications</a></li>
+      <li><a href="../index.html#teaching">Teaching</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li class="nav-cta"><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <div id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<main class="page-sub-main">
+  <header class="research-page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a> · <a href="../index.html#teaching">Teaching & Supervision</a> · Thesis Topics
+      </nav>
+      <div class="research-page-title-row">
+        <span class="research-page-icon" aria-hidden="true">🎓</span>
+        <div>
+          <h1>Available Thesis & Project Topics</h1>
+          <p class="research-page-lead">Research, development, and computational engineering topics offered for undergraduate and graduate students under my supervision.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <article class="section">
+    <div class="container research-detail-body">
+      <div class="research-detail-intro animate-on-scroll">
+        <p>
+          I offer a variety of research and development topics for motivated students interested in <strong>Geometric Deep Learning</strong>, <strong>Geometry Processing</strong>, and <strong>Virtual Reality (VR) applications</strong>. These projects span theoretical algorithm design to practical implementation in virtual environments, safety training, language learning, and design tools.
+        </p>
+        <p>
+          If you are interested in selecting one of these topics for your undergraduate thesis (Tugas Akhir) or graduate research project, please review the requirements and details below. Students are expected to have solid foundations in programming (Python, C++, or C# depending on the area) and a strong drive to solve challenging computational problems. Reach out via email with your CV and academic transcript to discuss further.
+        </p>
+      </div>
+
+      <!-- Jump Navigation Menu -->
+      <nav class="thesis-jump-menu animate-on-scroll" aria-label="Topics Navigation">
+        <a href="#theme-geometric-dl" class="thesis-jump-btn"><span>🧠</span> Geometric Deep Learning</a>
+        <a href="#theme-geometry-proc" class="thesis-jump-btn"><span>🔺</span> Geometry Processing</a>
+        <a href="#theme-vr-korean" class="thesis-jump-btn"><span>🇰🇷</span> VR for Korean Language</a>
+        <a href="#theme-vr-arch" class="thesis-jump-btn"><span>🏛️</span> VR for Architecture</a>
+        <a href="#theme-rendering-vr" class="thesis-jump-btn"><span>🖥️</span> Rendering in VR</a>
+        <a href="#theme-vr-product" class="thesis-jump-btn"><span>🎨</span> VR for Product Design</a>
+        <a href="#theme-vr-disaster" class="thesis-jump-btn"><span>🔥</span> VR for Disaster Training</a>
+        <a href="#theme-gait-analysis" class="thesis-jump-btn"><span>👣</span> Gait Analysis in VR</a>
+        <a href="#theme-vr-tours" class="thesis-jump-btn"><span>🗺️</span> VR for Virtual Tours</a>
+      </nav>
+
+      <!-- ── THEME 1: GEOMETRIC DEEP LEARNING ── -->
+      <section id="theme-geometric-dl" class="thesis-theme-section animate-on-scroll">
+        <div class="thesis-theme-header">
+          <span class="thesis-theme-icon" aria-hidden="true">🧠</span>
+          <h2>Geometric Deep Learning</h2>
+        </div>
+        <div class="thesis-topic-grid">
+          
+          <div class="thesis-topic-card">
+            <h3>Transformer-based models for geometric deep learning on point-cloud data</h3>
+            <p>
+              Modern 3D sensors generate massive, unorganized point clouds that represent shapes in space. Unlike regular grids in 2D image processing, point clouds are unstructured and permutation-invariant, which makes traditional convolution operations difficult to apply directly. Transformer-based models have emerged as a powerful alternative, utilizing self-attention mechanisms to capture complex long-range dependencies and global shape characteristics without relying on rigid grid structures. This thesis topic focuses on developing and optimizing point transformer architectures, addressing challenges such as spatial coordinate encoding, computational efficiency, and robust neighborhood grouping.
+            </p>
+            <p>
+              Students working on this topic will investigate how attention weights can be adapted to spatial distances and geometric properties (like local normals and curvature). You will implement and benchmark point transformers on standard datasets for tasks such as 3D object classification, part segmentation, and scene understanding. The ultimate goal is to design a model that balances local detail extraction with global structural awareness, achieving state-of-the-art accuracy while maintaining a manageable computational footprint.
+            </p>
+          </div>
+
+          <div class="thesis-topic-card">
+            <h3>Exploring Retention Network for point cloud data</h3>
+            <p>
+              The Retention Network (RetNet) has recently been proposed as a strong successor to the Transformer architecture, offering a "impossible triangle" solution: parallel training, low-latency inference, and linear memory complexity. While RetNet has shown exceptional performance in natural language processing with sequential data, its application to spatial 3D data like point clouds remains largely unexplored. Because point clouds lack a natural sequence or order, adapting RetNet requires rethinking the retention mechanism to operate over unstructured 3D coordinates.
+            </p>
+            <p>
+              In this project, you will design and implement a spatial retention operator that incorporates 3D relative position decay. You will investigate local-to-global aggregation methods that replace sequential order with spatial distance or hierarchical clustering (such as octrees or k-nearest neighbor graphs). By building a RetNet-based pipeline for 3D point clouds, this research aims to achieve the computational efficiency of linear-attention models while retaining the high representational capacity of standard Transformers for large-scale 3D scene analysis.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── THEME 2: GEOMETRY PROCESSING ── -->
+      <section id="theme-geometry-proc" class="thesis-theme-section animate-on-scroll">
+        <div class="thesis-theme-header">
+          <span class="thesis-theme-icon" aria-hidden="true">🔺</span>
+          <h2>Geometry Processing</h2>
+        </div>
+        <div class="thesis-topic-grid">
+
+          <div class="thesis-topic-card">
+            <h3>Multigrid solver for Laplace-Beltrami Operator on surface mesh</h3>
+            <p>
+              The Laplace-Beltrami Operator (LBO) is a cornerstone of discrete differential geometry, underpinning applications in mesh smoothing, parameterization, shape matching, and physical simulation. Solving the Poisson equation or computing eigenproblems involving the LBO on high-resolution meshes requires solving massive, sparse linear systems. Standard iterative solvers tend to stall when dealing with low-frequency errors, leading to slow convergence times on detailed meshes. Multigrid solvers overcome this by constructing a hierarchy of coarser meshes, solving the low-frequency components on the coarse levels and interpolating the corrections back to the fine mesh.
+            </p>
+            <p>
+              Building on our group's SIGGRAPH 2023 work on geometric multigrid methods, this topic involves designing robust restriction and prolongation operators that preserve the spectral properties of the LBO across levels. You will work on optimizing mesh decimation algorithms to construct high-quality coarse representations and implement efficient smoothers that handle irregular vertex valences. This research is critical for enabling real-time geometry processing and interactive design tools directly on complex, raw 3D scans.
+            </p>
+          </div>
+
+          <div class="thesis-topic-card">
+            <h3>Hierarchical method for simulation of deformable bodies</h3>
+            <p>
+              Real-time simulation of elastic materials, such as cloth, soft tissue, and rubber, is vital for virtual reality, medical training, and video games. Physical simulation frameworks (like Finite Element Methods, Projective Dynamics, or Position-Based Dynamics) require solving large systems of equations at every time step to enforce material constraints. As the resolution of the simulated mesh increases, standard numerical solvers become too slow to maintain the interactive frame rates (typically 60-90 FPS) required for smooth virtual reality experiences.
+            </p>
+            <p>
+              This project explores hierarchical (multigrid or coarse-to-fine) solver strategies to accelerate the simulation of deformable bodies. You will develop methods that compute coarse-scale deformations quickly and use them to guide or restrict the fine-scale simulation details. By implementing these hierarchical techniques, you will help bridge the gap between high-fidelity physics and real-time performance, enabling realistic tactile and visual feedback for highly detailed soft-body models in virtual environments.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── THEME 3: VR FOR KOREAN LANGUAGE ── -->
+      <section id="theme-vr-korean" class="thesis-theme-section animate-on-scroll">
+        <div class="thesis-theme-header">
+          <span class="thesis-theme-icon" aria-hidden="true">🇰🇷</span>
+          <h2>VR for Korean Language</h2>
+        </div>
+        <div class="thesis-topic-grid">
+
+          <div class="thesis-topic-card">
+            <h3>Game-based VR app for learning Korean words</h3>
+            <p>
+              Learning a new language requires persistent practice and active engagement, which traditional classroom and textbook methods often struggle to maintain. Immersive virtual reality offers a powerful alternative by placing learners inside simulated target-language environments where they can interact with objects and situations in real time. This thesis topic focuses on developing an educational VR game designed to teach Korean vocabulary, building upon our group's previous work on HangeulVR.
+            </p>
+            <p>
+              You will design and implement gamified mechanics—such as virtual shopping, interactive cooking, or situational matching games—where players must recognize and use Korean words to progress. The research will analyze how spatial memory, active physical interaction (e.g., picking up an object while hearing its Korean name), and game feedback loops affect word retention and learner motivation. This project combines Unity game development with pedagogical design and user experience evaluation.
+            </p>
+          </div>
+
+          <div class="thesis-topic-card">
+            <h3>AI-powered conversational VR app for Korean learners</h3>
+            <p>
+              While vocabulary acquisition is a crucial first step, mastering conversational flow and pronunciation is often the hardest hurdle for language learners. This project aims to build an immersive VR application that acts as a virtual conversational partner for Korean language students. By integrating advanced artificial intelligence models, such as Large Language Models (LLMs) for natural dialogue generation, Speech-to-Text (STT) for voice recognition, and Text-to-Speech (TTS) with realistic Korean accents, the app will simulate natural, open-ended conversations.
+            </p>
+            <p>
+              Students will design conversational scenarios—such as ordering food at a Korean restaurant, asking for directions in Seoul, or checking in at a hotel—where learners interact with AI-driven non-player characters (NPCs). The system will analyze the user's spoken input, generate contextually appropriate responses, and provide helpful feedback on grammar and pronunciation. You will address challenges such as reducing latency between speech and AI response to maintain immersion, and evaluating the educational efficacy of the virtual conversational partner.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── THEME 4: VR FOR ARCHITECTURE ── -->
+      <section id="theme-vr-arch" class="thesis-theme-section animate-on-scroll">
+        <div class="thesis-theme-header">
+          <span class="thesis-theme-icon" aria-hidden="true">🏛️</span>
+          <h2>VR for Architecture</h2>
+        </div>
+        <div class="thesis-topic-grid">
+
+          <div class="thesis-topic-card">
+            <h3>Realistic rendering of house customization in Virtual Reality</h3>
+            <p>
+              Architectural visualization in Virtual Reality has transformed how clients interact with unbuilt spaces, allowing them to walk through and customize homes before construction begins. However, achieving the level of visual realism required to make material and lighting decisions remains a major technical challenge, especially given the strict frame-rate requirements of VR headsets. Lower-quality rendering can break immersion and lead to motion sickness, while high-fidelity rendering (such as real-time path tracing) is computationally expensive.
+            </p>
+            <p>
+              This project focuses on optimizing real-time rendering pipelines (using Unity's URP or HDRP) to deliver photorealistic interiors in VR. You will explore advanced techniques such as dynamic lightmap baking, screen-space reflections, high-quality shader design for wood, glass, and fabrics, and foveated rendering. The goal is to build an interactive house customization app where users can change wall colors, flooring materials, and lighting layouts, and immediately see the results under realistic, high-fidelity illumination.
+            </p>
+          </div>
+
+          <div class="thesis-topic-card">
+            <h3>Improving MiDiffusion for layout generation of home furnitures in Virtual Reality</h3>
+            <p>
+              Setting up and designing home interiors can be overwhelming due to the infinite possibilities of layout arrangements. Generative AI, particularly diffusion models like MiDiffusion, has shown great promise in automatically synthesizing plausible furniture arrangements based on room boundaries and text descriptions. However, current layout models operate in 2D or static 3D spaces and do not account for the interactive, first-person nature of VR, where users might want to modify, lock, or suggest furniture configurations on the fly.
+            </p>
+            <p>
+              In this thesis, you will work on improving and integrating MiDiffusion into an interactive VR interface. You will develop mechanisms that allow users to select specific areas in VR, lock certain furniture pieces in place, and query the diffusion model to generate or complete the remaining layout. The project involves adapting layout generation to respect physical constraints (such as walking paths and door clearance) and building a responsive VR UI that translates AI-generated layouts into interactive 3D virtual spaces.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── THEME 5: RENDERING IN VR ── -->
+      <section id="theme-rendering-vr" class="thesis-theme-section animate-on-scroll">
+        <div class="thesis-theme-header">
+          <span class="thesis-theme-icon" aria-hidden="true">🖥️</span>
+          <h2>Rendering in VR</h2>
+        </div>
+        <div class="thesis-topic-grid">
+
+          <div class="thesis-topic-card">
+            <h3>Modifying the current rendering system of Unity for Virtual Reality</h3>
+            <p>
+              Rendering for VR is significantly more demanding than traditional flat-screen rendering, as it requires drawing two separate viewpoints (one for each eye) at high resolutions and frame rates (90Hz or higher) to avoid simulator sickness. Unity's standard Scriptable Render Pipelines (URP/HDRP) are versatile but contain overheads that are not optimized for specific VR hardware constraints. Modifying Unity's rendering system at a lower level is necessary to unlock peak performance for complex virtual environments.
+            </p>
+            <p>
+              You will investigate and modify Unity's stereoscopic rendering pipeline, focusing on techniques such as Single Pass Instanced rendering, variable rate shading, and custom shader compilation. Additionally, you will look at implementing advanced culling techniques to prevent the CPU and GPU from processing objects outside the user's field of view. This research is highly technical and suitable for students interested in graphics programming, engine architecture, and hardware-level performance optimization.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── THEME 6: VR FOR PRODUCT DESIGN ── -->
+      <section id="theme-vr-product" class="thesis-theme-section animate-on-scroll">
+        <div class="thesis-theme-header">
+          <span class="thesis-theme-icon" aria-hidden="true">🎨</span>
+          <h2>VR for Product Design</h2>
+        </div>
+        <div class="thesis-topic-grid">
+
+          <div class="thesis-topic-card">
+            <h3>Virtual Reality-based Try-in System for clothings in e-commerce</h3>
+            <p>
+              Online apparel shopping often suffers from high return rates because customers cannot try on clothes to see how they fit and move. A VR-based virtual try-on system addresses this by allowing customers to see clothing simulated on a digital avatar matching their body measurements. Achieving realistic cloth movement and draping in real time in a VR environment requires high-performance physical simulation and optimized deformation algorithms.
+            </p>
+            <p>
+              In this project, you will build an interactive VR clothing try-in system. You will implement real-time mass-spring or position-based cloth simulation models, optimize collision detection between the cloth mesh and the user's avatar, and design an intuitive VR interface for browsing and selecting garments. The research will evaluate the trade-offs between simulation accuracy and frame rate, aiming to create a system that feels natural, responsive, and visually convincing for e-commerce applications.
+            </p>
+          </div>
+
+          <div class="thesis-topic-card">
+            <h3>VR-based editing tools for tumbler design</h3>
+            <p>
+              Traditional 3D design software often requires complex mouse-and-keyboard interactions that can feel counterintuitive when designing physical, curved objects like tumblers. Virtual Reality offers a spatial canvas where designers can use natural hand gestures and 3D controllers to model and customize products. This project focuses on developing an intuitive, VR-based interactive editor specifically tailored for personalized tumbler and bottle design.
+            </p>
+            <p>
+              You will implement core 3D editing tools, including surface deformation, real-time texture painting, sticker placement with UV mapping, and material customization (e.g., matte, metallic, gloss). The system will allow users to rotate the tumbler naturally, apply designs, and export their creations into production-ready formats (such as STL or OBJ). You will study user interaction patterns to design a VR interface that is accessible to casual users while remaining precise enough for professional designers.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── THEME 7: VR FOR DISASTER MITIGATION ── -->
+      <section id="theme-vr-disaster" class="thesis-theme-section animate-on-scroll">
+        <div class="thesis-theme-header">
+          <span class="thesis-theme-icon" aria-hidden="true">🔥</span>
+          <h2>VR for disaster mitigation/training</h2>
+        </div>
+        <div class="thesis-topic-grid">
+
+          <div class="thesis-topic-card">
+            <h3>Improving FireDrill VR for disaster education in SGLC FT UGM</h3>
+            <p>
+              Immersive virtual reality is an ideal medium for safety training because it simulates dangerous situations without exposing trainees to physical risk. Our group previously developed FireDrill VR, a serious game designed to train users in fire evacuation protocols. To maximize the educational impact, this project aims to substantially improve the simulation by focusing on three primary objectives:
+            </p>
+            <ul class="thesis-sub-bullets">
+              <li><strong>More realistic SGLC building:</strong> Improve textures, models, and baked rendering in Unity to replicate the Smart Green Learning Center (SGLC) building with high spatial accuracy.</li>
+              <li><strong>Humanoid character activities:</strong> Populate the virtual building with AI-controlled crowds behaving realistically during an alarm (e.g., panic paths, bottleneck blockages, and evacuation routes).</li>
+              <li><strong>More use cases of disaster education:</strong> Expand the simulation to include other types of emergencies such as earthquakes, electrical faults, and toxic smoke spread.</li>
+            </ul>
+            <p>
+              As a student, you will work on integrating these features in Unity, evaluating how higher sensory fidelity and realistic crowd behaviors affect user stress levels and learning retention. The project involves 3D asset optimization, pathfinding algorithms, and interactive UI design, contributing to a vital campus-safety application.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── THEME 8: GAIT ANALYSIS IN VR ── -->
+      <section id="theme-gait-analysis" class="thesis-theme-section animate-on-scroll">
+        <div class="thesis-theme-header">
+          <span class="thesis-theme-icon" aria-hidden="true">👣</span>
+          <h2>Gait analysis in walk-in-place VR</h2>
+        </div>
+        <div class="thesis-topic-grid">
+
+          <div class="thesis-topic-card">
+            <h3>Analyzing the accuracy of walk-in-place in KAT VR C2+ Enhance omni treadmill</h3>
+            <p>
+              Locomotion remains one of the major challenges in virtual reality, as moving in a virtual space while remaining stationary in the physical world can cause spatial disorientation and motion sickness. Omnidirectional treadmills, such as the KAT VR C2+ Enhance, allow users to physically walk, run, and turn in 360 degrees on a low-friction surface. Walk-in-place (WIP) algorithms translate these physical sliding motions into virtual locomotion, but their accuracy, latency, and overall feel require rigorous scientific evaluation.
+            </p>
+            <p>
+              This thesis topic focuses on evaluating and calibrating the motion tracking accuracy of the KAT VR C2+ treadmill. You will design experiments to measure the correlation between a user's physical steps (stride length, frequency, direction) and the corresponding virtual movement speed and trajectory. By analyzing sensor latency, drift, and user gait patterns, you will identify areas for improvement and propose custom calibration models to enhance locomotion fidelity, ultimately contributing to a more comfortable and immersive VR navigation experience.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── THEME 9: VR FOR VIRTUAL TOUR ── -->
+      <section id="theme-vr-tours" class="thesis-theme-section animate-on-scroll">
+        <div class="thesis-theme-header">
+          <span class="thesis-theme-icon" aria-hidden="true">🗺️</span>
+          <h2>VR for Virtual Tour</h2>
+        </div>
+        <div class="thesis-topic-grid">
+
+          <div class="thesis-topic-card">
+            <h3>Virtual Tour of Faculty of Engineering (FoE)</h3>
+            <p>
+              Virtual tours offer an engaging way to showcase campus facilities, laboratory spaces, and historical landmarks to prospective students, alumni, and visitors. This project focuses on developing an interactive, immersive VR tour of the Faculty of Engineering (FoE) at UGM, utilizing a pre-provided, high-fidelity 3D model of the campus. The challenge is to convert this heavy architectural model into an optimized, real-time application that runs smoothly on standalone VR headsets.
+            </p>
+            <ul class="thesis-sub-bullets">
+              <li><strong>Pre-provided 3D Model:</strong> The raw 3D mesh and structural layout of the Faculty of Engineering are provided as a starting point.</li>
+            </ul>
+            <p>
+              You will implement navigation systems (teleportation and smooth locomotion), design a spatial user interface for information hotspots, and integrate multimedia content (such as audio guides, historical photos, and videos). You will also focus on asset optimization, including level-of-detail (LOD) creation, mesh simplification, and occlusion culling to ensure high frame rates. This project is ideal for students interested in architectural VR, user experience design, and interactive system optimization.
+            </p>
+          </div>
+
+          <div class="thesis-topic-card">
+            <h3>Animal’s tour of Faculty of Engineering</h3>
+            <p>
+              Most virtual tours simulate a human eye-level perspective, but exploring spaces through different visual and physical scales can provide unique insights and creative experiences. This project proposes a playful and educational VR application where users explore the Smart Green Learning Center (SGLC) building from the perspective of various animals—specifically a cat, a tiger, a giraffe, and a bird. Each animal will have unique movement constraints, camera heights, and visual filters to simulate their specific biological vision.
+            </p>
+            <ul class="thesis-sub-bullets">
+              <li><strong>Perspective Simulation:</strong> Implement distinct views and physics for animals, such as a **cat** (low perspective, high agility/jumping), a **tiger** (predator vision, rapid speed), a **giraffe** (extreme height viewpoint), and a **bird** (flight controls and high-altitude bird's-eye view).</li>
+            </ul>
+            <p>
+              You will research animal vision characteristics (such as dichromatic vision, field-of-view limits, or motion sensitivity) and implement shader-based post-processing effects to replicate them. This thesis combines game mechanics, shader programming, and creative interaction design.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── CALL TO ACTION SECTION ── -->
+      <section class="thesis-cta-box animate-on-scroll">
+        <h2>Interested in Supervised Research?</h2>
+        <p>
+          If you are a student at UGM and want to pursue one of these topics for your thesis or research project, I would love to hear from you. Please review the prerequisites and send your materials.
+        </p>
+        <p style="font-size: 0.9rem; color: var(--gray-600); margin-bottom: 2rem;">
+          <strong>Prerequisites:</strong> Strong programming skills in Python (for Geometric DL), C++ (for Geometry Processing), or C#/Unity (for VR applications), combined with self-reliance and academic curiosity.
+        </p>
+        <a href="mailto:ahmad.nasikun@ugm.ac.id?subject=Thesis%20Inquiry" class="btn-primary" style="display: inline-block;">Send Statement of Interest</a>
+      </section>
+
+      <p class="animate-on-scroll" style="text-align:center;margin-top:3.5rem;">
+        <a href="../index.html" class="btn-secondary" style="display:inline-block;border:1px solid var(--gray-200);color:var(--gray-800);padding:0.75rem 1.75rem;border-radius:6px;">← Back to Homepage</a>
+      </p>
+
+    </div>
+  </article>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <p>© <span id="footer-year"></span> Dr. Ahmad Nasikun · Universitas Gadjah Mada</p>
+    <p>Built with plain HTML, CSS &amp; JS · Hosted on <a href="https://pages.github.com" target="_blank">GitHub Pages</a></p>
+    <p>
+      <a href="mailto:ahmad.nasikun@ugm.ac.id">Email</a> ·
+      <a href="https://github.com/a-nasikun" target="_blank">GitHub</a> ·
+      <a href="https://scholar.google.com/citations?user=w0s9NVoAAAAJ&hl=en" target="_blank">Scholar</a>
+    </p>
+  </div>
+</footer>
+
+<button id="back-top" aria-label="Back to top">↑</button>
+<script src="../js/main.js"></script>
+</body>
+</html>
