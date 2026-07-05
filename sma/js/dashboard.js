@@ -118,7 +118,22 @@ function renderHero(data) {
 }
 
 // ── Grafik jaringan ──────────────────────────────────────────────────
-function buildGraphSeriesData(data, { search = '', minCount = 1 } = {}) {
+// Menempatkan 11 lingkaran SMA pada posisi tetap di sekeliling tepi kanvas
+// (seperti angka pada jam), agar sebaran kotak SMP di sekitarnya terlihat
+// jelas alih-alih semua node menumpuk ke tengah akibat gravitasi force-layout.
+function computeSmaRingPositions(smaNodes, width, height) {
+  const cx = width / 2, cy = height / 2;
+  const radius = Math.min(width, height) * 0.38;
+  const n = smaNodes.length;
+  const positions = {};
+  smaNodes.forEach((node, i) => {
+    const angle = (2 * Math.PI * i) / n - Math.PI / 2; // mulai dari atas, searah jarum jam
+    positions[node.kode] = { x: cx + radius * Math.cos(angle), y: cy + radius * Math.sin(angle) };
+  });
+  return positions;
+}
+
+function buildGraphSeriesData(data, { search = '', minCount = 1, ringPositions = null } = {}) {
   const smaTotals = data.network.sma_nodes.map(n => n.total);
   const smpTotals = data.network.smp_nodes.map(n => n.total);
   const smaMax = Math.max(...smaTotals), smaMin = Math.min(...smaTotals);
@@ -141,6 +156,7 @@ function buildGraphSeriesData(data, { search = '', minCount = 1 } = {}) {
   const nodes = [];
   data.network.sma_nodes.forEach(n => {
     const dim = matched ? 0.15 : 1;
+    const pos = ringPositions ? ringPositions[n.kode] : null;
     nodes.push({
       id: n.kode,
       name: n.nama,
@@ -150,6 +166,7 @@ function buildGraphSeriesData(data, { search = '', minCount = 1 } = {}) {
       category: kodeIndex[n.kode],
       itemStyle: { color: SMA_COLORS[n.kode], opacity: dim },
       label: { show: true, formatter: shortLabel(n.kode).replace('SMAN ', ''), fontSize: 11, fontWeight: 700, color: '#fff' },
+      ...(pos ? { x: pos.x, y: pos.y, fixed: true } : {}),
     });
   });
   data.network.smp_nodes.forEach(n => {
@@ -187,11 +204,18 @@ function renderNetwork(data) {
   const minCountSlider = document.getElementById('network-min-count');
   const minCountLabel = document.getElementById('network-min-count-label');
   const resetBtn = document.getElementById('network-reset');
+  const graphEl = document.getElementById('network-graph');
 
   function draw() {
+    const ringPositions = computeSmaRingPositions(
+      data.network.sma_nodes,
+      graphEl.clientWidth || 800,
+      graphEl.clientHeight || 620,
+    );
     const { nodes, links, categories } = buildGraphSeriesData(data, {
       search: search.value,
       minCount: Number(minCountSlider.value),
+      ringPositions,
     });
     registerChart('network-graph', {
       textStyle: baseTextStyle(),
@@ -210,7 +234,7 @@ function renderNetwork(data) {
         categories,
         data: nodes,
         links,
-        force: { repulsion: 110, edgeLength: [25, 130], gravity: 0.12, friction: 0.25 },
+        force: { repulsion: 90, edgeLength: [30, 170], gravity: 0.08, friction: 0.25 },
         emphasis: { focus: 'adjacency', label: { show: true, fontSize: 11 }, lineStyle: { opacity: 0.9 } },
         lineStyle: { curveness: 0.15 },
       }],
@@ -236,6 +260,13 @@ function renderNetwork(data) {
   tbody.innerHTML = rows.map(e =>
     `<tr><td>${e.target}</td><td>${shortLabel(e.source)}</td><td>${fmt(e.count)}</td></tr>`
   ).join('');
+
+  // Hitung ulang cincin posisi SMA saat kontainer berubah ukuran (mis. resize jendela).
+  let resizeTimer = null;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(draw, 200);
+  });
 }
 
 // ── Indikator global ────────────────────────────────────────────
