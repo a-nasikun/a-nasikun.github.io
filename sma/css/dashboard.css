@@ -389,23 +389,27 @@
 .sma-mini-list li:last-child { border-bottom: none; }
 .sma-mini-list .row {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.75rem;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.3rem 1.5rem;
+}
+.sma-mini-list .name {
+  flex: 0 1 auto;
+  white-space: nowrap;
 }
 .sma-mini-list .tags {
+  flex: 1 1 260px;
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   color: var(--gray-400);
-  margin-top: 0.25rem;
   line-height: 1.5;
-  overflow-wrap: break-word;
 }
 .sma-mini-list .n {
   font-family: var(--font-mono);
   color: var(--gray-400);
   font-size: 0.78rem;
   flex-shrink: 0;
+  margin-left: auto;
 }
 
 /* ── SMP point-of-view search/autocomplete ───────────────────────── */

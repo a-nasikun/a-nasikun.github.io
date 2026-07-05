@@ -517,15 +517,18 @@ function schoolPanelTemplate(data, school) {
           <h3 style="font-size:0.9rem;">Keseimbangan gender</h3>
           <div id="panel-${school.kode}-gender" class="sma-chart" style="height:220px;"></div>
         </div>
-        <div>
+        <div style="grid-column: 1 / -1;">
           <h3 style="font-size:0.9rem;">Sekolah asal teratas</h3>
           <ul class="sma-mini-list">
             ${feeders.map(f => {
               const breakdown = (data.by_sma_smp[school.kode] || {})[f.asal_sekolah];
               const tags = formatJalurTags(breakdown, { withValue: true });
               return `<li>
-                <div class="row"><span>${f.asal_sekolah}</span><span class="n">${fmt(f.count)}</span></div>
-                ${tags ? `<div class="tags">${tags}</div>` : ''}
+                <div class="row">
+                  <span class="name">${f.asal_sekolah}</span>
+                  ${tags ? `<span class="tags">${tags}</span>` : ''}
+                  <span class="n">${fmt(f.count)}</span>
+                </div>
               </li>`;
             }).join('')}
           </ul>
@@ -768,7 +771,7 @@ function smpPanelTemplate(data, smpName, info, destinations, rank) {
           <h3 style="font-size:0.9rem;">Diterima per jalur</h3>
           <div id="smp-jalur-chart" class="sma-chart" style="height:240px;"></div>
         </div>
-        <div>
+        <div style="grid-column: 1 / -1;">
           <h3 style="font-size:0.9rem;">Peringkat SMA tujuan</h3>
           <ul class="sma-mini-list">
             ${destinations.map(d => {
@@ -776,10 +779,10 @@ function smpPanelTemplate(data, smpName, info, destinations, rank) {
               const tags = formatJalurTags(breakdown, { withValue: false });
               return `<li>
                 <div class="row">
-                  <span><span class="dot" style="display:inline-block;width:0.55rem;height:0.55rem;border-radius:50%;background:${SMA_COLORS[d.kode]};margin-right:0.5rem;"></span>${d.nama}</span>
+                  <span class="name"><span class="dot" style="display:inline-block;width:0.55rem;height:0.55rem;border-radius:50%;background:${SMA_COLORS[d.kode]};margin-right:0.5rem;"></span>${d.nama}</span>
+                  ${tags ? `<span class="tags">${tags}</span>` : ''}
                   <span class="n">${fmt(d.count)}</span>
                 </div>
-                ${tags ? `<div class="tags">${tags}</div>` : ''}
               </li>`;
             }).join('')}
           </ul>
