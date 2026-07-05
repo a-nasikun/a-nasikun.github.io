@@ -171,13 +171,19 @@
     <div class="container">
       <div class="section-header animate-on-scroll">
         <h2>Jelajahi dari sudut pandang SMP/MTs</h2>
-        <p>Pilih satu sekolah menengah pertama (SMP/MTs) untuk melihat ke SMA mana saja alumninya melanjutkan sekolah, lewat jalur apa, dan berapa banyak.</p>
+        <p>Pilih salah satu dari 15 sekolah asal paling umum di bawah, atau ketik nama sekolah lain untuk melihat ke SMA mana saja alumninya melanjutkan sekolah, lewat jalur apa, dan berapa banyak.</p>
       </div>
 
+      <div class="sma-chip-row animate-on-scroll" id="smp-top-chips"></div>
+
       <div class="sma-card animate-on-scroll">
-        <div class="sma-smp-search-wrap">
-          <input type="text" id="smp-search" class="network-search" placeholder="Cari nama SMP/MTs (mis. SMP Negeri 5 Yogyakarta)…" aria-label="Cari SMP atau MTs" autocomplete="off" />
-          <div id="smp-suggestions" class="sma-suggestions" hidden></div>
+        <div class="smp-search-row">
+          <div class="sma-smp-search-wrap">
+            <input type="text" id="smp-search" class="network-search" placeholder="Atau ketik nama SMP/MTs lainnya…" aria-label="Cari SMP atau MTs" autocomplete="off" />
+            <div id="smp-suggestions" class="sma-suggestions" hidden></div>
+          </div>
+          <button class="btn-ghost" id="smp-search-btn">Cari</button>
+          <button class="btn-ghost" id="smp-reset-btn">Atur ulang</button>
         </div>
       </div>
 

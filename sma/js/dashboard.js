@@ -535,11 +535,47 @@ function mountSchoolCharts(data, school) {
 function renderSmpExplorer(data) {
   const searchInput = document.getElementById('smp-search');
   const suggestionsBox = document.getElementById('smp-suggestions');
+  const searchBtn = document.getElementById('smp-search-btn');
+  const resetBtn = document.getElementById('smp-reset-btn');
+  const chipsWrap = document.getElementById('smp-top-chips');
   let currentMatches = [];
   let activeIndex = -1;
 
+  // ── 15 sekolah asal paling umum sebagai pintasan cepat ──────────
+  const topChipsData = data.network.smp_nodes.slice(0, 15);
+  chipsWrap.innerHTML = topChipsData.map(n => `
+    <button class="sma-chip smp-chip" data-smp="${n.nama.replace(/"/g, '&quot;')}" aria-pressed="false" title="${n.nama}">
+      <span class="dot" style="background:${SMP_COLOR}"></span>
+      <span class="label">${n.nama}</span>
+      <span class="count">${fmt(n.total)}</span>
+    </button>
+  `).join('');
+  chipsWrap.querySelectorAll('.sma-chip').forEach(chip => {
+    chip.addEventListener('click', () => selectSmp(chip.dataset.smp));
+  });
+
+  function setActiveChip(name) {
+    chipsWrap.querySelectorAll('.sma-chip').forEach(chip => {
+      const isActive = chip.dataset.smp === name;
+      chip.classList.toggle('active', isActive);
+      chip.setAttribute('aria-pressed', String(isActive));
+    });
+  }
+
   function updateActive(items) {
     items.forEach((el, i) => el.classList.toggle('active-suggestion', i === activeIndex));
+  }
+
+  function findMatches(query) {
+    const q = query.trim().toLowerCase();
+    if (!q) return [];
+    const starts = [], contains = [];
+    data.network.smp_nodes.forEach(n => {
+      const nameLower = n.nama.toLowerCase();
+      if (nameLower.startsWith(q)) starts.push(n);
+      else if (nameLower.includes(q)) contains.push(n);
+    });
+    return [...starts, ...contains].slice(0, 8);
   }
 
   function renderSuggestions(query) {
@@ -547,13 +583,7 @@ function renderSmpExplorer(data) {
     activeIndex = -1;
     if (!q) { suggestionsBox.hidden = true; suggestionsBox.innerHTML = ''; return; }
 
-    const starts = [], contains = [];
-    data.network.smp_nodes.forEach(n => {
-      const nameLower = n.nama.toLowerCase();
-      if (nameLower.startsWith(q)) starts.push(n);
-      else if (nameLower.includes(q)) contains.push(n);
-    });
-    currentMatches = [...starts, ...contains].slice(0, 8);
+    currentMatches = findMatches(query);
 
     if (currentMatches.length === 0) {
       suggestionsBox.innerHTML = '<div class="sma-suggestion-item" style="cursor:default;color:var(--gray-400);">Tidak ditemukan</div>';
@@ -575,24 +605,47 @@ function renderSmpExplorer(data) {
   function selectSmp(name) {
     searchInput.value = name;
     suggestionsBox.hidden = true;
+    setActiveChip(name);
     renderSmpPanel(data, name);
+  }
+
+  function searchCurrentInput() {
+    if (!searchInput.value.trim()) return;
+    // Selalu hitung ulang dari teks saat ini, jangan andalkan state dropdown yang mungkin basi.
+    const freshMatches = findMatches(searchInput.value);
+    const pick = (suggestionsBox.hidden ? null : freshMatches[activeIndex]) || freshMatches[0];
+    if (pick) selectSmp(pick.nama);
+  }
+
+  function resetExplorer() {
+    searchInput.value = '';
+    suggestionsBox.hidden = true;
+    suggestionsBox.innerHTML = '';
+    currentMatches = [];
+    activeIndex = -1;
+    setActiveChip(null);
+    Object.values(smpPanelCharts).forEach(c => c && c.dispose());
+    smpPanelCharts = {};
+    document.getElementById('smp-panel-container').innerHTML =
+      '<div class="sma-empty-state" id="smp-empty-state">Cari dan pilih sekolah menengah pertama (SMP/MTs) di atas untuk melihat ke mana para alumninya melanjutkan sekolah.</div>';
   }
 
   searchInput.addEventListener('input', () => renderSuggestions(searchInput.value));
   searchInput.addEventListener('focus', () => { if (searchInput.value.trim()) renderSuggestions(searchInput.value); });
   searchInput.addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      searchCurrentInput();
+      return;
+    }
     if (suggestionsBox.hidden) return;
     const items = [...suggestionsBox.querySelectorAll('.sma-suggestion-item[data-idx]')];
     if (e.key === 'ArrowDown') { e.preventDefault(); activeIndex = Math.min(activeIndex + 1, items.length - 1); updateActive(items); }
     else if (e.key === 'ArrowUp') { e.preventDefault(); activeIndex = Math.max(activeIndex - 1, 0); updateActive(items); }
-    else if (e.key === 'Enter') {
-      e.preventDefault();
-      const pick = currentMatches[activeIndex] || currentMatches[0];
-      if (pick) selectSmp(pick.nama);
-    } else if (e.key === 'Escape') {
-      suggestionsBox.hidden = true;
-    }
+    else if (e.key === 'Escape') { suggestionsBox.hidden = true; }
   });
+  searchBtn.addEventListener('click', searchCurrentInput);
+  resetBtn.addEventListener('click', resetExplorer);
   document.addEventListener('click', e => {
     if (!e.target.closest('.sma-smp-search-wrap')) suggestionsBox.hidden = true;
   });

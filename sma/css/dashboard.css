@@ -386,6 +386,23 @@
 }
 
 /* ── SMP point-of-view search/autocomplete ───────────────────────── */
+.smp-search-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.smp-search-row .sma-smp-search-wrap { flex: 1 1 260px; }
+.smp-search-row .btn-ghost { flex-shrink: 0; }
+.smp-search-row #smp-reset-btn { margin-left: auto; }
+
+.sma-chip.smp-chip { max-width: 280px; }
+.sma-chip.smp-chip .label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .sma-smp-search-wrap { position: relative; }
 .sma-suggestions {
   position: absolute;
