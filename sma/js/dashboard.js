@@ -64,6 +64,7 @@ let DATA = null;
 const chartInstances = {};      // id -> instance echarts
 const schoolPanelCharts = {};   // kode -> { breakdown, scores, gender }
 const selectedSchools = new Set();
+let smpPanelCharts = {};        // { ego, jalur } — hanya satu SMP aktif sekaligus
 
 function registerChart(id, option) {
   const el = document.getElementById(id);
@@ -78,6 +79,7 @@ function registerChart(id, option) {
 window.addEventListener('resize', () => {
   Object.values(chartInstances).forEach(c => c.resize());
   Object.values(schoolPanelCharts).forEach(set => Object.values(set).forEach(c => c && c.resize()));
+  Object.values(smpPanelCharts).forEach(c => c && c.resize());
 });
 
 // ── Boot ───────────────────────────────────────────────────────────
@@ -97,6 +99,7 @@ function loadYear(year) {
       renderNetwork(data);
       renderGlobal(data);
       renderSchoolChips(data);
+      renderSmpExplorer(data);
     })
     .catch(err => {
       console.error('Gagal memuat data dasbor', err);
@@ -526,4 +529,194 @@ function mountSchoolCharts(data, school) {
   });
 
   schoolPanelCharts[school.kode] = { breakdown, scores, gender };
+}
+
+// ── Eksplorasi sudut pandang SMP ─────────────────────────────────────
+function renderSmpExplorer(data) {
+  const searchInput = document.getElementById('smp-search');
+  const suggestionsBox = document.getElementById('smp-suggestions');
+  let currentMatches = [];
+  let activeIndex = -1;
+
+  function updateActive(items) {
+    items.forEach((el, i) => el.classList.toggle('active-suggestion', i === activeIndex));
+  }
+
+  function renderSuggestions(query) {
+    const q = query.trim().toLowerCase();
+    activeIndex = -1;
+    if (!q) { suggestionsBox.hidden = true; suggestionsBox.innerHTML = ''; return; }
+
+    const starts = [], contains = [];
+    data.network.smp_nodes.forEach(n => {
+      const nameLower = n.nama.toLowerCase();
+      if (nameLower.startsWith(q)) starts.push(n);
+      else if (nameLower.includes(q)) contains.push(n);
+    });
+    currentMatches = [...starts, ...contains].slice(0, 8);
+
+    if (currentMatches.length === 0) {
+      suggestionsBox.innerHTML = '<div class="sma-suggestion-item" style="cursor:default;color:var(--gray-400);">Tidak ditemukan</div>';
+      suggestionsBox.hidden = false;
+      return;
+    }
+    suggestionsBox.innerHTML = currentMatches.map((n, i) => `
+      <div class="sma-suggestion-item" data-idx="${i}">
+        <span>${n.nama}</span>
+        <span class="count">${fmt(n.total)} siswa</span>
+      </div>
+    `).join('');
+    suggestionsBox.hidden = false;
+    suggestionsBox.querySelectorAll('.sma-suggestion-item[data-idx]').forEach(el => {
+      el.addEventListener('click', () => selectSmp(currentMatches[Number(el.dataset.idx)].nama));
+    });
+  }
+
+  function selectSmp(name) {
+    searchInput.value = name;
+    suggestionsBox.hidden = true;
+    renderSmpPanel(data, name);
+  }
+
+  searchInput.addEventListener('input', () => renderSuggestions(searchInput.value));
+  searchInput.addEventListener('focus', () => { if (searchInput.value.trim()) renderSuggestions(searchInput.value); });
+  searchInput.addEventListener('keydown', e => {
+    if (suggestionsBox.hidden) return;
+    const items = [...suggestionsBox.querySelectorAll('.sma-suggestion-item[data-idx]')];
+    if (e.key === 'ArrowDown') { e.preventDefault(); activeIndex = Math.min(activeIndex + 1, items.length - 1); updateActive(items); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); activeIndex = Math.max(activeIndex - 1, 0); updateActive(items); }
+    else if (e.key === 'Enter') {
+      e.preventDefault();
+      const pick = currentMatches[activeIndex] || currentMatches[0];
+      if (pick) selectSmp(pick.nama);
+    } else if (e.key === 'Escape') {
+      suggestionsBox.hidden = true;
+    }
+  });
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.sma-smp-search-wrap')) suggestionsBox.hidden = true;
+  });
+}
+
+function renderSmpPanel(data, smpName) {
+  const container = document.getElementById('smp-panel-container');
+  Object.values(smpPanelCharts).forEach(c => c && c.dispose());
+  smpPanelCharts = {};
+
+  const info = data.by_smp[smpName];
+  if (!info) {
+    container.innerHTML = '<div class="sma-empty-state">Data tidak ditemukan untuk sekolah ini.</div>';
+    return;
+  }
+
+  const destinations = data.network.edges
+    .filter(e => e.target === smpName)
+    .map(e => ({ kode: e.source, nama: shortLabel(e.source), count: e.count }))
+    .sort((a, b) => b.count - a.count);
+
+  const rankAll = [...data.network.smp_nodes].sort((a, b) => b.total - a.total);
+  const rank = rankAll.findIndex(n => n.nama === smpName) + 1;
+
+  container.innerHTML = smpPanelTemplate(data, smpName, info, destinations, rank);
+  mountSmpCharts(data, smpName, info, destinations);
+}
+
+function smpPanelTemplate(data, smpName, info, destinations, rank) {
+  return `
+    <article class="sma-school-panel" id="smp-panel" style="border-left-color:${SMP_COLOR}">
+      <div class="sma-school-panel-header">
+        <h3><span class="dot" style="background:${SMP_COLOR}"></span>${smpName}</h3>
+        <span class="rank-tag">#${rank} dari ${fmt(data.meta.total_smp)} sekolah asal berdasarkan total siswa diterima · ${fmt(info.total)} diterima ke ${destinations.length} SMA</span>
+      </div>
+      <div class="sma-panel-grid">
+        <div style="grid-column: 1 / -1;">
+          <h3 style="font-size:0.9rem;">Alumni melanjutkan ke SMA mana saja?</h3>
+          <div id="smp-ego-graph" class="sma-chart" style="height:340px;"></div>
+          <p class="network-legend-hint">Ukuran lingkaran SMA di sini menunjukkan jumlah alumni dari <strong>${smpName}</strong> secara spesifik, bukan total keseluruhan siswa SMA tersebut.</p>
+        </div>
+        <div>
+          <h3 style="font-size:0.9rem;">Diterima per jalur</h3>
+          <div id="smp-jalur-chart" class="sma-chart" style="height:240px;"></div>
+        </div>
+        <div>
+          <h3 style="font-size:0.9rem;">Peringkat SMA tujuan</h3>
+          <ul class="sma-mini-list">
+            ${destinations.map(d => `
+              <li>
+                <span><span class="dot" style="display:inline-block;width:0.55rem;height:0.55rem;border-radius:50%;background:${SMA_COLORS[d.kode]};margin-right:0.5rem;"></span>${d.nama}</span>
+                <span class="n">${fmt(d.count)}</span>
+              </li>
+            `).join('')}
+          </ul>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+function mountSmpCharts(data, smpName, info, destinations) {
+  const egoEl = document.getElementById('smp-ego-graph');
+  const counts = destinations.map(d => d.count);
+  const minC = Math.min(...counts), maxC = Math.max(...counts);
+  const centerX = egoEl.clientWidth / 2;
+  const centerY = egoEl.clientHeight / 2;
+
+  const nodes = [
+    {
+      id: '__smp__', name: smpName, value: info.total,
+      symbol: 'rect', symbolSize: 34,
+      itemStyle: { color: SMP_COLOR },
+      label: { show: true, formatter: 'SMP', fontSize: 10, fontWeight: 700, color: '#fff' },
+      fixed: true, x: centerX, y: centerY,
+    },
+    ...destinations.map(d => ({
+      id: d.kode, name: d.nama, value: d.count,
+      symbol: 'circle',
+      symbolSize: sqrtScale(d.count, minC, maxC, 30, 74),
+      itemStyle: { color: SMA_COLORS[d.kode] },
+      label: { show: true, formatter: d.nama.replace('SMAN ', ''), fontSize: 11, fontWeight: 700, color: '#fff' },
+    })),
+  ];
+  const links = destinations.map(d => ({
+    source: '__smp__', target: d.kode, value: d.count,
+    lineStyle: { width: sqrtScale(d.count, minC, maxC, 1.5, 9), color: 'target', opacity: 0.5, curveness: 0.12 },
+  }));
+
+  const ego = echarts.init(egoEl);
+  ego.setOption({
+    textStyle: baseTextStyle(),
+    tooltip: {
+      formatter(p) {
+        if (p.dataType === 'edge') return `${smpName} → ${shortLabel(p.data.target)}<br/><strong>${fmt(p.data.value)}</strong> siswa`;
+        if (p.data.id === '__smp__') return `<strong>${smpName}</strong><br/>${fmt(info.total)} siswa diterima total`;
+        return `<strong>${p.data.name}</strong><br/>${fmt(p.data.value)} siswa dari ${smpName}`;
+      },
+    },
+    series: [{
+      type: 'graph', layout: 'force', roam: true, draggable: true,
+      data: nodes, links,
+      force: { repulsion: 180, edgeLength: [60, 140], gravity: 0.15, friction: 0.3 },
+      emphasis: { focus: 'adjacency', label: { show: true } },
+      lineStyle: { curveness: 0.12 },
+    }],
+  });
+
+  const jalurList = data.meta.jalur_list.filter(j => info.jalur[j]);
+  const jalurEl = document.getElementById('smp-jalur-chart');
+  const jalurChart = echarts.init(jalurEl);
+  jalurChart.setOption({
+    textStyle: baseTextStyle(),
+    grid: { left: 100, right: 30, top: 10, bottom: 20 },
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' }, valueFormatter: v => `${fmt(v)} siswa` },
+    xAxis: { type: 'value', axisLabel: { fontSize: 10 }, splitLine: { lineStyle: { color: GRAY_200 } } },
+    yAxis: { type: 'category', data: jalurList, inverse: true, axisLabel: { fontSize: 10 } },
+    series: [{
+      type: 'bar', barWidth: '55%',
+      data: jalurList.map(j => info.jalur[j]),
+      itemStyle: { color: NAVY_SOFT },
+      label: { show: true, position: 'right', formatter: p => fmt(p.value), fontFamily: FONT_MONO, fontSize: 10, color: GRAY_600 },
+    }],
+  });
+
+  smpPanelCharts = { ego, jalur: jalurChart };
 }

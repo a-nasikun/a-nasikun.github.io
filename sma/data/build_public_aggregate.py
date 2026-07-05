@@ -119,6 +119,21 @@ def build(year: int):
         ],
     }
 
+    # ── Per-SMP jalur breakdown (for the "SMP point of view" explorer) ──
+    # Destinations (which SMA, how many) are derivable client-side from
+    # network.edges by filtering on target — no need to duplicate here.
+    smp_jalur = defaultdict(Counter)
+    for r in rows:
+        smp_jalur[r["asal_sekolah"]][r["jalur"]] += 1
+
+    by_smp = {
+        smp_name: {
+            "total": smp_totals[smp_name],
+            "jalur": dict(jalur_counter),
+        }
+        for smp_name, jalur_counter in smp_jalur.items()
+    }
+
     out = {
         "year": year,
         "meta": {
@@ -139,6 +154,7 @@ def build(year: int):
             "cutoff_ranking": cutoff_ranking,
         },
         "network": network,
+        "by_smp": by_smp,
     }
 
     out_dir = DATA_DIR / "public"

@@ -12183,5 +12183,1745 @@
     "count": 1
    }
   ]
+ },
+ "by_smp": {
+  "SMP NEGERI 8 YOGYAKARTA": {
+   "total": 207,
+   "jalur": {
+    "Zonasi Radius": 15,
+    "Zonasi Reguler": 141,
+    "Afirmasi": 16,
+    "Prestasi": 33,
+    "Pindah Tugas": 2
+   }
+  },
+  "SMP NEGERI 2 BERBAH": {
+   "total": 9,
+   "jalur": {
+    "Zonasi Radius": 1,
+    "Zonasi Reguler": 4,
+    "Prestasi": 3,
+    "Afirmasi": 1
+   }
+  },
+  "SMP NEGERI 3 GAMPING": {
+   "total": 13,
+   "jalur": {
+    "Zonasi Radius": 1,
+    "Zonasi Reguler": 9,
+    "Afirmasi": 2,
+    "Prestasi": 1
+   }
+  },
+  "SMP NEGERI 11 YOGYAKARTA": {
+   "total": 24,
+   "jalur": {
+    "Zonasi Radius": 2,
+    "Afirmasi": 9,
+    "Zonasi Reguler": 12,
+    "Prestasi": 1
+   }
+  },
+  "SMP NEGERI 5 YOGYAKARTA": {
+   "total": 232,
+   "jalur": {
+    "Zonasi Radius": 5,
+    "Zonasi Reguler": 155,
+    "Afirmasi": 25,
+    "Prestasi": 47
+   }
+  },
+  "SMP MUHAMMADIYAH 3 YOGYAKARTA": {
+   "total": 33,
+   "jalur": {
+    "Zonasi Radius": 2,
+    "Zonasi Reguler": 18,
+    "Afirmasi": 8,
+    "Prestasi": 4,
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP MUHAMMADIYAH 6 YOGYAKARTA": {
+   "total": 24,
+   "jalur": {
+    "Zonasi Radius": 3,
+    "Afirmasi": 18,
+    "Zonasi Reguler": 3
+   }
+  },
+  "SMP ISLAM AL AZHAR 26 YOGYAKARTA": {
+   "total": 28,
+   "jalur": {
+    "Zonasi Radius": 2,
+    "Prestasi": 4,
+    "Pindah Tugas": 6,
+    "Zonasi Reguler": 16
+   }
+  },
+  "SMP MUHAMMADIYAH 1 YOGYAKARTA": {
+   "total": 21,
+   "jalur": {
+    "Zonasi Radius": 3,
+    "Afirmasi": 5,
+    "Zonasi Reguler": 12,
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP NEGERI 1 KASIHAN": {
+   "total": 9,
+   "jalur": {
+    "Zonasi Reguler": 5,
+    "Afirmasi": 2,
+    "Prestasi": 1,
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP STELLA DUCE 1": {
+   "total": 19,
+   "jalur": {
+    "Zonasi Reguler": 16,
+    "Prestasi": 3
+   }
+  },
+  "SMP NEGERI 1 WATES": {
+   "total": 4,
+   "jalur": {
+    "Zonasi Reguler": 2,
+    "Prestasi": 2
+   }
+  },
+  "SMP NEGERI 1 GODEAN": {
+   "total": 20,
+   "jalur": {
+    "Zonasi Reguler": 7,
+    "Afirmasi": 1,
+    "Prestasi": 12
+   }
+  },
+  "SMP NEGERI 1 YOGYAKARTA": {
+   "total": 163,
+   "jalur": {
+    "Zonasi Reguler": 116,
+    "Prestasi": 20,
+    "Pindah Tugas": 3,
+    "Zonasi Radius": 6,
+    "Afirmasi": 18
+   }
+  },
+  "SMP NEGERI 4 YOGYAKARTA": {
+   "total": 55,
+   "jalur": {
+    "Zonasi Reguler": 36,
+    "Afirmasi": 11,
+    "Prestasi": 8
+   }
+  },
+  "SMP Negeri 1 Sleman": {
+   "total": 23,
+   "jalur": {
+    "Zonasi Reguler": 6,
+    "Prestasi": 13,
+    "Pindah Tugas": 3,
+    "Afirmasi": 1
+   }
+  },
+  "SMP IT ABU BAKAR YOGYAKARTA": {
+   "total": 100,
+   "jalur": {
+    "Zonasi Reguler": 69,
+    "Prestasi": 28,
+    "Pindah Tugas": 1,
+    "Zonasi Radius": 2
+   }
+  },
+  "SMP NEGERI 16 YOGYAKARTA": {
+   "total": 95,
+   "jalur": {
+    "Zonasi Reguler": 63,
+    "Afirmasi": 16,
+    "Prestasi": 5,
+    "Zonasi Radius": 11
+   }
+  },
+  "SMP NEGERI 2 YOGYAKARTA": {
+   "total": 137,
+   "jalur": {
+    "Zonasi Reguler": 96,
+    "Afirmasi": 25,
+    "Prestasi": 14,
+    "Pindah Tugas": 1,
+    "Zonasi Radius": 1
+   }
+  },
+  "SMP NEGERI 2 BANTUL": {
+   "total": 24,
+   "jalur": {
+    "Zonasi Reguler": 6,
+    "Afirmasi": 4,
+    "Prestasi": 13,
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP NEGERI 2 KASIHAN": {
+   "total": 13,
+   "jalur": {
+    "Zonasi Reguler": 6,
+    "Afirmasi": 3,
+    "Pindah Tugas": 1,
+    "Prestasi": 3
+   }
+  },
+  "SMP NEGERI 12 YOGYAKARTA": {
+   "total": 81,
+   "jalur": {
+    "Zonasi Reguler": 54,
+    "Afirmasi": 19,
+    "Zonasi Radius": 5,
+    "Prestasi": 2,
+    "Pindah Tugas": 1
+   }
+  },
+  "SMPIT IQRA": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP IT AL KHAIRAAT": {
+   "total": 3,
+   "jalur": {
+    "Zonasi Reguler": 3
+   }
+  },
+  "SMP NEGERI 6 YOGYAKARTA": {
+   "total": 128,
+   "jalur": {
+    "Zonasi Reguler": 93,
+    "Afirmasi": 12,
+    "Prestasi": 14,
+    "Pindah Tugas": 2,
+    "Zonasi Radius": 7
+   }
+  },
+  "SMP NEGERI 7 YOGYAKARTA": {
+   "total": 80,
+   "jalur": {
+    "Zonasi Reguler": 63,
+    "Afirmasi": 14,
+    "Zonasi Radius": 1,
+    "Prestasi": 1,
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP NEGERI 14 YOGYAKARTA": {
+   "total": 32,
+   "jalur": {
+    "Zonasi Reguler": 22,
+    "Afirmasi": 7,
+    "Prestasi": 1,
+    "Zonasi Radius": 2
+   }
+  },
+  "SMP NEGERI 13 YOGYAKARTA": {
+   "total": 19,
+   "jalur": {
+    "Zonasi Reguler": 7,
+    "Prestasi": 3,
+    "Zonasi Radius": 1,
+    "Afirmasi": 8
+   }
+  },
+  "SMP NEGERI 4 PAKEM": {
+   "total": 88,
+   "jalur": {
+    "Zonasi Reguler": 38,
+    "Prestasi": 46,
+    "Zonasi Radius": 1,
+    "Afirmasi": 2,
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP NEGERI 3 GODEAN": {
+   "total": 36,
+   "jalur": {
+    "Zonasi Reguler": 28,
+    "Afirmasi": 5,
+    "Pindah Tugas": 1,
+    "Prestasi": 2
+   }
+  },
+  "SMP NEGERI 10 YOGYAKARTA": {
+   "total": 60,
+   "jalur": {
+    "Zonasi Reguler": 39,
+    "Prestasi": 7,
+    "Pindah Tugas": 2,
+    "Zonasi Radius": 1,
+    "Afirmasi": 11
+   }
+  },
+  "MTSN 6 SLEMAN": {
+   "total": 40,
+   "jalur": {
+    "Zonasi Reguler": 36,
+    "Afirmasi": 1,
+    "Prestasi": 2,
+    "Zonasi Radius": 1
+   }
+  },
+  "SMP KESATUAN BANGSA": {
+   "total": 4,
+   "jalur": {
+    "Zonasi Reguler": 4
+   }
+  },
+  "SMP NEGERI 4 DEPOK": {
+   "total": 74,
+   "jalur": {
+    "Zonasi Reguler": 49,
+    "Prestasi": 22,
+    "Zonasi Radius": 1,
+    "Pindah Tugas": 2
+   }
+  },
+  "SMP YPVDP": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "MTSN 4 KULON PROGO": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP ISLAM TERPADU LHI": {
+   "total": 13,
+   "jalur": {
+    "Zonasi Reguler": 11,
+    "Prestasi": 2
+   }
+  },
+  "SMP MONTESSORI": {
+   "total": 7,
+   "jalur": {
+    "Zonasi Reguler": 5,
+    "Prestasi": 1,
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP OLIFANT": {
+   "total": 5,
+   "jalur": {
+    "Zonasi Reguler": 4,
+    "Prestasi": 1
+   }
+  },
+  "MTSN 1 YOGYAKARTA": {
+   "total": 33,
+   "jalur": {
+    "Zonasi Reguler": 15,
+    "Zonasi Radius": 2,
+    "Afirmasi": 12,
+    "Prestasi": 4
+   }
+  },
+  "SMP NEGERI 1 SEWON": {
+   "total": 6,
+   "jalur": {
+    "Zonasi Reguler": 4,
+    "Prestasi": 2
+   }
+  },
+  "SMP BAITUL QURAN BOARDING SCHOOL SAMBIREJO": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP MUHAMMADIYAH 5 YOGYAKARTA": {
+   "total": 20,
+   "jalur": {
+    "Afirmasi": 19,
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP NEGERI 2 GODEAN": {
+   "total": 2,
+   "jalur": {
+    "Afirmasi": 1,
+    "Zonasi Reguler": 1
+   }
+  },
+  "MTSN 1 BANTUL": {
+   "total": 6,
+   "jalur": {
+    "Afirmasi": 2,
+    "Zonasi Reguler": 3,
+    "Prestasi": 1
+   }
+  },
+  "SMP NEGERI 1 GAMPING": {
+   "total": 7,
+   "jalur": {
+    "Afirmasi": 4,
+    "Zonasi Reguler": 2,
+    "Prestasi": 1
+   }
+  },
+  "MTSN 2 BANTUL": {
+   "total": 1,
+   "jalur": {
+    "Afirmasi": 1
+   }
+  },
+  "MTSN 6 BANTUL": {
+   "total": 2,
+   "jalur": {
+    "Afirmasi": 2
+   }
+  },
+  "SMP NEGERI 3 YOGYAKARTA": {
+   "total": 21,
+   "jalur": {
+    "Afirmasi": 10,
+    "Zonasi Reguler": 7,
+    "Pindah Tugas": 1,
+    "Zonasi Radius": 1,
+    "Prestasi": 2
+   }
+  },
+  "SMP MAARIF GAMPING": {
+   "total": 1,
+   "jalur": {
+    "Afirmasi": 1
+   }
+  },
+  "SMP PIRI 1 YOGYAKARTA": {
+   "total": 5,
+   "jalur": {
+    "Afirmasi": 5
+   }
+  },
+  "SMP MATARAM": {
+   "total": 4,
+   "jalur": {
+    "Afirmasi": 2,
+    "Zonasi Reguler": 2
+   }
+  },
+  "SMP NEGERI 9 YOGYAKARTA": {
+   "total": 84,
+   "jalur": {
+    "Afirmasi": 14,
+    "Prestasi": 14,
+    "Zonasi Reguler": 48,
+    "Zonasi Radius": 7,
+    "Pindah Tugas": 1
+   }
+  },
+  "MTSS MUHAMMADIYAH KARANGKAJEN": {
+   "total": 17,
+   "jalur": {
+    "Afirmasi": 16,
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP NEGERI 15 YOGYAKARTA": {
+   "total": 59,
+   "jalur": {
+    "Afirmasi": 20,
+    "Zonasi Reguler": 33,
+    "Prestasi": 4,
+    "Zonasi Radius": 1,
+    "Pindah Tugas": 1
+   }
+  },
+  "MTSN 4 BANTUL": {
+   "total": 3,
+   "jalur": {
+    "Afirmasi": 1,
+    "Prestasi": 2
+   }
+  },
+  "SMP NEGERI 1 KALASAN": {
+   "total": 9,
+   "jalur": {
+    "Afirmasi": 2,
+    "Prestasi": 4,
+    "Zonasi Reguler": 2,
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP NEGERI 2 PAJANGAN": {
+   "total": 1,
+   "jalur": {
+    "Afirmasi": 1
+   }
+  },
+  "SMP NEGERI 1 SRANDAKAN": {
+   "total": 2,
+   "jalur": {
+    "Afirmasi": 2
+   }
+  },
+  "SMP NEGERI 2 SRANDAKAN": {
+   "total": 1,
+   "jalur": {
+    "Afirmasi": 1
+   }
+  },
+  "SMP NEGERI 2 BAMBANGLIPURO": {
+   "total": 1,
+   "jalur": {
+    "Afirmasi": 1
+   }
+  },
+  "SMP NEGERI 1 BANTUL": {
+   "total": 6,
+   "jalur": {
+    "Prestasi": 6
+   }
+  },
+  "SMP MUHAMMADIYAH 9 YOGYAKARTA": {
+   "total": 13,
+   "jalur": {
+    "Prestasi": 1,
+    "Afirmasi": 11,
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP NEGERI 3 KALASAN": {
+   "total": 3,
+   "jalur": {
+    "Prestasi": 2,
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP NEGERI 1 DEPOK": {
+   "total": 65,
+   "jalur": {
+    "Prestasi": 14,
+    "Zonasi Reguler": 45,
+    "Pindah Tugas": 2,
+    "Afirmasi": 4
+   }
+  },
+  "SMP NEGERI 1 MLATI": {
+   "total": 7,
+   "jalur": {
+    "Prestasi": 1,
+    "Zonasi Reguler": 6
+   }
+  },
+  "SMP NEGERI 1 TURI": {
+   "total": 1,
+   "jalur": {
+    "Prestasi": 1
+   }
+  },
+  "SMPIT ALAM NURUL ISLAM": {
+   "total": 10,
+   "jalur": {
+    "Prestasi": 3,
+    "Pindah Tugas": 1,
+    "Zonasi Reguler": 6
+   }
+  },
+  "SMP NEGERI 1 SANDEN": {
+   "total": 2,
+   "jalur": {
+    "Prestasi": 2
+   }
+  },
+  "SMP NEGERI 1 GALUR": {
+   "total": 6,
+   "jalur": {
+    "Prestasi": 3,
+    "Zonasi Reguler": 3
+   }
+  },
+  "SMP Teladan": {
+   "total": 6,
+   "jalur": {
+    "Prestasi": 1,
+    "Zonasi Reguler": 5
+   }
+  },
+  "SMP NEGERI 1 PANDAK": {
+   "total": 2,
+   "jalur": {
+    "Prestasi": 1,
+    "Afirmasi": 1
+   }
+  },
+  "MTSS MUALLIMIN MUHAMMADIYAH": {
+   "total": 6,
+   "jalur": {
+    "Pindah Tugas": 1,
+    "Zonasi Reguler": 4,
+    "Prestasi": 1
+   }
+  },
+  "SMP NEGERI 1 SEDAYU": {
+   "total": 4,
+   "jalur": {
+    "Pindah Tugas": 2,
+    "Prestasi": 2
+   }
+  },
+  "SMP NEGERI 1 MAGELANG": {
+   "total": 2,
+   "jalur": {
+    "Pindah Tugas": 1,
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP NEGERI 1 MINGGIR": {
+   "total": 5,
+   "jalur": {
+    "Pindah Tugas": 1,
+    "Prestasi": 2,
+    "Zonasi Reguler": 2
+   }
+  },
+  "SMPIT NURUL ISLAM TENGARAN KABUPATEN SEMARANG": {
+   "total": 1,
+   "jalur": {
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP Ali Maksum": {
+   "total": 2,
+   "jalur": {
+    "Pindah Tugas": 1,
+    "Prestasi": 1
+   }
+  },
+  "SMP BUDI LUHUR": {
+   "total": 1,
+   "jalur": {
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP IT MASJID SYUHADA YOGYAKARTA": {
+   "total": 9,
+   "jalur": {
+    "Zonasi Radius": 1,
+    "Zonasi Reguler": 5,
+    "Afirmasi": 2,
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP BUDI UTAMA MLATI": {
+   "total": 5,
+   "jalur": {
+    "Zonasi Reguler": 3,
+    "Prestasi": 2
+   }
+  },
+  "SMP NEGERI 2 MLATI": {
+   "total": 67,
+   "jalur": {
+    "Zonasi Reguler": 61,
+    "Prestasi": 3,
+    "Afirmasi": 3
+   }
+  },
+  "SMP NEGERI 3 MLATI": {
+   "total": 21,
+   "jalur": {
+    "Zonasi Reguler": 20,
+    "Afirmasi": 1
+   }
+  },
+  "SMP KRISTEN KALAM KUDUS": {
+   "total": 19,
+   "jalur": {
+    "Zonasi Reguler": 12,
+    "Prestasi": 6,
+    "Zonasi Radius": 1
+   }
+  },
+  "SMP ISLAM AL-AZHAR CAIRO": {
+   "total": 4,
+   "jalur": {
+    "Zonasi Reguler": 1,
+    "Pindah Tugas": 1,
+    "Prestasi": 2
+   }
+  },
+  "SMP NEGERI 5 DEPOK": {
+   "total": 12,
+   "jalur": {
+    "Zonasi Reguler": 12
+   }
+  },
+  "SMP MARIA IMMACULATA MARSUDIRINI": {
+   "total": 16,
+   "jalur": {
+    "Zonasi Reguler": 11,
+    "Afirmasi": 5
+   }
+  },
+  "SMP MUHAMMADIYAH AL MUJAHIDIN": {
+   "total": 5,
+   "jalur": {
+    "Zonasi Reguler": 4,
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP NEGERI 2 SEWON": {
+   "total": 5,
+   "jalur": {
+    "Zonasi Reguler": 2,
+    "Afirmasi": 1,
+    "Prestasi": 2
+   }
+  },
+  "SMP NEGERI 2 NGAGLIK": {
+   "total": 12,
+   "jalur": {
+    "Zonasi Reguler": 5,
+    "Afirmasi": 1,
+    "Prestasi": 5,
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP MUHAMMADIYAH 1 MLATI": {
+   "total": 20,
+   "jalur": {
+    "Afirmasi": 9,
+    "Zonasi Reguler": 10,
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP NEGERI 2 GAMPING": {
+   "total": 30,
+   "jalur": {
+    "Afirmasi": 9,
+    "Pindah Tugas": 1,
+    "Zonasi Radius": 1,
+    "Zonasi Reguler": 19
+   }
+  },
+  "MTSS MUHAMMADIYAH GEDONG TENGEN": {
+   "total": 4,
+   "jalur": {
+    "Afirmasi": 3,
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP MUHAMMADIYAH 2 GODEAN": {
+   "total": 3,
+   "jalur": {
+    "Afirmasi": 3
+   }
+  },
+  "SMP NEGERI 3 SAPTOSARI": {
+   "total": 1,
+   "jalur": {
+    "Afirmasi": 1
+   }
+  },
+  "SMP 17 1 YOGYAKARTA": {
+   "total": 1,
+   "jalur": {
+    "Afirmasi": 1
+   }
+  },
+  "SMP MUHAMMADIYAH 7 YOGYAKARTA": {
+   "total": 7,
+   "jalur": {
+    "Afirmasi": 4,
+    "Zonasi Radius": 1,
+    "Pindah Tugas": 1,
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP YPPSB SANGATTA UTARA": {
+   "total": 1,
+   "jalur": {
+    "Prestasi": 1
+   }
+  },
+  "MTSS TARUNA AL QUR`AN": {
+   "total": 1,
+   "jalur": {
+    "Prestasi": 1
+   }
+  },
+  "SMP NEGERI 3 SLEMAN": {
+   "total": 29,
+   "jalur": {
+    "Prestasi": 6,
+    "Zonasi Reguler": 22,
+    "Afirmasi": 1
+   }
+  },
+  "SMP NEGERI 2 NGABANG": {
+   "total": 1,
+   "jalur": {
+    "Prestasi": 1
+   }
+  },
+  "SMP NEGERI 2 SLEMAN": {
+   "total": 7,
+   "jalur": {
+    "Prestasi": 2,
+    "Afirmasi": 1,
+    "Zonasi Reguler": 3,
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP NEGERI 1 SEYEGAN": {
+   "total": 2,
+   "jalur": {
+    "Prestasi": 1,
+    "Afirmasi": 1
+   }
+  },
+  "SMP PANGUDI LUHUR 1 YOGYAKARTA": {
+   "total": 34,
+   "jalur": {
+    "Prestasi": 5,
+    "Zonasi Reguler": 28,
+    "Afirmasi": 1
+   }
+  },
+  "SMP PANGUDI LUHUR MOYUDAN": {
+   "total": 1,
+   "jalur": {
+    "Prestasi": 1
+   }
+  },
+  "SMP NEGERI 1 NANGGULAN": {
+   "total": 2,
+   "jalur": {
+    "Prestasi": 1,
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP MUHAMMADIYAH 2 YOGYAKARTA": {
+   "total": 33,
+   "jalur": {
+    "Prestasi": 9,
+    "Zonasi Reguler": 22,
+    "Pindah Tugas": 2
+   }
+  },
+  "SMP NEGERI 4 TEMPEL": {
+   "total": 1,
+   "jalur": {
+    "Pindah Tugas": 1
+   }
+  },
+  "MTS ANNIDA AL ISLAMY BEKASI": {
+   "total": 1,
+   "jalur": {
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP ANGKASA LANUD SULAIMAN": {
+   "total": 1,
+   "jalur": {
+    "Pindah Tugas": 1
+   }
+  },
+  "SMPIT IBNU ABBAS KLATEN": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Radius": 1
+   }
+  },
+  "SMP NEGERI 1 BERBAH": {
+   "total": 4,
+   "jalur": {
+    "Zonasi Reguler": 3,
+    "Afirmasi": 1
+   }
+  },
+  "SMP NEGERI 3 DEPOK": {
+   "total": 17,
+   "jalur": {
+    "Zonasi Reguler": 12,
+    "Prestasi": 2,
+    "Afirmasi": 2,
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP BOPKRI 1 YOGYAKARTA": {
+   "total": 5,
+   "jalur": {
+    "Afirmasi": 3,
+    "Prestasi": 1,
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP NEGERI 4 KALASAN": {
+   "total": 2,
+   "jalur": {
+    "Afirmasi": 1,
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP MUHAMMADIYAH 1 GODEAN": {
+   "total": 2,
+   "jalur": {
+    "Afirmasi": 1,
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP NEGERI 1 BANGUNTAPAN": {
+   "total": 42,
+   "jalur": {
+    "Afirmasi": 13,
+    "Zonasi Radius": 1,
+    "Zonasi Reguler": 23,
+    "Prestasi": 4,
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP NEGERI 5 SLEMAN": {
+   "total": 11,
+   "jalur": {
+    "Afirmasi": 6,
+    "Zonasi Reguler": 5
+   }
+  },
+  "SMP NEGERI 4 PATUK": {
+   "total": 1,
+   "jalur": {
+    "Afirmasi": 1
+   }
+  },
+  "SMP STELLA DUCE 2 YOGYAKARTA": {
+   "total": 3,
+   "jalur": {
+    "Prestasi": 1,
+    "Zonasi Radius": 1,
+    "Zonasi Reguler": 1
+   }
+  },
+  "MTSN 5 SLEMAN": {
+   "total": 2,
+   "jalur": {
+    "Prestasi": 1,
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMPN 1 CIAMIS": {
+   "total": 1,
+   "jalur": {
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP ISLAM AL AZHAR 38 WONOSARI": {
+   "total": 1,
+   "jalur": {
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP FITRAH ISLAMIC WORLD ACADEMY": {
+   "total": 1,
+   "jalur": {
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP MUHAMMADIYAH 10 YOGYAKARTA": {
+   "total": 15,
+   "jalur": {
+    "Zonasi Radius": 1,
+    "Zonasi Reguler": 5,
+    "Afirmasi": 9
+   }
+  },
+  "SMP TAHFIDZQU": {
+   "total": 5,
+   "jalur": {
+    "Zonasi Reguler": 4,
+    "Prestasi": 1
+   }
+  },
+  "SMP NEGERI 1 PAKEM": {
+   "total": 7,
+   "jalur": {
+    "Zonasi Reguler": 2,
+    "Afirmasi": 2,
+    "Prestasi": 3
+   }
+  },
+  "MTSN 4 SLEMAN": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP MUHAMMADIYAH 1 SLEMAN": {
+   "total": 3,
+   "jalur": {
+    "Zonasi Reguler": 2,
+    "Afirmasi": 1
+   }
+  },
+  "SMP NEGERI 2 TEMANGGUNG": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "MTSS UMMUL QURO": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP NEGERI 1 KALIBAWANG": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP PIRI NGAGLIK": {
+   "total": 4,
+   "jalur": {
+    "Zonasi Reguler": 2,
+    "Afirmasi": 2
+   }
+  },
+  "SMP NEGERI 4 NGAGLIK": {
+   "total": 8,
+   "jalur": {
+    "Zonasi Reguler": 7,
+    "Afirmasi": 1
+   }
+  },
+  "SMP MUHAMMADIYAH 2 MLATI": {
+   "total": 4,
+   "jalur": {
+    "Zonasi Reguler": 2,
+    "Afirmasi": 2
+   }
+  },
+  "SMP KANISIUS SLEMAN": {
+   "total": 3,
+   "jalur": {
+    "Zonasi Reguler": 3
+   }
+  },
+  "MTs DAARUL `ULUM 2 SINAR MELATI": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP BOPKRI 3 YOGYAKARTA": {
+   "total": 6,
+   "jalur": {
+    "Zonasi Reguler": 4,
+    "Afirmasi": 2
+   }
+  },
+  "MTS AL MURSYIDIYYAH": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "MTS NEGERI 6 SLEMAN": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP NEGERI 4 SLEMAN": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP MUTIARA PERSADA": {
+   "total": 4,
+   "jalur": {
+    "Zonasi Reguler": 4
+   }
+  },
+  "SMP NEGERI 2 PAKEM": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP KARITAS NGAGLIK": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP TAMAN DEWASA JETIS": {
+   "total": 14,
+   "jalur": {
+    "Zonasi Reguler": 3,
+    "Afirmasi": 11
+   }
+  },
+  "MTSN 10 SLEMAN": {
+   "total": 3,
+   "jalur": {
+    "Zonasi Reguler": 3
+   }
+  },
+  "SMP MUHAMMADIYAH BOARDING SCHOOL": {
+   "total": 5,
+   "jalur": {
+    "Zonasi Reguler": 4,
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP MUHAMMADIYAH 3 DEPOK": {
+   "total": 2,
+   "jalur": {
+    "Zonasi Reguler": 1,
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP DARUL HIKMAH PAKEM": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "MTSS WAHID HASYIM": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "MTSS MIFTAHUNNAJAH": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP BOPKRI 5 YOGYAKARTA": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP MUHAMMADIYAH 3 MLATI": {
+   "total": 1,
+   "jalur": {
+    "Afirmasi": 1
+   }
+  },
+  "SMP NEGERI 1 NGAGLIK": {
+   "total": 5,
+   "jalur": {
+    "Afirmasi": 1,
+    "Zonasi Reguler": 4
+   }
+  },
+  "SMP MUHAMMADIYAH KASIHAN": {
+   "total": 2,
+   "jalur": {
+    "Afirmasi": 2
+   }
+  },
+  "SMPN 2 SUNGAILIAT BANGKA": {
+   "total": 1,
+   "jalur": {
+    "Prestasi": 1
+   }
+  },
+  "SMP NEGERI 5 TASIKMALAYA": {
+   "total": 1,
+   "jalur": {
+    "Pindah Tugas": 1
+   }
+  },
+  "MTSN 9 BANTUL": {
+   "total": 10,
+   "jalur": {
+    "Zonasi Radius": 1,
+    "Afirmasi": 7,
+    "Zonasi Reguler": 2
+   }
+  },
+  "MTSN 7 BANTUL": {
+   "total": 5,
+   "jalur": {
+    "Zonasi Radius": 1,
+    "Afirmasi": 4
+   }
+  },
+  "SMP NEGERI 1 PIYUNGAN": {
+   "total": 13,
+   "jalur": {
+    "Zonasi Reguler": 4,
+    "Afirmasi": 3,
+    "Prestasi": 6
+   }
+  },
+  "SMP NEGERI 5 BANGUNTAPAN": {
+   "total": 3,
+   "jalur": {
+    "Zonasi Reguler": 1,
+    "Afirmasi": 2
+   }
+  },
+  "SMP NEGERI 2 BANGUNTAPAN": {
+   "total": 6,
+   "jalur": {
+    "Zonasi Reguler": 3,
+    "Afirmasi": 1,
+    "Pindah Tugas": 2
+   }
+  },
+  "SMPIT AR RAIHAN": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMPIT SALMAN ALFARISI BOARDING SCHOOL": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP JOANNES BOSCO": {
+   "total": 3,
+   "jalur": {
+    "Zonasi Reguler": 3
+   }
+  },
+  "SMP ISLAM TERPADU BINA ANAK SHOLEH": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP BAITUL QURAN PONJONG": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP NEGERI 1 PATUK": {
+   "total": 2,
+   "jalur": {
+    "Zonasi Reguler": 1,
+    "Prestasi": 1
+   }
+  },
+  "MTSS MAHAD ISLAMY": {
+   "total": 1,
+   "jalur": {
+    "Afirmasi": 1
+   }
+  },
+  "SMP MUHAMMADIYAH PIYUNGAN": {
+   "total": 1,
+   "jalur": {
+    "Afirmasi": 1
+   }
+  },
+  "SMP NEGERI 1 PLERET": {
+   "total": 5,
+   "jalur": {
+    "Afirmasi": 1,
+    "Prestasi": 4
+   }
+  },
+  "SMP TAMAN DEWASA IBU PAWIYATAN TAMANSISWA": {
+   "total": 3,
+   "jalur": {
+    "Afirmasi": 3
+   }
+  },
+  "SMP NEGERI 4 BANGUNTAPAN": {
+   "total": 2,
+   "jalur": {
+    "Afirmasi": 2
+   }
+  },
+  "SMP NEGERI 3 BANGUNTAPAN": {
+   "total": 6,
+   "jalur": {
+    "Afirmasi": 6
+   }
+  },
+  "SMP NEGERI 3 BERBAH": {
+   "total": 1,
+   "jalur": {
+    "Prestasi": 1
+   }
+  },
+  "SMP NEGERI 2 PLERET": {
+   "total": 4,
+   "jalur": {
+    "Prestasi": 1,
+    "Afirmasi": 3
+   }
+  },
+  "SMP ISLAM TERPADU ABU BAKAR": {
+   "total": 1,
+   "jalur": {
+    "Prestasi": 1
+   }
+  },
+  "MTS HUSNUL KHOTIMAH KUNINGAN": {
+   "total": 1,
+   "jalur": {
+    "Prestasi": 1
+   }
+  },
+  "SMPK KOLESE SANTO YUSUP 2 MALANG": {
+   "total": 1,
+   "jalur": {
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP 1 KUDUS": {
+   "total": 1,
+   "jalur": {
+    "Pindah Tugas": 1
+   }
+  },
+  "SMPIT INSAN KAMIL SIDOARJO": {
+   "total": 1,
+   "jalur": {
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP NEGERI 2 TAMBUN SELATAN": {
+   "total": 1,
+   "jalur": {
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP NEGERI 1 PUNDONG": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP NEGERI 2 DEPOK": {
+   "total": 10,
+   "jalur": {
+    "Zonasi Reguler": 7,
+    "Afirmasi": 2,
+    "Zonasi Radius": 1
+   }
+  },
+  "SMP MUHAMMADIYAH 4 YOGYAKARTA": {
+   "total": 5,
+   "jalur": {
+    "Afirmasi": 4,
+    "Zonasi Radius": 1
+   }
+  },
+  "SMP NEGERI 1 IMOGIRI": {
+   "total": 1,
+   "jalur": {
+    "Afirmasi": 1
+   }
+  },
+  "SMP NEGERI 2 CANGKRINGAN": {
+   "total": 1,
+   "jalur": {
+    "Afirmasi": 1
+   }
+  },
+  "SMP MUHAMMADIYAH PAKEM": {
+   "total": 1,
+   "jalur": {
+    "Afirmasi": 1
+   }
+  },
+  "SMP MUHAMMADIYAH 1 PRAMBANAN": {
+   "total": 1,
+   "jalur": {
+    "Afirmasi": 1
+   }
+  },
+  "SMP NEGERI 2 JETIS": {
+   "total": 1,
+   "jalur": {
+    "Afirmasi": 1
+   }
+  },
+  "SMP NEGERI 1 PURWODADI": {
+   "total": 1,
+   "jalur": {
+    "Prestasi": 1
+   }
+  },
+  "SMPN 11 KOTA JAMBI": {
+   "total": 1,
+   "jalur": {
+    "Pindah Tugas": 1
+   }
+  },
+  "SMPN 108 JAKARTA BARAT": {
+   "total": 1,
+   "jalur": {
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP ISLAM AL ABIDIN SURAKARTA": {
+   "total": 1,
+   "jalur": {
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP NEGERI 1 PRIGEN": {
+   "total": 1,
+   "jalur": {
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP ISLAM TERPADU UKHUWAH BANJARMASIN": {
+   "total": 1,
+   "jalur": {
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP NEGERI 3 SEWON": {
+   "total": 4,
+   "jalur": {
+    "Zonasi Reguler": 2,
+    "Afirmasi": 1,
+    "Prestasi": 1
+   }
+  },
+  "SMP NEGERI 1 TALIWANG": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP MUHAMMADIYAH 2 KALASAN": {
+   "total": 2,
+   "jalur": {
+    "Zonasi Reguler": 1,
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP NEGERI 4 SEWON": {
+   "total": 1,
+   "jalur": {
+    "Afirmasi": 1
+   }
+  },
+  "MTSS MUHAMMADIYAH KASIHAN": {
+   "total": 1,
+   "jalur": {
+    "Afirmasi": 1
+   }
+  },
+  "SMP BUDYA WACANA": {
+   "total": 2,
+   "jalur": {
+    "Prestasi": 1,
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP NEGERI 5 CILACAP": {
+   "total": 1,
+   "jalur": {
+    "Prestasi": 1
+   }
+  },
+  "SMP MUHAMMADIYAH BOARDING SCHOOL YOGYAKARTA": {
+   "total": 1,
+   "jalur": {
+    "Prestasi": 1
+   }
+  },
+  "SMP ISLAM TERPADU BINA UMAT": {
+   "total": 2,
+   "jalur": {
+    "Pindah Tugas": 1,
+    "Zonasi Reguler": 1
+   }
+  },
+  "MTSS SUNAN PANDANARAN": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Radius": 1
+   }
+  },
+  "PKBM AL-MUSTAJAB": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Radius": 1
+   }
+  },
+  "MTSS AFKAARUNA ISLAMIC SCHOOL": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Radius": 1
+   }
+  },
+  "SMP Eksperimental Mangunan": {
+   "total": 2,
+   "jalur": {
+    "Zonasi Reguler": 2
+   }
+  },
+  "SMP BUDI MULIA DUA": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP CAHAYA BANGSA UTAMA": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP MUHAMMADIYAH 8 YOGYAKARTA": {
+   "total": 7,
+   "jalur": {
+    "Afirmasi": 6,
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP KANISIUS GAYAM YOGYAKARTA": {
+   "total": 1,
+   "jalur": {
+    "Afirmasi": 1
+   }
+  },
+  "SMP N 2 PRAMBANAN KLATEN": {
+   "total": 1,
+   "jalur": {
+    "Afirmasi": 1
+   }
+  },
+  "SMP ISLAM ATHIRAH MAKASSAR": {
+   "total": 1,
+   "jalur": {
+    "Pindah Tugas": 1
+   }
+  },
+  "SMPN 1 DEKET LAMONGAN": {
+   "total": 1,
+   "jalur": {
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP NEGERI 1 PURWOHARJO": {
+   "total": 1,
+   "jalur": {
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP ANGKASA ADISUTJIPTO DEPOK": {
+   "total": 3,
+   "jalur": {
+    "Pindah Tugas": 1,
+    "Afirmasi": 2
+   }
+  },
+  "SMP DAARUL QURAN": {
+   "total": 1,
+   "jalur": {
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP MUHAMMADIYAH PLUS GUNUNGPRING": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Radius": 1
+   }
+  },
+  "SMP NEGERI 2 PIYUNGAN": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP BOPKRI 2 YOGYAKARTA": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP NOAH": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "MTSN 9 SLEMAN": {
+   "total": 1,
+   "jalur": {
+    "Afirmasi": 1
+   }
+  },
+  "PKBM BINA KARYA SUNAN PANDANARAN": {
+   "total": 1,
+   "jalur": {
+    "Afirmasi": 1
+   }
+  },
+  "SMP INSTITUT INDONESIA YOGYAKARTA": {
+   "total": 2,
+   "jalur": {
+    "Afirmasi": 2
+   }
+  },
+  "SMP NEGERI 1 KARANGMOJO": {
+   "total": 1,
+   "jalur": {
+    "Afirmasi": 1
+   }
+  },
+  "SMP NEGERI 1 RONGKOP": {
+   "total": 1,
+   "jalur": {
+    "Afirmasi": 1
+   }
+  },
+  "SMP MUHAMMADIYAH 1 DEPOK": {
+   "total": 1,
+   "jalur": {
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP NEGERI 1 PADALARANG": {
+   "total": 1,
+   "jalur": {
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP MUHAMMADIYAH 2 DEPOK": {
+   "total": 2,
+   "jalur": {
+    "Pindah Tugas": 1,
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP ISLAM AL AZHAR 28": {
+   "total": 1,
+   "jalur": {
+    "Pindah Tugas": 1
+   }
+  },
+  "SMP TAMAN DEWASA KUMENDAMAN YOGYAKARTA": {
+   "total": 1,
+   "jalur": {
+    "Afirmasi": 1
+   }
+  },
+  "SMP NEGERI 4 GAMPING": {
+   "total": 1,
+   "jalur": {
+    "Afirmasi": 1
+   }
+  },
+  "SMP NEGERI 1 BAMBANGLIPURO": {
+   "total": 1,
+   "jalur": {
+    "Afirmasi": 1
+   }
+  },
+  "SMP NEGERI 3 JETIS": {
+   "total": 1,
+   "jalur": {
+    "Afirmasi": 1
+   }
+  },
+  "SMP SANTO ALOYSIUS TURI": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "PKBM HOMESCHOOLING ENTREPRENEUR": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP NEGERI 3 NGAGLIK": {
+   "total": 2,
+   "jalur": {
+    "Zonasi Reguler": 1,
+    "Afirmasi": 1
+   }
+  },
+  "SMPIT IHSANUL FIKRI": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP ISLAM AL AZHAR": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP ISLAM AL AZHAR CAIRO PALEMBANG": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMPTK JOGJA PATRIAE ACADEMY": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP NEGERI 1 SAMIGALUH": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "PKBM PERSADA": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "MTSS MUALLIMAAT MUHAMMADIYAH": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "PKBM SANGGAR ANAK ALAM": {
+   "total": 2,
+   "jalur": {
+    "Zonasi Reguler": 1,
+    "Afirmasi": 1
+   }
+  },
+  "SMP ST. FRANSISKUS XAVERIUS RUTENG": {
+   "total": 1,
+   "jalur": {
+    "Zonasi Reguler": 1
+   }
+  },
+  "SMP NEGERI 3 PAKEM": {
+   "total": 1,
+   "jalur": {
+    "Afirmasi": 1
+   }
+  },
+  "MTSS DARUNNAJAH ULUJAMI": {
+   "total": 1,
+   "jalur": {
+    "Pindah Tugas": 1
+   }
+  }
  }
 }
