@@ -27,6 +27,27 @@ const shortLabel = kode => kode.replace('SMAN', 'SMAN ');
 const fmt = n => n.toLocaleString('id-ID');                                  // untuk jumlah (bilangan bulat)
 const fmtScore = n => n.toLocaleString('id-ID', { maximumFractionDigits: 2 }); // untuk skor/jarak (desimal)
 
+const JALUR_ORDER = ['Zonasi Radius', 'Zonasi Reguler', 'Afirmasi', 'Prestasi', 'Pindah Tugas'];
+const JALUR_ABBR = {
+  'Zonasi Radius': 'ZRad', 'Zonasi Reguler': 'ZReg', 'Afirmasi': 'Afirm',
+  'Prestasi': 'Prestasi', 'Pindah Tugas': 'Pindah',
+};
+
+// Baris ringkas rincian per-jalur untuk item daftar mini (mis. "ZReg:3·342,1  Prestasi:2·360,5").
+function formatJalurTags(breakdown, { withValue = true } = {}) {
+  if (!breakdown) return '';
+  return JALUR_ORDER
+    .filter(j => breakdown[j])
+    .map(j => {
+      const b = breakdown[j];
+      const abbr = JALUR_ABBR[j] || j;
+      if (!withValue) return `${abbr}:${fmt(b.count)}`;
+      const valStr = b.unit === 'meter' ? `${Math.round(b.value)}m` : fmtScore(b.value);
+      return `${abbr}:${fmt(b.count)}·${valStr}`;
+    })
+    .join('  ');
+}
+
 function baseTextStyle() {
   return { fontFamily: FONT_SANS, color: GRAY_600 };
 }
@@ -65,6 +86,7 @@ const chartInstances = {};      // id -> instance echarts
 const schoolPanelCharts = {};   // kode -> { breakdown, scores, gender }
 const selectedSchools = new Set();
 let smpPanelCharts = {};        // { ego, jalur } — hanya satu SMP aktif sekaligus
+let smpExplorerInitialized = false;
 
 function registerChart(id, option) {
   const el = document.getElementById(id);
@@ -98,7 +120,12 @@ function loadYear(year) {
       renderHero(data);
       renderNetwork(data);
       renderGlobal(data);
+      // Pilih default agar pengguna langsung melihat contoh hasilnya (hanya sekali, tidak menimpa pilihan manual).
+      if (selectedSchools.size === 0 && data.schools.some(s => s.kode === 'SMAN1')) {
+        selectedSchools.add('SMAN1');
+      }
       renderSchoolChips(data);
+      renderSchoolPanels(data);
       renderSmpExplorer(data);
     })
     .catch(err => {
@@ -311,9 +338,11 @@ function renderJalurTotalsChart(data) {
   const values = jalurList.map(j => (data.overall.jalur[j] ? data.overall.jalur[j].count : 0));
   registerChart('chart-jalur-totals', {
     textStyle: baseTextStyle(),
-    grid: { left: 110, right: 40, top: 10, bottom: 30 },
+    grid: { left: 110, right: 55, top: 10, bottom: 20 },
     tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' }, valueFormatter: v => `${fmt(v)} siswa` },
-    xAxis: { type: 'value', axisLine: { lineStyle: { color: GRAY_200 } }, splitLine: { lineStyle: { color: GRAY_200 } } },
+    // Sumbu nilai disembunyikan — kartu ini kini 33% lebar (grid 2 kolom), dan
+    // label di ujung tiap batang sudah menunjukkan angka pastinya tanpa perlu tanda sumbu.
+    xAxis: { type: 'value', axisLine: { show: false }, axisTick: { show: false }, axisLabel: { show: false }, splitLine: { show: false } },
     yAxis: { type: 'category', data: jalurList, inverse: true, axisLabel: { fontFamily: FONT_SANS, fontSize: 11 } },
     series: [{
       type: 'bar', data: values, barWidth: '55%',
@@ -396,13 +425,16 @@ function renderTopFeedersChart(feeders, elId, limit = 15) {
 // ── Eksplorasi per sekolah ──────────────────────────────────────────
 function renderSchoolChips(data) {
   const wrap = document.getElementById('school-chips');
-  wrap.innerHTML = data.schools.map(s => `
-    <button class="sma-chip" data-kode="${s.kode}" aria-pressed="false">
+  wrap.innerHTML = data.schools.map(s => {
+    const isActive = selectedSchools.has(s.kode);
+    return `
+    <button class="sma-chip${isActive ? ' active' : ''}" data-kode="${s.kode}" aria-pressed="${isActive}">
       <span class="dot" style="background:${SMA_COLORS[s.kode]}"></span>
       ${shortLabel(s.kode)}
       <span class="count">${fmt(s.total)}</span>
     </button>
-  `).join('');
+  `;
+  }).join('');
 
   wrap.querySelectorAll('.sma-chip').forEach(chip => {
     chip.addEventListener('click', () => {
@@ -488,7 +520,14 @@ function schoolPanelTemplate(data, school) {
         <div>
           <h3 style="font-size:0.9rem;">Sekolah asal teratas</h3>
           <ul class="sma-mini-list">
-            ${feeders.map((f, i) => `<li><span>${f.asal_sekolah}</span><span class="n">${fmt(f.count)}</span></li>`).join('')}
+            ${feeders.map(f => {
+              const breakdown = (data.by_sma_smp[school.kode] || {})[f.asal_sekolah];
+              const tags = formatJalurTags(breakdown, { withValue: true });
+              return `<li>
+                <div class="row"><span>${f.asal_sekolah}</span><span class="n">${fmt(f.count)}</span></div>
+                ${tags ? `<div class="tags">${tags}</div>` : ''}
+              </li>`;
+            }).join('')}
           </ul>
         </div>
       </div>
@@ -680,6 +719,13 @@ function renderSmpExplorer(data) {
   document.addEventListener('click', e => {
     if (!e.target.closest('.sma-smp-search-wrap')) suggestionsBox.hidden = true;
   });
+
+  // Pilih default agar pengguna langsung melihat contoh hasilnya (hanya sekali saat pertama dimuat).
+  if (!smpExplorerInitialized) {
+    smpExplorerInitialized = true;
+    const defaultSmp = 'SMP NEGERI 5 YOGYAKARTA';
+    if (data.by_smp[defaultSmp]) selectSmp(defaultSmp);
+  }
 }
 
 function renderSmpPanel(data, smpName) {
@@ -725,12 +771,17 @@ function smpPanelTemplate(data, smpName, info, destinations, rank) {
         <div>
           <h3 style="font-size:0.9rem;">Peringkat SMA tujuan</h3>
           <ul class="sma-mini-list">
-            ${destinations.map(d => `
-              <li>
-                <span><span class="dot" style="display:inline-block;width:0.55rem;height:0.55rem;border-radius:50%;background:${SMA_COLORS[d.kode]};margin-right:0.5rem;"></span>${d.nama}</span>
-                <span class="n">${fmt(d.count)}</span>
-              </li>
-            `).join('')}
+            ${destinations.map(d => {
+              const breakdown = (data.by_sma_smp[d.kode] || {})[smpName];
+              const tags = formatJalurTags(breakdown, { withValue: false });
+              return `<li>
+                <div class="row">
+                  <span><span class="dot" style="display:inline-block;width:0.55rem;height:0.55rem;border-radius:50%;background:${SMA_COLORS[d.kode]};margin-right:0.5rem;"></span>${d.nama}</span>
+                  <span class="n">${fmt(d.count)}</span>
+                </div>
+                ${tags ? `<div class="tags">${tags}</div>` : ''}
+              </li>`;
+            }).join('')}
           </ul>
         </div>
       </div>

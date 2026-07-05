@@ -134,6 +134,23 @@ def build(year: int):
         for smp_name, jalur_counter in smp_jalur.items()
     }
 
+    # ── Per (SMA, SMP) jalur breakdown — fine-grained cross tab used by both
+    # the SMA panel's feeder list (count + cutoff-style value per jalur) and
+    # the SMP panel's destination list (counts only, rendered client-side).
+    pair_jalur_values = defaultdict(lambda: defaultdict(list))
+    for r in rows:
+        val = r["radius_m"] if r["jalur"] == "Zonasi Radius" else r["nilai"]
+        pair_jalur_values[(r["sekolah_kode"], r["asal_sekolah"])][r["jalur"]].append(val)
+
+    by_sma_smp = {}
+    for (sma_kode, smp_name), jalur_map in pair_jalur_values.items():
+        entry = {}
+        for jalur, values in jalur_map.items():
+            unit = jalur_unit(jalur)
+            value = max(values) if unit == "meter" else min(values)
+            entry[jalur] = {"count": len(values), "value": round(value, 2), "unit": unit}
+        by_sma_smp.setdefault(sma_kode, {})[smp_name] = entry
+
     out = {
         "year": year,
         "meta": {
@@ -155,6 +172,7 @@ def build(year: int):
         },
         "network": network,
         "by_smp": by_smp,
+        "by_sma_smp": by_sma_smp,
     }
 
     out_dir = DATA_DIR / "public"

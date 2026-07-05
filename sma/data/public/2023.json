@@ -13923,5 +13923,6925 @@
     "Pindah Tugas": 1
    }
   }
+ },
+ "by_sma_smp": {
+  "SMAN1": {
+   "SMP NEGERI 8 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 2,
+     "value": 156.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 18,
+     "value": 340.71,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 2,
+     "value": 313.43,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 5,
+     "value": 363.72,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 BERBAH": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 121.0,
+     "unit": "meter"
+    }
+   },
+   "SMP NEGERI 3 GAMPING": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 139.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 345.46,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 11 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 143.0,
+     "unit": "meter"
+    },
+    "Afirmasi": {
+     "count": 3,
+     "value": 249.13,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 5 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 155.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 20,
+     "value": 345.74,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 4,
+     "value": 268.12,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 6,
+     "value": 364.56,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 3 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 155.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 353.09,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 5,
+     "value": 233.78,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 6 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 2,
+     "value": 161.0,
+     "unit": "meter"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 268.68,
+     "unit": "skor"
+    }
+   },
+   "SMP ISLAM AL AZHAR 26 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 159.0,
+     "unit": "meter"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 366.85,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 2,
+     "value": 282.08,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 1 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 175.0,
+     "unit": "meter"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 240.71,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 KASIHAN": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 349.97,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 2,
+     "value": 247.67,
+     "unit": "skor"
+    }
+   },
+   "SMP STELLA DUCE 1": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 355.84,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 WATES": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 369.28,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 GODEAN": {
+    "Zonasi Reguler": {
+     "count": 5,
+     "value": 343.14,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 310.89,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 5,
+     "value": 363.62,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 14,
+     "value": 340.07,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 3,
+     "value": 364.14,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 328.68,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 4 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 343.63,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 305.71,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 364.66,
+     "unit": "skor"
+    }
+   },
+   "SMP Negeri 1 Sleman": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 367.64,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 2,
+     "value": 367.59,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 343.27,
+     "unit": "skor"
+    }
+   },
+   "SMP IT ABU BAKAR YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 14,
+     "value": 341.99,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 371.63,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 16 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 13,
+     "value": 340.89,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 232.68,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 370.6,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 19,
+     "value": 341.09,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 4,
+     "value": 282.83,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 BANTUL": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 347.78,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 3,
+     "value": 285.71,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 5,
+     "value": 364.76,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 291.01,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 KASIHAN": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 361.86,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 2,
+     "value": 300.04,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 12 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 341.53,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 3,
+     "value": 266.22,
+     "unit": "skor"
+    }
+   },
+   "SMPIT IQRA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 358.17,
+     "unit": "skor"
+    }
+   },
+   "SMP IT AL KHAIRAAT": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 358.04,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 6 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 4,
+     "value": 341.46,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 287.19,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 3,
+     "value": 367.39,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 351.89,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 7 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 12,
+     "value": 341.49,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 2,
+     "value": 245.28,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 14 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 346.26,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 297.79,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 13 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 355.21,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 375.09,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 4 PAKEM": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 354.49,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 8,
+     "value": 364.09,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 GODEAN": {
+    "Zonasi Reguler": {
+     "count": 9,
+     "value": 341.42,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 2,
+     "value": 323.01,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 332.63,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 10 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 353.16,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 3,
+     "value": 364.43,
+     "unit": "skor"
+    }
+   },
+   "MTSN 6 SLEMAN": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 346.45,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 346.84,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 364.26,
+     "unit": "skor"
+    }
+   },
+   "SMP KESATUAN BANGSA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 350.67,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 4 DEPOK": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 349.49,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 363.84,
+     "unit": "skor"
+    }
+   },
+   "SMP YPVDP": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 346.18,
+     "unit": "skor"
+    }
+   },
+   "MTSN 4 KULON PROGO": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 344.69,
+     "unit": "skor"
+    }
+   },
+   "SMP ISLAM TERPADU LHI": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 344.1,
+     "unit": "skor"
+    }
+   },
+   "SMP MONTESSORI": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 343.48,
+     "unit": "skor"
+    }
+   },
+   "SMP OLIFANT": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 343.11,
+     "unit": "skor"
+    }
+   },
+   "MTSN 1 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 341.36,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 SEWON": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 341.12,
+     "unit": "skor"
+    }
+   },
+   "SMP BAITUL QURAN BOARDING SCHOOL SAMBIREJO": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 340.79,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 5 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 4,
+     "value": 220.59,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 GODEAN": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 292.54,
+     "unit": "skor"
+    }
+   },
+   "MTSN 1 BANTUL": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 280.69,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 GAMPING": {
+    "Afirmasi": {
+     "count": 4,
+     "value": 241.69,
+     "unit": "skor"
+    }
+   },
+   "MTSN 2 BANTUL": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 269.0,
+     "unit": "skor"
+    }
+   },
+   "MTSN 6 BANTUL": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 261.67,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 261.21,
+     "unit": "skor"
+    }
+   },
+   "SMP MAARIF GAMPING": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 247.07,
+     "unit": "skor"
+    }
+   },
+   "SMP PIRI 1 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 244.01,
+     "unit": "skor"
+    }
+   },
+   "SMP MATARAM": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 205.85,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 9 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 358.42,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 366.04,
+     "unit": "skor"
+    }
+   },
+   "MTSS MUHAMMADIYAH KARANGKAJEN": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 300.97,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 15 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 356.7,
+     "unit": "skor"
+    }
+   },
+   "MTSN 4 BANTUL": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 341.3,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 364.84,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 KALASAN": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 330.18,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 PAJANGAN": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 326.02,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 SRANDAKAN": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 318.16,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 SRANDAKAN": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 311.24,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 BAMBANGLIPURO": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 306.43,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 BANTUL": {
+    "Prestasi": {
+     "count": 4,
+     "value": 365.55,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 9 YOGYAKARTA": {
+    "Prestasi": {
+     "count": 1,
+     "value": 372.93,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 KALASAN": {
+    "Prestasi": {
+     "count": 1,
+     "value": 372.36,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 DEPOK": {
+    "Prestasi": {
+     "count": 2,
+     "value": 364.89,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 MLATI": {
+    "Prestasi": {
+     "count": 1,
+     "value": 367.41,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 TURI": {
+    "Prestasi": {
+     "count": 1,
+     "value": 366.83,
+     "unit": "skor"
+    }
+   },
+   "SMPIT ALAM NURUL ISLAM": {
+    "Prestasi": {
+     "count": 1,
+     "value": 366.29,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 293.69,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 SANDEN": {
+    "Prestasi": {
+     "count": 2,
+     "value": 365.1,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 GALUR": {
+    "Prestasi": {
+     "count": 1,
+     "value": 365.41,
+     "unit": "skor"
+    }
+   },
+   "SMP Teladan": {
+    "Prestasi": {
+     "count": 1,
+     "value": 365.19,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 PANDAK": {
+    "Prestasi": {
+     "count": 1,
+     "value": 364.16,
+     "unit": "skor"
+    }
+   },
+   "MTSS MUALLIMIN MUHAMMADIYAH": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 339.5,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 SEDAYU": {
+    "Pindah Tugas": {
+     "count": 2,
+     "value": 328.51,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 MAGELANG": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 303.26,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 MINGGIR": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 302.46,
+     "unit": "skor"
+    }
+   },
+   "SMPIT NURUL ISLAM TENGARAN KABUPATEN SEMARANG": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 295.65,
+     "unit": "skor"
+    }
+   },
+   "SMP Ali Maksum": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 291.41,
+     "unit": "skor"
+    }
+   },
+   "SMP BUDI LUHUR": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 283.05,
+     "unit": "skor"
+    }
+   }
+  },
+  "SMAN2": {
+   "SMP NEGERI 1 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 40.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 9,
+     "value": 313.24,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 312.84,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 356.76,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 260.58,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 12 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 2,
+     "value": 120.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 13,
+     "value": 309.31,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 8,
+     "value": 218.77,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 345.57,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 6 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 3,
+     "value": 197.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 20,
+     "value": 311.71,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 2,
+     "value": 256.98,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 273.39,
+     "unit": "skor"
+    }
+   },
+   "SMP IT MASJID SYUHADA YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 137.0,
+     "unit": "meter"
+    }
+   },
+   "SMP NEGERI 7 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 160.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 21,
+     "value": 306.81,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 5,
+     "value": 281.36,
+     "unit": "skor"
+    }
+   },
+   "SMP BUDI UTAMA MLATI": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 360.53,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 10,
+     "value": 307.25,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 256.37,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 2,
+     "value": 343.02,
+     "unit": "skor"
+    }
+   },
+   "SMP Negeri 1 Sleman": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 359.2,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 3,
+     "value": 341.3,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 MLATI": {
+    "Zonasi Reguler": {
+     "count": 13,
+     "value": 313.45,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 343.55,
+     "unit": "skor"
+    }
+   },
+   "SMP ISLAM TERPADU LHI": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 355.93,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 8 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 6,
+     "value": 312.97,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 278.2,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 2,
+     "value": 344.25,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 GODEAN": {
+    "Zonasi Reguler": {
+     "count": 19,
+     "value": 309.28,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 2,
+     "value": 243.55,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 2,
+     "value": 345.23,
+     "unit": "skor"
+    }
+   },
+   "SMP Teladan": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 327.86,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 4 PAKEM": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 343.52,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 4,
+     "value": 340.19,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 DEPOK": {
+    "Zonasi Reguler": {
+     "count": 5,
+     "value": 310.47,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 345.34,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 5 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 316.48,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 339.99,
+     "unit": "skor"
+    }
+   },
+   "SMPIT ALAM NURUL ISLAM": {
+    "Zonasi Reguler": {
+     "count": 5,
+     "value": 311.29,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 345.72,
+     "unit": "skor"
+    }
+   },
+   "SMP IT ABU BAKAR YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 7,
+     "value": 307.75,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 6,
+     "value": 344.75,
+     "unit": "skor"
+    }
+   },
+   "SMP ISLAM AL AZHAR 26 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 5,
+     "value": 313.72,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 340.31,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 270.34,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 14 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 4,
+     "value": 314.56,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 4,
+     "value": 254.54,
+     "unit": "skor"
+    }
+   },
+   "MTSN 6 SLEMAN": {
+    "Zonasi Reguler": {
+     "count": 7,
+     "value": 306.26,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 GODEAN": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 312.18,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 4,
+     "value": 348.86,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 MLATI": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 323.52,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 3 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 6,
+     "value": 311.57,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 2,
+     "value": 224.88,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 340.79,
+     "unit": "skor"
+    }
+   },
+   "SMP STELLA DUCE 1": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 330.36,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 2,
+     "value": 344.59,
+     "unit": "skor"
+    }
+   },
+   "MTSS MUALLIMIN MUHAMMADIYAH": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 330.27,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 348.0,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 1 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 329.18,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 265.9,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 GAMPING": {
+    "Zonasi Reguler": {
+     "count": 4,
+     "value": 306.93,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 2,
+     "value": 219.64,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 MLATI": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 309.03,
+     "unit": "skor"
+    }
+   },
+   "SMP KRISTEN KALAM KUDUS": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 323.62,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 4,
+     "value": 340.58,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 11 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 308.78,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 4,
+     "value": 200.73,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 348.76,
+     "unit": "skor"
+    }
+   },
+   "SMP KESATUAN BANGSA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 323.59,
+     "unit": "skor"
+    }
+   },
+   "SMP ISLAM AL-AZHAR CAIRO": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 320.23,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 16 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 316.5,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 5 DEPOK": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 313.09,
+     "unit": "skor"
+    }
+   },
+   "SMP MARIA IMMACULATA MARSUDIRINI": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 312.78,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 GODEAN": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 311.56,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH AL MUJAHIDIN": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 310.22,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 229.65,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 SEWON": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 306.33,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 NGAGLIK": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 305.76,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 6 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 5,
+     "value": 216.48,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 1 MLATI": {
+    "Afirmasi": {
+     "count": 4,
+     "value": 214.07,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 GAMPING": {
+    "Afirmasi": {
+     "count": 2,
+     "value": 235.45,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 234.1,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 5 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 226.18,
+     "unit": "skor"
+    }
+   },
+   "MTSS MUHAMMADIYAH GEDONG TENGEN": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 260.37,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 2 GODEAN": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 210.71,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 PANDAK": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 237.59,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 SAPTOSARI": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 235.24,
+     "unit": "skor"
+    }
+   },
+   "SMP PIRI 1 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 220.11,
+     "unit": "skor"
+    }
+   },
+   "SMP 17 1 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 201.59,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 7 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 198.87,
+     "unit": "skor"
+    }
+   },
+   "SMP YPPSB SANGATTA UTARA": {
+    "Prestasi": {
+     "count": 1,
+     "value": 358.04,
+     "unit": "skor"
+    }
+   },
+   "MTSS TARUNA AL QUR`AN": {
+    "Prestasi": {
+     "count": 1,
+     "value": 356.33,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 SLEMAN": {
+    "Prestasi": {
+     "count": 5,
+     "value": 344.37,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 NGABANG": {
+    "Prestasi": {
+     "count": 1,
+     "value": 355.48,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 GALUR": {
+    "Prestasi": {
+     "count": 1,
+     "value": 354.95,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 SEDAYU": {
+    "Prestasi": {
+     "count": 2,
+     "value": 353.54,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 SLEMAN": {
+    "Prestasi": {
+     "count": 1,
+     "value": 353.54,
+     "unit": "skor"
+    }
+   },
+   "SMP Ali Maksum": {
+    "Prestasi": {
+     "count": 1,
+     "value": 351.78,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 SEYEGAN": {
+    "Prestasi": {
+     "count": 1,
+     "value": 350.57,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 BANTUL": {
+    "Prestasi": {
+     "count": 2,
+     "value": 346.39,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 WATES": {
+    "Prestasi": {
+     "count": 2,
+     "value": 346.13,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 9 YOGYAKARTA": {
+    "Prestasi": {
+     "count": 1,
+     "value": 345.36,
+     "unit": "skor"
+    }
+   },
+   "SMP PANGUDI LUHUR 1 YOGYAKARTA": {
+    "Prestasi": {
+     "count": 1,
+     "value": 345.22,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 MINGGIR": {
+    "Prestasi": {
+     "count": 2,
+     "value": 339.93,
+     "unit": "skor"
+    }
+   },
+   "SMP PANGUDI LUHUR MOYUDAN": {
+    "Prestasi": {
+     "count": 1,
+     "value": 343.56,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 NANGGULAN": {
+    "Prestasi": {
+     "count": 1,
+     "value": 343.15,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 4 YOGYAKARTA": {
+    "Prestasi": {
+     "count": 1,
+     "value": 342.36,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 2 YOGYAKARTA": {
+    "Prestasi": {
+     "count": 1,
+     "value": 342.3,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 4 TEMPEL": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 275.3,
+     "unit": "skor"
+    }
+   },
+   "MTS ANNIDA AL ISLAMY BEKASI": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 262.63,
+     "unit": "skor"
+    }
+   },
+   "SMP ANGKASA LANUD SULAIMAN": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 239.29,
+     "unit": "skor"
+    }
+   }
+  },
+  "SMAN3": {
+   "SMP NEGERI 4 PAKEM": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 170.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 14,
+     "value": 353.22,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 2,
+     "value": 299.02,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 10,
+     "value": 375.08,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 364.28,
+     "unit": "skor"
+    }
+   },
+   "SMP KRISTEN KALAM KUDUS": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 266.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 350.37,
+     "unit": "skor"
+    }
+   },
+   "SMPIT IBNU ABBAS KLATEN": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 282.0,
+     "unit": "meter"
+    }
+   },
+   "SMP NEGERI 5 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 3,
+     "value": 340.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 51,
+     "value": 350.6,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 12,
+     "value": 249.56,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 17,
+     "value": 374.65,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 4 DEPOK": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 300.0,
+     "unit": "meter"
+    },
+    "Prestasi": {
+     "count": 3,
+     "value": 376.67,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 308.66,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 8 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 2,
+     "value": 330.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 16,
+     "value": 353.19,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 3,
+     "value": 273.71,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 4,
+     "value": 376.45,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 2,
+     "value": 319.5,
+     "unit": "skor"
+    }
+   },
+   "SMP ISLAM AL AZHAR 26 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 324.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 351.16,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 321.75,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 16 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 340.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 364.73,
+     "unit": "skor"
+    }
+   },
+   "SMP PANGUDI LUHUR 1 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 4,
+     "value": 357.79,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 7,
+     "value": 351.74,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 2,
+     "value": 277.56,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 2,
+     "value": 377.07,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 6 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 355.94,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 2,
+     "value": 295.23,
+     "unit": "skor"
+    }
+   },
+   "SMP IT ABU BAKAR YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 4,
+     "value": 361.81,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 3,
+     "value": 374.82,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 339.92,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 WATES": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 367.31,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 4 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 4,
+     "value": 351.81,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 3,
+     "value": 265.49,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 DEPOK": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 360.37,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 332.88,
+     "unit": "skor"
+    }
+   },
+   "SMP OLIFANT": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 361.77,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 10 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 360.35,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 344.88,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 BERBAH": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 359.39,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 12 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 359.21,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 2,
+     "value": 224.69,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 9 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 356.63,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 308.55,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 382.18,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 DEPOK": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 358.7,
+     "unit": "skor"
+    }
+   },
+   "SMP Negeri 1 Sleman": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 358.4,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 354.7,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 2,
+     "value": 381.28,
+     "unit": "skor"
+    }
+   },
+   "MTSN 6 SLEMAN": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 356.4,
+     "unit": "skor"
+    }
+   },
+   "SMP MONTESSORI": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 355.67,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 378.29,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 14 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 355.19,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 15 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 350.79,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 5,
+     "value": 233.3,
+     "unit": "skor"
+    }
+   },
+   "SMP BOPKRI 1 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 287.21,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 5 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 260.31,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 229.07,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 MLATI": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 349.18,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 7 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 306.47,
+     "unit": "skor"
+    }
+   },
+   "SMP MARIA IMMACULATA MARSUDIRINI": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 250.13,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 GODEAN": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 341.03,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 MLATI": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 314.0,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 4 KALASAN": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 312.14,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 SRANDAKAN": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 309.16,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 1 GODEAN": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 305.81,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 BANGUNTAPAN": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 305.23,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 5 SLEMAN": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 300.99,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 NGAGLIK": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 283.27,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 SEYEGAN": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 279.93,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 SLEMAN": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 268.03,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 4 PATUK": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 263.59,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 BANTUL": {
+    "Prestasi": {
+     "count": 3,
+     "value": 375.51,
+     "unit": "skor"
+    }
+   },
+   "SMP STELLA DUCE 2 YOGYAKARTA": {
+    "Prestasi": {
+     "count": 1,
+     "value": 382.57,
+     "unit": "skor"
+    }
+   },
+   "SMP BUDI UTAMA MLATI": {
+    "Prestasi": {
+     "count": 1,
+     "value": 381.01,
+     "unit": "skor"
+    }
+   },
+   "MTSN 5 SLEMAN": {
+    "Prestasi": {
+     "count": 1,
+     "value": 377.86,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 GODEAN": {
+    "Prestasi": {
+     "count": 1,
+     "value": 376.88,
+     "unit": "skor"
+    }
+   },
+   "SMPN 1 CIAMIS": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 341.69,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 KASIHAN": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 324.99,
+     "unit": "skor"
+    }
+   },
+   "SMP ISLAM AL AZHAR 38 WONOSARI": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 314.28,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 NANGGULAN": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 312.38,
+     "unit": "skor"
+    }
+   },
+   "SMP FITRAH ISLAMIC WORLD ACADEMY": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 311.02,
+     "unit": "skor"
+    }
+   }
+  },
+  "SMAN4": {
+   "SMP NEGERI 8 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 86.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 5,
+     "value": 247.16,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 12 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 140.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 18,
+     "value": 249.87,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 214.04,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 10 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 148.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 249.38,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 6,
+     "value": 199.22,
+     "unit": "skor"
+    }
+   },
+   "MTSN 6 SLEMAN": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 160.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 7,
+     "value": 246.24,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 GAMPING": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 160.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 12,
+     "value": 244.06,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 4,
+     "value": 208.39,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 6 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 161.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 246.67,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 8,
+     "value": 207.91,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 1 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 166.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 244.45,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 212.26,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 MLATI": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 245.13,
+     "unit": "skor"
+    }
+   },
+   "SMP IT MASJID SYUHADA YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 283.62,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 MLATI": {
+    "Zonasi Reguler": {
+     "count": 14,
+     "value": 245.28,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 SLEMAN": {
+    "Zonasi Reguler": {
+     "count": 8,
+     "value": 255.89,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 MINGGIR": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 304.75,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 6 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 13,
+     "value": 243.66,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 7 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 5,
+     "value": 250.59,
+     "unit": "skor"
+    }
+   },
+   "SMP MARIA IMMACULATA MARSUDIRINI": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 247.67,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 296.51,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 282.15,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 4 PAKEM": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 272.37,
+     "unit": "skor"
+    }
+   },
+   "SMP TAHFIDZQU": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 250.65,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 3 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 6,
+     "value": 249.06,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 238.36,
+     "unit": "skor"
+    }
+   },
+   "SMP PANGUDI LUHUR 1 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 273.72,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 289.77,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 PAKEM": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 287.04,
+     "unit": "skor"
+    }
+   },
+   "MTSN 4 SLEMAN": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 285.64,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 1 SLEMAN": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 246.2,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 280.36,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 TEMANGGUNG": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 279.4,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 14 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 5,
+     "value": 250.58,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 329.46,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 MLATI": {
+    "Zonasi Reguler": {
+     "count": 7,
+     "value": 255.0,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 1 GODEAN": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 274.88,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 10 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 274.19,
+     "unit": "skor"
+    }
+   },
+   "MTSS UMMUL QURO": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 273.38,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 1 MLATI": {
+    "Zonasi Reguler": {
+     "count": 9,
+     "value": 242.99,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 4,
+     "value": 231.66,
+     "unit": "skor"
+    }
+   },
+   "SMP ISLAM TERPADU LHI": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 272.61,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 SLEMAN": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 271.94,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 KASIHAN": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 271.5,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 KALIBAWANG": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 271.47,
+     "unit": "skor"
+    }
+   },
+   "SMP PIRI NGAGLIK": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 252.15,
+     "unit": "skor"
+    }
+   },
+   "SMP STELLA DUCE 1": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 248.94,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 4 NGAGLIK": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 269.63,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 2 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 264.35,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 2 MLATI": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 268.53,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 219.17,
+     "unit": "skor"
+    }
+   },
+   "MTSN 5 SLEMAN": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 267.38,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 GALUR": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 266.85,
+     "unit": "skor"
+    }
+   },
+   "SMP KANISIUS SLEMAN": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 257.23,
+     "unit": "skor"
+    }
+   },
+   "MTs DAARUL `ULUM 2 SINAR MELATI": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 264.84,
+     "unit": "skor"
+    }
+   },
+   "SMPIT ALAM NURUL ISLAM": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 264.46,
+     "unit": "skor"
+    }
+   },
+   "SMP KRISTEN KALAM KUDUS": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 261.86,
+     "unit": "skor"
+    }
+   },
+   "SMP BOPKRI 3 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 257.45,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 220.25,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 DEPOK": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 263.49,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 GAMPING": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 249.79,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 5 DEPOK": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 252.44,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 5 SLEMAN": {
+    "Zonasi Reguler": {
+     "count": 4,
+     "value": 248.03,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 3,
+     "value": 214.95,
+     "unit": "skor"
+    }
+   },
+   "MTS AL MURSYIDIYYAH": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 259.4,
+     "unit": "skor"
+    }
+   },
+   "MTS NEGERI 6 SLEMAN": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 258.55,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 4 SLEMAN": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 258.4,
+     "unit": "skor"
+    }
+   },
+   "SMP MUTIARA PERSADA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 258.12,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 PAKEM": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 257.78,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 11 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 255.37,
+     "unit": "skor"
+    }
+   },
+   "SMP KARITAS NGAGLIK": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 256.37,
+     "unit": "skor"
+    }
+   },
+   "SMP TAMAN DEWASA JETIS": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 242.26,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 6,
+     "value": 200.79,
+     "unit": "skor"
+    }
+   },
+   "MTSN 10 SLEMAN": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 243.57,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 15 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 255.05,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH BOARDING SCHOOL": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 252.88,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 3 DEPOK": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 252.57,
+     "unit": "skor"
+    }
+   },
+   "SMP DARUL HIKMAH PAKEM": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 251.23,
+     "unit": "skor"
+    }
+   },
+   "MTSS WAHID HASYIM": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 249.55,
+     "unit": "skor"
+    }
+   },
+   "MTSS MIFTAHUNNAJAH": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 249.23,
+     "unit": "skor"
+    }
+   },
+   "SMP BOPKRI 5 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 246.58,
+     "unit": "skor"
+    }
+   },
+   "SMP ISLAM AL AZHAR 26 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 244.72,
+     "unit": "skor"
+    }
+   },
+   "MTSS MUHAMMADIYAH KARANGKAJEN": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 243.91,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 3 MLATI": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 256.91,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 NGAGLIK": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 223.0,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 5 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 218.71,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH KASIHAN": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 217.97,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 2 GODEAN": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 201.15,
+     "unit": "skor"
+    }
+   },
+   "SMPN 2 SUNGAILIAT BANGKA": {
+    "Prestasi": {
+     "count": 1,
+     "value": 330.77,
+     "unit": "skor"
+    }
+   },
+   "SMP Negeri 1 Sleman": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 281.1,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 5 TASIKMALAYA": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 246.78,
+     "unit": "skor"
+    }
+   }
+  },
+  "SMAN5": {
+   "SMP NEGERI 9 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 5,
+     "value": 182.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 18,
+     "value": 323.32,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 3,
+     "value": 268.51,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 4,
+     "value": 339.83,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 7 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 98.0,
+     "unit": "meter"
+    },
+    "Afirmasi": {
+     "count": 3,
+     "value": 253.16,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 249.39,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 BANGUNTAPAN": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 120.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 16,
+     "value": 325.58,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 11,
+     "value": 227.33,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 2,
+     "value": 340.45,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 263.79,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 10 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 150.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 13,
+     "value": 323.48,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 4,
+     "value": 258.43,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 344.12,
+     "unit": "skor"
+    }
+   },
+   "MTSN 9 BANTUL": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 160.0,
+     "unit": "meter"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 252.22,
+     "unit": "skor"
+    }
+   },
+   "MTSN 1 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 2,
+     "value": 179.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 10,
+     "value": 323.25,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 7,
+     "value": 227.04,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 13 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 161.0,
+     "unit": "meter"
+    },
+    "Afirmasi": {
+     "count": 2,
+     "value": 255.56,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 340.45,
+     "unit": "skor"
+    }
+   },
+   "MTSN 7 BANTUL": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 174.0,
+     "unit": "meter"
+    },
+    "Afirmasi": {
+     "count": 3,
+     "value": 268.71,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 3 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 182.0,
+     "unit": "meter"
+    }
+   },
+   "SMP NEGERI 2 BERBAH": {
+    "Zonasi Reguler": {
+     "count": 4,
+     "value": 340.38,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 347.16,
+     "unit": "skor"
+    }
+   },
+   "SMP IT ABU BAKAR YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 18,
+     "value": 323.05,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 8,
+     "value": 338.93,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 PIYUNGAN": {
+    "Zonasi Reguler": {
+     "count": 4,
+     "value": 327.45,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 3,
+     "value": 261.98,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 5,
+     "value": 341.91,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 8 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 9,
+     "value": 323.12,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 5 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 8,
+     "value": 326.13,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 250.35,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 2,
+     "value": 345.69,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 8,
+     "value": 325.8,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 3,
+     "value": 339.21,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 4 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 6,
+     "value": 324.74,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 2,
+     "value": 342.63,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 BERBAH": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 341.26,
+     "unit": "skor"
+    }
+   },
+   "SMP IT AL KHAIRAAT": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 342.72,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 15 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 331.99,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 250.54,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 5 BANGUNTAPAN": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 339.44,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 271.25,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 16 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 4,
+     "value": 323.36,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 BANGUNTAPAN": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 323.48,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 265.51,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 258.77,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 6 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 335.12,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 2,
+     "value": 342.36,
+     "unit": "skor"
+    }
+   },
+   "SMP PANGUDI LUHUR 1 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 5,
+     "value": 325.11,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 325.0,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 4,
+     "value": 339.72,
+     "unit": "skor"
+    }
+   },
+   "SMPIT AR RAIHAN": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 333.26,
+     "unit": "skor"
+    }
+   },
+   "SMPIT SALMAN ALFARISI BOARDING SCHOOL": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 331.62,
+     "unit": "skor"
+    }
+   },
+   "SMP JOANNES BOSCO": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 323.15,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH BOARDING SCHOOL": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 330.62,
+     "unit": "skor"
+    }
+   },
+   "SMP ISLAM TERPADU BINA ANAK SHOLEH": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 330.53,
+     "unit": "skor"
+    }
+   },
+   "SMP ISLAM TERPADU LHI": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 330.31,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 339.13,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH AL MUJAHIDIN": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 329.21,
+     "unit": "skor"
+    }
+   },
+   "SMP BAITUL QURAN PONJONG": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 328.75,
+     "unit": "skor"
+    }
+   },
+   "MTSN 1 BANTUL": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 325.6,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 354.67,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 PATUK": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 327.75,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 340.2,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 2 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 323.94,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 4,
+     "value": 339.48,
+     "unit": "skor"
+    }
+   },
+   "MTSS MAHAD ISLAMY": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 272.65,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH PIYUNGAN": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 271.3,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 PLERET": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 267.93,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 4,
+     "value": 342.17,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 9 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 3,
+     "value": 237.98,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 5 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 2,
+     "value": 248.62,
+     "unit": "skor"
+    }
+   },
+   "MTSS MUHAMMADIYAH KARANGKAJEN": {
+    "Afirmasi": {
+     "count": 4,
+     "value": 229.26,
+     "unit": "skor"
+    }
+   },
+   "SMP TAMAN DEWASA IBU PAWIYATAN TAMANSISWA": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 243.13,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 4 BANGUNTAPAN": {
+    "Afirmasi": {
+     "count": 2,
+     "value": 237.29,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 BANGUNTAPAN": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 233.17,
+     "unit": "skor"
+    }
+   },
+   "MTSN 6 BANTUL": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 223.86,
+     "unit": "skor"
+    }
+   },
+   "SMP Negeri 1 Sleman": {
+    "Prestasi": {
+     "count": 1,
+     "value": 356.35,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 343.15,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 BERBAH": {
+    "Prestasi": {
+     "count": 1,
+     "value": 354.77,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 DEPOK": {
+    "Prestasi": {
+     "count": 1,
+     "value": 349.69,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 PLERET": {
+    "Prestasi": {
+     "count": 1,
+     "value": 348.93,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 SEWON": {
+    "Prestasi": {
+     "count": 2,
+     "value": 346.22,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 BANTUL": {
+    "Prestasi": {
+     "count": 1,
+     "value": 344.11,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 KALASAN": {
+    "Prestasi": {
+     "count": 2,
+     "value": 340.71,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 4 DEPOK": {
+    "Prestasi": {
+     "count": 1,
+     "value": 342.37,
+     "unit": "skor"
+    }
+   },
+   "SMP ISLAM TERPADU ABU BAKAR": {
+    "Prestasi": {
+     "count": 1,
+     "value": 341.16,
+     "unit": "skor"
+    }
+   },
+   "MTS HUSNUL KHOTIMAH KUNINGAN": {
+    "Prestasi": {
+     "count": 1,
+     "value": 341.05,
+     "unit": "skor"
+    }
+   },
+   "SMPK KOLESE SANTO YUSUP 2 MALANG": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 264.21,
+     "unit": "skor"
+    }
+   },
+   "SMP 1 KUDUS": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 262.39,
+     "unit": "skor"
+    }
+   },
+   "SMPIT INSAN KAMIL SIDOARJO": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 260.82,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 TAMBUN SELATAN": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 156.6,
+     "unit": "skor"
+    }
+   }
+  },
+  "SMAN6": {
+   "SMP NEGERI 8 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 9,
+     "value": 266.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 19,
+     "value": 335.8,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 4,
+     "value": 272.13,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 360.51,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 6 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 185.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 12,
+     "value": 335.78,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 2,
+     "value": 331.63,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 4,
+     "value": 358.74,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 2,
+     "value": 251.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 20,
+     "value": 335.59,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 4,
+     "value": 201.98,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 5,
+     "value": 358.42,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 268.83,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 DEPOK": {
+    "Zonasi Reguler": {
+     "count": 17,
+     "value": 336.86,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 3,
+     "value": 291.9,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 363.76,
+     "unit": "skor"
+    }
+   },
+   "SMP STELLA DUCE 1": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 345.45,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 363.33,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 4 DEPOK": {
+    "Zonasi Reguler": {
+     "count": 27,
+     "value": 336.09,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 3,
+     "value": 358.52,
+     "unit": "skor"
+    }
+   },
+   "SMP IT ABU BAKAR YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 338.66,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 6,
+     "value": 358.7,
+     "unit": "skor"
+    }
+   },
+   "SMP PANGUDI LUHUR 1 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 346.42,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 2,
+     "value": 360.94,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 15 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 352.51,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 221.78,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 12 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 335.53,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 361.56,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 4 PAKEM": {
+    "Zonasi Reguler": {
+     "count": 12,
+     "value": 338.81,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 7,
+     "value": 358.52,
+     "unit": "skor"
+    }
+   },
+   "MTSN 6 SLEMAN": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 356.16,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 356.86,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 4,
+     "value": 202.49,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 362.03,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 270.16,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 DEPOK": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 343.78,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 361.43,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 9 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 338.95,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 359.88,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 5 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 17,
+     "value": 335.1,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 2,
+     "value": 279.6,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 3,
+     "value": 361.19,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 5 DEPOK": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 342.25,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 2 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 339.99,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 304.35,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 7 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 348.05,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 362.12,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 278.15,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 GALUR": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 346.21,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 4 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 342.41,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 2,
+     "value": 240.01,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 2,
+     "value": 359.38,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 16 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 341.35,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 245.3,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 PUNDONG": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 338.75,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 DEPOK": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 336.83,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 231.03,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 10 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 336.66,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 358.72,
+     "unit": "skor"
+    }
+   },
+   "SMP TAMAN DEWASA JETIS": {
+    "Afirmasi": {
+     "count": 2,
+     "value": 206.18,
+     "unit": "skor"
+    }
+   },
+   "MTSN 9 BANTUL": {
+    "Afirmasi": {
+     "count": 2,
+     "value": 266.26,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 4 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 233.97,
+     "unit": "skor"
+    }
+   },
+   "SMP IT MASJID SYUHADA YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 210.89,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 10 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 202.56,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 9 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 2,
+     "value": 209.14,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 PAKEM": {
+    "Afirmasi": {
+     "count": 2,
+     "value": 300.22,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 KALASAN": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 314.63,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 2,
+     "value": 361.5,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 PLERET": {
+    "Afirmasi": {
+     "count": 2,
+     "value": 205.41,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 IMOGIRI": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 260.04,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 CANGKRINGAN": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 242.93,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 13 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 234.2,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 359.33,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH PAKEM": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 232.13,
+     "unit": "skor"
+    }
+   },
+   "SMP TAMAN DEWASA IBU PAWIYATAN TAMANSISWA": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 222.21,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 1 PRAMBANAN": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 219.69,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 BANGUNTAPAN": {
+    "Afirmasi": {
+     "count": 3,
+     "value": 205.4,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 5 BANGUNTAPAN": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 218.03,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 JETIS": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 210.21,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 BANGUNTAPAN": {
+    "Prestasi": {
+     "count": 1,
+     "value": 364.55,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 BERBAH": {
+    "Prestasi": {
+     "count": 1,
+     "value": 364.34,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 NGAGLIK": {
+    "Prestasi": {
+     "count": 1,
+     "value": 363.87,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 GODEAN": {
+    "Prestasi": {
+     "count": 2,
+     "value": 358.9,
+     "unit": "skor"
+    }
+   },
+   "SMP Negeri 1 Sleman": {
+    "Prestasi": {
+     "count": 3,
+     "value": 359.06,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 KASIHAN": {
+    "Prestasi": {
+     "count": 1,
+     "value": 362.28,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 3 YOGYAKARTA": {
+    "Prestasi": {
+     "count": 1,
+     "value": 362.03,
+     "unit": "skor"
+    }
+   },
+   "SMPIT ALAM NURUL ISLAM": {
+    "Prestasi": {
+     "count": 1,
+     "value": 361.73,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 PURWODADI": {
+    "Prestasi": {
+     "count": 1,
+     "value": 361.51,
+     "unit": "skor"
+    }
+   },
+   "SMP ISLAM TERPADU LHI": {
+    "Prestasi": {
+     "count": 1,
+     "value": 360.51,
+     "unit": "skor"
+    }
+   },
+   "MTSN 1 YOGYAKARTA": {
+    "Prestasi": {
+     "count": 1,
+     "value": 358.4,
+     "unit": "skor"
+    }
+   },
+   "SMPN 11 KOTA JAMBI": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 323.87,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 1 YOGYAKARTA": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 317.57,
+     "unit": "skor"
+    }
+   },
+   "SMP ISLAM AL AZHAR 26 YOGYAKARTA": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 296.31,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 SLEMAN": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 290.7,
+     "unit": "skor"
+    }
+   },
+   "SMPN 108 JAKARTA BARAT": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 281.85,
+     "unit": "skor"
+    }
+   },
+   "SMP ISLAM AL ABIDIN SURAKARTA": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 279.47,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 PRIGEN": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 273.7,
+     "unit": "skor"
+    }
+   },
+   "SMP ISLAM AL-AZHAR CAIRO": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 272.71,
+     "unit": "skor"
+    }
+   },
+   "SMP ISLAM TERPADU UKHUWAH BANJARMASIN": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 271.76,
+     "unit": "skor"
+    }
+   },
+   "SMP MONTESSORI": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 268.97,
+     "unit": "skor"
+    }
+   }
+  },
+  "SMAN7": {
+   "SMP NEGERI 16 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 8,
+     "value": 194.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 29,
+     "value": 318.31,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 9,
+     "value": 240.81,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 4,
+     "value": 332.1,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 11 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 107.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 346.57,
+     "unit": "skor"
+    }
+   },
+   "SMP STELLA DUCE 2 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 149.0,
+     "unit": "meter"
+    }
+   },
+   "SMP MUHAMMADIYAH 3 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 327.95,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 353.42,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 296.71,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 10 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 11,
+     "value": 315.46,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 249.42,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 336.57,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 23,
+     "value": 315.54,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 8,
+     "value": 270.74,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 4,
+     "value": 332.86,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 6 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 5,
+     "value": 318.09,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 336.89,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 4 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 316.93,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 12,
+     "value": 316.9,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 330.99,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 8 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 15,
+     "value": 315.42,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 271.48,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 330.3,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 7 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 5,
+     "value": 322.27,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 3,
+     "value": 266.22,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 KASIHAN": {
+    "Zonasi Reguler": {
+     "count": 5,
+     "value": 319.16,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 2,
+     "value": 337.2,
+     "unit": "skor"
+    }
+   },
+   "SMP STELLA DUCE 1": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 336.17,
+     "unit": "skor"
+    }
+   },
+   "MTSN 1 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 315.12,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 276.32,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 2,
+     "value": 333.49,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 GAMPING": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 315.56,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 335.17,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 BANTUL": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 317.48,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 290.49,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 2,
+     "value": 332.98,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 13 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 315.83,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 3,
+     "value": 242.25,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 14 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 335.11,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 9 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 325.04,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 3,
+     "value": 285.11,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 2,
+     "value": 334.5,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 2 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 4,
+     "value": 318.97,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 4,
+     "value": 334.72,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 15 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 7,
+     "value": 316.95,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 254.08,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 4,
+     "value": 334.39,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 1 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 317.65,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 249.95,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 SEWON": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 325.48,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 357.23,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 359.66,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 SEWON": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 331.27,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 273.69,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 330.88,
+     "unit": "skor"
+    }
+   },
+   "SMP IT ABU BAKAR YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 6,
+     "value": 315.99,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 2,
+     "value": 335.31,
+     "unit": "skor"
+    }
+   },
+   "SMP TAHFIDZQU": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 328.8,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 330.36,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 5 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 327.54,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 271.85,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 2,
+     "value": 333.07,
+     "unit": "skor"
+    }
+   },
+   "SMP OLIFANT": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 328.34,
+     "unit": "skor"
+    }
+   },
+   "SMP MATARAM": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 318.88,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 12 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 322.46,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 3,
+     "value": 251.59,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 SEWON": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 321.79,
+     "unit": "skor"
+    }
+   },
+   "MTSS MUALLIMIN MUHAMMADIYAH": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 322.5,
+     "unit": "skor"
+    }
+   },
+   "SMP ISLAM TERPADU LHI": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 316.09,
+     "unit": "skor"
+    }
+   },
+   "SMP MARIA IMMACULATA MARSUDIRINI": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 316.2,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 2,
+     "value": 256.99,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 KASIHAN": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 319.67,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 334.65,
+     "unit": "skor"
+    }
+   },
+   "SMP PANGUDI LUHUR 1 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 318.06,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 334.99,
+     "unit": "skor"
+    }
+   },
+   "SMP IT MASJID SYUHADA YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 317.92,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 257.03,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 TALIWANG": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 316.32,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 2 KALASAN": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 316.25,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 315.71,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 4,
+     "value": 242.45,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 5 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 7,
+     "value": 240.41,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 4 SEWON": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 292.91,
+     "unit": "skor"
+    }
+   },
+   "MTSN 1 BANTUL": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 275.07,
+     "unit": "skor"
+    }
+   },
+   "MTSS MUHAMMADIYAH KASIHAN": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 260.7,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH KASIHAN": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 251.22,
+     "unit": "skor"
+    }
+   },
+   "SMP BUDYA WACANA": {
+    "Prestasi": {
+     "count": 1,
+     "value": 355.98,
+     "unit": "skor"
+    }
+   },
+   "SMP BOPKRI 1 YOGYAKARTA": {
+    "Prestasi": {
+     "count": 1,
+     "value": 346.99,
+     "unit": "skor"
+    }
+   },
+   "MTSN 4 BANTUL": {
+    "Prestasi": {
+     "count": 1,
+     "value": 345.13,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 5 CILACAP": {
+    "Prestasi": {
+     "count": 1,
+     "value": 335.82,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH BOARDING SCHOOL YOGYAKARTA": {
+    "Prestasi": {
+     "count": 1,
+     "value": 333.44,
+     "unit": "skor"
+    }
+   },
+   "SMP ISLAM TERPADU BINA UMAT": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 252.43,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH BOARDING SCHOOL": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 251.28,
+     "unit": "skor"
+    }
+   }
+  },
+  "SMAN8": {
+   "SMP NEGERI 15 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 54.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 7,
+     "value": 346.58,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 4,
+     "value": 218.66,
+     "unit": "skor"
+    }
+   },
+   "SMP IT ABU BAKAR YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 2,
+     "value": 160.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 7,
+     "value": 345.44,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 2,
+     "value": 366.77,
+     "unit": "skor"
+    }
+   },
+   "MTSS SUNAN PANDANARAN": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 132.0,
+     "unit": "meter"
+    }
+   },
+   "SMP NEGERI 2 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 145.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 7,
+     "value": 344.44,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 6,
+     "value": 240.59,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 16 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 145.0,
+     "unit": "meter"
+    }
+   },
+   "SMP MUHAMMADIYAH 4 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 146.0,
+     "unit": "meter"
+    },
+    "Afirmasi": {
+     "count": 2,
+     "value": 256.49,
+     "unit": "skor"
+    }
+   },
+   "PKBM AL-MUSTAJAB": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 157.0,
+     "unit": "meter"
+    }
+   },
+   "SMP NEGERI 2 DEPOK": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 173.0,
+     "unit": "meter"
+    }
+   },
+   "SMP NEGERI 9 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 2,
+     "value": 180.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 18,
+     "value": 343.9,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 6,
+     "value": 225.15,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 3,
+     "value": 371.69,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 354.58,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 183.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 355.51,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 256.5,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 190.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 9,
+     "value": 351.78,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 5,
+     "value": 220.94,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 3,
+     "value": 366.05,
+     "unit": "skor"
+    }
+   },
+   "MTSS AFKAARUNA ISLAMIC SCHOOL": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 194.0,
+     "unit": "meter"
+    }
+   },
+   "SMP NEGERI 5 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 21,
+     "value": 346.68,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 3,
+     "value": 257.66,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 11,
+     "value": 364.97,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 10 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 4,
+     "value": 348.29,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 4,
+     "value": 266.78,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 339.19,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 BANGUNTAPAN": {
+    "Zonasi Reguler": {
+     "count": 7,
+     "value": 345.85,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 290.55,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 373.59,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 4 DEPOK": {
+    "Zonasi Reguler": {
+     "count": 11,
+     "value": 343.52,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 8,
+     "value": 365.09,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 366.18,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 2 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 352.52,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 4 PAKEM": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 345.86,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 3,
+     "value": 366.68,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 8 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 14,
+     "value": 343.48,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 279.44,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 12,
+     "value": 365.01,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 DEPOK": {
+    "Zonasi Reguler": {
+     "count": 6,
+     "value": 346.14,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 2,
+     "value": 278.21,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 313.39,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 4 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 5,
+     "value": 348.94,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 5,
+     "value": 265.58,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 369.95,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 6 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 5,
+     "value": 344.64,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 289.73,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 370.31,
+     "unit": "skor"
+    }
+   },
+   "MTSN 6 SLEMAN": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 363.09,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH AL MUJAHIDIN": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 361.47,
+     "unit": "skor"
+    }
+   },
+   "SMP PANGUDI LUHUR 1 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 4,
+     "value": 347.67,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 370.43,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 DEPOK": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 357.77,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 306.72,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 4,
+     "value": 365.71,
+     "unit": "skor"
+    }
+   },
+   "SMP Eksperimental Mangunan": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 357.29,
+     "unit": "skor"
+    }
+   },
+   "SMP BUDI MULIA DUA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 354.67,
+     "unit": "skor"
+    }
+   },
+   "MTSN 9 BANTUL": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 353.82,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 3,
+     "value": 224.81,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 KALASAN": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 353.28,
+     "unit": "skor"
+    }
+   },
+   "SMP ISLAM TERPADU LHI": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 350.18,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 12 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 349.69,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 282.76,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 KALASAN": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 345.37,
+     "unit": "skor"
+    }
+   },
+   "SMP CAHAYA BANGSA UTAMA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 343.56,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 13 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 2,
+     "value": 280.27,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 8 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 2,
+     "value": 226.69,
+     "unit": "skor"
+    }
+   },
+   "MTSN 1 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 2,
+     "value": 261.5,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 365.42,
+     "unit": "skor"
+    }
+   },
+   "MTSN 7 BANTUL": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 275.91,
+     "unit": "skor"
+    }
+   },
+   "MTSS MUHAMMADIYAH KARANGKAJEN": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 274.93,
+     "unit": "skor"
+    }
+   },
+   "SMP BOPKRI 1 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 273.63,
+     "unit": "skor"
+    }
+   },
+   "SMP KANISIUS GAYAM YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 271.49,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 BERBAH": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 246.41,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 BERBAH": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 242.0,
+     "unit": "skor"
+    }
+   },
+   "SMP N 2 PRAMBANAN KLATEN": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 221.43,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 BANTUL": {
+    "Prestasi": {
+     "count": 2,
+     "value": 370.44,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 GALUR": {
+    "Prestasi": {
+     "count": 1,
+     "value": 371.16,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 14 YOGYAKARTA": {
+    "Prestasi": {
+     "count": 1,
+     "value": 371.12,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 PIYUNGAN": {
+    "Prestasi": {
+     "count": 1,
+     "value": 367.75,
+     "unit": "skor"
+    }
+   },
+   "SMP KRISTEN KALAM KUDUS": {
+    "Prestasi": {
+     "count": 1,
+     "value": 366.3,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 SEWON": {
+    "Prestasi": {
+     "count": 1,
+     "value": 365.71,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 KASIHAN": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 333.26,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 BANGUNTAPAN": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 303.25,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 9 YOGYAKARTA": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 289.37,
+     "unit": "skor"
+    }
+   },
+   "SMP ISLAM ATHIRAH MAKASSAR": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 289.34,
+     "unit": "skor"
+    }
+   },
+   "SMPN 1 DEKET LAMONGAN": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 288.52,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 PURWOHARJO": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 288.18,
+     "unit": "skor"
+    }
+   },
+   "SMP ANGKASA ADISUTJIPTO DEPOK": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 288.05,
+     "unit": "skor"
+    }
+   },
+   "SMP DAARUL QURAN": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 283.8,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 2 KALASAN": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 282.46,
+     "unit": "skor"
+    }
+   }
+  },
+  "SMAN9": {
+   "SMP MUHAMMADIYAH PLUS GUNUNGPRING": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 88.0,
+     "unit": "meter"
+    }
+   },
+   "SMP NEGERI 1 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 100.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 18,
+     "value": 318.59,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 6,
+     "value": 216.92,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 351.23,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 5 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 140.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 27,
+     "value": 318.11,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 280.23,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 4,
+     "value": 350.02,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 8 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 245.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 15,
+     "value": 317.12,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 2,
+     "value": 274.66,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 4,
+     "value": 351.61,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 10 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 318.37,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 2,
+     "value": 217.88,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 348.89,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 4 PAKEM": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 321.89,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 11,
+     "value": 349.11,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 15 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 4,
+     "value": 317.6,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 4,
+     "value": 213.68,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 PIYUNGAN": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 334.59,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 DEPOK": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 322.9,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 349.12,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 322.78,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 356.98,
+     "unit": "skor"
+    }
+   },
+   "SMP IT AL KHAIRAAT": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 333.85,
+     "unit": "skor"
+    }
+   },
+   "SMP OLIFANT": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 333.03,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 356.5,
+     "unit": "skor"
+    }
+   },
+   "SMP BOPKRI 2 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 332.61,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 DEPOK": {
+    "Zonasi Reguler": {
+     "count": 14,
+     "value": 319.4,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 3,
+     "value": 348.35,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 262.91,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 4 DEPOK": {
+    "Zonasi Reguler": {
+     "count": 10,
+     "value": 320.72,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 4,
+     "value": 350.48,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 DEPOK": {
+    "Zonasi Reguler": {
+     "count": 4,
+     "value": 319.85,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 211.6,
+     "unit": "skor"
+    }
+   },
+   "SMP MONTESSORI": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 330.03,
+     "unit": "skor"
+    }
+   },
+   "SMP PANGUDI LUHUR 1 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 5,
+     "value": 319.41,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 12 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 330.0,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 5 DEPOK": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 317.33,
+     "unit": "skor"
+    }
+   },
+   "SMP ISLAM TERPADU LHI": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 329.09,
+     "unit": "skor"
+    }
+   },
+   "SMP IT ABU BAKAR YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 7,
+     "value": 317.47,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 KALASAN": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 328.25,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 272.82,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 2 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 318.06,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 262.37,
+     "unit": "skor"
+    }
+   },
+   "SMP ISLAM AL AZHAR 26 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 325.09,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 351.94,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 288.75,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 14 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 326.31,
+     "unit": "skor"
+    }
+   },
+   "SMP TAHFIDZQU": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 326.02,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 4 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 4,
+     "value": 319.17,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 7 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 324.32,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 4 KALASAN": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 324.29,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 9 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 322.73,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 355.68,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 6 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 317.69,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 274.39,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 2,
+     "value": 348.95,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 16 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 319.47,
+     "unit": "skor"
+    }
+   },
+   "SMP NOAH": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 322.24,
+     "unit": "skor"
+    }
+   },
+   "SMP KESATUAN BANGSA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 320.65,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 4 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 293.17,
+     "unit": "skor"
+    }
+   },
+   "MTSN 9 SLEMAN": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 240.65,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 8 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 3,
+     "value": 208.03,
+     "unit": "skor"
+    }
+   },
+   "PKBM BINA KARYA SUNAN PANDANARAN": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 228.32,
+     "unit": "skor"
+    }
+   },
+   "SMP IT MASJID SYUHADA YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 226.07,
+     "unit": "skor"
+    }
+   },
+   "SMP ANGKASA ADISUTJIPTO DEPOK": {
+    "Afirmasi": {
+     "count": 2,
+     "value": 216.28,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 10 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 219.64,
+     "unit": "skor"
+    }
+   },
+   "SMP INSTITUT INDONESIA YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 2,
+     "value": 192.77,
+     "unit": "skor"
+    }
+   },
+   "MTSN 9 BANTUL": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 211.16,
+     "unit": "skor"
+    }
+   },
+   "SMP BOPKRI 3 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 299.41,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 KARANGMOJO": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 239.51,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 2 MLATI": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 237.8,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 230.48,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 348.19,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 9 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 210.1,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 BANGUNTAPAN": {
+    "Afirmasi": {
+     "count": 2,
+     "value": 200.91,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 RONGKOP": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 204.98,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 PLERET": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 202.39,
+     "unit": "skor"
+    }
+   },
+   "SMP BUDI UTAMA MLATI": {
+    "Prestasi": {
+     "count": 1,
+     "value": 357.78,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 MLATI": {
+    "Prestasi": {
+     "count": 2,
+     "value": 351.82,
+     "unit": "skor"
+    }
+   },
+   "SMP Negeri 1 Sleman": {
+    "Prestasi": {
+     "count": 3,
+     "value": 354.74,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 PAKEM": {
+    "Prestasi": {
+     "count": 2,
+     "value": 348.14,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 NGAGLIK": {
+    "Prestasi": {
+     "count": 2,
+     "value": 352.33,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 SLEMAN": {
+    "Prestasi": {
+     "count": 1,
+     "value": 351.85,
+     "unit": "skor"
+    }
+   },
+   "SMP ISLAM AL-AZHAR CAIRO": {
+    "Prestasi": {
+     "count": 1,
+     "value": 351.57,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 KALASAN": {
+    "Prestasi": {
+     "count": 1,
+     "value": 349.08,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 SLEMAN": {
+    "Prestasi": {
+     "count": 1,
+     "value": 348.19,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 3 DEPOK": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 343.69,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 1 DEPOK": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 253.77,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 PADALARANG": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 233.8,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 2 DEPOK": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 232.88,
+     "unit": "skor"
+    }
+   },
+   "SMP ISLAM AL AZHAR 28": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 174.72,
+     "unit": "skor"
+    }
+   }
+  },
+  "SMAN10": {
+   "SMP NEGERI 12 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 2,
+     "value": 210.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 9,
+     "value": 290.9,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 16 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 205.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 12,
+     "value": 291.76,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 5,
+     "value": 228.31,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 1 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 208.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 294.68,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 14 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 2,
+     "value": 230.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 6,
+     "value": 291.8,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 217.68,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 4 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 9,
+     "value": 291.08,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 4,
+     "value": 290.17,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 214.48,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 KASIHAN": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 329.98,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 5 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 297.05,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 20,
+     "value": 290.73,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 2,
+     "value": 237.26,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 8 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 6,
+     "value": 292.41,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 6 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 9,
+     "value": 292.55,
+     "unit": "skor"
+    }
+   },
+   "SMP ISLAM TERPADU LHI": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 322.97,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 6,
+     "value": 300.13,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 7 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 17,
+     "value": 290.42,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 13 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 293.68,
+     "unit": "skor"
+    }
+   },
+   "SMP MUTIARA PERSADA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 315.76,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 MAGELANG": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 314.19,
+     "unit": "skor"
+    }
+   },
+   "SMP PANGUDI LUHUR 1 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 306.35,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 263.22,
+     "unit": "skor"
+    }
+   },
+   "MTSS MUALLIMIN MUHAMMADIYAH": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 310.82,
+     "unit": "skor"
+    }
+   },
+   "SMP STELLA DUCE 1": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 299.13,
+     "unit": "skor"
+    }
+   },
+   "SMP MARIA IMMACULATA MARSUDIRINI": {
+    "Zonasi Reguler": {
+     "count": 5,
+     "value": 295.68,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 2,
+     "value": 210.32,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 5 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 310.12,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 3,
+     "value": 211.94,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 9 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 299.26,
+     "unit": "skor"
+    }
+   },
+   "SMP BUDYA WACANA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 309.06,
+     "unit": "skor"
+    }
+   },
+   "SMP STELLA DUCE 2 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 307.47,
+     "unit": "skor"
+    }
+   },
+   "SMP IT ABU BAKAR YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 298.59,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 15 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 9,
+     "value": 290.96,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 223.28,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 2 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 6,
+     "value": 290.15,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 10 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 290.09,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 6 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 304.2,
+     "unit": "skor"
+    }
+   },
+   "SMP ISLAM TERPADU BINA UMAT": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 303.54,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 GAMPING": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 301.07,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 11 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 4,
+     "value": 292.43,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 2,
+     "value": 210.12,
+     "unit": "skor"
+    }
+   },
+   "SMP BOPKRI 1 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 294.39,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 198.27,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 8 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 294.19,
+     "unit": "skor"
+    }
+   },
+   "MTSN 1 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 294.15,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 2,
+     "value": 220.05,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH BOARDING SCHOOL": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 292.38,
+     "unit": "skor"
+    }
+   },
+   "SMP Eksperimental Mangunan": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 290.86,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 MINGGIR": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 290.34,
+     "unit": "skor"
+    }
+   },
+   "MTSN 1 BANTUL": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 290.28,
+     "unit": "skor"
+    }
+   },
+   "SMP KRISTEN KALAM KUDUS": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 290.27,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 9 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 3,
+     "value": 223.56,
+     "unit": "skor"
+    }
+   },
+   "MTSS MUHAMMADIYAH KARANGKAJEN": {
+    "Afirmasi": {
+     "count": 9,
+     "value": 200.38,
+     "unit": "skor"
+    }
+   },
+   "SMP PIRI 1 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 225.44,
+     "unit": "skor"
+    }
+   },
+   "MTSS MUHAMMADIYAH GEDONG TENGEN": {
+    "Afirmasi": {
+     "count": 2,
+     "value": 218.77,
+     "unit": "skor"
+    }
+   },
+   "SMP TAMAN DEWASA KUMENDAMAN YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 212.31,
+     "unit": "skor"
+    }
+   },
+   "SMP MATARAM": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 198.0,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 4 GAMPING": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 239.12,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 KASIHAN": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 234.35,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 BAMBANGLIPURO": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 294.14,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 JETIS": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 263.54,
+     "unit": "skor"
+    }
+   }
+  },
+  "SMAN11": {
+   "SMP NEGERI 6 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 3,
+     "value": 156.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 17,
+     "value": 274.85,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 3,
+     "value": 231.9,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 335.83,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 YOGYAKARTA": {
+    "Zonasi Radius": {
+     "count": 1,
+     "value": 150.0,
+     "unit": "meter"
+    },
+    "Zonasi Reguler": {
+     "count": 18,
+     "value": 274.49,
+     "unit": "skor"
+    }
+   },
+   "SMP Negeri 1 Sleman": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 283.06,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 292.52,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 352.72,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 MLATI": {
+    "Zonasi Reguler": {
+     "count": 34,
+     "value": 275.09,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 2,
+     "value": 285.17,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 SLEMAN": {
+    "Zonasi Reguler": {
+     "count": 14,
+     "value": 277.41,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 273.56,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 5 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 277.48,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 241.93,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 341.11,
+     "unit": "skor"
+    }
+   },
+   "SMP JOANNES BOSCO": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 338.88,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 8 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 18,
+     "value": 276.13,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 2,
+     "value": 249.09,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 4,
+     "value": 330.27,
+     "unit": "skor"
+    }
+   },
+   "SMP BUDI UTAMA MLATI": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 336.84,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 DEPOK": {
+    "Zonasi Reguler": {
+     "count": 5,
+     "value": 287.83,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 2,
+     "value": 337.19,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 7 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 333.29,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 3,
+     "value": 251.13,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 GALUR": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 332.81,
+     "unit": "skor"
+    }
+   },
+   "SMP SANTO ALOYSIUS TURI": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 331.42,
+     "unit": "skor"
+    }
+   },
+   "SMP MONTESSORI": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 328.91,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 4 PAKEM": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 328.77,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 3,
+     "value": 331.79,
+     "unit": "skor"
+    }
+   },
+   "PKBM HOMESCHOOLING ENTREPRENEUR": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 328.05,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 NGAGLIK": {
+    "Zonasi Reguler": {
+     "count": 4,
+     "value": 292.99,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 2,
+     "value": 330.5,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 324.02,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 PAKEM": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 327.12,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 336.88,
+     "unit": "skor"
+    }
+   },
+   "SMP ISLAM TERPADU LHI": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 326.3,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 NGAGLIK": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 322.57,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 221.23,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 2 DEPOK": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 322.39,
+     "unit": "skor"
+    }
+   },
+   "MTSS MUALLIMIN MUHAMMADIYAH": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 321.98,
+     "unit": "skor"
+    }
+   },
+   "SMPIT IHSANUL FIKRI": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 321.85,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 2 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 321.14,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 320.84,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 332.45,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 14 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 302.85,
+     "unit": "skor"
+    }
+   },
+   "SMP KANISIUS SLEMAN": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 318.64,
+     "unit": "skor"
+    }
+   },
+   "MTSN 6 SLEMAN": {
+    "Zonasi Reguler": {
+     "count": 16,
+     "value": 274.7,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 334.59,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 5 DEPOK": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 299.75,
+     "unit": "skor"
+    }
+   },
+   "SMP MUTIARA PERSADA": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 297.88,
+     "unit": "skor"
+    }
+   },
+   "SMP ISLAM AL AZHAR": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 316.69,
+     "unit": "skor"
+    }
+   },
+   "MTSS MUHAMMADIYAH GEDONG TENGEN": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 315.53,
+     "unit": "skor"
+    }
+   },
+   "SMP KRISTEN KALAM KUDUS": {
+    "Zonasi Reguler": {
+     "count": 5,
+     "value": 288.46,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 347.84,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 4 NGAGLIK": {
+    "Zonasi Reguler": {
+     "count": 6,
+     "value": 283.05,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 266.12,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 SLEMAN": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 282.76,
+     "unit": "skor"
+    }
+   },
+   "SMP ISLAM AL AZHAR 26 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 6,
+     "value": 281.76,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 331.4,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 MLATI": {
+    "Zonasi Reguler": {
+     "count": 10,
+     "value": 282.09,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 4 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 304.68,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 344.01,
+     "unit": "skor"
+    }
+   },
+   "SMP KESATUAN BANGSA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 304.58,
+     "unit": "skor"
+    }
+   },
+   "SMP STELLA DUCE 1": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 274.92,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH AL MUJAHIDIN": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 301.87,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 10 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 286.77,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 237.4,
+     "unit": "skor"
+    }
+   },
+   "SMP ISLAM AL AZHAR CAIRO PALEMBANG": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 299.93,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH BOARDING SCHOOL": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 299.87,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 12 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 4,
+     "value": 276.02,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 2,
+     "value": 209.46,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 1 MLATI": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 296.23,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 228.37,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 286.59,
+     "unit": "skor"
+    }
+   },
+   "SMPTK JOGJA PATRIAE ACADEMY": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 294.92,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 11 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 283.27,
+     "unit": "skor"
+    }
+   },
+   "SMP IT MASJID SYUHADA YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 279.24,
+     "unit": "skor"
+    }
+   },
+   "SMP BOPKRI 3 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 282.67,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 GAMPING": {
+    "Zonasi Reguler": {
+     "count": 6,
+     "value": 278.14,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 3,
+     "value": 220.77,
+     "unit": "skor"
+    }
+   },
+   "SMP Teladan": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 283.93,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 NGAGLIK": {
+    "Zonasi Reguler": {
+     "count": 4,
+     "value": 278.42,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 1 SAMIGALUH": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 288.13,
+     "unit": "skor"
+    }
+   },
+   "SMP PANGUDI LUHUR 1 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 286.1,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 1 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 3,
+     "value": 274.81,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 227.26,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 DEPOK": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 284.9,
+     "unit": "skor"
+    }
+   },
+   "MTSN 10 SLEMAN": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 283.29,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 3 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 2,
+     "value": 274.4,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 333.4,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 7 YOGYAKARTA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 282.19,
+     "unit": "skor"
+    }
+   },
+   "PKBM PERSADA": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 280.84,
+     "unit": "skor"
+    }
+   },
+   "MTSS MUALLIMAAT MUHAMMADIYAH": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 279.26,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 GAMPING": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 278.03,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 333.47,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 5 SLEMAN": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 276.95,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 2,
+     "value": 213.58,
+     "unit": "skor"
+    }
+   },
+   "PKBM SANGGAR ANAK ALAM": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 275.53,
+     "unit": "skor"
+    },
+    "Afirmasi": {
+     "count": 1,
+     "value": 213.25,
+     "unit": "skor"
+    }
+   },
+   "SMP ST. FRANSISKUS XAVERIUS RUTENG": {
+    "Zonasi Reguler": {
+     "count": 1,
+     "value": 274.85,
+     "unit": "skor"
+    }
+   },
+   "SMP PIRI NGAGLIK": {
+    "Afirmasi": {
+     "count": 2,
+     "value": 233.85,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 6 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 4,
+     "value": 216.24,
+     "unit": "skor"
+    }
+   },
+   "SMP TAMAN DEWASA JETIS": {
+    "Afirmasi": {
+     "count": 3,
+     "value": 228.04,
+     "unit": "skor"
+    }
+   },
+   "SMP PIRI 1 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 2,
+     "value": 209.54,
+     "unit": "skor"
+    }
+   },
+   "SMP TAMAN DEWASA IBU PAWIYATAN TAMANSISWA": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 209.49,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 15 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 2,
+     "value": 240.27,
+     "unit": "skor"
+    },
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 264.8,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 9 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 2,
+     "value": 261.87,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 1 SLEMAN": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 245.88,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 220.77,
+     "unit": "skor"
+    },
+    "Prestasi": {
+     "count": 1,
+     "value": 331.7,
+     "unit": "skor"
+    }
+   },
+   "MTSS MUHAMMADIYAH KARANGKAJEN": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 220.43,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 2 GODEAN": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 218.81,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 3 PAKEM": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 214.17,
+     "unit": "skor"
+    }
+   },
+   "SMP MUHAMMADIYAH 8 YOGYAKARTA": {
+    "Afirmasi": {
+     "count": 1,
+     "value": 202.6,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 4 DEPOK": {
+    "Prestasi": {
+     "count": 2,
+     "value": 338.28,
+     "unit": "skor"
+    }
+   },
+   "SMP ISLAM AL-AZHAR CAIRO": {
+    "Prestasi": {
+     "count": 1,
+     "value": 330.51,
+     "unit": "skor"
+    }
+   },
+   "SMP NEGERI 2 BERBAH": {
+    "Prestasi": {
+     "count": 1,
+     "value": 330.39,
+     "unit": "skor"
+    }
+   },
+   "MTSS DARUNNAJAH ULUJAMI": {
+    "Pindah Tugas": {
+     "count": 1,
+     "value": 162.2,
+     "unit": "skor"
+    }
+   }
+  }
  }
 }

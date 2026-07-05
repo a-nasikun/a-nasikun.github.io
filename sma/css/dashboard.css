@@ -145,6 +145,16 @@
 .sma-grid.cols-2 { grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); }
 .sma-grid.wide { grid-column: 1 / -1; }
 
+/* 2 baris x 2 kolom asimetris (33% / 66%) untuk 4 kartu indikator global */
+.sma-quad-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1.5rem;
+}
+@media (max-width: 760px) {
+  .sma-quad-grid { grid-template-columns: 1fr; }
+}
+
 .sma-card h3 {
   font-family: var(--font-serif);
   font-size: 1rem;
@@ -372,17 +382,30 @@
   font-size: 0.85rem;
 }
 .sma-mini-list li {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.4rem 0;
+  padding: 0.45rem 0;
   border-bottom: 1px solid var(--gray-100);
   color: var(--gray-800);
 }
 .sma-mini-list li:last-child { border-bottom: none; }
+.sma-mini-list .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+.sma-mini-list .tags {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--gray-400);
+  margin-top: 0.25rem;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+}
 .sma-mini-list .n {
   font-family: var(--font-mono);
   color: var(--gray-400);
   font-size: 0.78rem;
+  flex-shrink: 0;
 }
 
 /* ── SMP point-of-view search/autocomplete ───────────────────────── */
