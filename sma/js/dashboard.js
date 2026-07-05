@@ -1,7 +1,7 @@
 /* ================================================================
-   SMA Kota Yogyakarta — Selectivity Dashboard
-   Data: sma/data/public/<year>.json (aggregated, no student names/IDs)
-   Charts: Apache ECharts (loaded via CDN in index.html)
+   SMA Kota Yogyakarta — Dasbor Keketatan Seleksi
+   Data: sma/data/public/<year>.json (agregat, tanpa nama/ID siswa)
+   Grafik: Apache ECharts (dimuat via CDN di index.html)
    ================================================================ */
 'use strict';
 
@@ -24,13 +24,14 @@ const FONT_SANS    = "'IBM Plex Sans', system-ui, sans-serif";
 const FONT_MONO    = "'IBM Plex Mono', monospace";
 
 const shortLabel = kode => kode.replace('SMAN', 'SMAN ');
-const fmt = n => n.toLocaleString('en-US');
+const fmt = n => n.toLocaleString('id-ID');                                  // untuk jumlah (bilangan bulat)
+const fmtScore = n => n.toLocaleString('id-ID', { maximumFractionDigits: 2 }); // untuk skor/jarak (desimal)
 
 function baseTextStyle() {
   return { fontFamily: FONT_SANS, color: GRAY_600 };
 }
 
-// Linear-in-sqrt-space scale so node AREA is proportional to value (fair sizing).
+// Skala linear-di-ruang-akar agar LUAS node sebanding dengan nilainya (ukuran yang adil).
 function sqrtScale(value, domainMin, domainMax, rangeMin, rangeMax) {
   const a = Math.sqrt(Math.max(value, 0));
   const aMin = Math.sqrt(Math.max(domainMin, 0));
@@ -60,7 +61,7 @@ function histogram(values, bins = 12) {
 
 // ── State ──────────────────────────────────────────────────────────
 let DATA = null;
-const chartInstances = {};      // id -> echarts instance
+const chartInstances = {};      // id -> instance echarts
 const schoolPanelCharts = {};   // kode -> { breakdown, scores, gender }
 const selectedSchools = new Set();
 
@@ -98,14 +99,14 @@ function loadYear(year) {
       renderSchoolChips(data);
     })
     .catch(err => {
-      console.error('Failed to load dashboard data', err);
+      console.error('Gagal memuat data dasbor', err);
       const hero = document.getElementById('hero-stats');
       if (hero) hero.insertAdjacentHTML('afterend',
-        '<p style="color:#e8c97a;margin-top:1rem;">Could not load admission data for this year. Please try again later.</p>');
+        '<p style="color:#e8c97a;margin-top:1rem;">Data penerimaan untuk tahun ini tidak dapat dimuat. Silakan coba lagi nanti.</p>');
     });
 }
 
-// ── Hero stats ───────────────────────────────────────────────────
+// ── Statistik hero ───────────────────────────────────────────────────
 function renderHero(data) {
   document.getElementById('stat-schools').textContent  = data.meta.total_sma;
   document.getElementById('stat-students').textContent = fmt(data.meta.total_students);
@@ -113,7 +114,7 @@ function renderHero(data) {
   document.getElementById('stat-tracks').textContent    = data.meta.jalur_list.length;
 }
 
-// ── Network graph ──────────────────────────────────────────────────
+// ── Grafik jaringan ──────────────────────────────────────────────────
 function buildGraphSeriesData(data, { search = '', minCount = 1 } = {}) {
   const smaTotals = data.network.sma_nodes.map(n => n.total);
   const smpTotals = data.network.smp_nodes.map(n => n.total);
@@ -129,7 +130,7 @@ function buildGraphSeriesData(data, { search = '', minCount = 1 } = {}) {
     .map(n => n.nama)) : null;
 
   const categories = data.network.sma_nodes.map(n => ({ name: shortLabel(n.kode) }));
-  categories.push({ name: 'SMP / MTs (feeder)' });
+  categories.push({ name: 'SMP / MTs (sekolah asal)' });
   const smpCategoryIndex = categories.length - 1;
   const kodeIndex = {};
   data.network.sma_nodes.forEach((n, i) => { kodeIndex[n.kode] = i; });
@@ -193,8 +194,8 @@ function renderNetwork(data) {
       textStyle: baseTextStyle(),
       tooltip: {
         formatter(p) {
-          if (p.dataType === 'edge') return `${p.data.source} → ${p.data.target}<br/><strong>${fmt(p.data.value)}</strong> students`;
-          return `<strong>${p.data.name}</strong><br/>${fmt(p.data.value)} students`;
+          if (p.dataType === 'edge') return `${p.data.source} → ${p.data.target}<br/><strong>${fmt(p.data.value)}</strong> siswa`;
+          return `<strong>${p.data.name}</strong><br/>${fmt(p.data.value)} siswa`;
         },
       },
       legend: [{
@@ -226,7 +227,7 @@ function renderNetwork(data) {
     draw();
   });
 
-  // Accessible data-table alternative
+  // Alternatif tabel data yang mudah diakses (aksesibilitas)
   const tbody = document.querySelector('#network-table tbody');
   const rows = [...data.network.edges].sort((a, b) => b.count - a.count);
   tbody.innerHTML = rows.map(e =>
@@ -234,7 +235,7 @@ function renderNetwork(data) {
   ).join('');
 }
 
-// ── Global indicators ────────────────────────────────────────────
+// ── Indikator global ────────────────────────────────────────────
 function renderGlobal(data) {
   renderRankingChart(data);
   renderJalurTotalsChart(data);
@@ -254,17 +255,17 @@ function renderRankingChart(data) {
   registerChart('chart-ranking', {
     textStyle: baseTextStyle(),
     grid: { left: 90, right: 30, top: 10, bottom: 30 },
-    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' }, valueFormatter: v => `${v} pts` },
-    xAxis: { type: 'value', name: 'Cutoff score', axisLine: { lineStyle: { color: GRAY_200 } }, splitLine: { lineStyle: { color: GRAY_200 } } },
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' }, valueFormatter: v => `${fmtScore(v)} poin` },
+    xAxis: { type: 'value', name: 'Skor ambang batas', axisLine: { lineStyle: { color: GRAY_200 } }, splitLine: { lineStyle: { color: GRAY_200 } } },
     yAxis: { type: 'category', data: names, inverse: true, axisLine: { lineStyle: { color: GRAY_200 } }, axisLabel: { fontFamily: FONT_MONO } },
     series: [{
       type: 'bar', data: values.map((v, i) => ({ value: v, itemStyle: { color: colors[i] } })),
       barWidth: '55%',
-      label: { show: true, position: 'right', formatter: p => p.value, fontFamily: FONT_MONO, color: GRAY_600 },
+      label: { show: true, position: 'right', formatter: p => fmtScore(p.value), fontFamily: FONT_MONO, color: GRAY_600 },
       markLine: {
         symbol: 'none',
         lineStyle: { color: CUTOFF_COLOR, type: 'dashed', width: 2 },
-        label: { formatter: 'avg {c}', color: CUTOFF_COLOR, fontFamily: FONT_MONO },
+        label: { formatter: params => `rata-rata ${fmtScore(params.value)}`, color: CUTOFF_COLOR, fontFamily: FONT_MONO },
         data: [{ xAxis: Math.round(avg * 100) / 100 }],
       },
     }],
@@ -277,13 +278,13 @@ function renderJalurTotalsChart(data) {
   registerChart('chart-jalur-totals', {
     textStyle: baseTextStyle(),
     grid: { left: 110, right: 40, top: 10, bottom: 30 },
-    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' }, valueFormatter: v => `${fmt(v)} siswa` },
     xAxis: { type: 'value', axisLine: { lineStyle: { color: GRAY_200 } }, splitLine: { lineStyle: { color: GRAY_200 } } },
     yAxis: { type: 'category', data: jalurList, inverse: true, axisLabel: { fontFamily: FONT_SANS, fontSize: 11 } },
     series: [{
       type: 'bar', data: values, barWidth: '55%',
       itemStyle: { color: NAVY_SOFT, borderRadius: [0, 4, 4, 0] },
-      label: { show: true, position: 'right', fontFamily: FONT_MONO, color: GRAY_600 },
+      label: { show: true, position: 'right', formatter: p => fmt(p.value), fontFamily: FONT_MONO, color: GRAY_600 },
     }],
   });
 }
@@ -291,7 +292,7 @@ function renderJalurTotalsChart(data) {
 function renderGenderChart(gender, elId) {
   registerChart(elId, {
     textStyle: baseTextStyle(),
-    tooltip: { trigger: 'item', valueFormatter: v => `${fmt(v)} students` },
+    tooltip: { trigger: 'item', valueFormatter: v => `${fmt(v)} siswa` },
     legend: { bottom: 0, textStyle: { fontFamily: FONT_SANS, fontSize: 11 } },
     series: [{
       type: 'pie', radius: ['45%', '72%'], center: ['50%', '45%'],
@@ -313,14 +314,14 @@ function renderJalurRangeChart(data) {
   registerChart('chart-jalur-range', {
     textStyle: baseTextStyle(),
     grid: { left: 50, right: 20, top: 40, bottom: 60 },
-    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' }, valueFormatter: v => fmtScore(v) },
     legend: { top: 0, textStyle: { fontFamily: FONT_SANS, fontSize: 11 } },
     xAxis: { type: 'category', data: jalurList, axisLabel: { fontSize: 10, interval: 0, rotate: 20 } },
-    yAxis: { type: 'value', name: 'Score', splitLine: { lineStyle: { color: GRAY_200 } } },
+    yAxis: { type: 'value', name: 'Skor', splitLine: { lineStyle: { color: GRAY_200 } } },
     series: [
-      { name: 'Min (cutoff)', type: 'bar', data: mins, itemStyle: { color: '#c7d2df' } },
+      { name: 'Min (ambang batas)', type: 'bar', data: mins, itemStyle: { color: '#c7d2df' } },
       { name: 'Median', type: 'bar', data: meds, itemStyle: { color: NAVY_SOFT } },
-      { name: 'Max', type: 'bar', data: maxs, itemStyle: { color: NAVY } },
+      { name: 'Maks', type: 'bar', data: maxs, itemStyle: { color: NAVY } },
     ],
   });
 }
@@ -332,7 +333,7 @@ function renderRadiusHistogram(data) {
   registerChart('chart-radius-hist', {
     textStyle: baseTextStyle(),
     grid: { left: 45, right: 20, top: 20, bottom: 50 },
-    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' }, valueFormatter: v => `${v} students` },
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' }, valueFormatter: v => `${fmt(v)} siswa` },
     xAxis: { type: 'category', data: labels.map(l => l + 'm'), axisLabel: { fontSize: 9, interval: 0, rotate: 40 } },
     yAxis: { type: 'value', splitLine: { lineStyle: { color: GRAY_200 } } },
     series: [{ type: 'bar', data: counts, itemStyle: { color: NAVY_SOFT, borderRadius: [4, 4, 0, 0] } }],
@@ -344,7 +345,7 @@ function renderTopFeedersChart(feeders, elId, limit = 15) {
   registerChart(elId, {
     textStyle: baseTextStyle(),
     grid: { left: 220, right: 40, top: 10, bottom: 30 },
-    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' }, valueFormatter: v => `${fmt(v)} siswa` },
     xAxis: { type: 'value', splitLine: { lineStyle: { color: GRAY_200 } } },
     yAxis: {
       type: 'category', data: top.map(f => f.asal_sekolah).reverse(), inverse: false,
@@ -353,12 +354,12 @@ function renderTopFeedersChart(feeders, elId, limit = 15) {
     series: [{
       type: 'bar', data: top.map(f => f.count).reverse(), barWidth: '60%',
       itemStyle: { color: NAVY_SOFT, borderRadius: [0, 4, 4, 0] },
-      label: { show: true, position: 'right', fontFamily: FONT_MONO, color: GRAY_600 },
+      label: { show: true, position: 'right', formatter: p => fmt(p.value), fontFamily: FONT_MONO, color: GRAY_600 },
     }],
   });
 }
 
-// ── Per-school explorer ──────────────────────────────────────────
+// ── Eksplorasi per sekolah ──────────────────────────────────────────
 function renderSchoolChips(data) {
   const wrap = document.getElementById('school-chips');
   wrap.innerHTML = data.schools.map(s => `
@@ -392,12 +393,12 @@ function renderSchoolPanels(data) {
 
   if (selectedSchools.size === 0) {
     Object.keys(schoolPanelCharts).forEach(disposeSchoolCharts);
-    container.innerHTML = '<div class="sma-empty-state" id="school-empty-state">Select a school above to see its admission statistics.</div>';
+    container.innerHTML = '<div class="sma-empty-state" id="school-empty-state">Pilih sekolah di atas untuk melihat statistik penerimaannya.</div>';
     return;
   }
   if (emptyState) emptyState.remove();
 
-  // Remove panels for deselected schools
+  // Hapus panel untuk sekolah yang tidak lagi dipilih
   Object.keys(schoolPanelCharts).forEach(kode => {
     if (!selectedSchools.has(kode)) {
       disposeSchoolCharts(kode);
@@ -408,7 +409,7 @@ function renderSchoolPanels(data) {
 
   const orderedSelected = data.schools.filter(s => selectedSchools.has(s.kode));
   orderedSelected.forEach(school => {
-    if (document.getElementById(`panel-${school.kode}`)) return; // already rendered
+    if (document.getElementById(`panel-${school.kode}`)) return; // sudah dirender
     container.insertAdjacentHTML('beforeend', schoolPanelTemplate(data, school));
     mountSchoolCharts(data, school);
   });
@@ -434,24 +435,24 @@ function schoolPanelTemplate(data, school) {
     <article class="sma-school-panel" id="panel-${school.kode}" style="border-left-color:${color}">
       <div class="sma-school-panel-header">
         <h3><span class="dot" style="background:${color}"></span>${school.nama}</h3>
-        <span class="rank-tag">${rank ? `#${rank} of ${data.meta.total_sma} by Zonasi Reguler cutoff` : ''} · ${fmt(school.total)} accepted</span>
+        <span class="rank-tag">${rank ? `#${rank} dari ${data.meta.total_sma} sekolah berdasarkan ambang batas Zonasi Reguler` : ''} · ${fmt(school.total)} diterima</span>
       </div>
       <div class="sma-panel-grid">
         <div>
-          <h3 style="font-size:0.9rem;">Accepted per track</h3>
+          <h3 style="font-size:0.9rem;">Diterima per jalur</h3>
           <div id="panel-${school.kode}-breakdown" class="sma-chart" style="height:220px;"></div>
         </div>
         <div>
-          <h3 style="font-size:0.9rem;">Score range per track</h3>
+          <h3 style="font-size:0.9rem;">Rentang skor per jalur</h3>
           <div id="panel-${school.kode}-scores" class="sma-chart" style="height:220px;"></div>
-          <div class="sma-cutoff-note marker"><span class="swatch"></span> gold marker = this school's cutoff (lowest accepted score)</div>
+          <div class="sma-cutoff-note marker"><span class="swatch"></span> penanda emas = ambang batas sekolah ini (skor terendah yang diterima)</div>
         </div>
         <div>
-          <h3 style="font-size:0.9rem;">Gender balance</h3>
+          <h3 style="font-size:0.9rem;">Keseimbangan gender</h3>
           <div id="panel-${school.kode}-gender" class="sma-chart" style="height:220px;"></div>
         </div>
         <div>
-          <h3 style="font-size:0.9rem;">Top feeder schools</h3>
+          <h3 style="font-size:0.9rem;">Sekolah asal teratas</h3>
           <ul class="sma-mini-list">
             ${feeders.map((f, i) => `<li><span>${f.asal_sekolah}</span><span class="n">${fmt(f.count)}</span></li>`).join('')}
           </ul>
@@ -469,14 +470,14 @@ function mountSchoolCharts(data, school) {
   breakdown.setOption({
     textStyle: baseTextStyle(),
     grid: { left: 100, right: 30, top: 10, bottom: 20 },
-    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' }, valueFormatter: v => `${fmt(v)} siswa` },
     xAxis: { type: 'value', axisLabel: { fontSize: 10 }, splitLine: { lineStyle: { color: GRAY_200 } } },
     yAxis: { type: 'category', data: jalurList, inverse: true, axisLabel: { fontSize: 10 } },
     series: [{
       type: 'bar', barWidth: '55%',
       data: jalurList.map(j => school.jalur[j].count),
       itemStyle: { color },
-      label: { show: true, position: 'right', fontFamily: FONT_MONO, fontSize: 10, color: GRAY_600 },
+      label: { show: true, position: 'right', formatter: p => fmt(p.value), fontFamily: FONT_MONO, fontSize: 10, color: GRAY_600 },
     }],
   });
 
@@ -488,21 +489,21 @@ function mountSchoolCharts(data, school) {
     tooltip: {
       trigger: 'item',
       formatter(p) {
-        if (p.seriesName === 'Cutoff') return `${p.value[1]}<br/>Cutoff (min accepted): <strong>${p.value[0]}</strong>`;
-        return `${p.name}<br/>Highest accepted: <strong>${p.value}</strong>`;
+        if (p.seriesName === 'Ambang batas') return `${p.value[1]}<br/>Ambang batas (nilai minimum diterima): <strong>${fmtScore(p.value[0])}</strong>`;
+        return `${p.name}<br/>Nilai tertinggi diterima: <strong>${fmtScore(p.value)}</strong>`;
       },
     },
     xAxis: { type: 'value', axisLabel: { fontSize: 10 }, splitLine: { lineStyle: { color: GRAY_200 } } },
     yAxis: { type: 'category', data: scoreJalur, inverse: true, axisLabel: { fontSize: 10 } },
     series: [
       {
-        name: 'Highest accepted', type: 'bar', barWidth: '45%',
+        name: 'Nilai tertinggi diterima', type: 'bar', barWidth: '45%',
         data: scoreJalur.map(j => school.jalur[j].max),
         itemStyle: { color, opacity: 0.55 },
-        label: { show: true, position: 'right', fontFamily: FONT_MONO, fontSize: 10, color: GRAY_600 },
+        label: { show: true, position: 'right', formatter: p => fmtScore(p.value), fontFamily: FONT_MONO, fontSize: 10, color: GRAY_600 },
       },
       {
-        name: 'Cutoff', type: 'scatter', symbol: 'rect', symbolSize: [4, 20], z: 5,
+        name: 'Ambang batas', type: 'scatter', symbol: 'rect', symbolSize: [4, 20], z: 5,
         itemStyle: { color: CUTOFF_COLOR },
         data: scoreJalur.map(j => [school.jalur[j].cutoff, j]),
       },
@@ -512,7 +513,7 @@ function mountSchoolCharts(data, school) {
   const gender = echarts.init(document.getElementById(`panel-${school.kode}-gender`));
   gender.setOption({
     textStyle: baseTextStyle(),
-    tooltip: { trigger: 'item', valueFormatter: v => `${fmt(v)} students` },
+    tooltip: { trigger: 'item', valueFormatter: v => `${fmt(v)} siswa` },
     legend: { bottom: 0, textStyle: { fontFamily: FONT_SANS, fontSize: 10 } },
     series: [{
       type: 'pie', radius: ['42%', '70%'], center: ['50%', '42%'],

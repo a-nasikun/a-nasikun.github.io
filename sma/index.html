@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="An analytics dashboard exploring PPDB admission selectivity across the 11 SMA Negeri in Kota Yogyakarta — tracks, cutoff scores, and feeder-school patterns." />
-  <title>SMA Kota Yogyakarta — Selectivity Dashboard</title>
+  <meta name="description" content="Dasbor analitik yang mengulas tingkat keketatan seleksi PPDB di 11 SMA Negeri Kota Yogyakarta — jalur pendaftaran, nilai ambang batas, dan pola sekolah asal siswa." />
+  <title>SMA Kota Yogyakarta — Dasbor Keketatan Seleksi</title>
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="css/dashboard.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230d1b2a'/><text y='24' x='4' font-size='22' font-family='serif' fill='%23c9a84c'>N</text></svg>" />
@@ -15,14 +15,14 @@
   <div class="nav-inner">
     <a href="../index.html" class="nav-brand">Dr. <span>Nasikun</span></a>
     <ul class="nav-links">
-      <li><a href="../index.html#about">About</a></li>
-      <li><a href="../index.html#research">Research</a></li>
-      <li><a href="../index.html#publications">Publications</a></li>
-      <li><a href="../index.html#teaching">Teaching</a></li>
-      <li><a href="../index.html#projects">Projects</a></li>
-      <li class="nav-cta"><a href="../index.html#contact">Contact</a></li>
+      <li><a href="../index.html#about">Tentang</a></li>
+      <li><a href="../index.html#research">Riset</a></li>
+      <li><a href="../index.html#publications">Publikasi</a></li>
+      <li><a href="../index.html#teaching">Pengajaran</a></li>
+      <li><a href="../index.html#projects">Proyek</a></li>
+      <li class="nav-cta"><a href="../index.html#contact">Kontak</a></li>
     </ul>
-    <div id="hamburger" aria-label="Toggle menu">
+    <div id="hamburger" aria-label="Buka menu">
       <span></span><span></span><span></span>
     </div>
   </div>
@@ -32,62 +32,62 @@
 
   <header class="sma-hero">
     <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="../index.html">Home</a> · SMA Dashboard
+      <nav class="breadcrumb" aria-label="Remah roti">
+        <a href="../index.html">Beranda</a> · Dasbor SMA
       </nav>
       <div class="sma-eyebrow">PPDB Kota Yogyakarta</div>
-      <h1>Mapping high school selectivity in Yogyakarta</h1>
+      <h1>Memetakan tingkat keketatan SMA di Yogyakarta</h1>
       <p class="sma-hero-lead">
-        Every year, thousands of Yogyakarta middle-schoolers compete for seats at 11 public high schools (SMA Negeri) through five admission tracks — <code>Zonasi Radius</code>, <code>Zonasi Reguler</code>, <code>Afirmasi</code>, <code>Prestasi</code>, and <code>Pindah Tugas</code>. This dashboard reads the official PPDB results to show how selective each school and track actually was, and which middle schools (SMP/MTs) feed into which high schools.
+        Setiap tahun, ribuan siswa lulusan SMP di Kota Yogyakarta bersaing memperebutkan kursi di 11 SMA Negeri melalui lima jalur pendaftaran — <code>Zonasi Radius</code>, <code>Zonasi Reguler</code>, <code>Afirmasi</code>, <code>Prestasi</code>, dan <code>Pindah Tugas</code>. Dasbor ini membaca hasil resmi PPDB untuk menunjukkan seberapa ketat seleksi tiap sekolah dan jalur sesungguhnya, serta sekolah menengah pertama (SMP/MTs) mana saja yang menjadi "pemasok" siswa ke tiap SMA.
       </p>
 
       <div class="sma-year-select">
-        <label for="year-select">Admission year</label>
+        <label for="year-select">Tahun penerimaan</label>
         <select id="year-select">
           <option value="2023">2023</option>
         </select>
       </div>
 
       <div class="sma-stat-row" id="hero-stats">
-        <div class="sma-stat"><div class="stat-num" id="stat-schools">—</div><div class="stat-label">High schools</div></div>
-        <div class="sma-stat"><div class="stat-num" id="stat-students">—</div><div class="stat-label">Students accepted</div></div>
-        <div class="sma-stat"><div class="stat-num" id="stat-feeders">—</div><div class="stat-label">Feeder schools</div></div>
-        <div class="sma-stat"><div class="stat-num" id="stat-tracks">—</div><div class="stat-label">Admission tracks</div></div>
+        <div class="sma-stat"><div class="stat-num" id="stat-schools">—</div><div class="stat-label">SMA</div></div>
+        <div class="sma-stat"><div class="stat-num" id="stat-students">—</div><div class="stat-label">Siswa diterima</div></div>
+        <div class="sma-stat"><div class="stat-num" id="stat-feeders">—</div><div class="stat-label">Sekolah asal</div></div>
+        <div class="sma-stat"><div class="stat-num" id="stat-tracks">—</div><div class="stat-label">Jalur pendaftaran</div></div>
       </div>
     </div>
   </header>
 
-  <!-- ── NETWORK GRAPH ─────────────────────────────────────────── -->
+  <!-- ── GRAFIK JARINGAN ─────────────────────────────────────────── -->
   <section id="network" class="sma-section section">
     <div class="container">
       <div class="section-header animate-on-scroll">
-        <h2>How students flow: SMP/MTs → SMA</h2>
+        <h2>Alur siswa: SMP/MTs → SMA</h2>
         <p>
-          Each large circle is one of the 11 SMA Negeri, colored individually and sized by how many students it accepted. Each small square is a middle school (SMP/MTs), sized by how many students it sent on to any of the 11 schools — all drawn in the same neutral color, since the square's size is what matters here, not its identity. An edge's thickness and tint reflect how many students made that specific journey. Drag nodes, scroll to zoom, and hover to trace a school's feeders.
+          Setiap lingkaran besar adalah salah satu dari 11 SMA Negeri, diwarnai berbeda-beda dan berukuran sesuai jumlah siswa yang diterima. Setiap kotak kecil adalah sekolah menengah pertama (SMP/MTs), berukuran sesuai jumlah siswa yang diluluskannya ke salah satu dari 11 SMA tersebut — semuanya digambar dengan warna netral yang sama, karena yang penting di sini adalah ukurannya, bukan identitasnya. Ketebalan dan warna suatu tautan (edge) mencerminkan berapa banyak siswa yang menempuh jalur tersebut secara spesifik. Seret node untuk memindahkannya, gulir untuk memperbesar, dan arahkan kursor untuk menelusuri sekolah asal suatu SMA.
         </p>
       </div>
 
       <div class="sma-card animate-on-scroll">
         <div class="network-controls">
-          <input type="text" id="network-search" class="network-search" placeholder="Search a middle school (SMP/MTs)…" aria-label="Search middle school" />
+          <input type="text" id="network-search" class="network-search" placeholder="Cari sekolah menengah pertama (SMP/MTs)…" aria-label="Cari sekolah menengah pertama" />
           <div class="network-slider-wrap">
-            <span>Min. students per link</span>
+            <span>Min. siswa per tautan</span>
             <input type="range" id="network-min-count" min="1" max="15" value="1" step="1" />
             <span id="network-min-count-label">1</span>
           </div>
-          <button class="btn-ghost" id="network-reset">Reset view</button>
+          <button class="btn-ghost" id="network-reset">Atur ulang tampilan</button>
         </div>
 
-        <div id="network-graph" role="img" aria-label="Force-directed graph of middle schools connecting to the 11 SMA Negeri in Yogyakarta"></div>
+        <div id="network-graph" role="img" aria-label="Grafik jaringan sekolah menengah pertama yang terhubung ke 11 SMA Negeri di Yogyakarta"></div>
 
         <p class="network-legend-hint">
-          <strong>Reading the graph:</strong> circle size ∝ students accepted by that SMA · square size ∝ students sent by that middle school · edge width ∝ students on that specific SMP→SMA path. Use the search box or slider above to declutter a dense view.
+          <strong>Cara membaca grafik:</strong> ukuran lingkaran ∝ jumlah siswa yang diterima SMA tersebut · ukuran kotak ∝ jumlah siswa yang diluluskan sekolah menengah tersebut · ketebalan tautan ∝ jumlah siswa pada jalur SMP→SMA yang spesifik itu. Gunakan kotak pencarian atau penggeser di atas untuk merapikan tampilan yang padat.
         </p>
 
         <details class="sma-table-toggle">
-          <summary>View the underlying SMP → SMA counts as a table (accessible alternative)</summary>
+          <summary>Lihat data jumlah SMP → SMA dalam bentuk tabel (alternatif yang mudah diakses)</summary>
           <table class="sma-data-table" id="network-table">
-            <thead><tr><th>Middle school (SMP/MTs)</th><th>High school (SMA)</th><th>Students</th></tr></thead>
+            <thead><tr><th>Sekolah menengah pertama (SMP/MTs)</th><th>SMA</th><th>Jumlah siswa</th></tr></thead>
             <tbody></tbody>
           </table>
         </details>
@@ -95,53 +95,53 @@
     </div>
   </section>
 
-  <!-- ── GLOBAL INDICATORS ─────────────────────────────────────── -->
+  <!-- ── INDIKATOR GLOBAL ─────────────────────────────────────── -->
   <section id="global" class="sma-section alt section">
     <div class="container">
       <div class="section-header animate-on-scroll">
-        <h2>Global picture, all 11 schools combined</h2>
-        <p>Selectivity ranking, track breakdown, and where accepted students came from — across every school and track at once.</p>
+        <h2>Gambaran umum, seluruh 11 sekolah digabung</h2>
+        <p>Peringkat keketatan, rincian per jalur, dan asal sekolah siswa yang diterima — untuk semua sekolah dan jalur sekaligus.</p>
       </div>
 
       <div class="sma-grid animate-on-scroll">
 
         <div class="sma-card sma-grid wide" style="grid-template-columns: 1fr;">
           <div>
-            <h3>Selectivity ranking — Zonasi Reguler cutoff score</h3>
-            <p class="sma-card-sub">The lowest accepted score in each school's regular zoning track — the closest thing to a single "how hard is it to get in" number. Higher bar = more competitive.</p>
+            <h3>Peringkat keketatan — skor ambang batas Zonasi Reguler</h3>
+            <p class="sma-card-sub">Nilai terendah yang masih diterima pada jalur zonasi reguler tiap sekolah — angka yang paling mendekati "seberapa sulit masuk ke sini". Batang lebih tinggi = lebih kompetitif.</p>
             <div id="chart-ranking" class="sma-chart" style="height:420px;"></div>
-            <div class="sma-cutoff-note"><span class="swatch"></span> dashed line = average cutoff across all 11 schools</div>
+            <div class="sma-cutoff-note"><span class="swatch"></span> garis putus-putus = rata-rata ambang batas dari 11 sekolah</div>
           </div>
         </div>
 
         <div class="sma-card">
-          <h3>Accepted students per track</h3>
-          <p class="sma-card-sub">Total students admitted through each jalur, city-wide.</p>
+          <h3>Siswa diterima per jalur</h3>
+          <p class="sma-card-sub">Total siswa yang diterima melalui tiap jalur, se-kota.</p>
           <div id="chart-jalur-totals" class="sma-chart" style="height:300px;"></div>
         </div>
 
         <div class="sma-card">
-          <h3>Gender balance</h3>
-          <p class="sma-card-sub">All accepted students, all schools, all tracks.</p>
+          <h3>Keseimbangan gender</h3>
+          <p class="sma-card-sub">Seluruh siswa diterima, semua sekolah, semua jalur.</p>
           <div id="chart-gender" class="sma-chart" style="height:300px;"></div>
         </div>
 
         <div class="sma-card">
-          <h3>Score range per track</h3>
-          <p class="sma-card-sub">Minimum, median, and maximum accepted score for each track (Zonasi Radius shown in meters).</p>
+          <h3>Rentang skor per jalur</h3>
+          <p class="sma-card-sub">Nilai minimum, median, dan maksimum yang diterima pada tiap jalur (Zonasi Radius ditampilkan dalam meter).</p>
           <div id="chart-jalur-range" class="sma-chart" style="height:320px;"></div>
         </div>
 
         <div class="sma-card">
-          <h3>Zonasi Radius: accepted distance</h3>
-          <p class="sma-card-sub">Distribution of home-to-school distance for students accepted via Zonasi Radius.</p>
+          <h3>Zonasi Radius: jarak yang diterima</h3>
+          <p class="sma-card-sub">Sebaran jarak rumah ke sekolah bagi siswa yang diterima lewat Zonasi Radius.</p>
           <div id="chart-radius-hist" class="sma-chart" style="height:320px;"></div>
         </div>
 
         <div class="sma-card sma-grid wide" style="grid-template-columns: 1fr;">
           <div>
-            <h3>Top 15 feeder schools, city-wide</h3>
-            <p class="sma-card-sub">The middle schools that sent the most students into these 11 SMA in total.</p>
+            <h3>15 sekolah asal teratas, se-kota</h3>
+            <p class="sma-card-sub">Sekolah menengah pertama yang paling banyak meluluskan siswanya ke 11 SMA ini secara total.</p>
             <div id="chart-top-feeders" class="sma-chart" style="height:460px;"></div>
           </div>
         </div>
@@ -150,36 +150,36 @@
     </div>
   </section>
 
-  <!-- ── PER-SCHOOL EXPLORER ───────────────────────────────────── -->
+  <!-- ── EKSPLORASI PER SEKOLAH ───────────────────────────────────── -->
   <section id="perschool" class="sma-section section">
     <div class="container">
       <div class="section-header animate-on-scroll">
-        <h2>Explore each school</h2>
-        <p>Toggle one or more schools on to see their track breakdown, cutoff scores, and top feeders side by side.</p>
+        <h2>Jelajahi tiap sekolah</h2>
+        <p>Aktifkan satu atau beberapa sekolah untuk melihat rincian jalur, skor ambang batas, dan sekolah asal teratasnya secara berdampingan.</p>
       </div>
 
       <div class="sma-chip-row animate-on-scroll" id="school-chips"></div>
 
       <div id="school-panels">
-        <div class="sma-empty-state" id="school-empty-state">Select a school above to see its admission statistics.</div>
+        <div class="sma-empty-state" id="school-empty-state">Pilih sekolah di atas untuk melihat statistik penerimaannya.</div>
       </div>
     </div>
   </section>
 
   <p class="animate-on-scroll" style="text-align:center;margin: 0 0 4rem;">
-    <a href="../index.html" class="btn-secondary" style="display:inline-block;border:1px solid var(--gray-200);color:var(--gray-800);padding:0.75rem 1.75rem;border-radius:6px;">← Back to Homepage</a>
+    <a href="../index.html" class="btn-secondary" style="display:inline-block;border:1px solid var(--gray-200);color:var(--gray-800);padding:0.75rem 1.75rem;border-radius:6px;">← Kembali ke Beranda</a>
   </p>
 
 </main>
 
 <footer>
   <div class="footer-inner">
-    <p>© <span id="footer-year"></span> Dr. Ahmad Nasikun · Data source: official PPDB Kota Yogyakarta admission results</p>
-    <p>Built with plain HTML, CSS &amp; JS · Charts by <a href="https://echarts.apache.org" target="_blank">Apache ECharts</a></p>
+    <p>© <span id="footer-year"></span> Dr. Ahmad Nasikun · Sumber data: hasil resmi PPDB Kota Yogyakarta</p>
+    <p>Dibangun dengan HTML, CSS &amp; JS murni · Grafik oleh <a href="https://echarts.apache.org" target="_blank">Apache ECharts</a></p>
   </div>
 </footer>
 
-<button id="back-top" aria-label="Back to top">↑</button>
+<button id="back-top" aria-label="Kembali ke atas">↑</button>
 <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
 <script src="../js/main.js"></script>
 <script src="js/dashboard.js"></script>
