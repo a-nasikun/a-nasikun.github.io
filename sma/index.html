@@ -36,9 +36,9 @@
         <a href="../index.html">Beranda</a> · Dasbor SMA
       </nav>
       <div class="sma-eyebrow">PPDB Kota Yogyakarta</div>
-      <h1>Memetakan tingkat keketatan SMA di Yogyakarta</h1>
+      <h1>Pemetaan tingkat keketatan penerimaan SMA di Yogyakarta</h1>
       <p class="sma-hero-lead">
-        Setiap tahun, ribuan siswa lulusan SMP di Kota Yogyakarta bersaing memperebutkan kursi di 11 SMA Negeri melalui lima jalur pendaftaran — <code>Zonasi Radius</code>, <code>Zonasi Reguler</code>, <code>Afirmasi</code>, <code>Prestasi</code>, dan <code>Pindah Tugas</code>. Dasbor ini membaca hasil resmi PPDB untuk menunjukkan seberapa ketat seleksi tiap sekolah dan jalur sesungguhnya, serta sekolah menengah pertama (SMP/MTs) mana saja yang menjadi "pemasok" siswa ke tiap SMA.
+        Setiap tahun, ribuan siswa lulusan SMP di Yogyakarta bersaing memperebutkan kursi di 11 SMA Negeri di Yogyakarta melalui lima jalur pendaftaran — <code>Zonasi Radius</code>, <code>Zonasi Reguler</code>, <code>Afirmasi</code>, <code>Prestasi</code>, dan <code>Pindah Tugas</code>. Dasbor ini membaca hasil resmi PPDB untuk menunjukkan seberapa ketat seleksi tiap sekolah dan jalur sesungguhnya, serta sekolah menengah pertama (SMP/MTs) mana saja yang menjadi "pemasok" siswa ke tiap SMA.
       </p>
 
       <div class="sma-year-select">
@@ -63,7 +63,11 @@
       <div class="section-header animate-on-scroll">
         <h2>Alur siswa: SMP/MTs → SMA</h2>
         <p>
-          Setiap lingkaran besar adalah salah satu dari 11 SMA Negeri, diwarnai berbeda-beda dan berukuran sesuai jumlah siswa yang diterima. Setiap kotak kecil adalah sekolah menengah pertama (SMP/MTs), berukuran sesuai jumlah siswa yang diluluskannya ke salah satu dari 11 SMA tersebut — semuanya digambar dengan warna netral yang sama, karena yang penting di sini adalah ukurannya, bukan identitasnya. Ketebalan dan warna suatu tautan (edge) mencerminkan berapa banyak siswa yang menempuh jalur tersebut secara spesifik. Seret node untuk memindahkannya, gulir untuk memperbesar, dan arahkan kursor untuk menelusuri sekolah asal suatu SMA.
+          Setiap lingkaran besar adalah salah satu dari 11 SMA Negeri, diwarnai berbeda-beda dan berukuran sesuai jumlah siswa yang diterima. 
+          Setiap kotak kecil adalah sekolah menengah pertama (SMP/MTs), berukuran sesuai jumlah siswa yang diluluskannya ke salah satu dari 11 SMA tersebut — semuanya digambar dengan warna netral yang sama, 
+          karena yang penting di sini adalah ukurannya. 
+          Ketebalan dan warna suatu tautan (edge) mencerminkan berapa banyak siswa yang menempuh jalur tersebut secara spesifik. 
+          Geser node untuk memindahkannya, scroll untuk memperbesar, dan arahkan kursor untuk menelusuri sekolah asal suatu SMA.
         </p>
       </div>
 
@@ -72,7 +76,7 @@
           <input type="text" id="network-search" class="network-search" placeholder="Cari sekolah menengah pertama (SMP/MTs)…" aria-label="Cari sekolah menengah pertama" />
           <div class="network-slider-wrap">
             <span>Min. siswa per tautan</span>
-            <input type="range" id="network-min-count" min="1" max="15" value="1" step="1" />
+            <input type="range" id="network-min-count" min="1" max="15" value="5" step="1" />
             <span id="network-min-count-label">1</span>
           </div>
           <button class="btn-ghost" id="network-reset">Atur ulang tampilan</button>
@@ -108,7 +112,8 @@
         <div class="sma-card sma-grid wide" style="grid-template-columns: 1fr;">
           <div>
             <h3>Peringkat keketatan — skor ambang batas Zonasi Reguler</h3>
-            <p class="sma-card-sub">Nilai terendah yang masih diterima pada jalur zonasi reguler tiap sekolah — angka yang paling mendekati "seberapa sulit masuk ke sini". Batang lebih tinggi = lebih kompetitif.</p>
+            <p class="sma-card-sub">Nilai terendah yang masih diterima pada jalur zonasi reguler tiap sekolah — angka yang paling mendekati "seberapa sulit masuk ke sini". 
+              Batang lebih panjang artinya seleksi lebih kompetitif.</p>
             <div id="chart-ranking" class="sma-chart" style="height:420px;"></div>
             <div class="sma-cutoff-note"><span class="swatch"></span> garis putus-putus = rata-rata ambang batas dari 11 sekolah</div>
           </div>
@@ -192,10 +197,11 @@
       </div>
     </div>
   </section>
-
+  <!-- 
   <p class="animate-on-scroll" style="text-align:center;margin: 0 0 4rem;">
     <a href="../index.html" class="btn-secondary" style="display:inline-block;border:1px solid var(--gray-200);color:var(--gray-800);padding:0.75rem 1.75rem;border-radius:6px;">← Kembali ke Beranda</a>
   </p>
+  -->
 
 </main>
 

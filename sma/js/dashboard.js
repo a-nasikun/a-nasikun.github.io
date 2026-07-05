@@ -353,7 +353,7 @@ function renderJalurRangeChart(data) {
     xAxis: { type: 'category', data: jalurList, axisLabel: { fontSize: 10, interval: 0, rotate: 20 } },
     yAxis: { type: 'value', name: 'Skor', splitLine: { lineStyle: { color: GRAY_200 } } },
     series: [
-      { name: 'Min (ambang batas)', type: 'bar', data: mins, itemStyle: { color: '#c7d2df' } },
+      { name: 'Min', type: 'bar', data: mins, itemStyle: { color: '#c7d2df' } },
       { name: 'Median', type: 'bar', data: meds, itemStyle: { color: NAVY_SOFT } },
       { name: 'Maks', type: 'bar', data: maxs, itemStyle: { color: NAVY } },
     ],
