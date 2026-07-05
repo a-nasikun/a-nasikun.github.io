@@ -1,0 +1,528 @@
+/* ================================================================
+   SMA Kota Yogyakarta — Selectivity Dashboard
+   Data: sma/data/public/<year>.json (aggregated, no student names/IDs)
+   Charts: Apache ECharts (loaded via CDN in index.html)
+   ================================================================ */
+'use strict';
+
+const SMA_COLORS = {
+  SMAN1:  '#973f35', SMAN2:  '#976635', SMAN3:  '#977e35', SMAN4:  '#5e9735',
+  SMAN5:  '#359766', SMAN6:  '#35978a', SMAN7:  '#357a97', SMAN8:  '#355297',
+  SMAN9:  '#523597', SMAN10: '#833597', SMAN11: '#973566',
+};
+const SMP_COLOR    = '#9a9a90';
+const CUTOFF_COLOR = '#c9a84c';
+const NAVY         = '#0d1b2a';
+const NAVY_MID     = '#1a2e45';
+const NAVY_SOFT    = '#243b55';
+const GRAY_600     = '#5a5a52';
+const GRAY_400     = '#9a9a90';
+const GRAY_200     = '#e8e8e2';
+const GENDER_L     = '#1a2e45';
+const GENDER_P     = '#b5657a';
+const FONT_SANS    = "'IBM Plex Sans', system-ui, sans-serif";
+const FONT_MONO    = "'IBM Plex Mono', monospace";
+
+const shortLabel = kode => kode.replace('SMAN', 'SMAN ');
+const fmt = n => n.toLocaleString('en-US');
+
+function baseTextStyle() {
+  return { fontFamily: FONT_SANS, color: GRAY_600 };
+}
+
+// Linear-in-sqrt-space scale so node AREA is proportional to value (fair sizing).
+function sqrtScale(value, domainMin, domainMax, rangeMin, rangeMax) {
+  const a = Math.sqrt(Math.max(value, 0));
+  const aMin = Math.sqrt(Math.max(domainMin, 0));
+  const aMax = Math.sqrt(Math.max(domainMax, 1));
+  if (aMax === aMin) return (rangeMin + rangeMax) / 2;
+  const t = (a - aMin) / (aMax - aMin);
+  return rangeMin + t * (rangeMax - rangeMin);
+}
+
+function histogram(values, bins = 12) {
+  const min = Math.min(...values), max = Math.max(...values);
+  const width = (max - min) / bins || 1;
+  const counts = new Array(bins).fill(0);
+  values.forEach(v => {
+    let idx = Math.floor((v - min) / width);
+    if (idx >= bins) idx = bins - 1;
+    if (idx < 0) idx = 0;
+    counts[idx]++;
+  });
+  const labels = counts.map((_, i) => {
+    const lo = Math.round(min + i * width);
+    const hi = Math.round(min + (i + 1) * width);
+    return `${lo}–${hi}`;
+  });
+  return { labels, counts };
+}
+
+// ── State ──────────────────────────────────────────────────────────
+let DATA = null;
+const chartInstances = {};      // id -> echarts instance
+const schoolPanelCharts = {};   // kode -> { breakdown, scores, gender }
+const selectedSchools = new Set();
+
+function registerChart(id, option) {
+  const el = document.getElementById(id);
+  if (!el) return null;
+  if (chartInstances[id]) chartInstances[id].dispose();
+  const chart = echarts.init(el);
+  chart.setOption(option);
+  chartInstances[id] = chart;
+  return chart;
+}
+
+window.addEventListener('resize', () => {
+  Object.values(chartInstances).forEach(c => c.resize());
+  Object.values(schoolPanelCharts).forEach(set => Object.values(set).forEach(c => c && c.resize()));
+});
+
+// ── Boot ───────────────────────────────────────────────────────────
+const yearSelect = document.getElementById('year-select');
+loadYear(yearSelect.value);
+yearSelect.addEventListener('change', () => loadYear(yearSelect.value));
+
+function loadYear(year) {
+  fetch(`data/public/${year}.json`)
+    .then(r => {
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      return r.json();
+    })
+    .then(data => {
+      DATA = data;
+      renderHero(data);
+      renderNetwork(data);
+      renderGlobal(data);
+      renderSchoolChips(data);
+    })
+    .catch(err => {
+      console.error('Failed to load dashboard data', err);
+      const hero = document.getElementById('hero-stats');
+      if (hero) hero.insertAdjacentHTML('afterend',
+        '<p style="color:#e8c97a;margin-top:1rem;">Could not load admission data for this year. Please try again later.</p>');
+    });
+}
+
+// ── Hero stats ───────────────────────────────────────────────────
+function renderHero(data) {
+  document.getElementById('stat-schools').textContent  = data.meta.total_sma;
+  document.getElementById('stat-students').textContent = fmt(data.meta.total_students);
+  document.getElementById('stat-feeders').textContent   = fmt(data.meta.total_smp);
+  document.getElementById('stat-tracks').textContent    = data.meta.jalur_list.length;
+}
+
+// ── Network graph ──────────────────────────────────────────────────
+function buildGraphSeriesData(data, { search = '', minCount = 1 } = {}) {
+  const smaTotals = data.network.sma_nodes.map(n => n.total);
+  const smpTotals = data.network.smp_nodes.map(n => n.total);
+  const smaMax = Math.max(...smaTotals), smaMin = Math.min(...smaTotals);
+  const smpMax = Math.max(...smpTotals), smpMin = Math.min(...smpTotals);
+
+  const edges = data.network.edges.filter(e => e.count >= minCount);
+  const keepSmp = new Set(edges.map(e => e.target));
+
+  const q = search.trim().toLowerCase();
+  const matched = q ? new Set(data.network.smp_nodes
+    .filter(n => n.nama.toLowerCase().includes(q))
+    .map(n => n.nama)) : null;
+
+  const categories = data.network.sma_nodes.map(n => ({ name: shortLabel(n.kode) }));
+  categories.push({ name: 'SMP / MTs (feeder)' });
+  const smpCategoryIndex = categories.length - 1;
+  const kodeIndex = {};
+  data.network.sma_nodes.forEach((n, i) => { kodeIndex[n.kode] = i; });
+
+  const nodes = [];
+  data.network.sma_nodes.forEach(n => {
+    const dim = matched ? 0.15 : 1;
+    nodes.push({
+      id: n.kode,
+      name: n.nama,
+      value: n.total,
+      symbol: 'circle',
+      symbolSize: sqrtScale(n.total, smaMin, smaMax, 34, 78),
+      category: kodeIndex[n.kode],
+      itemStyle: { color: SMA_COLORS[n.kode], opacity: dim },
+      label: { show: true, formatter: shortLabel(n.kode).replace('SMAN ', ''), fontSize: 11, fontWeight: 700, color: '#fff' },
+    });
+  });
+  data.network.smp_nodes.forEach(n => {
+    if (!keepSmp.has(n.nama)) return;
+    const isMatch = matched ? matched.has(n.nama) : true;
+    nodes.push({
+      id: n.nama,
+      name: n.nama,
+      value: n.total,
+      symbol: 'rect',
+      symbolSize: sqrtScale(n.total, smpMin, smpMax, 5, 30),
+      category: smpCategoryIndex,
+      itemStyle: { color: SMP_COLOR, opacity: isMatch ? 0.95 : 0.12 },
+      label: { show: false },
+    });
+  });
+
+  const links = edges.map(e => ({
+    source: e.source,
+    target: e.target,
+    value: e.count,
+    lineStyle: {
+      width: sqrtScale(e.count, 1, Math.max(...data.network.edges.map(x => x.count)), 0.6, 7),
+      color: 'source',
+      opacity: matched ? (matched.has(e.target) ? 0.6 : 0.04) : 0.28,
+      curveness: 0.15,
+    },
+  }));
+
+  return { nodes, links, categories };
+}
+
+function renderNetwork(data) {
+  const search = document.getElementById('network-search');
+  const minCountSlider = document.getElementById('network-min-count');
+  const minCountLabel = document.getElementById('network-min-count-label');
+  const resetBtn = document.getElementById('network-reset');
+
+  function draw() {
+    const { nodes, links, categories } = buildGraphSeriesData(data, {
+      search: search.value,
+      minCount: Number(minCountSlider.value),
+    });
+    registerChart('network-graph', {
+      textStyle: baseTextStyle(),
+      tooltip: {
+        formatter(p) {
+          if (p.dataType === 'edge') return `${p.data.source} → ${p.data.target}<br/><strong>${fmt(p.data.value)}</strong> students`;
+          return `<strong>${p.data.name}</strong><br/>${fmt(p.data.value)} students`;
+        },
+      },
+      legend: [{
+        type: 'scroll', top: 4, textStyle: { fontFamily: FONT_MONO, fontSize: 10, color: GRAY_600 },
+        data: categories.map(c => c.name),
+      }],
+      series: [{
+        type: 'graph', layout: 'force', roam: true, draggable: true,
+        categories,
+        data: nodes,
+        links,
+        force: { repulsion: 110, edgeLength: [25, 130], gravity: 0.12, friction: 0.25 },
+        emphasis: { focus: 'adjacency', label: { show: true, fontSize: 11 }, lineStyle: { opacity: 0.9 } },
+        lineStyle: { curveness: 0.15 },
+      }],
+    });
+  }
+
+  draw();
+  search.addEventListener('input', draw);
+  minCountSlider.addEventListener('input', () => {
+    minCountLabel.textContent = minCountSlider.value;
+    draw();
+  });
+  resetBtn.addEventListener('click', () => {
+    search.value = '';
+    minCountSlider.value = 1;
+    minCountLabel.textContent = '1';
+    draw();
+  });
+
+  // Accessible data-table alternative
+  const tbody = document.querySelector('#network-table tbody');
+  const rows = [...data.network.edges].sort((a, b) => b.count - a.count);
+  tbody.innerHTML = rows.map(e =>
+    `<tr><td>${e.target}</td><td>${shortLabel(e.source)}</td><td>${fmt(e.count)}</td></tr>`
+  ).join('');
+}
+
+// ── Global indicators ────────────────────────────────────────────
+function renderGlobal(data) {
+  renderRankingChart(data);
+  renderJalurTotalsChart(data);
+  renderGenderChart(data.overall.gender, 'chart-gender');
+  renderJalurRangeChart(data);
+  renderRadiusHistogram(data);
+  renderTopFeedersChart(data.overall.top_feeders, 'chart-top-feeders', 15);
+}
+
+function renderRankingChart(data) {
+  const ranking = data.overall.cutoff_ranking;
+  const names = ranking.map(r => shortLabel(r.kode));
+  const values = ranking.map(r => r.cutoff);
+  const colors = ranking.map(r => SMA_COLORS[r.kode]);
+  const avg = values.reduce((a, b) => a + b, 0) / values.length;
+
+  registerChart('chart-ranking', {
+    textStyle: baseTextStyle(),
+    grid: { left: 90, right: 30, top: 10, bottom: 30 },
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' }, valueFormatter: v => `${v} pts` },
+    xAxis: { type: 'value', name: 'Cutoff score', axisLine: { lineStyle: { color: GRAY_200 } }, splitLine: { lineStyle: { color: GRAY_200 } } },
+    yAxis: { type: 'category', data: names, inverse: true, axisLine: { lineStyle: { color: GRAY_200 } }, axisLabel: { fontFamily: FONT_MONO } },
+    series: [{
+      type: 'bar', data: values.map((v, i) => ({ value: v, itemStyle: { color: colors[i] } })),
+      barWidth: '55%',
+      label: { show: true, position: 'right', formatter: p => p.value, fontFamily: FONT_MONO, color: GRAY_600 },
+      markLine: {
+        symbol: 'none',
+        lineStyle: { color: CUTOFF_COLOR, type: 'dashed', width: 2 },
+        label: { formatter: 'avg {c}', color: CUTOFF_COLOR, fontFamily: FONT_MONO },
+        data: [{ xAxis: Math.round(avg * 100) / 100 }],
+      },
+    }],
+  });
+}
+
+function renderJalurTotalsChart(data) {
+  const jalurList = data.meta.jalur_list;
+  const values = jalurList.map(j => (data.overall.jalur[j] ? data.overall.jalur[j].count : 0));
+  registerChart('chart-jalur-totals', {
+    textStyle: baseTextStyle(),
+    grid: { left: 110, right: 40, top: 10, bottom: 30 },
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+    xAxis: { type: 'value', axisLine: { lineStyle: { color: GRAY_200 } }, splitLine: { lineStyle: { color: GRAY_200 } } },
+    yAxis: { type: 'category', data: jalurList, inverse: true, axisLabel: { fontFamily: FONT_SANS, fontSize: 11 } },
+    series: [{
+      type: 'bar', data: values, barWidth: '55%',
+      itemStyle: { color: NAVY_SOFT, borderRadius: [0, 4, 4, 0] },
+      label: { show: true, position: 'right', fontFamily: FONT_MONO, color: GRAY_600 },
+    }],
+  });
+}
+
+function renderGenderChart(gender, elId) {
+  registerChart(elId, {
+    textStyle: baseTextStyle(),
+    tooltip: { trigger: 'item', valueFormatter: v => `${fmt(v)} students` },
+    legend: { bottom: 0, textStyle: { fontFamily: FONT_SANS, fontSize: 11 } },
+    series: [{
+      type: 'pie', radius: ['45%', '72%'], center: ['50%', '45%'],
+      label: { formatter: '{b}\n{d}%', fontFamily: FONT_SANS, fontSize: 11, color: GRAY_600 },
+      data: [
+        { name: 'Laki-laki (L)', value: gender.L, itemStyle: { color: GENDER_L } },
+        { name: 'Perempuan (P)', value: gender.P, itemStyle: { color: GENDER_P } },
+      ],
+    }],
+  });
+}
+
+function renderJalurRangeChart(data) {
+  const jalurList = data.meta.jalur_list.filter(j => data.overall.jalur[j] && data.overall.jalur[j].unit === 'skor');
+  const mins = jalurList.map(j => data.overall.jalur[j].min);
+  const meds = jalurList.map(j => data.overall.jalur[j].median);
+  const maxs = jalurList.map(j => data.overall.jalur[j].max);
+
+  registerChart('chart-jalur-range', {
+    textStyle: baseTextStyle(),
+    grid: { left: 50, right: 20, top: 40, bottom: 60 },
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+    legend: { top: 0, textStyle: { fontFamily: FONT_SANS, fontSize: 11 } },
+    xAxis: { type: 'category', data: jalurList, axisLabel: { fontSize: 10, interval: 0, rotate: 20 } },
+    yAxis: { type: 'value', name: 'Score', splitLine: { lineStyle: { color: GRAY_200 } } },
+    series: [
+      { name: 'Min (cutoff)', type: 'bar', data: mins, itemStyle: { color: '#c7d2df' } },
+      { name: 'Median', type: 'bar', data: meds, itemStyle: { color: NAVY_SOFT } },
+      { name: 'Max', type: 'bar', data: maxs, itemStyle: { color: NAVY } },
+    ],
+  });
+}
+
+function renderRadiusHistogram(data) {
+  const radius = data.overall.jalur['Zonasi Radius'];
+  if (!radius) return;
+  const { labels, counts } = histogram(radius.values, 10);
+  registerChart('chart-radius-hist', {
+    textStyle: baseTextStyle(),
+    grid: { left: 45, right: 20, top: 20, bottom: 50 },
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' }, valueFormatter: v => `${v} students` },
+    xAxis: { type: 'category', data: labels.map(l => l + 'm'), axisLabel: { fontSize: 9, interval: 0, rotate: 40 } },
+    yAxis: { type: 'value', splitLine: { lineStyle: { color: GRAY_200 } } },
+    series: [{ type: 'bar', data: counts, itemStyle: { color: NAVY_SOFT, borderRadius: [4, 4, 0, 0] } }],
+  });
+}
+
+function renderTopFeedersChart(feeders, elId, limit = 15) {
+  const top = feeders.slice(0, limit);
+  registerChart(elId, {
+    textStyle: baseTextStyle(),
+    grid: { left: 220, right: 40, top: 10, bottom: 30 },
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+    xAxis: { type: 'value', splitLine: { lineStyle: { color: GRAY_200 } } },
+    yAxis: {
+      type: 'category', data: top.map(f => f.asal_sekolah).reverse(), inverse: false,
+      axisLabel: { fontSize: 10, width: 200, overflow: 'truncate' },
+    },
+    series: [{
+      type: 'bar', data: top.map(f => f.count).reverse(), barWidth: '60%',
+      itemStyle: { color: NAVY_SOFT, borderRadius: [0, 4, 4, 0] },
+      label: { show: true, position: 'right', fontFamily: FONT_MONO, color: GRAY_600 },
+    }],
+  });
+}
+
+// ── Per-school explorer ──────────────────────────────────────────
+function renderSchoolChips(data) {
+  const wrap = document.getElementById('school-chips');
+  wrap.innerHTML = data.schools.map(s => `
+    <button class="sma-chip" data-kode="${s.kode}" aria-pressed="false">
+      <span class="dot" style="background:${SMA_COLORS[s.kode]}"></span>
+      ${shortLabel(s.kode)}
+      <span class="count">${fmt(s.total)}</span>
+    </button>
+  `).join('');
+
+  wrap.querySelectorAll('.sma-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const kode = chip.dataset.kode;
+      if (selectedSchools.has(kode)) {
+        selectedSchools.delete(kode);
+        chip.classList.remove('active');
+        chip.setAttribute('aria-pressed', 'false');
+      } else {
+        selectedSchools.add(kode);
+        chip.classList.add('active');
+        chip.setAttribute('aria-pressed', 'true');
+      }
+      renderSchoolPanels(data);
+    });
+  });
+}
+
+function renderSchoolPanels(data) {
+  const container = document.getElementById('school-panels');
+  const emptyState = document.getElementById('school-empty-state');
+
+  if (selectedSchools.size === 0) {
+    Object.keys(schoolPanelCharts).forEach(disposeSchoolCharts);
+    container.innerHTML = '<div class="sma-empty-state" id="school-empty-state">Select a school above to see its admission statistics.</div>';
+    return;
+  }
+  if (emptyState) emptyState.remove();
+
+  // Remove panels for deselected schools
+  Object.keys(schoolPanelCharts).forEach(kode => {
+    if (!selectedSchools.has(kode)) {
+      disposeSchoolCharts(kode);
+      const el = document.getElementById(`panel-${kode}`);
+      if (el) el.remove();
+    }
+  });
+
+  const orderedSelected = data.schools.filter(s => selectedSchools.has(s.kode));
+  orderedSelected.forEach(school => {
+    if (document.getElementById(`panel-${school.kode}`)) return; // already rendered
+    container.insertAdjacentHTML('beforeend', schoolPanelTemplate(data, school));
+    mountSchoolCharts(data, school);
+  });
+}
+
+function disposeSchoolCharts(kode) {
+  const set = schoolPanelCharts[kode];
+  if (!set) return;
+  Object.values(set).forEach(c => c && c.dispose());
+  delete schoolPanelCharts[kode];
+}
+
+function rankOf(data, kode) {
+  const idx = data.overall.cutoff_ranking.findIndex(r => r.kode === kode);
+  return idx === -1 ? null : idx + 1;
+}
+
+function schoolPanelTemplate(data, school) {
+  const color = SMA_COLORS[school.kode];
+  const rank = rankOf(data, school.kode);
+  const feeders = school.top_feeders.slice(0, 6);
+  return `
+    <article class="sma-school-panel" id="panel-${school.kode}" style="border-left-color:${color}">
+      <div class="sma-school-panel-header">
+        <h3><span class="dot" style="background:${color}"></span>${school.nama}</h3>
+        <span class="rank-tag">${rank ? `#${rank} of ${data.meta.total_sma} by Zonasi Reguler cutoff` : ''} · ${fmt(school.total)} accepted</span>
+      </div>
+      <div class="sma-panel-grid">
+        <div>
+          <h3 style="font-size:0.9rem;">Accepted per track</h3>
+          <div id="panel-${school.kode}-breakdown" class="sma-chart" style="height:220px;"></div>
+        </div>
+        <div>
+          <h3 style="font-size:0.9rem;">Score range per track</h3>
+          <div id="panel-${school.kode}-scores" class="sma-chart" style="height:220px;"></div>
+          <div class="sma-cutoff-note marker"><span class="swatch"></span> gold marker = this school's cutoff (lowest accepted score)</div>
+        </div>
+        <div>
+          <h3 style="font-size:0.9rem;">Gender balance</h3>
+          <div id="panel-${school.kode}-gender" class="sma-chart" style="height:220px;"></div>
+        </div>
+        <div>
+          <h3 style="font-size:0.9rem;">Top feeder schools</h3>
+          <ul class="sma-mini-list">
+            ${feeders.map((f, i) => `<li><span>${f.asal_sekolah}</span><span class="n">${fmt(f.count)}</span></li>`).join('')}
+          </ul>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+function mountSchoolCharts(data, school) {
+  const color = SMA_COLORS[school.kode];
+  const jalurList = data.meta.jalur_list.filter(j => school.jalur[j]);
+
+  const breakdown = echarts.init(document.getElementById(`panel-${school.kode}-breakdown`));
+  breakdown.setOption({
+    textStyle: baseTextStyle(),
+    grid: { left: 100, right: 30, top: 10, bottom: 20 },
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+    xAxis: { type: 'value', axisLabel: { fontSize: 10 }, splitLine: { lineStyle: { color: GRAY_200 } } },
+    yAxis: { type: 'category', data: jalurList, inverse: true, axisLabel: { fontSize: 10 } },
+    series: [{
+      type: 'bar', barWidth: '55%',
+      data: jalurList.map(j => school.jalur[j].count),
+      itemStyle: { color },
+      label: { show: true, position: 'right', fontFamily: FONT_MONO, fontSize: 10, color: GRAY_600 },
+    }],
+  });
+
+  const scoreJalur = jalurList.filter(j => school.jalur[j].unit === 'skor');
+  const scores = echarts.init(document.getElementById(`panel-${school.kode}-scores`));
+  scores.setOption({
+    textStyle: baseTextStyle(),
+    grid: { left: 100, right: 30, top: 10, bottom: 20 },
+    tooltip: {
+      trigger: 'item',
+      formatter(p) {
+        if (p.seriesName === 'Cutoff') return `${p.value[1]}<br/>Cutoff (min accepted): <strong>${p.value[0]}</strong>`;
+        return `${p.name}<br/>Highest accepted: <strong>${p.value}</strong>`;
+      },
+    },
+    xAxis: { type: 'value', axisLabel: { fontSize: 10 }, splitLine: { lineStyle: { color: GRAY_200 } } },
+    yAxis: { type: 'category', data: scoreJalur, inverse: true, axisLabel: { fontSize: 10 } },
+    series: [
+      {
+        name: 'Highest accepted', type: 'bar', barWidth: '45%',
+        data: scoreJalur.map(j => school.jalur[j].max),
+        itemStyle: { color, opacity: 0.55 },
+        label: { show: true, position: 'right', fontFamily: FONT_MONO, fontSize: 10, color: GRAY_600 },
+      },
+      {
+        name: 'Cutoff', type: 'scatter', symbol: 'rect', symbolSize: [4, 20], z: 5,
+        itemStyle: { color: CUTOFF_COLOR },
+        data: scoreJalur.map(j => [school.jalur[j].cutoff, j]),
+      },
+    ],
+  });
+
+  const gender = echarts.init(document.getElementById(`panel-${school.kode}-gender`));
+  gender.setOption({
+    textStyle: baseTextStyle(),
+    tooltip: { trigger: 'item', valueFormatter: v => `${fmt(v)} students` },
+    legend: { bottom: 0, textStyle: { fontFamily: FONT_SANS, fontSize: 10 } },
+    series: [{
+      type: 'pie', radius: ['42%', '70%'], center: ['50%', '42%'],
+      label: { formatter: '{d}%', fontSize: 10 },
+      data: [
+        { name: 'L', value: school.gender.L, itemStyle: { color: GENDER_L } },
+        { name: 'P', value: school.gender.P, itemStyle: { color: GENDER_P } },
+      ],
+    }],
+  });
+
+  schoolPanelCharts[school.kode] = { breakdown, scores, gender };
+}
