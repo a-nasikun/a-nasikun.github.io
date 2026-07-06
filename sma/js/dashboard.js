@@ -767,25 +767,27 @@ function smpPanelTemplate(data, smpName, info, destinations, rank) {
           <div id="smp-ego-graph" class="sma-chart" style="height:340px;"></div>
           <p class="network-legend-hint">Ukuran lingkaran SMA di sini menunjukkan jumlah alumni dari <strong>${smpName}</strong> secara spesifik, bukan total keseluruhan siswa SMA tersebut.</p>
         </div>
-        <div>
-          <h3 style="font-size:0.9rem;">Diterima per jalur</h3>
-          <div id="smp-jalur-chart" class="sma-chart" style="height:240px;"></div>
-        </div>
-        <div style="grid-column: 1 / -1;">
-          <h3 style="font-size:0.9rem;">Peringkat SMA tujuan</h3>
-          <ul class="sma-mini-list">
-            ${destinations.map(d => {
-              const breakdown = (data.by_sma_smp[d.kode] || {})[smpName];
-              const tags = formatJalurTags(breakdown, { withValue: false });
-              return `<li>
-                <div class="row">
-                  <span class="name"><span class="dot" style="display:inline-block;width:0.55rem;height:0.55rem;border-radius:50%;background:${SMA_COLORS[d.kode]};margin-right:0.5rem;"></span>${d.nama}</span>
-                  ${tags ? `<span class="tags">${tags}</span>` : ''}
-                  <span class="n">${fmt(d.count)}</span>
-                </div>
-              </li>`;
-            }).join('')}
-          </ul>
+        <div class="sma-quad-grid" style="grid-column: 1 / -1;">
+          <div>
+            <h3 style="font-size:0.9rem;">Diterima per jalur</h3>
+            <div id="smp-jalur-chart" class="sma-chart" style="height:240px;"></div>
+          </div>
+          <div>
+            <h3 style="font-size:0.9rem;">Peringkat SMA tujuan</h3>
+            <ul class="sma-mini-list">
+              ${destinations.map(d => {
+                const breakdown = (data.by_sma_smp[d.kode] || {})[smpName];
+                const tags = formatJalurTags(breakdown, { withValue: false });
+                return `<li>
+                  <div class="row">
+                    <span class="name"><span class="dot" style="display:inline-block;width:0.55rem;height:0.55rem;border-radius:50%;background:${SMA_COLORS[d.kode]};margin-right:0.5rem;"></span>${d.nama}</span>
+                    ${tags ? `<span class="tags">${tags}</span>` : ''}
+                    <span class="n">${fmt(d.count)}</span>
+                  </div>
+                </li>`;
+              }).join('')}
+            </ul>
+          </div>
         </div>
       </div>
     </article>
@@ -844,9 +846,11 @@ function mountSmpCharts(data, smpName, info, destinations) {
   const jalurChart = echarts.init(jalurEl);
   jalurChart.setOption({
     textStyle: baseTextStyle(),
-    grid: { left: 100, right: 30, top: 10, bottom: 20 },
+    grid: { left: 100, right: 40, top: 10, bottom: 10 },
     tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' }, valueFormatter: v => `${fmt(v)} siswa` },
-    xAxis: { type: 'value', axisLabel: { fontSize: 10 }, splitLine: { lineStyle: { color: GRAY_200 } } },
+    // Sumbu nilai disembunyikan — kartu ini kini 33% lebar (sebaris dengan Peringkat SMA tujuan),
+    // dan label di ujung tiap batang sudah menunjukkan angka pastinya.
+    xAxis: { type: 'value', axisLine: { show: false }, axisTick: { show: false }, axisLabel: { show: false }, splitLine: { show: false } },
     yAxis: { type: 'category', data: jalurList, inverse: true, axisLabel: { fontSize: 10 } },
     series: [{
       type: 'bar', barWidth: '55%',
