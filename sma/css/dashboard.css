@@ -400,9 +400,19 @@
 .sma-mini-list .tags {
   flex: 1 1 260px;
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.72rem;
+  line-height: 1.6;
+}
+.sma-mini-list .tags .tag-jalur {
   color: var(--gray-400);
-  line-height: 1.5;
+}
+.sma-mini-list .tags .tag-jalur::after {
+  content: ':';
+}
+.sma-mini-list .tags .tag-count {
+  color: var(--navy-soft);
+  font-weight: 600;
+  margin-right: 0.7rem;
 }
 .sma-mini-list .n {
   font-family: var(--font-mono);

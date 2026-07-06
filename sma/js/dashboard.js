@@ -34,18 +34,16 @@ const JALUR_ABBR = {
 };
 
 // Baris ringkas rincian per-jalur untuk item daftar mini (mis. "ZReg:3·342,1  Prestasi:2·360,5").
-function formatJalurTags(breakdown, { withValue = true } = {}) {
+function formatJalurTags(breakdown) {
   if (!breakdown) return '';
   return JALUR_ORDER
     .filter(j => breakdown[j])
     .map(j => {
       const b = breakdown[j];
       const abbr = JALUR_ABBR[j] || j;
-      if (!withValue) return `${abbr}:${fmt(b.count)}`;
-      const valStr = b.unit === 'meter' ? `${Math.round(b.value)}m` : fmtScore(b.value);
-      return `${abbr}:${fmt(b.count)}·${valStr}`;
+      return `<span class="tag-jalur">${abbr}</span><span class="tag-count">${fmt(b.count)}</span>`;
     })
-    .join('  ');
+    .join('');
 }
 
 function baseTextStyle() {
@@ -522,7 +520,7 @@ function schoolPanelTemplate(data, school) {
           <ul class="sma-mini-list">
             ${feeders.map(f => {
               const breakdown = (data.by_sma_smp[school.kode] || {})[f.asal_sekolah];
-              const tags = formatJalurTags(breakdown, { withValue: true });
+              const tags = formatJalurTags(breakdown);
               return `<li>
                 <div class="row">
                   <span class="name">${f.asal_sekolah}</span>
@@ -777,7 +775,7 @@ function smpPanelTemplate(data, smpName, info, destinations, rank) {
             <ul class="sma-mini-list">
               ${destinations.map(d => {
                 const breakdown = (data.by_sma_smp[d.kode] || {})[smpName];
-                const tags = formatJalurTags(breakdown, { withValue: false });
+                const tags = formatJalurTags(breakdown);
                 return `<li>
                   <div class="row">
                     <span class="name"><span class="dot" style="display:inline-block;width:0.55rem;height:0.55rem;border-radius:50%;background:${SMA_COLORS[d.kode]};margin-right:0.5rem;"></span>${d.nama}</span>
