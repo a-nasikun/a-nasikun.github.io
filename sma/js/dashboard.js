@@ -27,6 +27,28 @@ const shortLabel = kode => kode.replace('SMAN', 'SMAN ');
 const fmt = n => n.toLocaleString('id-ID');                                  // untuk jumlah (bilangan bulat)
 const fmtScore = n => n.toLocaleString('id-ID', { maximumFractionDigits: 2 }); // untuk skor/jarak (desimal)
 
+// Nama pendek untuk label pada grafik (mis. "SMP NEGERI 1 YOGYAKARTA" -> "SMPN 1 Jogja").
+const SMP_PREFIX_RULES = [
+  [/^SMP NEGERI\b/i, 'SMPN'],
+  [/^SMPN\b/i, 'SMPN'],
+  [/^MTS NEGERI\b/i, 'MTsN'],
+  [/^MTSN\b/i, 'MTsN'],
+  [/^SMP MUHAMMADIYAH\b/i, 'SMP Muh'],
+  [/^MTSS MUHAMMADIYAH\b/i, 'MTs Muh'],
+  [/^SMP ISLAM TERPADU\b/i, 'SMP IT'],
+  [/^SMPIT\b/i, 'SMP IT'],
+  [/^SMP KRISTEN\b/i, 'SMP Kr'],
+];
+function shortSmpName(nama, maxLen = 22) {
+  let s = nama;
+  for (const [re, repl] of SMP_PREFIX_RULES) {
+    if (re.test(s)) { s = s.replace(re, repl); break; }
+  }
+  s = s.replace(/\bYOGYAKARTA\b/i, 'Jogja');
+  if (s.length > maxLen) s = s.slice(0, maxLen - 1).trim() + '…';
+  return s;
+}
+
 const JALUR_ORDER = ['Zonasi Radius', 'Zonasi Reguler', 'Afirmasi', 'Prestasi', 'Pindah Tugas'];
 const JALUR_ABBR = {
   'Zonasi Radius': 'ZRad', 'Zonasi Reguler': 'ZReg', 'Afirmasi': 'Afirm',
@@ -502,6 +524,11 @@ function schoolPanelTemplate(data, school) {
         <span class="rank-tag">${rank ? `#${rank} dari ${data.meta.total_sma} sekolah berdasarkan ambang batas Zonasi Reguler` : ''} · ${fmt(school.total)} diterima</span>
       </div>
       <div class="sma-panel-grid">
+        <div style="grid-column: 1 / -1;">
+          <h3 style="font-size:0.9rem;">Sekolah asal mana saja yang mengirim siswa ke sini?</h3>
+          <div id="panel-${school.kode}-graph" class="sma-chart" style="height:420px;"></div>
+          <p class="network-legend-hint">Ukuran kotak SMP di sini menunjukkan jumlah siswa yang dikirim ke <strong>${school.nama}</strong> secara spesifik, bukan total keseluruhan siswa yang diluluskan sekolah tersebut.</p>
+        </div>
         <div>
           <h3 style="font-size:0.9rem;">Diterima per jalur</h3>
           <div id="panel-${school.kode}-breakdown" class="sma-chart" style="height:220px;"></div>
@@ -536,9 +563,65 @@ function schoolPanelTemplate(data, school) {
   `;
 }
 
+function mountSchoolGraph(data, school) {
+  const graphEl = document.getElementById(`panel-${school.kode}-graph`);
+  const color = SMA_COLORS[school.kode];
+  const feeders = data.network.edges
+    .filter(e => e.source === school.kode)
+    .map(e => ({ nama: e.target, count: e.count }))
+    .sort((a, b) => b.count - a.count);
+  const counts = feeders.map(f => f.count);
+  const minC = Math.min(...counts), maxC = Math.max(...counts);
+  const centerX = graphEl.clientWidth / 2;
+  const centerY = graphEl.clientHeight / 2;
+
+  const nodes = [
+    {
+      id: '__sma__', name: school.nama, value: school.total,
+      symbol: 'circle', symbolSize: 46,
+      itemStyle: { color },
+      label: { show: true, formatter: shortLabel(school.kode).replace('SMAN ', ''), fontSize: 12, fontWeight: 700, color: '#fff' },
+      fixed: true, x: centerX, y: centerY,
+    },
+    ...feeders.map(f => ({
+      id: f.nama, name: f.nama, value: f.count,
+      symbol: 'rect',
+      symbolSize: sqrtScale(f.count, minC, maxC, 10, 46),
+      itemStyle: { color: SMP_COLOR },
+      label: { show: true, position: 'right', formatter: shortSmpName(f.nama), fontSize: 9, color: GRAY_600 },
+    })),
+  ];
+  const links = feeders.map(f => ({
+    source: '__sma__', target: f.nama, value: f.count,
+    lineStyle: { width: sqrtScale(f.count, minC, maxC, 0.6, 6), color, opacity: 0.3, curveness: 0.12 },
+  }));
+
+  const graph = echarts.init(graphEl);
+  graph.setOption({
+    textStyle: baseTextStyle(),
+    tooltip: {
+      formatter(p) {
+        if (p.dataType === 'edge') return `${p.data.target} → ${school.nama}<br/><strong>${fmt(p.data.value)}</strong> siswa`;
+        if (p.data.id === '__sma__') return `<strong>${school.nama}</strong><br/>${fmt(school.total)} siswa diterima total`;
+        return `<strong>${p.data.name}</strong><br/>${fmt(p.data.value)} siswa ke ${school.nama}`;
+      },
+    },
+    series: [{
+      type: 'graph', layout: 'force', roam: true, draggable: true,
+      data: nodes, links,
+      force: { repulsion: 150, edgeLength: [50, 180], gravity: 0.1, friction: 0.3 },
+      emphasis: { focus: 'adjacency', label: { show: true } },
+      lineStyle: { curveness: 0.12 },
+    }],
+  });
+  return graph;
+}
+
 function mountSchoolCharts(data, school) {
   const color = SMA_COLORS[school.kode];
   const jalurList = data.meta.jalur_list.filter(j => school.jalur[j]);
+
+  const graph = mountSchoolGraph(data, school);
 
   const breakdown = echarts.init(document.getElementById(`panel-${school.kode}-breakdown`));
   breakdown.setOption({
@@ -599,7 +682,7 @@ function mountSchoolCharts(data, school) {
     }],
   });
 
-  schoolPanelCharts[school.kode] = { breakdown, scores, gender };
+  schoolPanelCharts[school.kode] = { graph, breakdown, scores, gender };
 }
 
 // ── Eksplorasi sudut pandang SMP ─────────────────────────────────────
