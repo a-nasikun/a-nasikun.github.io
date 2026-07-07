@@ -526,6 +526,14 @@ function schoolPanelTemplate(data, school) {
       <div class="sma-panel-grid">
         <div style="grid-column: 1 / -1;">
           <h3 style="font-size:0.9rem;">Sekolah asal mana saja yang mengirim siswa ke sini?</h3>
+          <div class="network-controls">
+            <div class="network-slider-wrap">
+              <span>Min. siswa per SMP</span>
+              <input type="range" id="panel-${school.kode}-min-count" min="1" max="20" value="5" step="1" />
+              <span id="panel-${school.kode}-min-count-label">5</span>
+            </div>
+            <button class="btn-ghost" id="panel-${school.kode}-graph-reset">Atur ulang tampilan</button>
+          </div>
           <div id="panel-${school.kode}-graph" class="sma-chart" style="height:420px;"></div>
           <p class="network-legend-hint">Ukuran kotak SMP di sini menunjukkan jumlah siswa yang dikirim ke <strong>${school.nama}</strong> secara spesifik, bukan total keseluruhan siswa yang diluluskan sekolah tersebut.</p>
         </div>
@@ -565,55 +573,79 @@ function schoolPanelTemplate(data, school) {
 
 function mountSchoolGraph(data, school) {
   const graphEl = document.getElementById(`panel-${school.kode}-graph`);
+  const minSlider = document.getElementById(`panel-${school.kode}-min-count`);
+  const minLabel = document.getElementById(`panel-${school.kode}-min-count-label`);
+  const resetBtn = document.getElementById(`panel-${school.kode}-graph-reset`);
   const color = SMA_COLORS[school.kode];
-  const feeders = data.network.edges
+  const DEFAULT_MIN = 5;
+
+  const allFeeders = data.network.edges
     .filter(e => e.source === school.kode)
     .map(e => ({ nama: e.target, count: e.count }))
     .sort((a, b) => b.count - a.count);
-  const counts = feeders.map(f => f.count);
-  const minC = Math.min(...counts), maxC = Math.max(...counts);
-  const centerX = graphEl.clientWidth / 2;
-  const centerY = graphEl.clientHeight / 2;
-
-  const nodes = [
-    {
-      id: '__sma__', name: school.nama, value: school.total,
-      symbol: 'circle', symbolSize: 46,
-      itemStyle: { color },
-      label: { show: true, formatter: shortLabel(school.kode).replace('SMAN ', ''), fontSize: 12, fontWeight: 700, color: '#fff' },
-      fixed: true, x: centerX, y: centerY,
-    },
-    ...feeders.map(f => ({
-      id: f.nama, name: f.nama, value: f.count,
-      symbol: 'rect',
-      symbolSize: sqrtScale(f.count, minC, maxC, 10, 46),
-      itemStyle: { color: SMP_COLOR },
-      label: { show: true, position: 'right', formatter: shortSmpName(f.nama), fontSize: 9, color: GRAY_600 },
-    })),
-  ];
-  const links = feeders.map(f => ({
-    source: '__sma__', target: f.nama, value: f.count,
-    lineStyle: { width: sqrtScale(f.count, minC, maxC, 0.6, 6), color, opacity: 0.3, curveness: 0.12 },
-  }));
 
   const graph = echarts.init(graphEl);
-  graph.setOption({
-    textStyle: baseTextStyle(),
-    tooltip: {
-      formatter(p) {
-        if (p.dataType === 'edge') return `${p.data.target} → ${school.nama}<br/><strong>${fmt(p.data.value)}</strong> siswa`;
-        if (p.data.id === '__sma__') return `<strong>${school.nama}</strong><br/>${fmt(school.total)} siswa diterima total`;
-        return `<strong>${p.data.name}</strong><br/>${fmt(p.data.value)} siswa ke ${school.nama}`;
+
+  function draw() {
+    const minCount = Number(minSlider.value);
+    const feeders = allFeeders.filter(f => f.count >= minCount);
+    const counts = feeders.map(f => f.count);
+    const minC = counts.length ? Math.min(...counts) : 1;
+    const maxC = counts.length ? Math.max(...counts) : 1;
+    const centerX = graphEl.clientWidth / 2;
+    const centerY = graphEl.clientHeight / 2;
+
+    const nodes = [
+      {
+        id: '__sma__', name: school.nama, value: school.total,
+        symbol: 'circle', symbolSize: 46,
+        itemStyle: { color },
+        label: { show: true, formatter: shortLabel(school.kode).replace('SMAN ', ''), fontSize: 12, fontWeight: 700, color: '#fff' },
+        fixed: true, x: centerX, y: centerY,
       },
-    },
-    series: [{
-      type: 'graph', layout: 'force', roam: true, draggable: true,
-      data: nodes, links,
-      force: { repulsion: 150, edgeLength: [50, 180], gravity: 0.1, friction: 0.3 },
-      emphasis: { focus: 'adjacency', label: { show: true } },
-      lineStyle: { curveness: 0.12 },
-    }],
+      ...feeders.map(f => ({
+        id: f.nama, name: f.nama, value: f.count,
+        symbol: 'rect',
+        symbolSize: sqrtScale(f.count, minC, maxC, 10, 46),
+        itemStyle: { color: SMP_COLOR },
+        label: { show: true, position: 'right', formatter: shortSmpName(f.nama), fontSize: 9, color: GRAY_600 },
+      })),
+    ];
+    const links = feeders.map(f => ({
+      source: '__sma__', target: f.nama, value: f.count,
+      lineStyle: { width: sqrtScale(f.count, minC, maxC, 0.6, 6), color, opacity: 0.3, curveness: 0.12 },
+    }));
+
+    graph.setOption({
+      textStyle: baseTextStyle(),
+      tooltip: {
+        formatter(p) {
+          if (p.dataType === 'edge') return `${p.data.target} → ${school.nama}<br/><strong>${fmt(p.data.value)}</strong> siswa`;
+          if (p.data.id === '__sma__') return `<strong>${school.nama}</strong><br/>${fmt(school.total)} siswa diterima total`;
+          return `<strong>${p.data.name}</strong><br/>${fmt(p.data.value)} siswa ke ${school.nama}`;
+        },
+      },
+      series: [{
+        type: 'graph', layout: 'force', roam: true, draggable: true,
+        data: nodes, links,
+        force: { repulsion: 150, edgeLength: [50, 180], gravity: 0.1, friction: 0.3 },
+        emphasis: { focus: 'adjacency', label: { show: true } },
+        lineStyle: { curveness: 0.12 },
+      }],
+    }, true);
+  }
+
+  draw();
+  minSlider.addEventListener('input', () => {
+    minLabel.textContent = minSlider.value;
+    draw();
   });
+  resetBtn.addEventListener('click', () => {
+    minSlider.value = DEFAULT_MIN;
+    minLabel.textContent = String(DEFAULT_MIN);
+    draw();
+  });
+
   return graph;
 }
 
