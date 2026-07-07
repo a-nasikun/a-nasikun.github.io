@@ -107,6 +107,7 @@ const schoolPanelCharts = {};   // kode -> { breakdown, scores, gender }
 const selectedSchools = new Set();
 let smpPanelCharts = {};        // { ego, jalur } — hanya satu SMP aktif sekaligus
 let smpExplorerInitialized = false;
+const cmpCharts = { a: {}, b: {} }; // panel perbandingan — dua slot tetap, "a" dan "b"
 
 function registerChart(id, option) {
   const el = document.getElementById(id);
@@ -122,6 +123,8 @@ window.addEventListener('resize', () => {
   Object.values(chartInstances).forEach(c => c.resize());
   Object.values(schoolPanelCharts).forEach(set => Object.values(set).forEach(c => c && c.resize()));
   Object.values(smpPanelCharts).forEach(c => c && c.resize());
+  Object.values(cmpCharts.a).forEach(c => c && c.resize());
+  Object.values(cmpCharts.b).forEach(c => c && c.resize());
 });
 
 // ── Boot ───────────────────────────────────────────────────────────
@@ -146,6 +149,7 @@ function loadYear(year) {
       }
       renderSchoolChips(data);
       renderSchoolPanels(data);
+      renderComparison(data);
       renderSmpExplorer(data);
     })
     .catch(err => {
@@ -459,15 +463,14 @@ function renderSchoolChips(data) {
   wrap.querySelectorAll('.sma-chip').forEach(chip => {
     chip.addEventListener('click', () => {
       const kode = chip.dataset.kode;
+      // Hanya satu SMA yang bisa aktif sekaligus di sini — memilih satu otomatis menonaktifkan yang lain.
       if (selectedSchools.has(kode)) {
         selectedSchools.delete(kode);
-        chip.classList.remove('active');
-        chip.setAttribute('aria-pressed', 'false');
       } else {
+        selectedSchools.clear();
         selectedSchools.add(kode);
-        chip.classList.add('active');
-        chip.setAttribute('aria-pressed', 'true');
       }
+      renderSchoolChips(data);
       renderSchoolPanels(data);
     });
   });
@@ -571,11 +574,11 @@ function schoolPanelTemplate(data, school) {
   `;
 }
 
-function mountSchoolGraph(data, school) {
-  const graphEl = document.getElementById(`panel-${school.kode}-graph`);
-  const minSlider = document.getElementById(`panel-${school.kode}-min-count`);
-  const minLabel = document.getElementById(`panel-${school.kode}-min-count-label`);
-  const resetBtn = document.getElementById(`panel-${school.kode}-graph-reset`);
+function mountFeederGraph(data, school, ids) {
+  const graphEl = document.getElementById(ids.graphElId);
+  const minSlider = document.getElementById(ids.minSliderId);
+  const minLabel = document.getElementById(ids.minLabelId);
+  const resetBtn = document.getElementById(ids.resetBtnId);
   const color = SMA_COLORS[school.kode];
   const DEFAULT_MIN = 5;
 
@@ -649,14 +652,10 @@ function mountSchoolGraph(data, school) {
   return graph;
 }
 
-function mountSchoolCharts(data, school) {
-  const color = SMA_COLORS[school.kode];
+function mountJalurCountChart(elId, data, school, color) {
   const jalurList = data.meta.jalur_list.filter(j => school.jalur[j]);
-
-  const graph = mountSchoolGraph(data, school);
-
-  const breakdown = echarts.init(document.getElementById(`panel-${school.kode}-breakdown`));
-  breakdown.setOption({
+  const chart = echarts.init(document.getElementById(elId));
+  chart.setOption({
     textStyle: baseTextStyle(),
     grid: { left: 100, right: 30, top: 10, bottom: 20 },
     tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' }, valueFormatter: v => `${fmt(v)} siswa` },
@@ -669,10 +668,14 @@ function mountSchoolCharts(data, school) {
       label: { show: true, position: 'right', formatter: p => fmt(p.value), fontFamily: FONT_MONO, fontSize: 10, color: GRAY_600 },
     }],
   });
+  return chart;
+}
 
+function mountJalurScoreChart(elId, data, school, color) {
+  const jalurList = data.meta.jalur_list.filter(j => school.jalur[j]);
   const scoreJalur = jalurList.filter(j => school.jalur[j].unit === 'skor');
-  const scores = echarts.init(document.getElementById(`panel-${school.kode}-scores`));
-  scores.setOption({
+  const chart = echarts.init(document.getElementById(elId));
+  chart.setOption({
     textStyle: baseTextStyle(),
     grid: { left: 100, right: 30, top: 10, bottom: 20 },
     tooltip: {
@@ -698,6 +701,20 @@ function mountSchoolCharts(data, school) {
       },
     ],
   });
+  return chart;
+}
+
+function mountSchoolCharts(data, school) {
+  const color = SMA_COLORS[school.kode];
+
+  const graph = mountFeederGraph(data, school, {
+    graphElId: `panel-${school.kode}-graph`,
+    minSliderId: `panel-${school.kode}-min-count`,
+    minLabelId: `panel-${school.kode}-min-count-label`,
+    resetBtnId: `panel-${school.kode}-graph-reset`,
+  });
+  const breakdown = mountJalurCountChart(`panel-${school.kode}-breakdown`, data, school, color);
+  const scores = mountJalurScoreChart(`panel-${school.kode}-scores`, data, school, color);
 
   const gender = echarts.init(document.getElementById(`panel-${school.kode}-gender`));
   gender.setOption({
@@ -715,6 +732,120 @@ function mountSchoolCharts(data, school) {
   });
 
   schoolPanelCharts[school.kode] = { graph, breakdown, scores, gender };
+}
+
+// ── Bandingkan dua SMA ────────────────────────────────────────────────
+function comparisonBodyTemplate() {
+  const slotBlock = slot => `
+    <div class="sma-card">
+      <div class="sma-compare-col-header" id="cmp-${slot}-header"></div>
+      <div class="network-controls">
+        <div class="network-slider-wrap">
+          <span>Min. siswa per SMP</span>
+          <input type="range" id="cmp-${slot}-min-count" min="1" max="20" value="5" step="1" />
+          <span id="cmp-${slot}-min-count-label">5</span>
+        </div>
+        <button class="btn-ghost" id="cmp-${slot}-graph-reset">Atur ulang tampilan</button>
+      </div>
+      <div id="cmp-${slot}-graph" class="sma-chart" style="height:360px;"></div>
+    </div>
+  `;
+  return `
+    <div class="sma-compare-row">${slotBlock('a')}${slotBlock('b')}</div>
+
+    <div class="sma-compare-row">
+      <div class="sma-card">
+        <h3 style="font-size:0.9rem;">Diterima per jalur</h3>
+        <div id="cmp-a-breakdown" class="sma-chart" style="height:220px;"></div>
+      </div>
+      <div class="sma-card">
+        <h3 style="font-size:0.9rem;">Diterima per jalur</h3>
+        <div id="cmp-b-breakdown" class="sma-chart" style="height:220px;"></div>
+      </div>
+    </div>
+
+    <div class="sma-compare-row">
+      <div class="sma-card">
+        <h3 style="font-size:0.9rem;">Rentang skor per jalur</h3>
+        <div id="cmp-a-scores" class="sma-chart" style="height:220px;"></div>
+      </div>
+      <div class="sma-card">
+        <h3 style="font-size:0.9rem;">Rentang skor per jalur</h3>
+        <div id="cmp-b-scores" class="sma-chart" style="height:220px;"></div>
+      </div>
+    </div>
+    <div class="sma-cutoff-note marker"><span class="swatch"></span> penanda emas = ambang batas sekolah (skor terendah yang diterima)</div>
+
+    <div class="sma-compare-row">
+      <div class="sma-card">
+        <h3 style="font-size:0.9rem;">6 sekolah asal teratas</h3>
+        <ul class="sma-mini-list" id="cmp-a-feeders"></ul>
+      </div>
+      <div class="sma-card">
+        <h3 style="font-size:0.9rem;">6 sekolah asal teratas</h3>
+        <ul class="sma-mini-list" id="cmp-b-feeders"></ul>
+      </div>
+    </div>
+  `;
+}
+
+function renderComparisonSlot(data, slot, kode) {
+  Object.values(cmpCharts[slot]).forEach(c => c && c.dispose());
+  cmpCharts[slot] = {};
+
+  const school = data.schools.find(s => s.kode === kode);
+  const color = SMA_COLORS[kode];
+
+  document.getElementById(`cmp-${slot}-header`).innerHTML =
+    `<span class="dot" style="background:${color}"></span>${school.nama}`;
+
+  cmpCharts[slot].graph = mountFeederGraph(data, school, {
+    graphElId: `cmp-${slot}-graph`,
+    minSliderId: `cmp-${slot}-min-count`,
+    minLabelId: `cmp-${slot}-min-count-label`,
+    resetBtnId: `cmp-${slot}-graph-reset`,
+  });
+  cmpCharts[slot].breakdown = mountJalurCountChart(`cmp-${slot}-breakdown`, data, school, color);
+  cmpCharts[slot].scores = mountJalurScoreChart(`cmp-${slot}-scores`, data, school, color);
+
+  const feeders = school.top_feeders.slice(0, 6);
+  document.getElementById(`cmp-${slot}-feeders`).innerHTML = feeders.map(f => `
+    <li><div class="row"><span class="name">${f.asal_sekolah}</span><span class="n">${fmt(f.count)}</span></div></li>
+  `).join('');
+}
+
+function renderComparison(data) {
+  const selectA = document.getElementById('cmp-select-a');
+  const selectB = document.getElementById('cmp-select-b');
+  const body = document.getElementById('comparison-body');
+
+  const optionsHtml = data.schools.map(s => `<option value="${s.kode}">${s.nama}</option>`).join('');
+  selectA.innerHTML = optionsHtml;
+  selectB.innerHTML = optionsHtml;
+
+  // Default: dua sekolah paling ketat, agar pengguna langsung melihat contoh perbandingan yang menarik.
+  const ranking = data.overall.cutoff_ranking;
+  selectA.value = ranking[0] ? ranking[0].kode : data.schools[0].kode;
+  selectB.value = ranking[1] ? ranking[1].kode : data.schools[1].kode;
+
+  body.innerHTML = comparisonBodyTemplate();
+
+  function updateOptionAvailability() {
+    // Tidak boleh memilih SMA yang sama di kedua sisi.
+    [...selectA.options].forEach(o => { o.disabled = o.value === selectB.value; });
+    [...selectB.options].forEach(o => { o.disabled = o.value === selectA.value; });
+  }
+
+  function renderBoth() {
+    updateOptionAvailability();
+    renderComparisonSlot(data, 'a', selectA.value);
+    renderComparisonSlot(data, 'b', selectB.value);
+  }
+
+  selectA.addEventListener('change', renderBoth);
+  selectB.addEventListener('change', renderBoth);
+
+  renderBoth();
 }
 
 // ── Eksplorasi sudut pandang SMP ─────────────────────────────────────

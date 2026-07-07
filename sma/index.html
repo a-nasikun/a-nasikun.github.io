@@ -161,8 +161,8 @@
   <section id="perschool" class="sma-section section">
     <div class="container">
       <div class="section-header animate-on-scroll">
-        <h2>Jelajahi tiap sekolah</h2>
-        <p>Aktifkan satu atau beberapa sekolah untuk melihat rincian jalur, skor ambang batas, dan sekolah asal teratasnya secara berdampingan.</p>
+        <h2>Data SMA</h2>
+        <p>Pilih satu sekolah untuk melihat rincian jalur, skor ambang batas, dan sekolah asal teratasnya.</p>
       </div>
 
       <div class="sma-chip-row animate-on-scroll" id="school-chips"></div>
@@ -170,6 +170,32 @@
       <div id="school-panels">
         <div class="sma-empty-state" id="school-empty-state">Pilih sekolah di atas untuk melihat statistik penerimaannya.</div>
       </div>
+    </div>
+  </section>
+
+  <!-- ── BANDINGKAN DUA SMA ───────────────────────────────────────── -->
+  <section id="comparison" class="sma-section alt section">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <h2>Bandingkan dua SMA</h2>
+        <p>Pilih dua SMA untuk membandingkan sekolah asal, jalur penerimaan, dan skor secara berdampingan.</p>
+      </div>
+
+      <div class="sma-card animate-on-scroll">
+        <div class="sma-compare-select-row">
+          <div class="sma-compare-select-wrap">
+            <label for="cmp-select-a">SMA pertama</label>
+            <select id="cmp-select-a"></select>
+          </div>
+          <div class="sma-compare-vs">vs</div>
+          <div class="sma-compare-select-wrap">
+            <label for="cmp-select-b">SMA kedua</label>
+            <select id="cmp-select-b"></select>
+          </div>
+        </div>
+      </div>
+
+      <div id="comparison-body"></div>
     </div>
   </section>
 
