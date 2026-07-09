@@ -45,7 +45,7 @@ const CURRICULUM_2026 = [
 {"semester":5,"kode":"FIUxxxxxx","nama_id":"Bahasa Indonesia","nama_en":"Bahasa Indonesia","kategori":"General Education","sks":2},
 {"semester":5,"kode":"TIF263101","nama_id":"Desain Sistem","nama_en":"System Design","kategori":"Engineering Topic","sks":3},
 {"semester":5,"kode":"TIF263102","nama_id":"Keamanan Siber","nama_en":"Cybersecurity","kategori":"Engineering Topic","sks":3},
-{"semester":5,"kode":"TKU263101","nama_id":"Kerja Praktik / Magang Industri","nama_en":"Internship","kategori":"Engineering Topic","sks":2},
+{"semester":5,"kode":"TKU263101","nama_id":"Kerja Praktik","nama_en":"Internship","kategori":"Engineering Topic","sks":2},
 {"semester":5,"kode":"FIUxxxxxx","nama_id":"Kewarganegaraan","nama_en":"Civics","kategori":"General Education","sks":2},
 {"semester":5,"kode":"FIUxxxxxx","nama_id":"Pancasila","nama_en":"Pancasila","kategori":"General Education","sks":2},
 {"semester":5,"kode":"TIF263103","nama_id":"Proyek Senior Teknologi Informasi","nama_en":"Information Engineering Senior Project","kategori":"Engineering Topic","sks":3},
