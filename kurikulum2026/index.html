@@ -123,7 +123,7 @@
   <section id="prinsip" class="kur-section alt section">
     <div class="container">
       <div class="section-header animate-on-scroll">
-        <span class="badge">Prinsip &amp; Aturan</span>
+        <span class="badge badge-kur-navy">Prinsip &amp; Aturan</span>
         <div class="divider"></div>
         <h2>3 Prinsip Dasar Masa Peralihan</h2>
         <p>Mahasiswa <strong>angkatan 2026 </strong>adalah angkatan pertama yang menjalankan Kurikulum 2026 secara penuh. 
@@ -160,7 +160,7 @@
   <section id="per-angkatan" class="kur-section section">
     <div class="container">
       <div class="section-header animate-on-scroll">
-        <span class="badge">Per Angkatan</span>
+        <span class="badge badge-kur-green">Per Angkatan</span>
         <div class="divider"></div>
         <h2>Ketentuan Khusus per Angkatan (P6–P10)</h2>
         <p>Selain 5 aturan umum di atas, tiap angkatan punya ketentuan tambahan spesifik — umumnya berupa kewajiban mengambil 1–2 mata kuliah baru yang belum ada di Kurikulum 2021.</p>
@@ -211,7 +211,7 @@
   <section id="cek-status" class="kur-section alt section">
     <div class="container">
       <div class="section-header animate-on-scroll">
-        <span class="badge">Alat Bantu</span>
+        <span class="badge badge-kur-orange">Alat Bantu</span>
         <div class="divider"></div>
         <h2>Cek Status Mata Kuliahmu</h2>
         <p>Pilih angkatanmu untuk melihat, untuk tiap mata kuliah di Kurikulum 2026, apakah kamu sudah setara mengambilnya, belum, atau ini mata kuliah baru yang akan/baru ditawarkan.</p>
@@ -232,10 +232,10 @@
       </div>
 
       <div class="kur-summary-row animate-on-scroll">
-        <div class="kur-summary-card"><div class="stat-num" id="stat-utama">–</div><div class="stat-label">SKS sudah diambil (utama)</div></div>
-        <div class="kur-summary-card"><div class="stat-num" id="stat-tambahan">–</div><div class="stat-label">SKS tambahan (MatKul Pilihan)</div></div>
+        <div class="kur-summary-card accent-green"><div class="stat-num" id="stat-utama">–</div><div class="stat-label">SKS sudah diambil (utama)</div></div>
+        <div class="kur-summary-card accent-orange"><div class="stat-num" id="stat-tambahan">–</div><div class="stat-label">SKS tambahan (MatKul Pilihan)</div></div>
         <div class="kur-summary-card"><div class="stat-num" id="stat-total">–</div><div class="stat-label">Total SKS sudah diambil</div></div>
-        <div class="kur-summary-card"><div class="stat-num" id="stat-proyeksi">–</div><div class="stat-label">Proyeksi SKS saat lulus</div></div>
+        <div class="kur-summary-card accent-blue"><div class="stat-num" id="stat-proyeksi">–</div><div class="stat-label">Proyeksi SKS saat lulus</div></div>
       </div>
 
       <div id="checker-table-container" class="animate-on-scroll"></div>
@@ -271,34 +271,34 @@
   <section id="padanan" class="kur-section alt section">
     <div class="container">
       <div class="section-header animate-on-scroll">
-        <span class="badge">Padanan MatKul</span>
+        <span class="badge badge-kur-navy">Padanan MatKul</span>
         <div class="divider"></div>
         <h2>Padanan Mata Kuliah, Kurikulum 2021 → 2026</h2>
         <p>Empat cara mata kuliah bisa berubah saat berpindah dari Kurikulum 2021 ke Kurikulum 2026: ada yang benar-benar baru, ada yang tidak lagi diselenggarakan, ada yang berganti nama/SKS/semester, dan ada yang namanya tetap tapi bobotnya bergeser.</p>
       </div>
 
       <div class="kur-padanan-group animate-on-scroll">
-        <h3><span class="kur-padanan-icon">🆕</span> Mata kuliah baru (ada di 2026, tidak ada di 2021)</h3>
-        <div id="padanan-baru-content" class="kur-card"></div>
+        <h3><span class="kur-padanan-icon kur-icon-chip accent-green">🆕</span> Mata kuliah baru (ada di 2026, tidak ada di 2021)</h3>
+        <div id="padanan-baru-content" class="kur-card accent-green"></div>
       </div>
 
       <div class="kur-padanan-group animate-on-scroll">
-        <h3><span class="kur-padanan-icon">🚫</span> Mata kuliah yang tidak lagi diselenggarakan (ada di 2021, dihapus di 2026)</h3>
-        <div id="padanan-dihapus-content" class="kur-card"></div>
+        <h3><span class="kur-padanan-icon kur-icon-chip accent-pink">🚫</span> Mata kuliah yang tidak lagi diselenggarakan (ada di 2021, dihapus di 2026)</h3>
+        <div id="padanan-dihapus-content" class="kur-card accent-pink"></div>
       </div>
 
       <div class="kur-padanan-group animate-on-scroll">
-        <h3><span class="kur-padanan-icon">🔁</span> Mata kuliah yang berganti nama, SKS, dan/atau semester</h3>
+        <h3><span class="kur-padanan-icon kur-icon-chip accent-navy">🔁</span> Mata kuliah yang berganti nama, SKS, dan/atau semester</h3>
         <p class="kur-padanan-sub">Nama mata kuliah berubah (kadang beberapa mata kuliah lama digabung jadi satu), dengan SKS dan/atau semester yang juga menyesuaikan.</p>
-        <div class="kur-card" style="overflow-x:auto;">
+        <div class="kur-card accent-navy" style="overflow-x:auto;">
           <table class="kur-padanan-table" id="padanan-berubah-table"></table>
         </div>
       </div>
 
       <div class="kur-padanan-group animate-on-scroll">
-        <h3><span class="kur-padanan-icon">🟰</span> Mata kuliah dengan nama sama — SKS dan/atau semester pindah waktu</h3>
+        <h3><span class="kur-padanan-icon kur-icon-chip accent-gold">🟰</span> Mata kuliah dengan nama sama — SKS dan/atau semester pindah waktu</h3>
         <p class="kur-padanan-sub">Nama mata kuliah tidak berubah, tetapi jumlah SKS dan/atau posisi semesternya bergeser mengikuti struktur Kurikulum 2026.</p>
-        <div class="kur-card" id="padanan-tetap-content" style="overflow-x:auto;"></div>
+        <div class="kur-card accent-gold" id="padanan-tetap-content" style="overflow-x:auto;"></div>
       </div>
     </div>
   </section>
@@ -307,7 +307,7 @@
   <section id="konsentrasi" class="kur-section alt section">
     <div class="container">
       <div class="section-header animate-on-scroll">
-        <span class="badge">Konsentrasi</span>
+        <span class="badge badge-kur-green">Konsentrasi</span>
         <div class="divider"></div>
         <h2>Jalur Konsentrasi / Pendalaman Prodi</h2>
         <p>Di semester 6 (20 SKS), mahasiswa memilih satu dari beberapa jalur intensifikasi berikut sebagai rekomendasi jalur pembelajaran karier (career learning path) — tidak wajib mengikat, mahasiswa tetap bisa memilih mata kuliah secara individual/satuan.</p>
@@ -328,7 +328,7 @@
   <section id="magang" class="kur-section section">
     <div class="container">
       <div class="section-header animate-on-scroll">
-        <span class="badge">Praktik &amp; Proyek Akhir</span>
+        <span class="badge badge-kur-orange">Praktik &amp; Proyek Akhir</span>
         <div class="divider"></div>
         <h2>Kerja Praktik, Magang Industri &amp; Capstone Design</h2>
       </div>
@@ -374,7 +374,7 @@
       </div>
 
       <div class="animate-on-scroll">
-        <div class="kur-card" style="max-width:40rem;">
+        <div class="kur-card accent-gold" style="max-width:40rem;">
           <h3 style="font-family:var(--font-serif);color:var(--navy);font-size:1.05rem;margin-bottom:0.75rem;">Syarat Yudisium Sarjana Teknik</h3>
           <ul style="font-size:0.85rem;color:var(--gray-600);line-height:1.9;padding-left:1.1rem;">
             <li>Telah menyelesaikan tugas akhir (Proyek Individual).</li>
@@ -393,7 +393,7 @@
   <section id="faq" class="kur-section section">
     <div class="container">
       <div class="section-header animate-on-scroll">
-        <span class="badge">FAQ</span>
+        <span class="badge badge-kur-navy">FAQ</span>
         <div class="divider"></div>
         <h2>Pertanyaan yang Sering Diajukan</h2>
       </div>

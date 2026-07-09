@@ -96,10 +96,10 @@ const SPECIALIZATION = [
 ];
 
 const JALUR_INFO = {
-  "Software Engineer": { icon: "💻", desc: "Merancang, membangun, dan menguji perangkat lunak — dari aplikasi web, mobile, hingga game." },
-  "Network and Security Engineer": { icon: "🛡️", desc: "Mendalami keamanan siber, forensik digital, dan sistem jaringan/IoT." },
-  "Data Engineer": { icon: "📊", desc: "Mengolah data skala besar, pembelajaran mesin, dan kecerdasan artifisial terapan." },
-  "Industrial Experience": { icon: "🏭", desc: "Magang industri hingga 1 semester (setara 20 SKS) sebagai pengganti mata kuliah spesialisasi di kampus." }
+  "Software Engineer": { icon: "💻", accent: "navy",   desc: "Merancang, membangun, dan menguji perangkat lunak — dari aplikasi web, mobile, hingga game." },
+  "Network and Security Engineer": { icon: "🛡️", accent: "green",  desc: "Mendalami keamanan siber, forensik digital, dan sistem jaringan/IoT." },
+  "Data Engineer": { icon: "📊", accent: "orange", desc: "Mengolah data skala besar, pembelajaran mesin, dan kecerdasan artifisial terapan." },
+  "Industrial Experience": { icon: "🏭", accent: "gold",   desc: "Magang industri hingga 1 semester (setara 20 SKS) sebagai pengganti mata kuliah spesialisasi di kampus." }
 };
 
 // Hasil survei preferensi konsentrasi mahasiswa (slide sosialisasi)
@@ -298,12 +298,12 @@ function renderSpecialization() {
   let html = '';
   Object.keys(byJalur).forEach(jalur => {
     const items = byJalur[jalur];
-    const info = JALUR_INFO[jalur] || { icon: '📘', desc: '' };
+    const info = JALUR_INFO[jalur] || { icon: '📘', accent: 'navy', desc: '' };
     const totalSks = items.reduce((s, c) => s + c.sks, 0);
     html += `
-    <div class="kur-jalur-card">
+    <div class="kur-jalur-card accent-${info.accent}">
       <div class="kur-jalur-head">
-        <div class="kur-jalur-icon">${info.icon}</div>
+        <div class="kur-jalur-icon accent-${info.accent}">${info.icon}</div>
         <div>
           <h3>${jalur}</h3>
           <span class="kur-jalur-sks">${totalSks} SKS</span>
