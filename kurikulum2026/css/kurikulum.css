@@ -523,4 +523,5 @@
   .kur-stat-row { grid-template-columns: repeat(2, auto); row-gap: 1.25rem; }
   .kur-survey-row { grid-template-columns: 8rem 1fr 2.5rem; }
   .kur-angkatan-table { display: block; overflow-x: auto; white-space: nowrap; }
+  .kur-padanan-table { display: block; overflow-x: auto; white-space: nowrap; }
 }
