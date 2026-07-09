@@ -1,0 +1,466 @@
+/* ================================================================
+   Panduan Transisi Kurikulum 2021 → 2026 — Prodi Teknologi Informasi
+   Extends the site's navy + gold editorial tokens (see ../css/style.css)
+   Status colours: green = sudah diambil, pink = belum diambil,
+                    blue = mata kuliah baru, gray = perlu konfirmasi
+   ================================================================ */
+
+:root {
+  --kur-green:      #2f8f5b;
+  --kur-green-bg:   #e6f4ec;
+  --kur-pink:       #b5457a;
+  --kur-pink-bg:    #fbebf2;
+  --kur-blue:       #2f6fb5;
+  --kur-blue-bg:    #e8f1fb;
+  --kur-check:      #8a7a3f;
+  --kur-check-bg:   #f6f0dd;
+}
+
+/* ── Hero ──────────────────────────────────────────────────────── */
+.kur-hero {
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+  padding: 7rem 0 3.5rem;
+}
+.kur-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 80% 20%, rgba(201,168,76,0.08) 0%, transparent 60%),
+    linear-gradient(160deg, #0d1b2a 0%, #1a2e45 60%, #0d1b2a 100%);
+}
+.kur-hero .container { position: relative; z-index: 1; }
+.kur-hero .breadcrumb { color: rgba(255,255,255,0.55); }
+.kur-hero .breadcrumb a { color: var(--gold-light); text-decoration: underline; text-underline-offset: 2px; }
+.kur-hero .breadcrumb a:hover { color: var(--gold); }
+
+.kur-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--gold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.5rem 0 1rem;
+}
+.kur-eyebrow::before { content: ''; width: 2rem; height: 1px; background: var(--gold); }
+
+.kur-hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 4.2vw, 2.9rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.18;
+  max-width: 42rem;
+  margin-bottom: 1rem;
+}
+.kur-hero-lead {
+  color: rgba(255,255,255,0.72);
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 42rem;
+  margin-bottom: 1.5rem;
+}
+.kur-hero-lead code {
+  font-family: var(--font-mono);
+  background: rgba(255,255,255,0.08);
+  padding: 0.1em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+  color: var(--gold-light);
+}
+
+.kur-stat-row {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 2.5rem;
+  padding-top: 1.75rem;
+  margin-top: 0.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.kur-stat .stat-num {
+  font-family: var(--font-mono);
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: var(--gold);
+  line-height: 1;
+}
+.kur-stat .stat-label {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 0.35rem;
+}
+
+.kur-toc {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.kur-toc a {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: rgba(255,255,255,0.75);
+  border: 1px solid rgba(201,168,76,0.3);
+  padding: 0.4rem 0.85rem;
+  border-radius: 99px;
+  transition: var(--transition);
+}
+.kur-toc a:hover { color: var(--navy); background: var(--gold); border-color: var(--gold); }
+
+/* ── Sections ──────────────────────────────────────────────────── */
+.kur-section { background: var(--white); }
+.kur-section.alt { background: var(--gray-100); }
+
+.kur-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+.kur-section.alt .kur-card { background: var(--white); }
+
+.kur-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.kur-grid.cols-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+
+/* ── Composition bar (Basic Science / Engineering Topic / Gen Ed) ─ */
+.kur-composition {
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 2.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--white);
+  margin: 1.25rem 0 0.75rem;
+}
+.kur-composition > div { display: flex; align-items: center; justify-content: center; }
+.kur-comp-basic { background: var(--navy); }
+.kur-comp-eng   { background: #2f8f6f; }
+.kur-comp-gen   { background: #c9772e; }
+.kur-composition-legend {
+  display: flex; flex-wrap: wrap; gap: 1.25rem;
+  font-size: 0.78rem; color: var(--gray-600);
+}
+.kur-composition-legend span.swatch {
+  display: inline-block; width: 0.7rem; height: 0.7rem; border-radius: 2px; margin-right: 0.4rem;
+}
+
+/* ── Numbered principle / rule cards ──────────────────────────── */
+.kur-num-card {
+  display: flex;
+  gap: 1rem;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+}
+.kur-num-badge {
+  flex-shrink: 0;
+  width: 2.25rem; height: 2.25rem;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+.kur-num-card h4 { font-family: var(--font-serif); font-size: 1rem; color: var(--navy); margin-bottom: 0.35rem; }
+.kur-num-card p { font-size: 0.88rem; color: var(--gray-600); line-height: 1.65; }
+
+.kur-rule-list { display: flex; flex-direction: column; gap: 1rem; }
+.kur-rule-item {
+  display: flex; gap: 1rem;
+  background: var(--gray-100);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 8px 8px 0;
+  padding: 1rem 1.25rem;
+}
+.kur-rule-code {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--navy);
+  flex-shrink: 0;
+  min-width: 2.5rem;
+}
+.kur-rule-item p { font-size: 0.88rem; color: var(--gray-800); line-height: 1.65; }
+.kur-rule-item strong { color: var(--navy); }
+
+/* ── Ketentuan khusus per angkatan table ─────────────────────────── */
+.kur-angkatan-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+.kur-angkatan-table th, .kur-angkatan-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--gray-200);
+  text-align: left;
+  vertical-align: top;
+}
+.kur-angkatan-table th {
+  background: var(--navy);
+  color: var(--white);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.kur-angkatan-table tr:last-child td { border-bottom: none; }
+.kur-angkatan-table td:first-child { font-weight: 700; color: var(--navy); white-space: nowrap; }
+
+/* ── Accordion (struktur kurikulum) ──────────────────────────────── */
+.kur-accordion-item {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  margin-bottom: 0.85rem;
+  overflow: hidden;
+}
+.kur-accordion-item summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--font-serif);
+  transition: background var(--transition);
+}
+.kur-accordion-item summary::-webkit-details-marker { display: none; }
+.kur-accordion-item summary:hover { background: var(--gray-100); }
+.kur-accordion-item summary::after {
+  content: '+';
+  margin-left: auto;
+  font-family: var(--font-sans);
+  font-size: 1.3rem;
+  color: var(--gold);
+  line-height: 1;
+}
+.kur-accordion-item[open] summary::after { content: '−'; }
+.kur-sem-badge {
+  background: var(--navy);
+  color: var(--gold);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.kur-sem-title { color: var(--gray-600); font-size: 0.9rem; font-family: var(--font-sans); }
+.kur-sem-sks {
+  margin-left: auto;
+  padding-right: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--gold);
+  font-weight: 700;
+}
+.kur-accordion-body { padding: 0 1.25rem 1.25rem; }
+
+.kur-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+.kur-table th, .kur-table td { padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--gray-200); text-align: left; }
+.kur-table th { font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--gray-400); }
+.kur-table tr:last-child td { border-bottom: none; }
+.kur-mono { font-family: var(--font-mono); font-size: 0.78rem; color: var(--gray-400); }
+.kur-en { color: var(--gray-400); font-style: italic; font-size: 0.85em; }
+.kur-sks { font-family: var(--font-mono); font-weight: 700; color: var(--navy); }
+
+.kur-kat {
+  font-size: 0.68rem;
+  font-family: var(--font-mono);
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+.kat-basic { background: rgba(13,27,42,0.08); color: var(--navy); }
+.kat-eng   { background: rgba(47,143,111,0.12); color: #1f6b52; }
+.kat-gen   { background: rgba(201,119,46,0.12); color: #a05a1f; }
+
+/* ── Jalur konsentrasi ─────────────────────────────────────────── */
+.kur-jalur-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.kur-jalur-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.kur-jalur-head { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.85rem; }
+.kur-jalur-icon {
+  width: 2.75rem; height: 2.75rem;
+  background: var(--gray-100);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; flex-shrink: 0;
+}
+.kur-jalur-card h3 { font-family: var(--font-serif); font-size: 1rem; color: var(--navy); }
+.kur-jalur-sks { font-family: var(--font-mono); font-size: 0.72rem; color: var(--gold); font-weight: 700; }
+.kur-jalur-desc { font-size: 0.85rem; color: var(--gray-600); line-height: 1.6; margin-bottom: 1rem; }
+.kur-jalur-list { list-style: none; }
+.kur-jalur-list li {
+  font-size: 0.8rem; color: var(--gray-800);
+  padding: 0.4rem 0; border-top: 1px solid var(--gray-200);
+}
+.kur-jalur-list li:first-child { border-top: none; }
+.kur-jalur-item-sks { color: var(--gray-400); font-family: var(--font-mono); font-size: 0.9em; }
+
+.kur-survey {
+  margin-top: 2.5rem;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 10px;
+  padding: 1.75rem;
+}
+.kur-survey h3 { font-family: var(--font-serif); font-size: 1.05rem; color: var(--navy); margin-bottom: 0.35rem; }
+.kur-survey-sub { font-size: 0.85rem; color: var(--gray-600); margin-bottom: 1.25rem; }
+.kur-survey-row { display: grid; grid-template-columns: 13rem 1fr 3rem; align-items: center; gap: 1rem; margin-bottom: 0.85rem; }
+.kur-survey-label { font-size: 0.82rem; color: var(--gray-800); }
+.kur-survey-track { background: var(--gray-100); border-radius: 99px; height: 0.6rem; overflow: hidden; }
+.kur-survey-fill { height: 100%; background: linear-gradient(90deg, var(--navy), var(--gold)); border-radius: 99px; }
+.kur-survey-val { font-family: var(--font-mono); font-size: 0.8rem; color: var(--navy); font-weight: 700; text-align: right; }
+
+/* ── Cek Status Mata Kuliah (checker) ────────────────────────────── */
+.kur-angkatan-chips { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
+.kur-angkatan-chip {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.55rem 1.4rem;
+  border-radius: 99px;
+  border: 1px solid var(--gray-200);
+  background: var(--white);
+  color: var(--gray-600);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.kur-angkatan-chip:hover { border-color: var(--gold); color: var(--navy); }
+.kur-angkatan-chip.active { background: var(--navy); border-color: var(--navy); color: var(--gold-light); }
+
+.kur-legend { display: flex; flex-wrap: wrap; gap: 1.25rem; margin: 1.25rem 0 1.75rem; font-size: 0.8rem; color: var(--gray-600); }
+.kur-legend .dot { display: inline-block; width: 0.75rem; height: 0.75rem; border-radius: 50%; margin-right: 0.4rem; vertical-align: -1px; }
+
+.kur-summary-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.kur-summary-card {
+  background: var(--navy);
+  border-radius: 8px;
+  padding: 1.15rem 1.25rem;
+  text-align: center;
+}
+.kur-summary-card .stat-num { font-family: var(--font-mono); font-size: 1.6rem; font-weight: 700; color: var(--gold); }
+.kur-summary-card .stat-label { font-size: 0.7rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0.3rem; }
+
+.kur-checker-sem-label {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: var(--navy);
+  margin: 1.5rem 0 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--gold);
+  display: inline-block;
+}
+.kur-checker-sem-label span { color: var(--gray-400); font-size: 0.8rem; font-family: var(--font-sans); }
+.kur-checker-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+.kur-checker-card {
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+  border-left: 4px solid transparent;
+}
+.kur-checker-card.st-green { background: var(--kur-green-bg); border-left-color: var(--kur-green); }
+.kur-checker-card.st-pink  { background: var(--kur-pink-bg);  border-left-color: var(--kur-pink); }
+.kur-checker-card.st-blue  { background: var(--kur-blue-bg);  border-left-color: var(--kur-blue); }
+.kur-checker-card.st-check { background: var(--kur-check-bg); border-left-color: var(--kur-check); }
+.kur-checker-name { font-size: 0.88rem; font-weight: 600; color: var(--navy); margin-bottom: 0.25rem; }
+.kur-checker-old { font-size: 0.78rem; color: var(--gray-600); margin-bottom: 0.5rem; }
+.kur-checker-meta { display: flex; justify-content: space-between; align-items: center; font-size: 0.72rem; }
+.kur-checker-status { font-family: var(--font-mono); font-weight: 700; }
+.st-green .kur-checker-status  { color: var(--kur-green); }
+.st-pink  .kur-checker-status  { color: var(--kur-pink); }
+.st-blue  .kur-checker-status  { color: var(--kur-blue); }
+.st-check .kur-checker-status  { color: var(--kur-check); }
+.kur-checker-oldsem { color: var(--gray-400); }
+
+.kur-extra-note {
+  margin-top: 2rem;
+  background: var(--gray-100);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+}
+.kur-extra-note h4 { font-family: var(--font-serif); font-size: 0.95rem; color: var(--navy); margin-bottom: 0.65rem; }
+.kur-extra-note ul { list-style: none; font-size: 0.82rem; color: var(--gray-800); }
+.kur-extra-note li { padding: 0.25rem 0; }
+
+/* ── Magang & Capstone ─────────────────────────────────────────── */
+.kur-timeline {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-align: center;
+  margin: 1.25rem 0;
+}
+.kur-timeline > div { padding: 0.75rem; background: var(--gray-200); color: var(--gray-600); }
+.kur-timeline > div.active { background: var(--navy); color: var(--gold-light); font-weight: 700; }
+
+/* ── FAQ ───────────────────────────────────────────────────────── */
+.kur-faq-item {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+}
+.kur-faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 1rem 1.25rem;
+  font-weight: 600;
+  color: var(--navy);
+  font-size: 0.92rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.kur-faq-item summary::-webkit-details-marker { display: none; }
+.kur-faq-item summary::after { content: '+'; margin-left: auto; color: var(--gold); font-size: 1.2rem; }
+.kur-faq-item[open] summary::after { content: '−'; }
+.kur-faq-item summary:hover { background: var(--gray-100); }
+.kur-faq-body { padding: 0 1.25rem 1.1rem; font-size: 0.88rem; color: var(--gray-600); line-height: 1.7; }
+
+/* ── Disclaimer / source note ─────────────────────────────────── */
+.kur-disclaimer {
+  background: var(--gold-pale);
+  border-left: 4px solid var(--gold);
+  border-radius: 0 8px 8px 0;
+  padding: 1.1rem 1.4rem;
+  font-size: 0.85rem;
+  color: var(--gray-800);
+  line-height: 1.7;
+}
+
+/* ── Responsive ───────────────────────────────────────────────── */
+@media (max-width: 700px) {
+  .kur-stat-row { grid-template-columns: repeat(2, auto); row-gap: 1.25rem; }
+  .kur-survey-row { grid-template-columns: 8rem 1fr 2.5rem; }
+  .kur-angkatan-table { display: block; overflow-x: auto; white-space: nowrap; }
+}
