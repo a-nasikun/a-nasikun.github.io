@@ -437,8 +437,8 @@ function renderPadanan() {
 const STATUS_LABEL = {
   green: 'Sudah diambil',
   pink: 'Belum diambil',
-  blue: 'Mata kuliah baru — segera ditawarkan',
-  check: 'Perlu konfirmasi ke prodi'
+  blue: 'Ditawarkan di 2026 gasal',
+  check: 'Ditawarkan bersama TE+TB'
 };
 
 let currentAngkatan = '2025';
