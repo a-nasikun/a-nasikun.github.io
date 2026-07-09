@@ -198,6 +198,66 @@
 .kur-rule-item p { font-size: 0.88rem; color: var(--gray-800); line-height: 1.65; }
 .kur-rule-item strong { color: var(--navy); }
 
+/* ── Padanan Mata Kuliah (2021 → 2026) ───────────────────────────── */
+.kur-padanan-group { margin-bottom: 2.5rem; }
+.kur-padanan-group:last-child { margin-bottom: 0; }
+.kur-padanan-group h3 {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--navy);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.65rem;
+}
+.kur-padanan-icon { font-size: 1.15rem; }
+.kur-padanan-sub { font-size: 0.85rem; color: var(--gray-600); margin-bottom: 0.85rem; max-width: 44rem; }
+
+.kur-pending-note {
+  border: 1.5px dashed var(--gray-200);
+  border-radius: 8px;
+  padding: 1.1rem 1.4rem;
+  font-size: 0.85rem;
+  color: var(--gray-400);
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.kur-pending-note::before { content: '⏳'; font-size: 1rem; }
+
+.kur-padanan-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; background: var(--white); }
+.kur-padanan-table th, .kur-padanan-table td {
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--gray-200);
+  text-align: left;
+  vertical-align: middle;
+}
+.kur-padanan-table thead tr:first-child th {
+  font-family: var(--font-serif);
+  font-size: 0.82rem;
+  text-align: center;
+}
+.kur-padanan-table thead tr:first-child th.th-2021 { background: var(--gray-600); color: var(--white); }
+.kur-padanan-table thead tr:first-child th.th-2026 { background: var(--navy); color: var(--gold-light); }
+.kur-padanan-table thead tr:last-child th {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--gray-400);
+  background: var(--gray-100);
+  text-align: left;
+}
+.kur-padanan-table thead tr:last-child th.sks-col,
+.kur-padanan-table thead tr:last-child th.sem-col,
+.kur-padanan-table td.sks-col,
+.kur-padanan-table td.sem-col { text-align: center; white-space: nowrap; }
+.kur-padanan-table td.sks-col, .kur-padanan-table td.sem-col { font-family: var(--font-mono); font-weight: 700; color: var(--navy); }
+.kur-padanan-table td.arrow-col { text-align: center; color: var(--gold); font-weight: 700; background: var(--gray-100); }
+.kur-padanan-table td.new-course { background: rgba(201,168,76,0.08); font-weight: 600; color: var(--navy); }
+.kur-padanan-table td.new-course.no-value { color: var(--gray-400); font-style: italic; font-weight: 400; }
+
 /* ── Ketentuan khusus per angkatan table ─────────────────────────── */
 .kur-angkatan-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
 .kur-angkatan-table th, .kur-angkatan-table td {

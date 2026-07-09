@@ -150,6 +150,45 @@ const SUMMARY_TOTALS = {
   "2022": { utama: 139, tambahan: 10, total: 149, proyeksi: 151 }
 };
 
+// ── Padanan Mata Kuliah, Kurikulum 2021 → 2026 ────────────────────
+// Setiap grup: satu atau lebih mata kuliah 2021 (old) yang menjadi satu mata kuliah 2026 (new).
+// "baru" dan "dihapus" masih placeholder — dilengkapi belakangan; "tetap" (nama sama, SKS/semester
+// bisa berbeda) juga placeholder.
+const PADANAN_BERUBAH = [
+  { old: [
+      { nama: "Aljabar Linear", sks: 3, sem: 2 },
+      { nama: "Teori Vektor dan Matriks", sks: 2, sem: 1 }
+    ], new: { nama: "Aljabar", sks: 3, sem: 1 } },
+  { old: [
+      { nama: "Fisika Mekanika Klasik", sks: 2, sem: 1 },
+      { nama: "Fisika Fluida, Kalor, dan Gelombang", sks: 2, sem: 1 }
+    ], new: { nama: "Fisika Dasar", sks: 3, sem: 1 } },
+  { old: [{ nama: "Kalkulus Variabel Tunggal", sks: 3, sem: 1 }],
+    new: { nama: "Kalkulus", sks: 3, sem: 1 } },
+  { old: [{ nama: "Konsep Keteknikan untuk Peradaban", sks: 2, sem: 2 }],
+    new: { nama: "Konsep Keteknikan untuk Peradaban", sks: 3, sem: 2 } },
+  { old: [{ nama: "Bahasa Indonesia dan Penulisan Ilmiah", sks: 2, sem: 6 }],
+    new: { nama: "Bahasa Indonesia", sks: 2, sem: 5 } },
+  { old: [{ nama: "Keamanan Komputer", sks: 3, sem: 6 }],
+    new: { nama: "Keamanan Siber", sks: 3, sem: 5 } },
+  { old: [{ nama: "Skripsi dan Pendadaran", sks: 4, sem: 8 }],
+    new: { nama: "Proyek Individual", sks: 3, sem: 7 } },
+  { old: [{ nama: "Manajemen Industri", sks: 2, sem: 1 }],
+    new: { nama: "Humaniora Digital", sks: 2, sem: 7 } },
+  { old: [{ nama: "Komunikasi Data dan Komputer", sks: 3, sem: 3 }],
+    new: { nama: "Sistem Terdistribusi", sks: 3, sem: 4 } },
+  { old: [{ nama: "Medan Elektromagnetik", sks: 3, sem: 4 }],
+    new: { nama: "Desain Sistem", sks: 3, sem: 5 } },
+  { old: [{ nama: "Sistem Berbasis Mikroprosesor", sks: 2, sem: 4 }],
+    new: { nama: "Manajemen Informasi", sks: 2, sem: 1 } },
+  { old: [{ nama: "Integrasi Aplikasi dan Informasi", sks: 2, sem: 6 }],
+    new: { nama: "(Menjadi pilihan konsentrasi)", sks: null, sem: null } }
+];
+
+const PADANAN_BARU = [];     // TODO: mata kuliah yang ada di 2026 tapi tidak ada di 2021
+const PADANAN_DIHAPUS = [];  // TODO: mata kuliah 2021 yang tidak lagi diselenggarakan di 2026
+const PADANAN_TETAP = [];    // TODO: mata kuliah nama sama, SKS/semester berbeda
+
 const KATEGORI_CLASS = {
   "Basic Science": "kat-basic",
   "Engineering Topic": "kat-eng",
@@ -262,6 +301,63 @@ function renderSurvey() {
     </div>`).join('');
 }
 
+// ── Render: Padanan Mata Kuliah, Kurikulum 2021 → 2026 ────────────
+function renderPadananBerubah() {
+  const table = document.getElementById('padanan-berubah-table');
+  if (!table) return;
+
+  let html = `
+    <thead>
+      <tr>
+        <th class="th-2021" colspan="3">Kurikulum 2021</th>
+        <th></th>
+        <th class="th-2026" colspan="3">Kurikulum 2026</th>
+      </tr>
+      <tr>
+        <th>Mata Kuliah</th><th class="sks-col">SKS</th><th class="sem-col">Semester</th>
+        <th></th>
+        <th>Mata Kuliah</th><th class="sks-col">SKS</th><th class="sem-col">Semester</th>
+      </tr>
+    </thead>
+    <tbody>`;
+
+  PADANAN_BERUBAH.forEach(group => {
+    const rowspan = group.old.length;
+    const noValue = group.new.sks === null;
+    group.old.forEach((o, i) => {
+      html += '<tr>';
+      html += `<td>${o.nama}</td><td class="sks-col">${o.sks}</td><td class="sem-col">${o.sem}</td>`;
+      if (i === 0) {
+        html += `<td class="arrow-col" rowspan="${rowspan}">→</td>`;
+        html += `<td class="new-course${noValue ? ' no-value' : ''}" rowspan="${rowspan}">${group.new.nama}</td>`;
+        html += `<td class="sks-col new-course${noValue ? ' no-value' : ''}" rowspan="${rowspan}">${group.new.sks ?? '—'}</td>`;
+        html += `<td class="sem-col new-course${noValue ? ' no-value' : ''}" rowspan="${rowspan}">${group.new.sem ?? '—'}</td>`;
+      }
+      html += '</tr>';
+    });
+  });
+
+  html += '</tbody>';
+  table.innerHTML = html;
+}
+
+function renderPadananPlaceholder(containerId, list, emptyLabel) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  if (!list.length) {
+    container.innerHTML = `<div class="kur-pending-note">${emptyLabel}</div>`;
+    return;
+  }
+  container.innerHTML = `<ul class="kur-jalur-list">${list.map(c => `<li>${c.nama}${c.sks ? ` <span class="kur-jalur-item-sks">(${c.sks} SKS${c.sem ? `, semester ${c.sem}` : ''})</span>` : ''}</li>`).join('')}</ul>`;
+}
+
+function renderPadanan() {
+  renderPadananBerubah();
+  renderPadananPlaceholder('padanan-baru-content', PADANAN_BARU, 'Daftar mata kuliah baru akan ditambahkan di sini.');
+  renderPadananPlaceholder('padanan-dihapus-content', PADANAN_DIHAPUS, 'Daftar mata kuliah yang tidak lagi diselenggarakan akan ditambahkan di sini.');
+  renderPadananPlaceholder('padanan-tetap-content', PADANAN_TETAP, 'Daftar mata kuliah dengan nama sama akan ditambahkan di sini.');
+}
+
 // ── Render: Cek Status Mata Kuliah per Angkatan ───────────────────
 const STATUS_LABEL = {
   green: 'Sudah diambil',
@@ -324,6 +420,7 @@ function renderChecker(angkatan) {
 // ── Init ───────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   renderStruktur();
+  renderPadanan();
   renderSpecialization();
   renderChecker('2025');
 

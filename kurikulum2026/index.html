@@ -55,6 +55,7 @@
         <a href="#per-angkatan">Ketentuan per Angkatan</a>
         <a href="#cek-status">Cek Status Mata Kuliah</a>
         <a href="#struktur">Struktur Kurikulum</a>
+        <a href="#padanan">Padanan MatKul</a>
         <a href="#konsentrasi">Konsentrasi</a>
         <a href="#magang">Magang &amp; Capstone</a>
         <a href="#kelulusan">Syarat Kelulusan</a>
@@ -263,6 +264,41 @@
         <p>144 SKS penuh, disusun dalam 8 semester. Semester 6 dialokasikan penuh untuk mata kuliah pilihan (pendalaman prodi/konsentrasi), dan semester 7–8 berfokus pada proyek individu serta Capstone Design.</p>
       </div>
       <div id="struktur-accordion" class="animate-on-scroll"></div>
+    </div>
+  </section>
+
+  <!-- ── PADANAN MATA KULIAH ───────────────────────────────────────── -->
+  <section id="padanan" class="kur-section alt section">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="badge">Padanan MatKul</span>
+        <div class="divider"></div>
+        <h2>Padanan Mata Kuliah, Kurikulum 2021 → 2026</h2>
+        <p>Empat cara mata kuliah bisa berubah saat berpindah dari Kurikulum 2021 ke Kurikulum 2026: ada yang benar-benar baru, ada yang tidak lagi diselenggarakan, ada yang berganti nama/SKS/semester, dan ada yang namanya tetap tapi bobotnya bergeser.</p>
+      </div>
+
+      <div class="kur-padanan-group animate-on-scroll">
+        <h3><span class="kur-padanan-icon">🆕</span> Mata kuliah baru (ada di 2026, tidak ada di 2021)</h3>
+        <div id="padanan-baru-content"></div>
+      </div>
+
+      <div class="kur-padanan-group animate-on-scroll">
+        <h3><span class="kur-padanan-icon">🚫</span> Mata kuliah yang tidak lagi diselenggarakan (ada di 2021, dihapus di 2026)</h3>
+        <div id="padanan-dihapus-content"></div>
+      </div>
+
+      <div class="kur-padanan-group animate-on-scroll">
+        <h3><span class="kur-padanan-icon">🔁</span> Mata kuliah yang berganti nama, SKS, dan/atau semester</h3>
+        <p class="kur-padanan-sub">Nama mata kuliah berubah (kadang beberapa mata kuliah lama digabung jadi satu), dengan SKS dan/atau semester yang juga menyesuaikan.</p>
+        <div class="kur-card" style="overflow-x:auto;">
+          <table class="kur-padanan-table" id="padanan-berubah-table"></table>
+        </div>
+      </div>
+
+      <div class="kur-padanan-group animate-on-scroll">
+        <h3><span class="kur-padanan-icon">🟰</span> Mata kuliah dengan nama sama, SKS/semester mungkin berubah</h3>
+        <div id="padanan-tetap-content"></div>
+      </div>
     </div>
   </section>
 
