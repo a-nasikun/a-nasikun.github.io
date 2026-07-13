@@ -222,6 +222,115 @@ const PADANAN_TETAP = [
   { nama: "Proyek Perancangan Teknologi Informasi 2",     sks2021: 2, sem2021: 7, sks2026: 2, sem2026: 8 }
 ];
 
+// ── Mata Kuliah yang Ditawarkan — Gasal 2026/2027 ─────────────────
+// Karena beberapa mata kuliah bergeser semester dan menjadi prasyarat mata
+// kuliah lain, DTETI perlu menawarkan sejumlah mata kuliah "lebih awal" dari
+// posisi nominalnya di Kurikulum 2026 agar tidak ada mahasiswa yang tertahan.
+// Sumber: slide "Matkul Ditawarkan" (tim kurikulum DTETI).
+const OFFERINGS = [
+  {
+    semesterLabel: "Semester 1",
+    angkatanLabel: "Angkatan 2026",
+    nominalSemester: 1,
+    left: { title: "Kurikulum", showSemester: false, items: [
+      { no: 1, nama: "Aljabar", sks: 3 },
+      { no: 2, nama: "Fisika Dasar", sks: 3 },
+      { no: 3, nama: "Kalkulus", sks: 3 },
+      { no: 4, nama: "Manajemen Informasi", sks: 2 },
+      { no: 5, nama: "Matematika Diskrit", sks: 3 },
+      { no: 6, nama: "Pemrograman Dasar", sks: 3 },
+      { no: 7, nama: "Probabilitas dan Variabel Acak", sks: 2 }
+    ]},
+    right: { title: "Ditawarkan", showSemester: false, items: [
+      { no: 1, nama: "Aljabar", sks: 3 },
+      { no: 2, nama: "Fisika Dasar", sks: 3 },
+      { no: 3, nama: "Kalkulus", sks: 3 },
+      { no: 4, nama: "Manajemen Informasi", sks: 2 },
+      { no: 5, nama: "Matematika Diskrit", sks: 3 },
+      { no: 6, nama: "Pemrograman Dasar", sks: 3 },
+      { no: 7, nama: "Probabilitas dan Variabel Acak", sks: 2 }
+    ]}
+  },
+  {
+    semesterLabel: "Semester 3",
+    angkatanLabel: "Angkatan 2025",
+    nominalSemester: 3,
+    left: { title: "Kurikulum", showSemester: false, items: [
+      { no: 1, nama: "Isyarat dan Sistem", sks: 3 },
+      { no: 2, nama: "Jaringan Komputer", sks: 3 },
+      { no: 3, nama: "Kecerdasan Artifisial", sks: 3 },
+      { no: 4, nama: "Metode Numeris", sks: 3 },
+      { no: 5, nama: "Pemrograman Berorientasi Obyek", sks: 3 },
+      { no: 6, nama: "Persamaan Diferensial", sks: 3 },
+      { no: 7, nama: "Praktikum Sains Dasar", sks: 1 },
+      { no: 8, nama: "Sistem Operasi", sks: 2 }
+    ], total: 21 },
+    right: { title: "Ditawarkan", showSemester: true, items: [
+      { no: 1, nama: "Manajemen Informasi", sks: 2, sem: 1 },
+      { no: 2, nama: "Arsitektur Komputer", sks: 3, sem: 2 },
+      { no: 3, nama: "Statistika", sks: 2, sem: 2 },
+      { no: 4, nama: "Teknologi Basis Data", sks: 3, sem: 2 },
+      { no: 5, nama: "Isyarat dan Sistem", sks: 3, sem: 3 },
+      { no: 6, nama: "Jaringan Komputer", sks: 3, sem: 3 },
+      { no: 7, nama: "Metode Numeris", sks: 3, sem: 3 },
+      { no: 8, nama: "Pemrograman Berorientasi Obyek", sks: 3, sem: 3 },
+      { no: 9, nama: "Praktikum Sains Dasar", sks: 1, sem: 3 }
+    ], total: 23 }
+  },
+  {
+    semesterLabel: "Semester 5",
+    angkatanLabel: "Angkatan 2024",
+    nominalSemester: 5,
+    left: { title: "Kurikulum", showSemester: false, items: [
+      { no: 1, nama: "Bahasa Indonesia", sks: 2 },
+      { no: 2, nama: "Desain Sistem", sks: 3 },
+      { no: 3, nama: "Keamanan Siber", sks: 3 },
+      { no: 4, nama: "Kerja Praktik / Magang Industri", sks: 2 },
+      { no: 5, nama: "Kewarganegaraan", sks: 2 },
+      { no: 6, nama: "Pancasila", sks: 2 },
+      { no: 7, nama: "Proyek Senior Teknologi Informasi", sks: 3 },
+      { no: 8, nama: "Teknik Visualisasi Grafis", sks: 3 }
+    ], total: 20 },
+    right: { title: "Ditawarkan", showSemester: true, items: [
+      { no: 1, nama: "Manajemen Informasi", sks: 2, sem: 1 },
+      { no: 2, nama: "Sistem Operasi", sks: 2, sem: 3 },
+      { no: 3, nama: "Komputasi Awan", sks: 2, sem: 4 },
+      { no: 4, nama: "Pengembangan Aplikasi Web", sks: 3, sem: 4 },
+      { no: 5, nama: "Proyek Junior Teknologi Informasi", sks: 2, sem: 4 },
+      { no: 6, nama: "Rekayasa Data", sks: 3, sem: 4 },
+      { no: 7, nama: "Rekayasa Perangkat Lunak", sks: 3, sem: 4 },
+      { no: 8, nama: "Kerja Praktik", sks: 2, sem: 5 },
+      { no: 9, nama: "Proyek Senior Teknologi Informasi", sks: 3, sem: 5 }
+    ], total: 22 }
+  },
+  {
+    semesterLabel: "Semester 7",
+    angkatanLabel: "Angkatan 2023",
+    nominalSemester: 7,
+    left: { title: "Kebutuhan Angkatan 2023", showSemester: true, items: [
+      { no: 1, nama: "Manajemen Informasi", sks: 2, sem: 1 },
+      { no: 2, nama: "Humaniora Digital", sks: 2, sem: 7 },
+      { no: 3, nama: "Kewirausahaan Teknologi", sks: 2, sem: 7 },
+      { no: 4, nama: "Komunikasi Masyarakat", sks: 2, sem: 7 },
+      { no: 5, nama: "Kuliah Kerja Nyata", sks: 4, sem: 7 },
+      { no: 6, nama: "Penerapan Teknologi Tepat Guna", sks: 2, sem: 7 },
+      { no: 7, nama: "Proyek Individual", sks: 3, sem: 7 },
+      { no: 8, nama: "Proyek Perancangan Teknologi Informasi 2", sks: 2, sem: 5 },
+      { no: 9, nama: "Studium Generale", sks: 2, sem: 5 }
+    ], total: 21 },
+    right: { title: "Ditawarkan", showSemester: false, items: [
+      { no: 1, nama: "Humaniora Digital", sks: 2 },
+      { no: 2, nama: "Interaksi Manusia dan Komputer", sks: 3 },
+      { no: 3, nama: "Kewirausahaan Teknologi", sks: 2 },
+      { no: 4, nama: "Komunikasi Masyarakat", sks: 2 },
+      { no: 5, nama: "Kuliah Kerja Nyata", sks: 4 },
+      { no: 6, nama: "Penerapan Teknologi Tepat Guna", sks: 2 },
+      { no: 7, nama: "Proyek Individual", sks: 3 },
+      { no: 8, nama: "Proyek Perancangan Teknologi Informasi 1", sks: 2 }
+    ], total: 20 }
+  }
+];
+
 const KATEGORI_CLASS = {
   "Basic Science": "kat-basic",
   "Engineering Topic": "kat-eng",
@@ -284,6 +393,58 @@ function semesterLabel(sem) {
     8: 'Capstone design 2 & kelulusan'
   };
   return labels[sem] || '';
+}
+
+// ── Render: Mata Kuliah yang Ditawarkan (Gasal 2026/2027) ─────────
+function renderOfferingTable(side, nominalSemester) {
+  const rows = side.items.map(item => {
+    const shifted = side.showSemester && item.sem !== nominalSemester;
+    return `
+    <tr class="${shifted ? 'kur-offering-shifted' : ''}">
+      <td class="kur-mono">${item.no}</td>
+      <td>${item.nama}</td>
+      <td class="kur-sks">${item.sks}</td>
+      ${side.showSemester ? `<td class="kur-offering-sem">${item.sem}</td>` : ''}
+    </tr>`;
+  }).join('');
+  const total = side.total ?? side.items.reduce((s, i) => s + i.sks, 0);
+  return `
+  <div class="kur-offering-col">
+    <div class="kur-offering-col-title">${side.title}</div>
+    <table class="kur-table kur-offering-table">
+      <thead><tr>
+        <th>No</th><th>Mata Kuliah</th><th>SKS</th>${side.showSemester ? '<th>Sem.</th>' : ''}
+      </tr></thead>
+      <tbody>${rows}</tbody>
+      <tfoot><tr>
+        <td colspan="2">TOTAL</td><td class="kur-sks">${total}</td>${side.showSemester ? '<td></td>' : ''}
+      </tr></tfoot>
+    </table>
+  </div>`;
+}
+
+function renderOfferings() {
+  const container = document.getElementById('offerings-accordion');
+  if (!container) return;
+
+  let html = '';
+  OFFERINGS.forEach((term, i) => {
+    const open = i === 0 ? ' open' : '';
+    html += `
+    <details class="kur-accordion-item"${open}>
+      <summary>
+        <span class="kur-sem-badge">${term.semesterLabel}</span>
+        <span class="kur-sem-title">${term.angkatanLabel}</span>
+      </summary>
+      <div class="kur-accordion-body">
+        <div class="kur-offering-grid">
+          ${renderOfferingTable(term.left, term.nominalSemester)}
+          ${renderOfferingTable(term.right, term.nominalSemester)}
+        </div>
+      </div>
+    </details>`;
+  });
+  container.innerHTML = html;
 }
 
 // ── Render: Konsentrasi / Jalur Karir ─────────────────────────────
@@ -495,6 +656,7 @@ function renderChecker(angkatan) {
 // ── Init ───────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   renderStruktur();
+  renderOfferings();
   renderPadanan();
   renderSpecialization();
   renderChecker('2025');

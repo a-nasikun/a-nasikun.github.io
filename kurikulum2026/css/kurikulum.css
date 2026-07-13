@@ -384,6 +384,43 @@
 .kur-en { color: var(--gray-400); font-style: italic; font-size: 0.85em; }
 .kur-sks { font-family: var(--font-mono); font-weight: 700; color: var(--navy); }
 
+/* ── Mata Kuliah yang Ditawarkan ──────────────────────────────────── */
+.kur-offering-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.kur-offering-col {
+  background: var(--gray-100);
+  border-radius: 8px;
+  padding: 1rem;
+}
+.kur-offering-col-title {
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 0.65rem;
+}
+.kur-offering-table { background: var(--white); border-radius: 6px; overflow: hidden; }
+.kur-offering-table th, .kur-offering-table td { padding: 0.5rem 0.65rem; }
+.kur-offering-table tfoot td {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-top: 2px solid var(--gray-200);
+  border-bottom: none;
+  background: var(--gray-100);
+}
+.kur-offering-sem { font-family: var(--font-mono); color: var(--gray-400); }
+/* Rows offered ahead of their nominal semester — the whole point of this panel */
+tr.kur-offering-shifted { background: var(--kur-accent-orange-bg); }
+tr.kur-offering-shifted td { color: #a05a1f; font-weight: 600; }
+tr.kur-offering-shifted .kur-offering-sem { color: #a05a1f; font-weight: 700; }
+
 .kur-kat {
   font-size: 0.68rem;
   font-family: var(--font-mono);
