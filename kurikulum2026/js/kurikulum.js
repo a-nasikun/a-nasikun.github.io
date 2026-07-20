@@ -448,10 +448,10 @@ const CHECKER_DATA = [
     "semester": 5, "kode": "TIF263102", "nama_2026": "Keamanan Siber (Cybersecurity)",
     "kategori": "Engineering Topic", "sks": 3,
     "angkatan": {
-      "2025": { "nama_lama": "Keamanan Siber", "sks": 3, "semester_lama": 5, "status": "pink" },
-      "2024": { "nama_lama": "Keamanan Siber", "sks": 3, "semester_lama": 5, "status": "pink" },
-      "2023": { "nama_lama": "Keamanan Siber", "sks": 3, "semester_lama": 6, "status": "green" },
-      "2022": { "nama_lama": "Keamanan Siber", "sks": 3, "semester_lama": 6, "status": "green" }
+      "2025": { "nama_lama": "Keamanan Komputer", "sks": 3, "semester_lama": 5, "status": "pink" },
+      "2024": { "nama_lama": "Keamanan Komputer", "sks": 3, "semester_lama": 5, "status": "pink" },
+      "2023": { "nama_lama": "Keamanan Komputer", "sks": 3, "semester_lama": 6, "status": "green" },
+      "2022": { "nama_lama": "Keamanan Komputer", "sks": 3, "semester_lama": 6, "status": "green" }
     }
   },
   {
@@ -697,7 +697,10 @@ const PADANAN_BARU = [
 // Mata kuliah hilang — ada di Kurikulum 2021, tidak lagi diselenggarakan di Kurikulum 2026.
 const PADANAN_DIHAPUS = [
   { nama: "Analisis Variabel Kompleks", sks: 3, sem: 2 },
-  { nama: "Fisika Listrik dan Magnet",  sks: 3, sem: 2 }
+  { nama: "Fisika Listrik dan Magnet",  sks: 3, sem: 2 },
+  { nama: "Manajemen Industri",  sks: 2, sem: 1 },
+  { nama: "Medan Elektromagnetik",  sks: 3, sem: 5 },
+  { nama: "Sistem Berbasis Mikroprosesor",  sks: 2, sem: 1 }
 ];
 
 // Mata kuliah dengan nama sama antara 2021 dan 2026 — "pindah waktu": SKS dan/atau semester bergeser.
