@@ -619,7 +619,7 @@ const CHECKER_DATA = [
 
 const EXTRA_CREDITS = {
   "2025": [
-    { nama: "Teori Vektor dan Matriks", sks: 2, semester: 1 },
+    //{ nama: "Teori Vektor dan Matriks", sks: 2, semester: 1 },
     { nama: "Analisis Variabel Kompleks", sks: 3, semester: 2 },
     { nama: "Fisika Listrik dan Magnet", sks: 3, semester: 2 },
     { nama: "Manajemen Industri", sks: 2, semester: 1 }
