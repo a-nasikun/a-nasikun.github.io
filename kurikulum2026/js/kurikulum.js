@@ -625,22 +625,21 @@ const EXTRA_CREDITS = {
     { nama: "Manajemen Industri", sks: 2, semester: 1 }
   ],
   "2024": [
-    { nama: "Teori Vektor dan Matriks", sks: 2, semester: 1 },
     { nama: "Analisis Variabel Kompleks", sks: 3, semester: 2 },
-    { nama: "Fisika Fluida, Kalor dan Gelombang", sks: 3, semester: 1 },
-    { nama: "Manajemen Industri", sks: 2, semester: 1 }
+    { nama: "Fisika Listrik dan Magnet", sks: 3, semester: 2 },
+    { nama: "Manajemen Industri", sks: 2, semester: 1 },
+    { nama: "Medan Elektromagnetik", sks: 3, semester: 5 },
+    { nama: "Sistem Berbasis Mikroprosesor", sks: 2, semester: 1 },
   ],
   "2023": [
-    { nama: "Teori Vektor dan Matriks", sks: 2, semester: 1 },
     { nama: "Analisis Variabel Kompleks", sks: 3, semester: 2 },
-    { nama: "Fisika Fluida, Kalor dan Gelombang", sks: 3, semester: 1 },
+    { nama: "Fisika Listrik dan Magnet", sks: 3, semester: 2 },
     { nama: "Manajemen Industri", sks: 2, semester: 1 },
     { nama: "Integrasi Aplikasi dan Informasi", sks: 2, semester: 6 }
   ],
   "2022": [
-    { nama: "Teori Vektor dan Matriks", sks: 2, semester: 1 },
     { nama: "Analisis Variabel Kompleks", sks: 3, semester: 2 },
-    { nama: "Fisika Fluida, Kalor dan Gelombang", sks: 3, semester: 1 },
+    { nama: "Fisika Listrik dan Magnet", sks: 3, semester: 2 },
     { nama: "Integrasi Aplikasi dan Informasi", sks: 2, semester: 6 }
   ]
 };
