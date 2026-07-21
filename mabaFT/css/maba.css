@@ -1,0 +1,195 @@
+/* ================================================================
+   Infografis Penerimaan Mahasiswa Baru — Fakultas Teknik UGM
+   Extends the site's navy + gold editorial tokens (see ../css/style.css),
+   following the same page-prefix convention as kurikulum2026/css/kurikulum.css
+   and sma/css/dashboard.css.
+   ================================================================ */
+
+:root {
+  /* Accent rotation, reused from the site's kategori badges (see kurikulum.css) */
+  --maba-acc-navy:   #0d1b2a;
+  --maba-acc-green:  #2f8f6f;
+  --maba-acc-orange: #c9772e;
+  --maba-acc-gold:   #c9a84c;
+  --maba-acc-blue:   #2f6fb5;
+  --maba-acc-pink:   #b5457a;
+  --maba-acc-violet: #4a3aa7;
+  --maba-acc-teal:   #1baf7a;
+
+  /* Chart categorical palette — one hue per intake year, fixed order, never
+     cycled. Validated with dataviz/scripts/validate_palette.js (all-pairs,
+     light mode, surface #fafaf8): CVD-safe and distinct at a glance. */
+  --maba-y2023: #2a78d6;
+  --maba-y2024: #008300;
+  --maba-y2025: #e87ba4;
+  --maba-y2026: #eda100;
+
+  /* Status (delta) — reserved for up/down indicators, never used as a series color */
+  --maba-good:     #0ca30c;
+  --maba-critical: #d03b3b;
+
+  --maba-ink-secondary: #52514e;
+  --maba-grid-line:     #e1e0d9;
+}
+
+/* ── Hero ──────────────────────────────────────────────────────── */
+.maba-hero {
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+  padding: 7rem 0 3.5rem;
+}
+.maba-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 80% 20%, rgba(201,168,76,0.08) 0%, transparent 60%),
+    linear-gradient(160deg, #0d1b2a 0%, #1a2e45 60%, #0d1b2a 100%);
+}
+.maba-hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+.maba-hero .container { position: relative; z-index: 1; }
+.maba-hero .breadcrumb { color: rgba(255,255,255,0.55); }
+.maba-hero .breadcrumb a { color: var(--gold-light); text-decoration: underline; text-underline-offset: 2px; }
+.maba-hero .breadcrumb a:hover { color: var(--gold); }
+
+.maba-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--gold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  display: flex; align-items: center; gap: 0.75rem;
+  margin: 1.5rem 0 1rem;
+}
+.maba-eyebrow::before { content: ''; width: 2rem; height: 1px; background: var(--gold); }
+
+.maba-hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 4.2vw, 2.9rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.18;
+  max-width: 44rem;
+  margin-bottom: 1rem;
+}
+.maba-hero-lead {
+  color: rgba(255,255,255,0.72);
+  font-size: 1rem;
+  line-height: 1.85;
+  max-width: 42rem;
+  margin-bottom: 1.5rem;
+}
+.maba-hero-lead code {
+  font-family: var(--font-mono);
+  background: rgba(255,255,255,0.08);
+  padding: 0.1em 0.4em; border-radius: 3px; font-size: 0.9em; color: var(--gold-light);
+}
+
+.maba-stat-row {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 2.25rem;
+  padding-top: 1.75rem;
+  margin-top: 0.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.maba-stat .stat-num { font-family: var(--font-mono); font-size: 1.65rem; font-weight: 600; color: var(--gold); line-height: 1; }
+.maba-stat .stat-label { font-size: 0.7rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.35rem; }
+.maba-stat .stat-num.delta-up   { color: #7fdc7f; }
+.maba-stat .stat-num.delta-down { color: #ef9d9d; }
+
+.maba-toc { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.maba-toc a {
+  font-family: var(--font-mono); font-size: 0.76rem; color: rgba(255,255,255,0.75);
+  border: 1px solid rgba(201,168,76,0.3); padding: 0.4rem 0.85rem; border-radius: 99px;
+  transition: var(--transition);
+}
+.maba-toc a:hover { color: var(--navy); background: var(--gold); border-color: var(--gold); }
+
+/* ── Sections ──────────────────────────────────────────────────── */
+.maba-section { background: var(--white); }
+.maba-section.alt { background: var(--gray-100); }
+
+/* ── Chart cards ───────────────────────────────────────────────── */
+.maba-chart-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 10px; padding: 1.75rem 1.75rem 1rem; }
+.maba-chart-card h3 { font-family: var(--font-serif); font-size: 1.05rem; color: var(--navy); margin-bottom: 0.25rem; }
+.maba-chart-sub { font-size: 0.85rem; color: var(--gray-600); margin-bottom: 1.25rem; }
+.maba-chart-wrap { position: relative; width: 100%; }
+
+/* ── Data table ────────────────────────────────────────────────── */
+.maba-table-wrap { overflow-x: auto; border: 1px solid var(--gray-200); border-radius: 10px; }
+.maba-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; min-width: 720px; }
+.maba-table th, .maba-table td { padding: 0.7rem 0.9rem; border-bottom: 1px solid var(--gray-200); text-align: right; white-space: nowrap; }
+.maba-table th:first-child, .maba-table td:first-child { text-align: left; white-space: normal; min-width: 15rem; }
+.maba-table thead th {
+  background: var(--navy); color: var(--white);
+  font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.04em; text-transform: uppercase;
+  position: sticky; top: 0;
+}
+.maba-table thead th:first-child { text-align: left; }
+.maba-table tbody tr:nth-child(even) { background: var(--gray-100); }
+.maba-table tbody tr:hover { background: var(--gold-pale); }
+.maba-table td.num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; color: var(--navy); }
+.maba-table .prog-name { font-weight: 600; color: var(--navy); }
+.maba-table .dept-tag {
+  display: inline-block; margin-left: 0.5rem; font-family: var(--font-mono); font-size: 0.65rem;
+  color: var(--gray-600); background: var(--gray-100); border-radius: 3px; padding: 0.05rem 0.4rem;
+}
+.maba-table tfoot td {
+  font-family: var(--font-mono); font-weight: 700; color: var(--navy);
+  background: var(--gold-pale); border-top: 2px solid var(--gold); border-bottom: none;
+}
+.maba-delta-badge {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  font-family: var(--font-mono); font-size: 0.78rem; font-weight: 700;
+  padding: 0.15rem 0.5rem; border-radius: 99px;
+}
+.maba-delta-badge.up   { color: var(--maba-good);     background: rgba(12,163,12,0.09); }
+.maba-delta-badge.down { color: var(--maba-critical); background: rgba(208,59,59,0.09); }
+.maba-delta-badge.flat { color: var(--gray-600);      background: var(--gray-100); }
+
+/* ── Department cards ─────────────────────────────────────────── */
+.maba-dept-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 2rem; }
+.maba-dept-card {
+  background: var(--white); border: 1px solid var(--gray-200); border-top: 3px solid var(--gray-200);
+  border-radius: 8px; padding: 1.25rem 1.4rem;
+}
+.maba-dept-card .dept-code { font-family: var(--font-mono); font-size: 0.72rem; color: var(--gold-light); background: var(--navy); display: inline-block; padding: 0.15rem 0.5rem; border-radius: 3px; margin-bottom: 0.6rem; }
+.maba-dept-card h4 { font-family: var(--font-serif); font-size: 0.95rem; color: var(--navy); margin-bottom: 0.3rem; }
+.maba-dept-card p { font-size: 0.78rem; color: var(--gray-600); line-height: 1.5; margin-bottom: 0.75rem; }
+.maba-dept-card .dept-nums { display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid var(--gray-200); padding-top: 0.65rem; }
+.maba-dept-card .dept-nums .n { font-family: var(--font-mono); font-weight: 700; color: var(--navy); }
+.maba-dept-grid .maba-dept-card:nth-of-type(8n+1) { border-top-color: var(--maba-acc-navy); }
+.maba-dept-grid .maba-dept-card:nth-of-type(8n+2) { border-top-color: var(--maba-acc-green); }
+.maba-dept-grid .maba-dept-card:nth-of-type(8n+3) { border-top-color: var(--maba-acc-orange); }
+.maba-dept-grid .maba-dept-card:nth-of-type(8n+4) { border-top-color: var(--maba-acc-gold); }
+.maba-dept-grid .maba-dept-card:nth-of-type(8n+5) { border-top-color: var(--maba-acc-blue); }
+.maba-dept-grid .maba-dept-card:nth-of-type(8n+6) { border-top-color: var(--maba-acc-pink); }
+.maba-dept-grid .maba-dept-card:nth-of-type(8n+7) { border-top-color: var(--maba-acc-violet); }
+.maba-dept-grid .maba-dept-card:nth-of-type(8n+8) { border-top-color: var(--maba-acc-teal); }
+
+/* ── Notes / disclaimer ────────────────────────────────────────── */
+.maba-note {
+  background: var(--gold-pale);
+  border-left: 4px solid var(--gold);
+  border-radius: 0 8px 8px 0;
+  padding: 1.1rem 1.4rem;
+  font-size: 0.85rem;
+  color: var(--gray-800);
+  line-height: 1.7;
+  margin-top: 1.5rem;
+}
+.maba-note strong { color: var(--navy); }
+
+/* ── Responsive ────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .maba-stat-row { grid-template-columns: repeat(2, auto); row-gap: 1.25rem; }
+}

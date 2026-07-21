@@ -12,17 +12,13 @@ const cvar = name => css.getPropertyValue(name).trim();
 const COLORS = {
   navy: cvar('--navy'),
   gold: cvar('--gold'),
-  ink: cvar('--ink-primary'),
-  inkSecondary: cvar('--ink-secondary'),
-  inkMuted: cvar('--ink-muted'),
-  grid: cvar('--grid-line'),
-  good: cvar('--status-good'),
-  critical: cvar('--status-critical'),
+  inkSecondary: cvar('--maba-ink-secondary'),
+  grid: cvar('--maba-grid-line'),
   years: {
-    2023: cvar('--yr-2023'),
-    2024: cvar('--yr-2024'),
-    2025: cvar('--yr-2025'),
-    2026: cvar('--yr-2026'),
+    2023: cvar('--maba-y2023'),
+    2024: cvar('--maba-y2024'),
+    2025: cvar('--maba-y2025'),
+    2026: cvar('--maba-y2026'),
   },
 };
 
@@ -34,10 +30,10 @@ function delta(from, to) {
 
 function deltaBadgeHTML(from, to) {
   const { abs, pct } = delta(from, to);
-  if (abs === 0) return `<span class="delta-badge flat">→ 0%</span>`;
+  if (abs === 0) return `<span class="maba-delta-badge flat">→ 0%</span>`;
   const dir = abs > 0 ? 'up' : 'down';
   const arrow = abs > 0 ? '▲' : '▼';
-  return `<span class="delta-badge ${dir}">${arrow} ${Math.abs(pct).toFixed(1)}%</span>`;
+  return `<span class="maba-delta-badge ${dir}">${arrow} ${Math.abs(pct).toFixed(1)}%</span>`;
 }
 
 /* ── Hero stats ────────────────────────────────────────────────── */
@@ -237,7 +233,7 @@ const barTooltipOptions = {
   grid.innerHTML = DEPARTMENT_DATA.map(d => {
     const [y23, , , y26] = d.values;
     return `
-      <div class="dept-card">
+      <div class="maba-dept-card">
         <span class="dept-code">${d.code}</span>
         <h4>${d.name}</h4>
         <p>${d.composition}</p>

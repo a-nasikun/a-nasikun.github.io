@@ -5,46 +5,54 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="Infografis penerimaan mahasiswa baru S1 Fakultas Teknik UGM 2023–2026: tabel dan grafik pertumbuhan per program studi dan per departemen." />
 <title>Infografis Penerimaan Mahasiswa Baru — Fakultas Teknik UGM</title>
-<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="../css/style.css" />
+<link rel="stylesheet" href="css/maba.css" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230d1b2a'/><text y='24' x='4' font-size='22' font-family='serif' fill='%23c9a84c'>N</text></svg>" />
 </head>
-<body>
+<body class="page-research-detail">
 
 <nav id="navbar">
   <div class="nav-inner">
-    <a href="#" class="nav-brand">FT <span>UGM</span><small>Statistik Penerimaan Mahasiswa</small></a>
+    <a href="../index.html" class="nav-brand">Dr. <span>Nasikun</span></a>
     <ul class="nav-links">
-      <li><a href="#tabel">Tabel</a></li>
-      <li><a href="#tren-total">Tren Total</a></li>
-      <li><a href="#program-studi">Program Studi</a></li>
-      <li><a href="#departemen">Departemen</a></li>
+      <li><a href="../index.html#about">Tentang</a></li>
+      <li><a href="../index.html#research">Riset</a></li>
+      <li><a href="../index.html#publications">Publikasi</a></li>
+      <li><a href="../index.html#teaching">Pengajaran</a></li>
+      <li><a href="../index.html#projects">Proyek</a></li>
+      <li class="nav-cta"><a href="../index.html#contact">Kontak</a></li>
     </ul>
-    <div id="hamburger" aria-label="Buka menu"><span></span><span></span><span></span></div>
+    <div id="hamburger" aria-label="Buka menu">
+      <span></span><span></span><span></span>
+    </div>
   </div>
 </nav>
 
-<main>
+<main class="page-sub-main">
 
-  <!-- ── HERO ─────────────────────────────────────────────────── -->
-  <header class="hero">
+  <!-- ── HERO ─────────────────────────────────────────────────────── -->
+  <header class="maba-hero">
     <div class="container">
-      <div class="eyebrow">Fakultas Teknik · Universitas Gadjah Mada</div>
+      <nav class="breadcrumb" aria-label="Remah roti">
+        <a href="../index.html">Beranda</a> · Statistik Penerimaan Mahasiswa Baru FT UGM
+      </nav>
+      <div class="maba-eyebrow">Fakultas Teknik · Universitas Gadjah Mada</div>
       <h1>Pertumbuhan Penerimaan Mahasiswa Baru 2023–2026</h1>
-      <p class="hero-lead">
+      <p class="maba-hero-lead">
         Rangkuman jumlah mahasiswa <strong>terdaftar</strong> (bukan pendaftar/peminat) jenjang sarjana
         di 15 program studi Fakultas Teknik UGM selama empat tahun akademik terakhir. Untuk program
         studi yang membuka jalur <code>IUP</code> pada tahun 2026, angka yang ditampilkan adalah
         <strong>total mahasiswa baru</strong> (reguler + IUP).
       </p>
 
-      <div class="stat-row">
-        <div class="stat"><div class="stat-num" id="stat-total-2026">–</div><div class="stat-label">Mahasiswa baru 2026</div></div>
-        <div class="stat"><div class="stat-num" id="stat-delta-2326">–</div><div class="stat-label">Perubahan 2023 → 2026</div></div>
-        <div class="stat"><div class="stat-num">15</div><div class="stat-label">Program studi sarjana</div></div>
-        <div class="stat"><div class="stat-num">8</div><div class="stat-label">Departemen</div></div>
+      <div class="maba-stat-row">
+        <div class="maba-stat"><div class="stat-num" id="stat-total-2026">–</div><div class="stat-label">Mahasiswa baru 2026</div></div>
+        <div class="maba-stat"><div class="stat-num" id="stat-delta-2326">–</div><div class="stat-label">Perubahan 2023 → 2026</div></div>
+        <div class="maba-stat"><div class="stat-num">15</div><div class="stat-label">Program studi sarjana</div></div>
+        <div class="maba-stat"><div class="stat-num">8</div><div class="stat-label">Departemen</div></div>
       </div>
 
-      <div class="toc">
+      <div class="maba-toc">
         <a href="#tabel">Tabel Rekap</a>
         <a href="#tren-total">Tren Total Fakultas</a>
         <a href="#program-studi">Per Program Studi</a>
@@ -55,7 +63,7 @@
   </header>
 
   <!-- ── 1. TABEL ─────────────────────────────────────────────── -->
-  <section id="tabel" class="section">
+  <section id="tabel" class="maba-section section">
     <div class="container">
       <div class="section-header animate-on-scroll">
         <span class="badge">1 · Tabel</span>
@@ -63,8 +71,8 @@
         <h2>Mahasiswa terdaftar per program studi</h2>
         <p>Diurutkan mengikuti pengelompokan departemen. Kolom terakhir menunjukkan perubahan dari 2023 ke 2026.</p>
       </div>
-      <div class="table-wrap animate-on-scroll">
-        <table class="data-table">
+      <div class="maba-table-wrap animate-on-scroll">
+        <table class="maba-table">
           <thead>
             <tr>
               <th>Program Studi</th>
@@ -83,7 +91,7 @@
   </section>
 
   <!-- ── 2. TREN TOTAL ────────────────────────────────────────── -->
-  <section id="tren-total" class="section alt">
+  <section id="tren-total" class="maba-section alt section">
     <div class="container">
       <div class="section-header animate-on-scroll">
         <span class="badge">2 · Tren</span>
@@ -91,10 +99,10 @@
         <h2>Pertumbuhan total mahasiswa Fakultas Teknik</h2>
         <p>Jumlah gabungan seluruh 15 program studi, per tahun akademik.</p>
       </div>
-      <div class="chart-card animate-on-scroll">
+      <div class="maba-chart-card animate-on-scroll">
         <h3>Total mahasiswa baru FT UGM</h3>
-        <p class="chart-sub">2023–2026 · seluruh program studi sarjana</p>
-        <div class="chart-wrap" style="height:320px;">
+        <p class="maba-chart-sub">2023–2026 · seluruh program studi sarjana</p>
+        <div class="maba-chart-wrap" style="height:320px;">
           <canvas id="chart-total"></canvas>
         </div>
       </div>
@@ -102,7 +110,7 @@
   </section>
 
   <!-- ── 3. PER PROGRAM STUDI ─────────────────────────────────── -->
-  <section id="program-studi" class="section">
+  <section id="program-studi" class="maba-section section">
     <div class="container">
       <div class="section-header animate-on-scroll">
         <span class="badge">3 · Per Program Studi</span>
@@ -110,8 +118,8 @@
         <h2>Pertumbuhan per 15 program studi</h2>
         <p>Diurutkan dari jumlah mahasiswa baru 2026 tertinggi ke terendah. Warna batang menandai tahun.</p>
       </div>
-      <div class="chart-card animate-on-scroll">
-        <div class="chart-wrap" style="height:640px;">
+      <div class="maba-chart-card animate-on-scroll">
+        <div class="maba-chart-wrap" style="height:640px;">
           <canvas id="chart-programs"></canvas>
         </div>
       </div>
@@ -119,7 +127,7 @@
   </section>
 
   <!-- ── 4. PER DEPARTEMEN ────────────────────────────────────── -->
-  <section id="departemen" class="section alt">
+  <section id="departemen" class="maba-section alt section">
     <div class="container">
       <div class="section-header animate-on-scroll">
         <span class="badge">4 · Per Departemen</span>
@@ -131,24 +139,24 @@
           DTSL = T. Sipil + Sumber Daya Air + T. Infrastruktur Lingkungan.
         </p>
       </div>
-      <div class="chart-card animate-on-scroll">
-        <div class="chart-wrap" style="height:380px;">
+      <div class="maba-chart-card animate-on-scroll">
+        <div class="maba-chart-wrap" style="height:380px;">
           <canvas id="chart-departments"></canvas>
         </div>
       </div>
-      <div class="dept-grid animate-on-scroll" id="dept-grid"></div>
+      <div class="maba-dept-grid animate-on-scroll" id="dept-grid"></div>
     </div>
   </section>
 
   <!-- ── CATATAN DATA ─────────────────────────────────────────── -->
-  <section id="catatan" class="section">
+  <section id="catatan" class="maba-section section">
     <div class="container">
       <div class="section-header animate-on-scroll">
         <span class="badge">Catatan</span>
         <div class="divider"></div>
         <h2>Sumber &amp; metodologi data</h2>
       </div>
-      <div class="note-box animate-on-scroll">
+      <div class="maba-note animate-on-scroll">
         <strong>Definisi angka.</strong> Semua nilai merepresentasikan mahasiswa <strong>terdaftar</strong>
         (registrasi/aktif), bukan jumlah peminat atau jumlah diterima. Sumber per tahun berbeda format aslinya:
         2023 dari kolom “Registrasi” (rekap peminat/diterima/registrasi), 2024 dari kolom “Aktif” (rekap pivot),
@@ -163,14 +171,15 @@
 
 <footer>
   <div class="footer-inner">
-    <span>© <span id="footer-year"></span> · Infografis Penerimaan Mahasiswa Baru FT UGM</span>
-    <span>Tema mengikuti <a href="https://nasikun.com" target="_blank" rel="noopener">nasikun.com</a></span>
+    <p>© <span id="footer-year"></span> Dr. Ahmad Nasikun · Sumber data: Fakultas Teknik UGM (rekap penerimaan mahasiswa baru 2023–2026)</p>
+    <p>Dibangun dengan HTML, CSS &amp; JS murni · Grafik oleh <a href="https://www.chartjs.org" target="_blank">Chart.js</a></p>
   </div>
 </footer>
 
+<button id="back-top" aria-label="Kembali ke atas">↑</button>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script src="../js/main.js"></script>
 <script src="js/data.js"></script>
 <script src="js/charts.js"></script>
-<script src="js/main.js"></script>
 </body>
 </html>
