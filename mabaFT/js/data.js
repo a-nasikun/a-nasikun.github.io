@@ -1,9 +1,16 @@
 /* ================================================================
    Data penerimaan mahasiswa baru S1 — Fakultas Teknik UGM
    Sumber: data/2023.jpeg (kolom "Registrasi"), data/2024.jpeg (kolom "Aktif"),
-           data/2025.jpeg (Jumlah Mahasiswa Baru, reguler), data/2026.jpeg
-           (kolom "Total Mahasiswa Baru" — termasuk IUP untuk prodi yang membuka jalur IUP).
+           data/2025.jpeg (Jumlah Mahasiswa Baru, reguler) + tabel IUP 2025
+           terpisah (International Program) untuk 9 prodi yang membukanya,
+           data/2026.jpeg (kolom "Total Mahasiswa Baru" — termasuk IUP untuk
+           prodi yang membuka jalur IUP).
    Angka merepresentasikan mahasiswa TERDAFTAR (registered), bukan peminat/pendaftar.
+
+   2025 = reguler + IUP (untuk 9 prodi yang membuka jalur IUP tahun itu):
+     PWK +10, T. Biomedis +16, Teknologi Informasi +28, T. Geodesi +9,
+     T. Geologi +34, T. Kimia +39, T. Industri +41, T. Mesin +33, T. Sipil +47
+     (total tambahan IUP 2025 = 257).
    ================================================================ */
 
 const YEARS = [2023, 2024, 2025, 2026];
@@ -11,19 +18,19 @@ const YEARS = [2023, 2024, 2025, 2026];
 /* dept: kode departemen — lihat DEPARTMENTS di bawah untuk nama lengkap & susunan prodi */
 const PROGRAMS = [
   { name: 'Arsitektur',                         dept: 'DTAP', values: [83, 88, 84, 83] },
-  { name: 'Perencanaan Wilayah dan Kota',        dept: 'DTAP', values: [98, 94, 61, 88] },
-  { name: 'Teknik Biomedis',                     dept: 'DTETI', values: [39, 55, 62, 82] },
+  { name: 'Perencanaan Wilayah dan Kota',        dept: 'DTAP', values: [98, 94, 71, 88] },
+  { name: 'Teknik Biomedis',                     dept: 'DTETI', values: [39, 55, 78, 82] },
   { name: 'Teknik Elektro',                      dept: 'DTETI', values: [72, 89, 97, 116] },
-  { name: 'Teknologi Informasi',                 dept: 'DTETI', values: [81, 122, 77, 139] },
+  { name: 'Teknologi Informasi',                 dept: 'DTETI', values: [81, 122, 105, 139] },
   { name: 'Teknik Fisika',                       dept: 'DTNTF', values: [127, 149, 146, 133] },
   { name: 'Teknik Nuklir',                       dept: 'DTNTF', values: [55, 54, 51, 52] },
-  { name: 'Teknik Geodesi',                      dept: 'DTGD', values: [157, 134, 133, 137] },
-  { name: 'Teknik Geologi',                      dept: 'DTGL', values: [133, 147, 132, 161] },
-  { name: 'Teknik Kimia',                        dept: 'DTK',  values: [175, 190, 146, 174] },
-  { name: 'Teknik Industri',                     dept: 'DTMI', values: [145, 166, 118, 167] },
-  { name: 'Teknik Mesin',                        dept: 'DTMI', values: [180, 194, 165, 208] },
+  { name: 'Teknik Geodesi',                      dept: 'DTGD', values: [157, 134, 142, 137] },
+  { name: 'Teknik Geologi',                      dept: 'DTGL', values: [133, 147, 166, 161] },
+  { name: 'Teknik Kimia',                        dept: 'DTK',  values: [175, 190, 185, 174] },
+  { name: 'Teknik Industri',                     dept: 'DTMI', values: [145, 166, 159, 167] },
+  { name: 'Teknik Mesin',                        dept: 'DTMI', values: [180, 194, 198, 208] },
   { name: 'Teknik Infrastruktur Lingkungan',     dept: 'DTSL', values: [59, 71, 52, 51] },
-  { name: 'Teknik Sipil',                        dept: 'DTSL', values: [170, 180, 108, 155] },
+  { name: 'Teknik Sipil',                        dept: 'DTSL', values: [170, 180, 155, 155] },
   { name: 'Teknik Sumber Daya Air',              dept: 'DTSL', values: [42, 71, 50, 53] },
 ];
 
