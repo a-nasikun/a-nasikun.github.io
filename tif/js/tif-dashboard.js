@@ -25,6 +25,10 @@ const GENDER_LABELS = { L: 'Laki-laki', P: 'Perempuan' };
 const BLOOD_ORDER   = ['A', 'B', 'AB', 'O'];
 const BLOOD_COLORS  = { A: '#2f6fb5', B: '#b5457a', AB: '#c9772e', O: '#1baf7a' };
 const STATUS_ORDER  = ['REGISTRASI', 'AKTIF', 'KAMPUS MERDEKA', 'CUTI DENGAN IJIN', 'LULUS', 'NON AKTIF', 'MENGUNDURKAN DIRI'];
+// Excluded from the IPK distribution charts only: their last recorded IPK
+// isn't a meaningful data point for "how well are enrolled/graduated
+// students doing" once they've left the program.
+const IPK_DIST_EXCLUDE_STATUS = ['NON AKTIF', 'MENGUNDURKAN DIRI'];
 
 const fmt   = n => n.toLocaleString('id-ID');
 const fmt2  = n => n.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -142,7 +146,7 @@ function renderDistChart(elId, groups, colorMap, { unit = 'IPK' } = {}) {
     lineStyle: { width: 2.5, color: colorMap[g.name] },
     areaStyle: { color: colorMap[g.name], opacity: 0.12 },
     emphasis: { focus: 'series' },
-    data: kde(g.values),
+    data: kde(g.values, { min: 1, max: 4 }),
   }));
   chart.setOption({
     textStyle: baseTextStyle(),
@@ -159,7 +163,7 @@ function renderDistChart(elId, groups, colorMap, { unit = 'IPK' } = {}) {
       data: usable.map(g => ({ name: g.name, itemStyle: { color: colorMap[g.name] } })),
     },
     xAxis: {
-      type: 'value', min: 0, max: 4, name: unit, nameLocation: 'middle', nameGap: 26,
+      type: 'value', min: 1, max: 4, name: unit, nameLocation: 'middle', nameGap: 26,
       nameTextStyle: { fontFamily: FONT_MONO, fontSize: 11, color: GRAY_400 },
       axisLabel: { fontFamily: FONT_MONO, fontSize: 11 },
       axisLine: { lineStyle: { color: GRAY_200 } },
@@ -182,8 +186,14 @@ function renderDistChart(elId, groups, colorMap, { unit = 'IPK' } = {}) {
   }
 }
 
+// Shared row set for all three IPK distribution charts: has an IPK value,
+// and excludes students who are no longer active (see IPK_DIST_EXCLUDE_STATUS).
+function ipkRows() {
+  return filtered().filter(r => r.ipk != null && !IPK_DIST_EXCLUDE_STATUS.includes(r.status_akhir));
+}
+
 function renderIpkByJalur() {
-  const rows = filtered().filter(r => r.ipk != null);
+  const rows = ipkRows();
   const groups = JALUR_ORDER.map(name => ({
     name, values: rows.filter(r => r.jalur_masuk === name).map(r => r.ipk),
   }));
@@ -191,7 +201,7 @@ function renderIpkByJalur() {
 }
 
 function renderIpkRegIup() {
-  const rows = filtered().filter(r => r.ipk != null);
+  const rows = ipkRows();
   const groups = ['Reguler', 'IUP'].map(name => ({
     name, values: rows.filter(r => r.sub_angkatan === name).map(r => r.ipk),
   }));
@@ -199,7 +209,7 @@ function renderIpkRegIup() {
 }
 
 function renderIpkGender() {
-  const rows = filtered().filter(r => r.ipk != null);
+  const rows = ipkRows();
   const groups = ['L', 'P'].map(code => ({
     name: GENDER_LABELS[code], values: rows.filter(r => r.jenis_kelamin === code).map(r => r.ipk),
   }));
