@@ -6,7 +6,8 @@ personal fields, normalizes "Jalur Masuk" naming across years, and writes
 a combined, anonymized dataset to tif/processed/.
 
 Excluded (never written to output): NIM, Nama Mahasiswa, Email UGM, No HP,
-Alamat Domisili, Golongan Darah, Wali, Alamat Wali, No HP Wali, Alamat KTP.
+Alamat Domisili, Wali, Alamat Wali, No HP Wali, Alamat KTP. Golongan Darah
+is kept for aggregate distribution charts only.
 """
 import glob
 import json
@@ -46,7 +47,7 @@ COL = {
     "alamat_domisili": 24,   # SENSITIVE - excluded
     "email_ugm": 25,         # SENSITIVE - excluded
     "no_hp": 26,             # SENSITIVE - excluded
-    "golongan_darah": 27,    # SENSITIVE - excluded
+    "golongan_darah": 27,    # kept: aggregate-only (see dashboard charts), never joined to an identifying row
     "wali": 28,               # SENSITIVE - excluded
     "alamat_wali": 29,        # SENSITIVE - excluded
     "no_hp_wali": 30,         # SENSITIVE - excluded
@@ -60,9 +61,10 @@ OUTPUT_FIELDS = [
     "angkatan", "periode_masuk", "tanggal_masuk", "program_studi",
     "jalur_masuk", "jalur_masuk_raw", "beasiswa_kerjasama", "asal_3t",
     "jatah_sks", "ips", "sks_kumulatif", "ipk", "sub_angkatan",
-    "kurikulum", "jenis_kelamin", "agama", "sekolah_asal",
-    "kabupaten_sekolah", "propinsi_sekolah", "kabupaten_ktp",
-    "propinsi_ktp", "pekerjaan_wali", "semester_akhir", "status_akhir",
+    "kurikulum", "jenis_kelamin", "agama", "golongan_darah",
+    "sekolah_asal", "kabupaten_sekolah", "propinsi_sekolah",
+    "kabupaten_ktp", "propinsi_ktp", "pekerjaan_wali",
+    "pekerjaan_kategori", "semester_akhir", "status_akhir",
     "source_year",
 ]
 
@@ -80,6 +82,33 @@ JALUR_MAP = {
     "pbutm": "UM UGM",
     "pbuk": "UM UGM",
 }
+
+
+PEKERJAAN_RULES = [
+    (("meninggal",), "Tidak Bekerja / Lainnya"),
+    (("rumah tangga",), "Tidak Bekerja / Lainnya"),
+    (("tidak bekerja", "belum bekerja", "penganggur"), "Tidak Bekerja / Lainnya"),
+    (("pensiun", "pesiun"), "Pensiunan"),
+    (("bumn",), "Pegawai BUMN"),
+    (("tni", "polri", "tentara"), "TNI / Polri"),
+    (("negeri", "pns"), "PNS / Pegawai Negeri"),
+    (("dosen", "guru"), "Guru / Dosen"),
+    (("tani", "nelayan"), "Petani / Nelayan"),
+    (("wiraswasta", "wirausaha", "dagang"), "Wiraswasta / Pedagang"),
+    (("karyawan", "pegawai", "pekerja", "buruh", "driver"), "Karyawan Swasta"),
+]
+
+
+def normalize_pekerjaan(raw):
+    if raw is None:
+        return "Tidak Bekerja / Lainnya"
+    s = str(raw).strip().lower()
+    if s in ("", "-", "–", "—", "lain-lain", "lainnya"):
+        return "Tidak Bekerja / Lainnya"
+    for keywords, category in PEKERJAAN_RULES:
+        if any(k in s for k in keywords):
+            return category
+    return "Tidak Bekerja / Lainnya"
 
 
 def normalize_jalur(raw):
@@ -128,12 +157,14 @@ def extract_file(path, year):
             "kurikulum": clean_value(row[COL["kurikulum"]]),
             "jenis_kelamin": clean_value(row[COL["jenis_kelamin"]]),
             "agama": clean_value(row[COL["agama"]]),
+            "golongan_darah": clean_value(row[COL["golongan_darah"]]),
             "sekolah_asal": clean_value(row[COL["sekolah_asal"]]),
             "kabupaten_sekolah": clean_value(row[COL["kabupaten_sekolah"]]),
             "propinsi_sekolah": clean_value(row[COL["propinsi_sekolah"]]),
             "kabupaten_ktp": clean_value(row[COL["kabupaten_ktp"]]),
             "propinsi_ktp": clean_value(row[COL["propinsi_ktp"]]),
             "pekerjaan_wali": clean_value(row[COL["pekerjaan_wali"]]),
+            "pekerjaan_kategori": normalize_pekerjaan(row[COL["pekerjaan_wali"]]),
             "semester_akhir": clean_value(row[COL["semester_akhir"]]),
             "status_akhir": clean_value(row[COL["status_akhir"]]),
             "source_year": year,

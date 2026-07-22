@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Dasbor analitik mahasiswa S1 Teknologi Informasi UGM angkatan 2020–2025: distribusi IPK per jalur masuk, demografi, asal sekolah program IUP, dan tren penerimaan." />
+<title>Dasbor Mahasiswa — Teknologi Informasi UGM</title>
+<link rel="stylesheet" href="../css/style.css" />
+<link rel="stylesheet" href="css/tif.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230d1b2a'/><text y='24' x='4' font-size='22' font-family='serif' fill='%23c9a84c'>N</text></svg>" />
+</head>
+<body class="page-research-detail">
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-brand">Dr. <span>Nasikun</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">Tentang</a></li>
+      <li><a href="../index.html#research">Riset</a></li>
+      <li><a href="../index.html#publications">Publikasi</a></li>
+      <li><a href="../index.html#teaching">Pengajaran</a></li>
+      <li><a href="../index.html#projects">Proyek</a></li>
+      <li class="nav-cta"><a href="../index.html#contact">Kontak</a></li>
+    </ul>
+    <div id="hamburger" aria-label="Buka menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<main class="page-sub-main">
+
+  <!-- ── HERO ─────────────────────────────────────────────────────── -->
+  <header class="tif-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Remah roti">
+        <a href="../index.html">Beranda</a> · Dasbor Mahasiswa TIF UGM
+      </nav>
+      <div class="tif-eyebrow">Teknologi Informasi · Universitas Gadjah Mada</div>
+      <h1>Dasbor Mahasiswa S1 Teknologi Informasi 2020–2025</h1>
+      <p class="tif-hero-lead">
+        Rangkuman anonim data mahasiswa terdaftar enam angkatan terakhir — performa akademik per
+        jalur masuk (<code>SNBP</code>, <code>SNBT</code>, <code>UM UGM</code>, <code>IUP</code>),
+        demografi, asal sekolah, dan tren penerimaan. Seluruh data identitas pribadi (NIM, nama,
+        kontak, alamat) telah dihapus sebelum dipublikasikan — lihat <a href="#catatan" style="color:var(--gold-light);text-decoration:underline;">catatan metodologi</a>.
+      </p>
+
+      <div class="tif-year-filter" id="year-filter">
+        <span class="tif-year-filter-label">Tampilkan</span>
+      </div>
+
+      <div class="tif-stat-row">
+        <div class="tif-stat"><div class="stat-num" id="stat-total">–</div><div class="stat-label">Mahasiswa (pilihan)</div></div>
+        <div class="tif-stat"><div class="stat-num" id="stat-ipk">–</div><div class="stat-label">Rata-rata IPK</div></div>
+        <div class="tif-stat"><div class="stat-num" id="stat-female">–</div><div class="stat-label">Mahasiswa perempuan</div></div>
+        <div class="tif-stat"><div class="stat-num" id="stat-top-jalur">–</div><div class="stat-label">Jalur terbanyak</div></div>
+      </div>
+
+      <div class="tif-toc">
+        <a href="#tren">Tren Penerimaan &amp; IPK</a>
+        <a href="#status">Status &amp; Attrisi</a>
+        <a href="#performa">Distribusi IPK</a>
+        <a href="#demografi">Demografi</a>
+        <a href="#keluarga">Latar Belakang Keluarga</a>
+        <a href="#asal">Asal &amp; Geografi</a>
+        <a href="#catatan">Catatan Data</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── 1. TREN PENERIMAAN & IPK ─────────────────────────────────── -->
+  <section id="tren" class="tif-section section">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="badge">1 · Tren</span>
+        <div class="divider"></div>
+        <h2>Tren penerimaan dan performa akademik per tahun</h2>
+        <p>Selalu menampilkan keenam angkatan sekaligus (tidak terpengaruh filter tahun di atas) — di sinilah pola lintas-waktu paling terlihat.</p>
+      </div>
+      <div class="tif-grid cols-2 animate-on-scroll">
+        <div class="tif-card">
+          <h3>Komposisi jalur masuk per angkatan</h3>
+          <p class="tif-card-sub">Jumlah mahasiswa baru per tahun, disusun berdasarkan jalur masuk (dinormalisasi ke penamaan 2025). Jalur <code>IUP</code> baru dibuka 2024.</p>
+          <div id="chart-enrollment" class="tif-chart" style="height:340px;"></div>
+        </div>
+        <div class="tif-card">
+          <h3>Tren rata-rata IPK</h3>
+          <p class="tif-card-sub">Rata-rata IPK seluruh mahasiswa per angkatan, dengan pita ±1 standar deviasi. Arahkan kursor untuk detail per tahun.</p>
+          <div id="chart-ipk-trend" class="tif-chart" style="height:340px;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 2. STATUS & ATTRISI ─────────────────────────────────────── -->
+  <section id="status" class="tif-section alt section">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="badge">2 · Status &amp; Attrisi</span>
+        <div class="divider"></div>
+        <h2>Mahasiswa yang mengundurkan diri, per angkatan</h2>
+        <p>Selalu menampilkan keenam angkatan sekaligus. Tabel di bawah merinci status akhir lengkap tiap angkatan sebagai konteks.</p>
+      </div>
+      <div class="tif-card animate-on-scroll">
+        <div id="chart-dropout" class="tif-chart" style="height:280px;"></div>
+      </div>
+      <div class="tif-table-wrap animate-on-scroll">
+        <table class="tif-table">
+          <thead>
+            <tr>
+              <th>Status Akhir</th>
+              <th>2020</th><th>2021</th><th>2022</th><th>2023</th><th>2024</th><th>2025</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody id="status-table-body"></tbody>
+          <tfoot id="status-table-foot"></tfoot>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 3. DISTRIBUSI IPK ───────────────────────────────────────── -->
+  <section id="performa" class="tif-section section">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="badge">3 · Performa Akademik</span>
+        <div class="divider"></div>
+        <h2>Sebaran IPK, dikelompokkan berbagai cara</h2>
+        <p>Kurva kepadatan (bukan histogram) memperlihatkan bentuk sebaran tiap kelompok — puncak lebih ke kanan berarti kelompok itu cenderung ber-IPK lebih tinggi. Mengikuti filter tahun di atas.</p>
+      </div>
+      <div class="tif-grid animate-on-scroll">
+        <div class="tif-card">
+          <h3>Distribusi IPK per jalur masuk</h3>
+          <p class="tif-card-sub">SNBP, SNBT, UM UGM, dan IUP dibandingkan sebagai kurva kepadatan terpisah.</p>
+          <div id="chart-ipk-jalur" class="tif-chart" style="height:320px;"></div>
+          <div class="tif-chart-note" id="chart-ipk-jalur-note"></div>
+        </div>
+        <div class="tif-card">
+          <h3>Reguler vs. IUP</h3>
+          <p class="tif-card-sub">Jalur reguler (SNBP+SNBT+UM UGM digabung) dibandingkan dengan jalur IUP.</p>
+          <div id="chart-ipk-regiup" class="tif-chart" style="height:320px;"></div>
+          <div class="tif-chart-note" id="chart-ipk-regiup-note"></div>
+        </div>
+        <div class="tif-card">
+          <h3>Berdasarkan gender</h3>
+          <p class="tif-card-sub">Sebaran IPK mahasiswa laki-laki dibandingkan perempuan.</p>
+          <div id="chart-ipk-gender" class="tif-chart" style="height:320px;"></div>
+          <div class="tif-chart-note" id="chart-ipk-gender-note"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 4. DEMOGRAFI ────────────────────────────────────────────── -->
+  <section id="demografi" class="tif-section alt section">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="badge">4 · Demografi</span>
+        <div class="divider"></div>
+        <h2>Gender, agama, dan golongan darah</h2>
+        <p>Seluruh grafik pada bagian ini bersifat agregat — tidak pernah ditautkan ke identitas mahasiswa tertentu. Mengikuti filter tahun di atas.</p>
+      </div>
+      <div class="tif-quad-grid animate-on-scroll">
+        <div class="tif-card">
+          <h3>Gender</h3>
+          <p class="tif-card-sub">L = Laki-laki · P = Perempuan</p>
+          <div id="chart-gender" class="tif-chart" style="height:280px;"></div>
+        </div>
+        <div class="tif-card">
+          <h3>Agama</h3>
+          <p class="tif-card-sub">Jumlah mahasiswa per agama.</p>
+          <div id="chart-agama" class="tif-chart" style="height:280px;"></div>
+        </div>
+        <div class="tif-card">
+          <h3>Golongan darah</h3>
+          <p class="tif-card-sub">Ditampilkan hanya sebagai agregat.</p>
+          <div id="chart-blood" class="tif-chart" style="height:280px;"></div>
+          <div class="tif-chart-note" id="chart-blood-note"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 5. LATAR BELAKANG KELUARGA ───────────────────────────────── -->
+  <section id="keluarga" class="tif-section section">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="badge">5 · Latar Belakang Keluarga</span>
+        <div class="divider"></div>
+        <h2>Pekerjaan orang tua / wali</h2>
+        <p>Dikelompokkan dari teks pekerjaan mentah (mis. "KARYAWAN SWASTA", "Karyawan Swasta", "Pekerja lepas" → <em>Karyawan Swasta</em>) ke 9 kategori agar dapat dibandingkan. Mengikuti filter tahun di atas.</p>
+      </div>
+      <div class="tif-card animate-on-scroll">
+        <div id="chart-pekerjaan" class="tif-chart" style="height:380px;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 6. ASAL & GEOGRAFI ──────────────────────────────────────── -->
+  <section id="asal" class="tif-section alt section">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="badge">6 · Asal &amp; Geografi</span>
+        <div class="divider"></div>
+        <h2>Dari mana mahasiswa berasal</h2>
+        <p>Mengikuti filter tahun di atas — data sekolah asal IUP hanya tersedia sejak jalur ini dibuka tahun 2024.</p>
+      </div>
+      <div class="tif-grid cols-2 animate-on-scroll">
+        <div class="tif-card">
+          <h3>15 sekolah asal teratas — program IUP</h3>
+          <p class="tif-card-sub">Sekolah menengah yang paling banyak mengirim siswanya ke jalur IUP TIF UGM.</p>
+          <div id="chart-iup-schools" class="tif-chart" style="height:420px;"></div>
+        </div>
+        <div class="tif-card">
+          <h3>Provinsi asal (KTP)</h3>
+          <p class="tif-card-sub">12 provinsi asal terbanyak, seluruh jalur masuk.</p>
+          <div id="chart-propinsi" class="tif-chart" style="height:420px;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CATATAN DATA ─────────────────────────────────────────── -->
+  <section id="catatan" class="tif-section section">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="badge">Catatan</span>
+        <div class="divider"></div>
+        <h2>Sumber, anonimisasi &amp; metodologi</h2>
+      </div>
+
+      <div class="tif-note animate-on-scroll">
+        <strong>Sumber data.</strong> Rekap resmi "Daftar Mahasiswa" Departemen Teknik Elektro dan
+        Teknologi Informasi UGM, satu berkas per angkatan (2020–2025), program studi S1 Teknologi Informasi.
+      </div>
+
+      <div class="tif-note animate-on-scroll">
+        <strong>Data yang dihapus sebelum dipublikasikan.</strong> NIM, nama mahasiswa, email UGM,
+        nomor HP, alamat domisili, alamat KTP, serta seluruh data wali (nama, alamat, nomor HP) —
+        tidak pernah disertakan dalam berkas publik ini. Golongan darah disertakan <em>hanya</em>
+        sebagai agregat pada grafik di atas, tidak pernah ditautkan ke baris data individu yang
+        dapat diidentifikasi. Pekerjaan wali disertakan sebagai kategori pekerjaan umum, bukan teks aslinya.
+      </div>
+
+      <div class="tif-note animate-on-scroll">
+        <strong>Normalisasi jalur masuk.</strong> Penamaan jalur masuk berubah beberapa kali sejak 2020;
+        seluruh data dipetakan ke empat kategori sesuai penamaan 2025.
+        <table class="tif-mapping-table">
+          <thead><tr><th>Nama pada berkas asli</th><th></th><th>Kategori pada dasbor</th></tr></thead>
+          <tbody>
+            <tr><td>SNMPTN (2020–2021), SNBP (2022–2025)</td><td class="arrow">→</td><td>SNBP</td></tr>
+            <tr><td>SBMPTN (2020–2021), SNBT (2022–2025)</td><td class="arrow">→</td><td>SNBT</td></tr>
+            <tr><td>PBUB, PBUTM, PBUK (2020–2021), Prestasi &amp; Ujian Masuk UGM (2022–2025)</td><td class="arrow">→</td><td>UM UGM</td></tr>
+            <tr><td>Internasional (2024–2025), Asing Degree (2025)</td><td class="arrow">→</td><td>IUP</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tif-note animate-on-scroll">
+        <strong>Kurva kepadatan (bukan histogram).</strong> Grafik distribusi IPK menggunakan estimasi
+        kepadatan kernel Gaussian (Kernel Density Estimation, bandwidth aturan Silverman), diskalakan
+        ke sumbu "Jumlah" agar sebanding dengan ukuran tiap kelompok. Ini merupakan pendekatan halus dari data
+        asli, bukan hitungan pasti pada tiap nilai IPK — kelompok dengan n &lt; 3 tidak digambar.
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <p>© <span id="footer-year"></span> Dr. Ahmad Nasikun · Sumber data: Departemen Teknik Elektro dan Teknologi Informasi UGM (rekap mahasiswa TIF 2020–2025, dianonimkan)</p>
+    <p>Dibangun dengan HTML, CSS &amp; JS murni · Grafik oleh <a href="https://echarts.apache.org" target="_blank">Apache ECharts</a></p>
+  </div>
+</footer>
+
+<button id="back-top" aria-label="Kembali ke atas">↑</button>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+<script src="../js/main.js"></script>
+<script src="js/tif-dashboard.js"></script>
+</body>
+</html>

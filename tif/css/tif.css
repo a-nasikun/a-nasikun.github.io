@@ -1,0 +1,229 @@
+/* ================================================================
+   TIF UGM — Dasbor Mahasiswa
+   Extends the site's navy + gold editorial tokens (see ../css/style.css),
+   following the same page-prefix convention as sma/css/dashboard.css and
+   mabaFT/css/maba.css.
+
+   Chart palette validated with dataviz/scripts/validate_palette.js
+   (categorical, light mode, surface #fcfcfb):
+     jalur masuk / reg-iup / gender / golongan darah sets all pass CVD +
+     normal-vision floors; contrast WARNs (teal, gold) are mitigated by
+     always shipping direct labels / legends on those series.
+   ================================================================ */
+
+:root {
+  --tif-blue:   #2f6fb5;   /* SNBP · Reguler · default series */
+  --tif-teal:   #1baf7a;   /* SNBT */
+  --tif-pink:   #b5457a;   /* UM UGM */
+  --tif-gold:   #c9a84c;   /* IUP — ties to the site's gold accent */
+  --tif-orange: #c9772e;   /* golongan darah AB */
+  --tif-navy-mid: #1a2e45; /* gender: L */
+  --tif-pink-soft: #b5657a; /* gender: P (sma dashboard convention) */
+  --tif-critical: #d03b3b; /* mengundurkan diri — reserved status color */
+
+  --tif-ink-secondary: #52514e;
+  --tif-grid-line: #e1e0d9;
+}
+
+/* ── Hero ──────────────────────────────────────────────────────── */
+.tif-hero {
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+  padding: 7rem 0 3.5rem;
+}
+.tif-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 80% 20%, rgba(201,168,76,0.08) 0%, transparent 60%),
+    linear-gradient(160deg, #0d1b2a 0%, #1a2e45 60%, #0d1b2a 100%);
+}
+.tif-hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+.tif-hero .container { position: relative; z-index: 1; }
+.tif-hero .breadcrumb { color: rgba(255,255,255,0.55); }
+.tif-hero .breadcrumb a { color: var(--gold-light); text-decoration: underline; text-underline-offset: 2px; }
+.tif-hero .breadcrumb a:hover { color: var(--gold); }
+
+.tif-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--gold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  display: flex; align-items: center; gap: 0.75rem;
+  margin: 1.5rem 0 1rem;
+}
+.tif-eyebrow::before { content: ''; width: 2rem; height: 1px; background: var(--gold); }
+
+.tif-hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 4.2vw, 2.9rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.18;
+  max-width: 44rem;
+  margin-bottom: 1rem;
+}
+.tif-hero-lead {
+  color: rgba(255,255,255,0.72);
+  font-size: 1rem;
+  line-height: 1.85;
+  max-width: 42rem;
+  margin-bottom: 1.5rem;
+}
+.tif-hero-lead code {
+  font-family: var(--font-mono);
+  background: rgba(255,255,255,0.08);
+  padding: 0.1em 0.4em; border-radius: 3px; font-size: 0.9em; color: var(--gold-light);
+}
+
+/* ── Year filter (the global "Total vs per-tahun" control) ───────── */
+.tif-year-filter {
+  margin-top: 1.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+}
+.tif-year-filter-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-right: 0.4rem;
+}
+.tif-year-chip {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.75);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(201,168,76,0.3);
+  padding: 0.4rem 0.9rem;
+  border-radius: 99px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.tif-year-chip:hover { border-color: var(--gold); color: var(--white); }
+.tif-year-chip.active { background: var(--gold); border-color: var(--gold); color: var(--navy); font-weight: 600; }
+
+.tif-stat-row {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 2.25rem;
+  padding-top: 1.75rem;
+  margin-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.tif-stat .stat-num { font-family: var(--font-mono); font-size: 1.65rem; font-weight: 600; color: var(--gold); line-height: 1; }
+.tif-stat .stat-label { font-size: 0.7rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.35rem; }
+
+.tif-toc { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.tif-toc a {
+  font-family: var(--font-mono); font-size: 0.76rem; color: rgba(255,255,255,0.75);
+  border: 1px solid rgba(201,168,76,0.3); padding: 0.4rem 0.85rem; border-radius: 99px;
+  transition: var(--transition);
+}
+.tif-toc a:hover { color: var(--navy); background: var(--gold); border-color: var(--gold); }
+
+/* ── Sections ──────────────────────────────────────────────────── */
+.tif-section { background: var(--white); }
+.tif-section.alt { background: var(--gray-100); }
+
+.tif-section-note {
+  font-size: 0.85rem;
+  color: var(--gray-600);
+  background: var(--gold-pale);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 6px 6px 0;
+  padding: 0.6rem 1rem;
+  margin: 0 0 1.5rem;
+  display: inline-block;
+}
+
+/* ── Chart cards ───────────────────────────────────────────────── */
+.tif-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+.tif-grid.wide { grid-column: 1 / -1; }
+.tif-grid.cols-2 { grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); }
+.tif-quad-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+@media (max-width: 900px) { .tif-quad-grid { grid-template-columns: 1fr; } }
+
+.tif-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 10px; padding: 1.75rem 1.75rem 1.25rem; }
+.tif-card h3 { font-family: var(--font-serif); font-size: 1.05rem; color: var(--navy); margin-bottom: 0.25rem; }
+.tif-card-sub { font-size: 0.83rem; color: var(--gray-600); margin-bottom: 1.1rem; line-height: 1.55; }
+.tif-chart { width: 100%; position: relative; }
+.tif-chart-note {
+  font-size: 0.76rem;
+  color: var(--gray-400);
+  font-family: var(--font-mono);
+  margin-top: 0.6rem;
+}
+.tif-empty-state {
+  display: flex; align-items: center; justify-content: center;
+  height: 100%;
+  min-height: 220px;
+  text-align: center;
+  padding: 1.5rem;
+  border: 1px dashed var(--gray-200);
+  border-radius: 8px;
+  color: var(--gray-400);
+  font-size: 0.85rem;
+}
+
+/* ── Data table (used for status-akhir breakdown) ─────────────────── */
+.tif-table-wrap { overflow-x: auto; border: 1px solid var(--gray-200); border-radius: 10px; margin-top: 1.5rem; }
+.tif-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; min-width: 680px; }
+.tif-table th, .tif-table td { padding: 0.65rem 0.85rem; border-bottom: 1px solid var(--gray-200); text-align: right; white-space: nowrap; }
+.tif-table th:first-child, .tif-table td:first-child { text-align: left; white-space: normal; min-width: 8rem; }
+.tif-table thead th {
+  background: var(--navy); color: var(--white);
+  font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.04em; text-transform: uppercase;
+  position: sticky; top: 0;
+}
+.tif-table thead th:first-child { text-align: left; }
+.tif-table tbody tr:nth-child(even) { background: var(--gray-100); }
+.tif-table tbody tr:hover { background: var(--gold-pale); }
+.tif-table td.num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; color: var(--navy); }
+.tif-table tfoot td {
+  font-family: var(--font-mono); font-weight: 700; color: var(--navy);
+  background: var(--gold-pale); border-top: 2px solid var(--gold); border-bottom: none;
+}
+.tif-table td.critical { color: var(--tif-critical); font-weight: 600; }
+
+/* ── Legend swatches (used in prose near charts) ──────────────────── */
+.tif-legend-inline { display: inline-flex; align-items: center; gap: 0.4rem; font-family: var(--font-mono); font-size: 0.76rem; color: var(--gray-600); margin-right: 1rem; }
+.tif-legend-inline .dot { width: 0.65rem; height: 0.65rem; border-radius: 50%; flex-shrink: 0; }
+
+/* ── Notes / disclaimer ────────────────────────────────────────── */
+.tif-note {
+  background: var(--gold-pale);
+  border-left: 4px solid var(--gold);
+  border-radius: 0 8px 8px 0;
+  padding: 1.1rem 1.4rem;
+  font-size: 0.85rem;
+  color: var(--gray-800);
+  line-height: 1.75;
+  margin-top: 1.25rem;
+}
+.tif-note strong { color: var(--navy); }
+.tif-note-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 1.5rem; }
+.tif-mapping-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; margin-top: 0.75rem; }
+.tif-mapping-table th, .tif-mapping-table td { padding: 0.4rem 0.6rem; border-bottom: 1px solid var(--gray-200); text-align: left; }
+.tif-mapping-table th { font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; color: var(--gray-400); }
+.tif-mapping-table td.arrow { color: var(--gold); font-family: var(--font-mono); text-align: center; width: 2rem; }
+
+/* ── Responsive ────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .tif-stat-row { grid-template-columns: repeat(2, auto); row-gap: 1.25rem; }
+}
+@media (max-width: 640px) {
+  .tif-hero { padding-top: 6rem; }
+}
