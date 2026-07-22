@@ -1,0 +1,10 @@
+# OS
+.DS_Store
+
+# Office temp/lock files
+~$*.xls*
+~$*.doc*
+
+# Raw student data — contains PII (NIM, names, contacts, addresses).
+# Only the anonymized aggregate in tif/processed/ should ever be committed.
+tif/data/*.xlsx
