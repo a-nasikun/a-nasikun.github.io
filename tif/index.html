@@ -259,9 +259,12 @@
 
       <div class="tif-note animate-on-scroll">
         <strong>Kurva kepadatan (bukan histogram).</strong> Grafik distribusi IPK menggunakan estimasi
-        kepadatan kernel Gaussian (Kernel Density Estimation, bandwidth aturan Silverman), diskalakan
-        ke sumbu "Jumlah" agar sebanding dengan ukuran tiap kelompok. Ini merupakan pendekatan halus dari data
-        asli, bukan hitungan pasti pada tiap nilai IPK — kelompok dengan n &lt; 3 tidak digambar.
+        kepadatan kernel Gaussian (Kernel Density Estimation, bandwidth aturan Silverman). Sumbu Y adalah
+        <strong>persentase dari kelompok itu sendiri</strong> (tiap kurva berjumlah ~100% terhadap dirinya
+        sendiri), bukan jumlah mahasiswa — sehingga kelompok kecil seperti IUP (n=61) dapat dibandingkan
+        bentuk sebarannya secara adil dengan kelompok besar seperti UM UGM (n=216), tanpa "tenggelam" karena
+        selisih jumlah populasi. Ini merupakan pendekatan halus dari data asli, bukan hitungan pasti pada
+        tiap nilai IPK — kelompok dengan n &lt; 3 tidak digambar.
       </div>
     </div>
   </section>

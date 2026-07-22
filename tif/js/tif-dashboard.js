@@ -74,6 +74,9 @@ function countBy(rows, keyFn) {
 // ── Gaussian KDE, scaled to an approximate "Jumlah" (count) y-axis ──
 // Silverman's rule-of-thumb bandwidth. Evaluated on a fixed 0–4 grid
 // (the IPK scale) so multiple groups can be overlaid on shared axes.
+// Output is normalized to each group's OWN 100% (density * step * 100),
+// not scaled by group size — so a small group (e.g. IUP) and a large one
+// (e.g. UM UGM) are visually comparable by shape, not swamped by n.
 function kde(values, { min = 0, max = 4, points = 161 } = {}) {
   const n = values.length;
   if (n === 0) return [];
@@ -89,7 +92,7 @@ function kde(values, { min = 0, max = 4, points = 161 } = {}) {
       sum += Math.exp(-0.5 * u * u);
     }
     const density = sum / (n * h * Math.sqrt(2 * Math.PI));
-    out.push([Number(x.toFixed(3)), Number((density * n * step).toFixed(4))]);
+    out.push([Number(x.toFixed(3)), Number((density * step * 100).toFixed(4))]);
   }
   return out;
 }
@@ -147,7 +150,7 @@ function renderDistChart(elId, groups, colorMap, { unit = 'IPK' } = {}) {
     grid: { left: 46, right: 20, top: 12, bottom: 58 },
     tooltip: {
       trigger: 'axis',
-      valueFormatter: v => fmt(Math.round(v)),
+      valueFormatter: v => `${v.toFixed(1)}%`,
       textStyle: { fontFamily: FONT_SANS, fontSize: 12 },
     },
     legend: {
@@ -163,9 +166,9 @@ function renderDistChart(elId, groups, colorMap, { unit = 'IPK' } = {}) {
       splitLine: { show: false },
     },
     yAxis: {
-      type: 'value', name: 'Jumlah (estimasi)',
+      type: 'value', name: '% Mahasiswa (per kelompok)',
       nameTextStyle: { fontFamily: FONT_MONO, fontSize: 10, color: GRAY_400 },
-      axisLabel: { fontFamily: FONT_MONO, fontSize: 11 },
+      axisLabel: { fontFamily: FONT_MONO, fontSize: 11, formatter: v => `${v}%` },
       splitLine: { lineStyle: { color: GRAY_200 } },
     },
     series,
