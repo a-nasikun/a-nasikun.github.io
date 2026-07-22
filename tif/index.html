@@ -178,6 +178,12 @@
         <h2>Dari mana mahasiswa berasal</h2>
         <p>Mengikuti filter tahun di atas — data sekolah asal IUP hanya tersedia sejak jalur ini dibuka tahun 2024.</p>
       </div>
+      <div class="tif-card animate-on-scroll" style="margin-bottom:1.5rem;">
+        <h3>Peta sebaran provinsi asal (KTP)</h3>
+        <p class="tif-card-sub">Jumlah mahasiswa per provinsi, seluruh jalur masuk. Geser untuk menggeser peta, scroll untuk memperbesar, arahkan kursor ke provinsi untuk melihat jumlahnya.</p>
+        <div id="chart-map-propinsi" class="tif-chart" style="height:480px;"></div>
+        <div class="tif-chart-note" id="chart-map-propinsi-note"></div>
+      </div>
       <div class="tif-grid cols-2 animate-on-scroll">
         <div class="tif-card">
           <h3>15 sekolah asal teratas — program IUP</h3>
@@ -186,7 +192,7 @@
         </div>
         <div class="tif-card">
           <h3>Provinsi asal (KTP)</h3>
-          <p class="tif-card-sub">12 provinsi asal terbanyak, seluruh jalur masuk.</p>
+          <p class="tif-card-sub">12 provinsi asal terbanyak, seluruh jalur masuk — versi tabel/batang dari peta di atas.</p>
           <div id="chart-propinsi" class="tif-chart" style="height:420px;"></div>
         </div>
       </div>
@@ -268,6 +274,15 @@
         (hanya sedikit mahasiswa ber-IPK &lt; 1,00). Mahasiswa berstatus <code>NON AKTIF</code> atau
         <code>MENGUNDURKAN DIRI</code> tidak disertakan pada ketiga grafik distribusi IPK ini, karena IPK
         terakhir mereka bukan indikator yang representatif untuk performa akademik mahasiswa yang masih aktif.
+      </div>
+
+      <div class="tif-note animate-on-scroll">
+        <strong>Peta provinsi.</strong> Batas wilayah provinsi pada peta sebaran asal mahasiswa berasal dari
+        <a href="https://github.com/denyherianto/indonesia-geojson-topojson-maps-with-38-provinces" target="_blank" rel="noopener">"Indonesia GeoJSON &amp; TopoJSON Maps (38 Provinces)"</a>,
+        dilisensikan di bawah <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>.
+        Dua provinsi dengan penamaan berbeda dari sumber (<code>DI Yogyakarta</code>, <code>Nanggroe Aceh
+        Darussalam</code>) dipetakan ke penamaan resmi pada berkas peta. Mahasiswa dengan provinsi "Luar Negeri"
+        atau tidak tercatat tidak ditampilkan di peta, tapi tetap dihitung di grafik batang provinsi di sebelahnya.
       </div>
     </div>
   </section>

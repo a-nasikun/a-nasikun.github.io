@@ -27,6 +27,16 @@ const BLOOD_COLORS  = { A: '#2f6fb5', B: '#b5457a', AB: '#c9772e', O: '#1baf7a' 
 const AGAMA_ORDER    = ['Islam', 'Kristen', 'Katolik', 'Hindu', 'Budha'];
 const AGAMA_COLORS   = { Islam: '#2f6fb5', Kristen: '#1baf7a', Katolik: '#b5457a', Hindu: '#4a3aa7', Budha: '#c9772e' };
 const STATUS_ORDER  = ['REGISTRASI', 'AKTIF', 'KAMPUS MERDEKA', 'CUTI DENGAN IJIN', 'LULUS', 'NON AKTIF', 'MENGUNDURKAN DIRI'];
+
+// propinsi_ktp values -> the exact "PROVINSI" property spelling used in
+// tif/processed/indonesia-provinces.geojson (CC BY 4.0, see Catatan Data).
+// Most values already match; only these two differ.
+const PROVINCE_GEOJSON_NAME = {
+  'DI Yogyakarta': 'Daerah Istimewa Yogyakarta',
+  'Nanggroe Aceh Darussalam': 'Aceh',
+};
+// Not actual Indonesian provinces — shown as a footnote, never plotted on the map.
+const PROVINCE_NON_MAPPABLE = ['Luar Negeri', 'Lain-lain'];
 // Excluded from the IPK distribution charts only: their last recorded IPK
 // isn't a meaningful data point for "how well are enrolled/graduated
 // students doing" once they've left the program.
@@ -39,7 +49,7 @@ const pct   = (n, d) => d === 0 ? '–' : `${((n / d) * 100).toFixed(1)}%`;
 function baseTextStyle() { return { fontFamily: FONT_SANS, color: GRAY_600, fontSize: 12 }; }
 
 // ── State ──────────────────────────────────────────────────────────
-const STATE = { raw: [], year: 'all' };
+const STATE = { raw: [], year: 'all', mapReady: false };
 const YEARS = [2020, 2021, 2022, 2023, 2024, 2025];
 
 function filtered() {
@@ -339,6 +349,61 @@ function renderPekerjaan() {
 function renderPropinsi() {
   renderHorizontalBar('chart-propinsi', countBy(filtered(), r => r.propinsi_ktp), { color: '#2f6fb5', top: 12 });
 }
+
+function renderPropinsiMap() {
+  const elId = 'chart-map-propinsi';
+  if (!STATE.mapReady) {
+    showEmpty(elId, 'Peta tidak dapat dimuat (berkas GeoJSON gagal diambil). Lihat tabel provinsi di sebelah kanan sebagai gantinya.');
+    return;
+  }
+  const rows = filtered();
+  const counts = countBy(rows, r => r.propinsi_ktp);
+  const mapData = [];
+  let excludedCount = 0;
+  counts.forEach((n, provName) => {
+    if (PROVINCE_NON_MAPPABLE.includes(provName)) { excludedCount += n; return; }
+    mapData.push({ name: PROVINCE_GEOJSON_NAME[provName] || provName, value: n, rawName: provName });
+  });
+  const maxVal = mapData.reduce((m, d) => Math.max(m, d.value), 1);
+
+  clearEmpty(elId);
+  const chart = getChart(elId);
+  chart.setOption({
+    textStyle: baseTextStyle(),
+    tooltip: {
+      trigger: 'item',
+      formatter: p => p.value != null ? `${p.name}: ${fmt(p.value)} mahasiswa` : `${p.name}: 0 mahasiswa`,
+    },
+    visualMap: {
+      min: 1, max: maxVal,
+      left: 10, bottom: 10,
+      text: ['Terbanyak', 'Paling sedikit'],
+      textStyle: { fontFamily: FONT_MONO, fontSize: 10, color: GRAY_600 },
+      inRange: { color: ['#cde2fb', '#5598e7', '#184f95'] },
+      calculable: false,
+    },
+    series: [{
+      type: 'map',
+      map: 'indonesia',
+      roam: true,
+      scaleLimit: { min: 1, max: 6 },
+      label: { show: false },
+      itemStyle: { areaColor: '#f0efec', borderColor: '#d8d7d0', borderWidth: 0.6 },
+      emphasis: {
+        itemStyle: { areaColor: GOLD },
+        label: { show: true, fontFamily: FONT_SANS, fontSize: 10, color: NAVY },
+      },
+      data: mapData,
+    }],
+  }, true);
+
+  const noteEl = document.getElementById(`${elId}-note`);
+  if (noteEl) {
+    noteEl.textContent = excludedCount
+      ? `${fmt(excludedCount)} mahasiswa berasal dari luar negeri / tidak tercatat provinsinya — tidak ditampilkan di peta.`
+      : '';
+  }
+}
 function renderIupSchools() {
   const rows = filtered().filter(r => r.sub_angkatan === 'IUP');
   if (rows.length === 0) {
@@ -357,6 +422,7 @@ function renderFilteredCharts() {
   renderAgamaDonut();
   renderPekerjaan();
   renderPropinsi();
+  renderPropinsiMap();
   renderIupSchools();
   renderHeroStats();
 }
@@ -543,8 +609,22 @@ function initYearFilter() {
 
 // ── Init ──────────────────────────────────────────────────────────
 async function init() {
-  const res = await fetch('processed/students.json');
-  STATE.raw = await res.json();
+  const [studentsRes, mapRes] = await Promise.all([
+    fetch('processed/students.json'),
+    fetch('processed/indonesia-provinces.geojson').catch(() => null),
+  ]);
+  STATE.raw = await studentsRes.json();
+
+  if (mapRes && mapRes.ok) {
+    try {
+      const geoJson = await mapRes.json();
+      echarts.registerMap('indonesia', geoJson);
+      STATE.mapReady = true;
+    } catch (e) {
+      STATE.mapReady = false;
+    }
+  }
+
   initYearFilter();
   renderAlwaysAllCharts();
   renderFilteredCharts();
