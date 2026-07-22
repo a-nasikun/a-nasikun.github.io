@@ -168,6 +168,7 @@ function renderDistChart(elId, groups, colorMap, { unit = 'IPK' } = {}) {
       axisLabel: { fontFamily: FONT_MONO, fontSize: 11 },
       splitLine: { lineStyle: { color: GRAY_200 } },
     },
+    series,
   }, true);
 
   const noteEl = document.getElementById(`${elId}-note`);
