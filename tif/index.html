@@ -58,11 +58,11 @@
 
       <div class="tif-toc">
         <a href="#tren">Tren Penerimaan &amp; IPK</a>
-        <a href="#status">Status &amp; Attrisi</a>
         <a href="#performa">Distribusi IPK</a>
         <a href="#demografi">Demografi</a>
         <a href="#keluarga">Latar Belakang Keluarga</a>
         <a href="#asal">Asal &amp; Geografi</a>
+        <a href="#status">Status &amp; Attrisi</a>
         <a href="#catatan">Catatan Data</a>
       </div>
     </div>
@@ -92,39 +92,11 @@
     </div>
   </section>
 
-  <!-- ── 2. STATUS & ATTRISI ─────────────────────────────────────── -->
-  <section id="status" class="tif-section alt section">
+  <!-- ── 2. DISTRIBUSI IPK ───────────────────────────────────────── -->
+  <section id="performa" class="tif-section alt section">
     <div class="container">
       <div class="section-header animate-on-scroll">
-        <span class="badge">2 · Status &amp; Attrisi</span>
-        <div class="divider"></div>
-        <h2>Mahasiswa yang mengundurkan diri, per angkatan</h2>
-        <p>Selalu menampilkan keenam angkatan sekaligus. Tabel di bawah merinci status akhir lengkap tiap angkatan sebagai konteks.</p>
-      </div>
-      <div class="tif-card animate-on-scroll">
-        <div id="chart-dropout" class="tif-chart" style="height:280px;"></div>
-      </div>
-      <div class="tif-table-wrap animate-on-scroll">
-        <table class="tif-table">
-          <thead>
-            <tr>
-              <th>Status Akhir</th>
-              <th>2020</th><th>2021</th><th>2022</th><th>2023</th><th>2024</th><th>2025</th>
-              <th>Total</th>
-            </tr>
-          </thead>
-          <tbody id="status-table-body"></tbody>
-          <tfoot id="status-table-foot"></tfoot>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── 3. DISTRIBUSI IPK ───────────────────────────────────────── -->
-  <section id="performa" class="tif-section section">
-    <div class="container">
-      <div class="section-header animate-on-scroll">
-        <span class="badge">3 · Performa Akademik</span>
+        <span class="badge">2 · Performa Akademik</span>
         <div class="divider"></div>
         <h2>Sebaran IPK, dikelompokkan berbagai cara</h2>
         <p>Kurva kepadatan (bukan histogram) memperlihatkan bentuk sebaran tiap kelompok — puncak lebih ke kanan berarti kelompok itu cenderung ber-IPK lebih tinggi. Mengikuti filter tahun di atas.</p>
@@ -152,11 +124,11 @@
     </div>
   </section>
 
-  <!-- ── 4. DEMOGRAFI ────────────────────────────────────────────── -->
-  <section id="demografi" class="tif-section alt section">
+  <!-- ── 3. DEMOGRAFI ────────────────────────────────────────────── -->
+  <section id="demografi" class="tif-section section">
     <div class="container">
       <div class="section-header animate-on-scroll">
-        <span class="badge">4 · Demografi</span>
+        <span class="badge">3 · Demografi</span>
         <div class="divider"></div>
         <h2>Gender, agama, dan golongan darah</h2>
         <p>Seluruh grafik pada bagian ini bersifat agregat — tidak pernah ditautkan ke identitas mahasiswa tertentu. Mengikuti filter tahun di atas.</p>
@@ -182,11 +154,11 @@
     </div>
   </section>
 
-  <!-- ── 5. LATAR BELAKANG KELUARGA ───────────────────────────────── -->
-  <section id="keluarga" class="tif-section section">
+  <!-- ── 4. LATAR BELAKANG KELUARGA ───────────────────────────────── -->
+  <section id="keluarga" class="tif-section alt section">
     <div class="container">
       <div class="section-header animate-on-scroll">
-        <span class="badge">5 · Latar Belakang Keluarga</span>
+        <span class="badge">4 · Latar Belakang Keluarga</span>
         <div class="divider"></div>
         <h2>Pekerjaan orang tua / wali</h2>
         <p>Dikelompokkan dari teks pekerjaan mentah (mis. "KARYAWAN SWASTA", "Karyawan Swasta", "Pekerja lepas" → <em>Karyawan Swasta</em>) ke 9 kategori agar dapat dibandingkan. Mengikuti filter tahun di atas.</p>
@@ -197,11 +169,11 @@
     </div>
   </section>
 
-  <!-- ── 6. ASAL & GEOGRAFI ──────────────────────────────────────── -->
-  <section id="asal" class="tif-section alt section">
+  <!-- ── 5. ASAL & GEOGRAFI ──────────────────────────────────────── -->
+  <section id="asal" class="tif-section section">
     <div class="container">
       <div class="section-header animate-on-scroll">
-        <span class="badge">6 · Asal &amp; Geografi</span>
+        <span class="badge">5 · Asal &amp; Geografi</span>
         <div class="divider"></div>
         <h2>Dari mana mahasiswa berasal</h2>
         <p>Mengikuti filter tahun di atas — data sekolah asal IUP hanya tersedia sejak jalur ini dibuka tahun 2024.</p>
@@ -217,6 +189,34 @@
           <p class="tif-card-sub">12 provinsi asal terbanyak, seluruh jalur masuk.</p>
           <div id="chart-propinsi" class="tif-chart" style="height:420px;"></div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 6. STATUS & ATTRISI ─────────────────────────────────────── -->
+  <section id="status" class="tif-section alt section">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="badge">6 · Status &amp; Attrisi</span>
+        <div class="divider"></div>
+        <h2>Mahasiswa yang mengundurkan diri, per angkatan</h2>
+        <p>Selalu menampilkan keenam angkatan sekaligus. Tabel di bawah merinci status akhir lengkap tiap angkatan sebagai konteks.</p>
+      </div>
+      <div class="tif-card animate-on-scroll">
+        <div id="chart-dropout" class="tif-chart" style="height:280px;"></div>
+      </div>
+      <div class="tif-table-wrap animate-on-scroll">
+        <table class="tif-table">
+          <thead>
+            <tr>
+              <th>Status Akhir</th>
+              <th>2020</th><th>2021</th><th>2022</th><th>2023</th><th>2024</th><th>2025</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody id="status-table-body"></tbody>
+          <tfoot id="status-table-foot"></tfoot>
+        </table>
       </div>
     </div>
   </section>

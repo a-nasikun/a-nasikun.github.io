@@ -24,6 +24,8 @@ const GENDER_COLORS = { L: '#1a2e45', P: '#b5657a' };
 const GENDER_LABELS = { L: 'Laki-laki', P: 'Perempuan' };
 const BLOOD_ORDER   = ['A', 'B', 'AB', 'O'];
 const BLOOD_COLORS  = { A: '#2f6fb5', B: '#b5457a', AB: '#c9772e', O: '#1baf7a' };
+const AGAMA_ORDER    = ['Islam', 'Kristen', 'Katolik', 'Hindu', 'Budha'];
+const AGAMA_COLORS   = { Islam: '#2f6fb5', Kristen: '#1baf7a', Katolik: '#b5457a', Hindu: '#4a3aa7', Budha: '#c9772e' };
 const STATUS_ORDER  = ['REGISTRASI', 'AKTIF', 'KAMPUS MERDEKA', 'CUTI DENGAN IJIN', 'LULUS', 'NON AKTIF', 'MENGUNDURKAN DIRI'];
 // Excluded from the IPK distribution charts only: their last recorded IPK
 // isn't a meaningful data point for "how well are enrolled/graduated
@@ -305,8 +307,31 @@ function renderHorizontalBar(elId, counts, { color = '#2f6fb5', top = null, form
   }, true);
 }
 
-function renderAgama() {
-  renderHorizontalBar('chart-agama', countBy(filtered(), r => r.agama), { color: '#2f6fb5' });
+function renderAgamaDonut() {
+  const rows = filtered();
+  const counts = countBy(rows, r => r.agama);
+  clearEmpty('chart-agama');
+  const chart = getChart('chart-agama');
+  chart.setOption({
+    textStyle: baseTextStyle(),
+    color: AGAMA_ORDER.map(k => AGAMA_COLORS[k]),
+    tooltip: { trigger: 'item', formatter: p => `${p.name}: ${fmt(p.value)} (${p.percent}%)` },
+    legend: { bottom: 0, textStyle: { fontFamily: FONT_SANS, fontSize: 11 } },
+    series: [{
+      type: 'pie',
+      radius: ['45%', '72%'],
+      avoidLabelOverlap: true,
+      itemStyle: { borderColor: '#fff', borderWidth: 2 },
+      label: { formatter: '{b}\n{d}%', fontFamily: FONT_SANS, fontSize: 11, color: GRAY_600 },
+      data: AGAMA_ORDER.map(k => ({ name: k, value: counts.get(k) || 0 })),
+    }],
+    graphic: {
+      elements: [{
+        type: 'text', left: 'center', top: 'center',
+        style: { text: fmt(rows.length), fontFamily: FONT_MONO, fontSize: 20, fontWeight: 700, fill: NAVY },
+      }],
+    },
+  }, true);
 }
 function renderPekerjaan() {
   renderHorizontalBar('chart-pekerjaan', countBy(filtered(), r => r.pekerjaan_kategori), { color: '#2f6fb5' });
@@ -329,7 +354,7 @@ function renderFilteredCharts() {
   renderIpkGender();
   renderGenderDonut();
   renderBloodDonut();
-  renderAgama();
+  renderAgamaDonut();
   renderPekerjaan();
   renderPropinsi();
   renderIupSchools();
