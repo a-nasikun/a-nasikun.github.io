@@ -397,8 +397,7 @@ function renderPropinsiMap() {
     series: [{
       type: 'map',
       map: 'indonesia',
-      roam: true,
-      scaleLimit: { min: 1, max: 6 },
+      roam: false, // locked in place — mouse wheel over the map should scroll the page, not zoom it
       label: { show: false },
       itemStyle: { areaColor: '#f0efec', borderColor: '#d8d7d0', borderWidth: 0.6 },
       emphasis: {
