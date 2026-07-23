@@ -372,7 +372,7 @@ function renderPropinsiMap() {
     textStyle: baseTextStyle(),
     tooltip: {
       trigger: 'item',
-      formatter: p => p.value != null ? `${p.name}: ${fmt(p.value)} mahasiswa` : `${p.name}: 0 mahasiswa`,
+      formatter: p => (p.value != null && !Number.isNaN(p.value)) ? `${p.name}: ${fmt(p.value)} mahasiswa` : `${p.name}: 0 mahasiswa`,
     },
     visualMap: {
       min: 1, max: maxVal,
@@ -618,6 +618,10 @@ async function init() {
   if (mapRes && mapRes.ok) {
     try {
       const geoJson = await mapRes.json();
+      // ECharts identifies map regions by properties.name — this GeoJSON's
+      // source only has properties.PROVINSI, so region names must be
+      // copied over before registering or every region stays data-less.
+      geoJson.features.forEach(f => { f.properties.name = f.properties.PROVINSI; });
       echarts.registerMap('indonesia', geoJson);
       STATE.mapReady = true;
     } catch (e) {
