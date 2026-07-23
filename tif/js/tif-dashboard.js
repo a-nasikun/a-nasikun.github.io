@@ -1,5 +1,6 @@
 /* ================================================================
-   TIF UGM — Dasbor Mahasiswa
+   DTETI UGM — Dasbor Mahasiswa (Teknologi Informasi, Teknik Elektro,
+   Teknik Biomedis)
    Data: tif/processed/students.json (agregat, tanpa NIM/nama/kontak)
    Grafik: Apache ECharts (dimuat via CDN di index.html)
    ================================================================ */
@@ -28,6 +29,9 @@ const AGAMA_ORDER    = ['Islam', 'Kristen', 'Katolik', 'Hindu', 'Budha'];
 const AGAMA_COLORS   = { Islam: '#2f6fb5', Kristen: '#1baf7a', Katolik: '#b5457a', Hindu: '#4a3aa7', Budha: '#c9772e' };
 const STATUS_ORDER  = ['REGISTRASI', 'AKTIF', 'KAMPUS MERDEKA', 'CUTI DENGAN IJIN', 'LULUS', 'NON AKTIF', 'MENGUNDURKAN DIRI'];
 
+const PROGRAM_CODES  = ['TIF', 'TE', 'TBM'];
+const PROGRAM_LABELS = { TIF: 'T. Informasi', TE: 'T. Elektro', TBM: 'T. Biomedis' };
+
 // propinsi_ktp values -> the exact "PROVINSI" property spelling used in
 // tif/processed/indonesia-provinces.geojson (CC BY 4.0, see Catatan Data).
 // Most values already match; only these two differ.
@@ -49,12 +53,20 @@ const pct   = (n, d) => d === 0 ? '–' : `${((n / d) * 100).toFixed(1)}%`;
 function baseTextStyle() { return { fontFamily: FONT_SANS, color: GRAY_600, fontSize: 12 }; }
 
 // ── State ──────────────────────────────────────────────────────────
-const STATE = { raw: [], year: 'all', mapReady: false };
+const STATE = { raw: [], year: 'all', prodi: new Set(PROGRAM_CODES), mapReady: false };
 const YEARS = [2020, 2021, 2022, 2023, 2024, 2025];
 
+// Respects the Program Studi filter only — used by the trend charts that
+// always plot all 6 years regardless of the Tahun filter.
+function filteredByProdi() {
+  return STATE.raw.filter(r => STATE.prodi.has(r.program_kode));
+}
+
+// Respects both the Program Studi and Tahun filters — used by everything else.
 function filtered() {
-  if (STATE.year === 'all') return STATE.raw;
-  return STATE.raw.filter(r => String(r.source_year) === String(STATE.year));
+  const rows = filteredByProdi();
+  if (STATE.year === 'all') return rows;
+  return rows.filter(r => String(r.source_year) === String(STATE.year));
 }
 
 // ── Small stats helpers ───────────────────────────────────────────
@@ -145,7 +157,7 @@ function renderDistChart(elId, groups, colorMap, { unit = 'IPK' } = {}) {
   const excluded = groups.filter(g => g.values.length > 0 && g.values.length < 3);
 
   if (usable.length === 0) {
-    showEmpty(elId, 'Data tidak cukup untuk digambar pada pilihan tahun ini.');
+    showEmpty(elId, 'Data tidak cukup untuk digambar pada pilihan program studi/tahun ini.');
     return;
   }
   clearEmpty(elId);
@@ -291,7 +303,7 @@ function renderHorizontalBar(elId, counts, { color = '#2f6fb5', top = null, form
   let entries = Array.from(counts.entries()).sort((a, b) => b[1] - a[1]);
   if (top) entries = entries.slice(0, top);
   if (entries.length === 0) {
-    showEmpty(elId, 'Tidak ada data pada pilihan tahun ini.');
+    showEmpty(elId, 'Tidak ada data pada pilihan program studi/tahun ini.');
     return;
   }
   clearEmpty(elId);
@@ -407,7 +419,11 @@ function renderPropinsiMap() {
 function renderIupSchools() {
   const rows = filtered().filter(r => r.sub_angkatan === 'IUP');
   if (rows.length === 0) {
-    showEmpty('chart-iup-schools', 'Program IUP belum dibuka pada tahun ini (dimulai 2024). Pilih 2024, 2025, atau Semua Tahun.');
+    const prodiHasIup = [...STATE.prodi].some(p => p === 'TIF' || p === 'TBM');
+    const message = !prodiHasIup
+      ? 'Teknik Elektro belum membuka jalur IUP. Pilih Teknologi Informasi dan/atau Teknik Biomedis untuk melihat data ini.'
+      : 'Program IUP belum dibuka pada tahun ini (dimulai 2024). Pilih 2024, 2025, atau Semua Tahun.';
+    showEmpty('chart-iup-schools', message);
     return;
   }
   renderHorizontalBar('chart-iup-schools', countBy(rows, r => r.sekolah_asal), { color: GOLD, top: 15 });
@@ -428,13 +444,15 @@ function renderFilteredCharts() {
 }
 
 // ================================================================
-// Charts that DO NOT respect the filter — they ARE the year-trend
+// Charts that respect Program Studi but ALWAYS show every year —
+// filtering these to one year would collapse a trend to a single point.
 // ================================================================
 
 function renderEnrollmentTrend() {
   const chart = getChart('chart-enrollment');
+  const prodiRows = filteredByProdi();
   const byYear = YEARS.map(y => {
-    const rows = STATE.raw.filter(r => r.source_year === y);
+    const rows = prodiRows.filter(r => r.source_year === y);
     const c = countBy(rows, r => r.jalur_masuk);
     return JALUR_ORDER.map(j => c.get(j) || 0);
   });
@@ -464,8 +482,9 @@ function renderEnrollmentTrend() {
 
 function renderIpkTrend() {
   const chart = getChart('chart-ipk-trend');
+  const prodiRows = filteredByProdi();
   const stats = YEARS.map(y => {
-    const values = STATE.raw.filter(r => r.source_year === y && r.ipk != null).map(r => r.ipk);
+    const values = prodiRows.filter(r => r.source_year === y && r.ipk != null).map(r => r.ipk);
     const m = mean(values);
     const sd = stdev(values);
     return { m, sd, n: values.length };
@@ -517,8 +536,9 @@ function renderIpkTrend() {
 
 function renderDropoutTrend() {
   const chart = getChart('chart-dropout');
-  const counts = YEARS.map(y => STATE.raw.filter(r => r.source_year === y && r.status_akhir === 'MENGUNDURKAN DIRI').length);
-  const totals = YEARS.map(y => STATE.raw.filter(r => r.source_year === y).length);
+  const prodiRows = filteredByProdi();
+  const counts = YEARS.map(y => prodiRows.filter(r => r.source_year === y && r.status_akhir === 'MENGUNDURKAN DIRI').length);
+  const totals = YEARS.map(y => prodiRows.filter(r => r.source_year === y).length);
   chart.setOption({
     textStyle: baseTextStyle(),
     grid: { left: 40, right: 20, top: 16, bottom: 40 },
@@ -541,8 +561,9 @@ function renderDropoutTrend() {
 
 function renderStatusTable() {
   const tbody = document.getElementById('status-table-body');
+  const prodiRows = filteredByProdi();
   const rows = STATUS_ORDER.map(status => {
-    const perYear = YEARS.map(y => STATE.raw.filter(r => r.source_year === y && r.status_akhir === status).length);
+    const perYear = YEARS.map(y => prodiRows.filter(r => r.source_year === y && r.status_akhir === status).length);
     const total = perYear.reduce((a, b) => a + b, 0);
     return { status, perYear, total };
   }).filter(r => r.total > 0);
@@ -556,7 +577,7 @@ function renderStatusTable() {
   `).join('');
 
   const tfoot = document.getElementById('status-table-foot');
-  const colTotals = YEARS.map(y => STATE.raw.filter(r => r.source_year === y).length);
+  const colTotals = YEARS.map(y => prodiRows.filter(r => r.source_year === y).length);
   const grand = colTotals.reduce((a, b) => a + b, 0);
   tfoot.innerHTML = `
     <tr>
@@ -567,11 +588,16 @@ function renderStatusTable() {
   `;
 }
 
-function renderAlwaysAllCharts() {
+function renderTrendCharts() {
   renderEnrollmentTrend();
   renderIpkTrend();
   renderDropoutTrend();
   renderStatusTable();
+}
+
+function renderAll() {
+  renderTrendCharts();
+  renderFilteredCharts();
 }
 
 // ── Hero stats (respect the filter) ────────────────────────────────
@@ -591,19 +617,49 @@ function renderHeroStats() {
   document.getElementById('stat-top-jalur').textContent = topJalur;
 }
 
-// ── Year filter wiring ──────────────────────────────────────────────
-function initYearFilter() {
-  const container = document.getElementById('year-filter');
-  const chips = [{ value: 'all', label: 'Semua Tahun' }, ...YEARS.map(y => ({ value: String(y), label: String(y) }))];
-  container.innerHTML = chips.map(c =>
-    `<button class="tif-year-chip${c.value === STATE.year ? ' active' : ''}" data-year="${c.value}">${c.label}</button>`
+// ── Filter bar wiring (Program Studi — multi-select, Tahun — single-select) ──
+function initFilterBar() {
+  const yearContainer = document.getElementById('year-filter');
+  const yearChips = [{ value: 'all', label: 'Semua Tahun' }, ...YEARS.map(y => ({ value: String(y), label: String(y) }))];
+  yearContainer.innerHTML = yearChips.map(c =>
+    `<button class="tif-filter-chip${c.value === STATE.year ? ' active' : ''}" data-year="${c.value}">${c.label}</button>`
   ).join('');
-  container.addEventListener('click', e => {
-    const btn = e.target.closest('.tif-year-chip');
+  yearContainer.addEventListener('click', e => {
+    const btn = e.target.closest('.tif-filter-chip');
     if (!btn) return;
     STATE.year = btn.dataset.year;
-    container.querySelectorAll('.tif-year-chip').forEach(b => b.classList.toggle('active', b === btn));
-    renderFilteredCharts();
+    yearContainer.querySelectorAll('.tif-filter-chip').forEach(b => b.classList.toggle('active', b === btn));
+    renderAll();
+  });
+
+  const prodiContainer = document.getElementById('prodi-filter');
+  const prodiChips = [{ value: 'all', label: 'Semua' }, ...PROGRAM_CODES.map(p => ({ value: p, label: PROGRAM_LABELS[p] }))];
+  prodiContainer.innerHTML = prodiChips.map(c =>
+    `<button class="tif-filter-chip" data-prodi="${c.value}">${c.label}</button>`
+  ).join('');
+
+  function syncProdiChips() {
+    const allActive = STATE.prodi.size === PROGRAM_CODES.length;
+    prodiContainer.querySelectorAll('.tif-filter-chip').forEach(b => {
+      const v = b.dataset.prodi;
+      b.classList.toggle('active', v === 'all' ? allActive : STATE.prodi.has(v));
+    });
+  }
+  syncProdiChips();
+
+  prodiContainer.addEventListener('click', e => {
+    const btn = e.target.closest('.tif-filter-chip');
+    if (!btn) return;
+    const v = btn.dataset.prodi;
+    if (v === 'all') {
+      STATE.prodi = new Set(PROGRAM_CODES);
+    } else if (STATE.prodi.has(v)) {
+      if (STATE.prodi.size > 1) STATE.prodi.delete(v); // always keep at least one program selected
+    } else {
+      STATE.prodi.add(v);
+    }
+    syncProdiChips();
+    renderAll();
   });
 }
 
@@ -629,9 +685,8 @@ async function init() {
     }
   }
 
-  initYearFilter();
-  renderAlwaysAllCharts();
-  renderFilteredCharts();
+  initFilterBar();
+  renderAll();
 }
 
 init();

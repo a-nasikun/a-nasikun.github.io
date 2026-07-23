@@ -1,9 +1,11 @@
 """
-Extract TIF UGM student data from the raw admissions Excel exports.
+Extract DTETI UGM student data (Teknologi Informasi, Teknik Elektro, Teknik
+Biomedis) from the raw admissions Excel exports.
 
-Reads tif/data/Daftar mahasiswa <year>.xlsx (2020-2025), drops sensitive
-personal fields, normalizes "Jalur Masuk" naming across years, and writes
-a combined, anonymized dataset to tif/processed/.
+Reads tif/data/Daftar mahasiswa [<prodi>_]<year>.xlsx (2020-2025, 3 study
+programs x 6 years = 18 files), drops sensitive personal fields, normalizes
+"Jalur Masuk" naming across years, and writes a combined, anonymized dataset
+to tif/processed/.
 
 Excluded (never written to output): NIM, Nama Mahasiswa, Email UGM, No HP,
 Alamat Domisili, Wali, Alamat Wali, No HP Wali, Alamat KTP. Golongan Darah
@@ -12,11 +14,21 @@ is kept for aggregate distribution charts only.
 import glob
 import json
 import csv
+import re
 import datetime
 import openpyxl
 
 DATA_DIR = "tif/data"
 OUT_DIR = "tif/processed"
+
+FILENAME_RE = re.compile(r"Daftar mahasiswa(?: (T Elektro|T Biomedis))?[ _](\d{4})\.xlsx$")
+
+# "Program Studi" cell value -> short code + display label used throughout the dashboard.
+PROGRAM_BY_RAW = {
+    "S1 TEKNOLOGI INFORMASI": ("TIF", "Teknologi Informasi"),
+    "S1 TEKNIK ELEKTRO": ("TE", "Teknik Elektro"),
+    "S1 TEKNIK BIOMEDIS": ("TBM", "Teknik Biomedis"),
+}
 
 # 0-indexed column positions (row 3 header, data starts row 4)
 COL = {
@@ -59,6 +71,7 @@ COL = {
 # Fields kept in the anonymized output, in order.
 OUTPUT_FIELDS = [
     "angkatan", "periode_masuk", "tanggal_masuk", "program_studi",
+    "program_kode", "program_label",
     "jalur_masuk", "jalur_masuk_raw", "beasiswa_kerjasama", "asal_3t",
     "jatah_sks", "ips", "sks_kumulatif", "ipk", "sub_angkatan",
     "kurikulum", "jenis_kelamin", "agama", "golongan_darah",
@@ -140,11 +153,17 @@ def extract_file(path, year):
         if row[COL["no"]] is None and row[COL["program_studi"]] is None:
             continue
         raw_jalur = clean_value(row[COL["jalur_masuk_raw"]])
+        raw_program = clean_value(row[COL["program_studi"]])
+        if raw_program not in PROGRAM_BY_RAW:
+            raise ValueError(f"Unmapped Program Studi value: {raw_program!r} in {path}")
+        program_kode, program_label = PROGRAM_BY_RAW[raw_program]
         rec = {
             "angkatan": clean_value(row[COL["angkatan"]]),
             "periode_masuk": clean_value(row[COL["periode_masuk"]]),
             "tanggal_masuk": clean_value(row[COL["tanggal_masuk"]]),
-            "program_studi": clean_value(row[COL["program_studi"]]),
+            "program_studi": raw_program,
+            "program_kode": program_kode,
+            "program_label": program_label,
             "jalur_masuk": normalize_jalur(raw_jalur),
             "jalur_masuk_raw": raw_jalur,
             "beasiswa_kerjasama": clean_value(row[COL["beasiswa_kerjasama"]]),
@@ -178,12 +197,15 @@ def main():
     all_records = []
     files = sorted(glob.glob(f"{DATA_DIR}/Daftar mahasiswa *.xlsx"))
     for path in files:
-        year = int(path.rsplit(" ", 1)[-1].replace(".xlsx", ""))
+        m = FILENAME_RE.search(path)
+        if not m:
+            raise ValueError(f"Filename doesn't match expected pattern: {path}")
+        year = int(m.group(2))
         recs = extract_file(path, year)
         print(f"{path}: {len(recs)} records")
         all_records.extend(recs)
 
-    all_records.sort(key=lambda r: (r["source_year"], r["angkatan"]))
+    all_records.sort(key=lambda r: (r["source_year"], r["program_kode"], r["angkatan"]))
 
     with open(f"{OUT_DIR}/students.json", "w", encoding="utf-8") as f:
         json.dump(all_records, f, ensure_ascii=False, indent=2)

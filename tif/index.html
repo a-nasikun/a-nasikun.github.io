@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Dasbor analitik mahasiswa S1 Teknologi Informasi UGM angkatan 2020–2025: distribusi IPK per jalur masuk, demografi, asal sekolah program IUP, dan tren penerimaan." />
-<title>Dasbor Mahasiswa — Teknologi Informasi UGM</title>
+<meta name="description" content="Dasbor analitik mahasiswa S1 Departemen Teknik Elektro dan Teknologi Informasi UGM angkatan 2020–2025 (Teknologi Informasi, Teknik Elektro, Teknik Biomedis): distribusi IPK per jalur masuk, demografi, asal sekolah program IUP, dan tren penerimaan." />
+<title>Dasbor Mahasiswa — DTETI UGM</title>
 <link rel="stylesheet" href="../css/style.css" />
 <link rel="stylesheet" href="css/tif.css" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230d1b2a'/><text y='24' x='4' font-size='22' font-family='serif' fill='%23c9a84c'>N</text></svg>" />
@@ -34,20 +34,19 @@
   <header class="tif-hero">
     <div class="container">
       <nav class="breadcrumb" aria-label="Remah roti">
-        <a href="../index.html">Beranda</a> · Dasbor Mahasiswa TIF UGM
+        <a href="../index.html">Beranda</a> · Dasbor Mahasiswa DTETI UGM
       </nav>
-      <div class="tif-eyebrow">Teknologi Informasi · Universitas Gadjah Mada</div>
-      <h1>Dasbor Mahasiswa S1 Teknologi Informasi 2020–2025</h1>
+      <div class="tif-eyebrow">Departemen Teknik Elektro dan Teknologi Informasi · Universitas Gadjah Mada</div>
+      <h1>Dasbor Mahasiswa DTETI UGM 2020–2025</h1>
       <p class="tif-hero-lead">
-        Rangkuman anonim data mahasiswa terdaftar enam angkatan terakhir — performa akademik per
-        jalur masuk (<code>SNBP</code>, <code>SNBT</code>, <code>UM UGM</code>, <code>IUP</code>),
-        demografi, asal sekolah, dan tren penerimaan. Seluruh data identitas pribadi (NIM, nama,
-        kontak, alamat) telah dihapus sebelum dipublikasikan — lihat <a href="#catatan" style="color:var(--gold-light);text-decoration:underline;">catatan metodologi</a>.
+        Rangkuman anonim data mahasiswa terdaftar enam angkatan terakhir dari tiga program studi —
+        <strong>Teknologi Informasi</strong>, <strong>Teknik Elektro</strong>, dan <strong>Teknik
+        Biomedis</strong> — performa akademik per jalur masuk (<code>SNBP</code>, <code>SNBT</code>,
+        <code>UM UGM</code>, <code>IUP</code>), demografi, asal sekolah, dan tren penerimaan. Gunakan
+        bilah filter di bawah untuk memilih program studi dan/atau tahun tertentu. Seluruh data
+        identitas pribadi (NIM, nama, kontak, alamat) telah dihapus sebelum dipublikasikan — lihat
+        <a href="#catatan" style="color:var(--gold-light);text-decoration:underline;">catatan metodologi</a>.
       </p>
-
-      <div class="tif-year-filter" id="year-filter">
-        <span class="tif-year-filter-label">Tampilkan</span>
-      </div>
 
       <div class="tif-stat-row">
         <div class="tif-stat"><div class="stat-num" id="stat-total">–</div><div class="stat-label">Mahasiswa (pilihan)</div></div>
@@ -68,6 +67,21 @@
     </div>
   </header>
 
+  <!-- ── FILTER BAR (sticky — tetap terlihat saat scroll) ────────────── -->
+  <div class="tif-filter-bar" id="filter-bar">
+    <div class="container tif-filter-bar-inner">
+      <div class="tif-filter-group">
+        <span class="tif-filter-label">Program Studi</span>
+        <div class="tif-filter-chips" id="prodi-filter"></div>
+      </div>
+      <div class="tif-filter-divider"></div>
+      <div class="tif-filter-group">
+        <span class="tif-filter-label">Tahun</span>
+        <div class="tif-filter-chips" id="year-filter"></div>
+      </div>
+    </div>
+  </div>
+
   <!-- ── 1. TREN PENERIMAAN & IPK ─────────────────────────────────── -->
   <section id="tren" class="tif-section section">
     <div class="container">
@@ -75,7 +89,7 @@
         <span class="badge">1 · Tren</span>
         <div class="divider"></div>
         <h2>Tren penerimaan dan performa akademik per tahun</h2>
-        <p>Selalu menampilkan keenam angkatan sekaligus (tidak terpengaruh filter tahun di atas) — di sinilah pola lintas-waktu paling terlihat.</p>
+        <p>Selalu menampilkan keenam angkatan sekaligus untuk program studi terpilih (mengikuti filter Program Studi, tidak terpengaruh filter Tahun) — di sinilah pola lintas-waktu paling terlihat.</p>
       </div>
       <div class="tif-grid cols-2 animate-on-scroll">
         <div class="tif-card">
@@ -99,7 +113,7 @@
         <span class="badge">2 · Performa Akademik</span>
         <div class="divider"></div>
         <h2>Sebaran IPK, dikelompokkan berbagai cara</h2>
-        <p>Kurva kepadatan (bukan histogram) memperlihatkan bentuk sebaran tiap kelompok — puncak lebih ke kanan berarti kelompok itu cenderung ber-IPK lebih tinggi. Mengikuti filter tahun di atas.</p>
+        <p>Kurva kepadatan (bukan histogram) memperlihatkan bentuk sebaran tiap kelompok — puncak lebih ke kanan berarti kelompok itu cenderung ber-IPK lebih tinggi. Mengikuti filter Program Studi dan Tahun di atas.</p>
       </div>
       <div class="tif-card animate-on-scroll" style="margin-bottom:1.5rem;">
         <h3>Distribusi IPK per jalur masuk</h3>
@@ -131,7 +145,7 @@
         <span class="badge">3 · Demografi</span>
         <div class="divider"></div>
         <h2>Gender, agama, dan golongan darah</h2>
-        <p>Seluruh grafik pada bagian ini bersifat agregat — tidak pernah ditautkan ke identitas mahasiswa tertentu. Mengikuti filter tahun di atas.</p>
+        <p>Seluruh grafik pada bagian ini bersifat agregat — tidak pernah ditautkan ke identitas mahasiswa tertentu. Mengikuti filter Program Studi dan Tahun di atas.</p>
       </div>
       <div class="tif-quad-grid animate-on-scroll">
         <div class="tif-card">
@@ -161,7 +175,7 @@
         <span class="badge">4 · Latar Belakang Keluarga</span>
         <div class="divider"></div>
         <h2>Pekerjaan orang tua / wali</h2>
-        <p>Dikelompokkan dari teks pekerjaan mentah (mis. "KARYAWAN SWASTA", "Karyawan Swasta", "Pekerja lepas" → <em>Karyawan Swasta</em>) ke 9 kategori agar dapat dibandingkan. Mengikuti filter tahun di atas.</p>
+        <p>Dikelompokkan dari teks pekerjaan mentah (mis. "KARYAWAN SWASTA", "Karyawan Swasta", "Pekerja lepas" → <em>Karyawan Swasta</em>) ke 9 kategori agar dapat dibandingkan. Mengikuti filter Program Studi dan Tahun di atas.</p>
       </div>
       <div class="tif-card animate-on-scroll">
         <div id="chart-pekerjaan" class="tif-chart" style="height:380px;"></div>
@@ -176,7 +190,7 @@
         <span class="badge">5 · Asal &amp; Geografi</span>
         <div class="divider"></div>
         <h2>Dari mana mahasiswa berasal</h2>
-        <p>Mengikuti filter tahun di atas — data sekolah asal IUP hanya tersedia sejak jalur ini dibuka tahun 2024.</p>
+        <p>Mengikuti filter Program Studi dan Tahun di atas — data sekolah asal IUP hanya tersedia untuk program studi yang membukanya (Teknologi Informasi &amp; Teknik Biomedis, sejak 2024; Teknik Elektro belum membuka jalur ini).</p>
       </div>
       <div class="tif-card animate-on-scroll" style="margin-bottom:1.5rem;">
         <h3>Peta sebaran provinsi asal (KTP)</h3>
@@ -187,7 +201,7 @@
       <div class="tif-grid cols-2 animate-on-scroll">
         <div class="tif-card">
           <h3>15 sekolah asal teratas — program IUP</h3>
-          <p class="tif-card-sub">Sekolah menengah yang paling banyak mengirim siswanya ke jalur IUP TIF UGM.</p>
+          <p class="tif-card-sub">Sekolah menengah yang paling banyak mengirim siswanya ke jalur IUP DTETI UGM (Teknologi Informasi &amp; Teknik Biomedis).</p>
           <div id="chart-iup-schools" class="tif-chart" style="height:420px;"></div>
         </div>
         <div class="tif-card">
@@ -206,7 +220,7 @@
         <span class="badge">6 · Status &amp; Attrisi</span>
         <div class="divider"></div>
         <h2>Mahasiswa yang mengundurkan diri, per angkatan</h2>
-        <p>Selalu menampilkan keenam angkatan sekaligus. Tabel di bawah merinci status akhir lengkap tiap angkatan sebagai konteks.</p>
+        <p>Selalu menampilkan keenam angkatan sekaligus untuk program studi terpilih (mengikuti filter Program Studi, tidak terpengaruh filter Tahun). Tabel di bawah merinci status akhir lengkap tiap angkatan sebagai konteks.</p>
       </div>
       <div class="tif-card animate-on-scroll">
         <div id="chart-dropout" class="tif-chart" style="height:280px;"></div>
@@ -238,7 +252,8 @@
 
       <div class="tif-note animate-on-scroll">
         <strong>Sumber data.</strong> Rekap resmi "Daftar Mahasiswa" Departemen Teknik Elektro dan
-        Teknologi Informasi UGM, satu berkas per angkatan (2020–2025), program studi S1 Teknologi Informasi.
+        Teknologi Informasi UGM, satu berkas per angkatan per program studi (2020–2025) untuk ketiga
+        program studi S1: Teknologi Informasi, Teknik Elektro, dan Teknik Biomedis — 18 berkas total.
       </div>
 
       <div class="tif-note animate-on-scroll">
@@ -291,7 +306,7 @@
 
 <footer>
   <div class="footer-inner">
-    <p>© <span id="footer-year"></span> Dr. Ahmad Nasikun · Sumber data: Departemen Teknik Elektro dan Teknologi Informasi UGM (rekap mahasiswa TIF 2020–2025, dianonimkan)</p>
+    <p>© <span id="footer-year"></span> Dr. Ahmad Nasikun · Sumber data: Departemen Teknik Elektro dan Teknologi Informasi UGM (rekap mahasiswa Teknologi Informasi, Teknik Elektro &amp; Teknik Biomedis 2020–2025, dianonimkan)</p>
     <p>Dibangun dengan HTML, CSS &amp; JS murni · Grafik oleh <a href="https://echarts.apache.org" target="_blank">Apache ECharts</a></p>
   </div>
 </footer>
